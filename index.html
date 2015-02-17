@@ -1,26 +1,14 @@
 ---
-layout: default
 title: Blogging Like a Hacker
+type: pages
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Blog do Danguilherme</title>
 
-  <link rel="stylesheet" href="css/syntax.css">
-</head>
-<body>
-  <h1>Guilherme Ventura</h1>
-
-  <h2>Posts</h2>
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        {{ post.excerpt }}
-      </li>
-    {% endfor %}
-  </ul>
-</body>
-</html>
+<h2>Posts</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>

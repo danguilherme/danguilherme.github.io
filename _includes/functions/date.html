@@ -1,0 +1,50 @@
+{% if include.simple %}
+  {{ include.date | date: "%d/%m/%Y %H:%M" }}
+{% else %}
+  {% assign month = include.date | date: "%-m" %}
+  {% case month %}
+    {% when '1' %}
+      {% assign month = 'Janeiro' %}
+    {% when '2' %}
+      {% assign month = 'Fevereiro' %}
+    {% when '3' %}
+      {% assign month = 'Março' %}
+    {% when '4' %}
+      {% assign month = 'Abril' %}
+    {% when '5' %}
+      {% assign month = 'Maio' %}
+    {% when '6' %}
+      {% assign month = 'Junho' %}
+    {% when '7' %}
+      {% assign month = 'Julho' %}
+    {% when '8' %}
+      {% assign month = 'Agosto' %}
+    {% when '9' %}
+      {% assign month = 'Setembro' %}
+    {% when '10' %}
+      {% assign month = 'Outubro' %}
+    {% when '11' %}
+      {% assign month = 'Novembro' %}
+    {% when '12' %}
+      {% assign month = 'Dezembro' %}
+  {% endcase %}
+  {% assign day_of_week = include.date | date: "%-w" %}
+  {% case day_of_week %}
+    {% when '0' %}
+      {% assign day_of_week = 'Domingo' %}
+    {% when '1' %}
+      {% assign day_of_week = 'Segunda-Feira' %}
+    {% when '2' %}
+      {% assign day_of_week = 'Terça-Feira' %}
+    {% when '3' %}
+      {% assign day_of_week = 'Quarta-Feira' %}
+    {% when '4' %}
+      {% assign day_of_week = 'Quinta-Feira' %}
+    {% when '5' %}
+      {% assign day_of_week = 'Sexta-Feira' %}
+    {% when '6' %}
+      {% assign day_of_week = 'Sábado' %}
+  {% endcase %}
+  {{include.simple}}
+  {{ day_of_week }}, {{ include.date | date: '%d' }} de {{ month }} de {{ include.date | date: '%Y' }}
+{% endif %}

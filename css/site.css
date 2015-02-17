@@ -1,0 +1,151 @@
+html {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  /* line-height: 1.5rem; */
+}
+
+body {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Marvel', sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.7rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.3rem;
+}
+
+h6 {
+  font-size: 1.1rem;
+}
+
+/* main header */
+body > header h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+body > header h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body > header p {
+  font-size: .9rem;
+  margin: 0;
+}
+
+body > article {
+  margin-bottom: 2rem;
+  /* background-color: inherit; */
+}
+
+body > footer {
+  font-size: .7rem;
+  line-height: 2rem;
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 0 1rem;
+
+  text-align: center;
+
+  border-top: #d0d0d0 solid 1px;
+  background-color: #fff;
+}
+
+#page {
+}
+
+#post {
+}
+
+#post .post-info {
+  min-width: 25%;
+  width: 75%;
+  text-align: center;
+  margin: 10px auto 3rem auto;
+}
+
+#post .post-info .post-title {
+  font-size: 3rem;
+
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+#post .post-info .post-tagline {
+  font-size: 1.7rem;
+  color: #ddd;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+
+  margin: 0;
+}
+
+#post .post-info .post-metadata {
+  font-size: .8em;
+
+  margin: 0;
+}
+
+#post .twitter-share-notice {
+  margin: 2rem 0;
+}
+
+#post .author {
+  padding: 1em;
+  border-top: black 2px solid;
+  /* border-color: lightgray; */
+  /* border-left-color: gray; */
+  /* border-top-color: gray; */
+  /* border-right-color: lightgray; */
+  /* border-bottom-color: lightgray; */
+  /* border-width: 2px; */
+  /* border-style: ridge; */
+  /* border-radius: 5px; */
+  /* background-color: #e2e2e2; */
+}
+
+#post .author::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+#post .author img {
+  float: left;
+  margin-right: 10px;
+}
+
+#post .post-comments {
+  margin-top: 3rem;
+}

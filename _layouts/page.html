@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{page.title}} - Guilherme Ventura</title>
+
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link href='http://fonts.googleapis.com/css?family=Marvel:400,700|Raleway:700,400' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  {% include header.html %}
+
+  <article id="page">
+    <h1 class="page-title">{{page.title}}</h1>
+
+    <section class="page-content">
+      {{content}}
+    </section>
+  </article>
+
+  {% include footer.html %}
+  {% include google_analytics.html %}
+</body>
+</html>

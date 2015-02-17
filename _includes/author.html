@@ -1,0 +1,28 @@
+{% assign author = site.data.authors[include.author] %}
+<div class="author">
+  {% if author.email %}
+  <img id="author-gravatar" width="100px" height="100px" alt="gravatar" />
+  {% endif %}
+
+  <div class="author-name"><a href="{{author.web}}">{{author.name}}</a></div>
+  <div class="author-bio">{{author.bio}}</div>
+
+  {% comment %}
+  {% if author.twitter || author.github %}
+  <ul class="author-links">
+    {% if author.github %}
+    <li class="author-link-github"><a href="https://github.com/{{author.github}}">GitHub</a></li>
+    {% endif %}
+
+    {% if author.twitter %}
+    <li class="author-link-twitter"><a href="https://twitter.com/{{author.twitter}}">Twitter</a></li>
+    {% endif %}
+  </ul>
+  {% endif %}
+  {% endcomment %}
+
+  <script type="text/javascript" src="/js/gravatar.js"></script>
+  <script>
+    loadGravatar('{{author.email}}', document.getElementById('author-gravatar'));
+  </script>
+</div>

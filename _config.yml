@@ -2,7 +2,7 @@ title: Guilherme Ventura
 tagline: Na incessante jornada rumo ao conhecimento
 # url: http://blog.guilhermeventura.net
 
-highlighter: rouge
+highlighter: pygments
 permalink: /:title
 
 defaults:
