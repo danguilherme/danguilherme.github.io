@@ -18,8 +18,8 @@
       <p class="post-tagline">{{page.tagline}}</p>
       <p class="post-metadata">
         {% comment %}<span class="post-author">{% include functions/author.html author=page.author %}</span>,{% endcomment %}
-        <time datetime="{{site.time}}" pubdate="pubdate" class="post-time" title="{% include functions/date.html date=site.time simple=true %}">
-          {% include functions/date.html date=site.time %}
+        <time datetime="{{post.date}}" pubdate="pubdate" class="post-time" title="{% include functions/date.html date=post.date simple=true %}">
+          {% include functions/date.html date=post.date %}
         </time>
       </p>
     </header>
