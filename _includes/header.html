@@ -1,4 +1,16 @@
 <header>
-  <h1><a href="/">{{site.title}}</a></h1>
-  <p>{{site.tagline}}</p>
+  <div class="title">
+    <h1><a href="/">{{site.title}}</a></h1>
+    <p>{{site.tagline}}</p>
+  </div>
+
+  <nav>
+    <ul>
+      {% for page in site.pages %}
+      {% if page.title %}
+      <li><a href="{{site.url}}{{page.url}}">{{ page.title }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
 </header>

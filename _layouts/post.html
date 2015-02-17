@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% include head.html %}
+  {% include head_content.html %}
+
+  <meta name="description" content="{{post.excerpt | strip_html}}">
 
   <title>{{page.title}} - Guilherme Ventura</title>
 </head>
@@ -14,9 +16,11 @@
       <p class="post-tagline">{{page.tagline}}</p>
       <p class="post-metadata">
         {% comment %}<span class="post-author">{% include functions/author.html author=page.author %}</span>,{% endcomment %}
-        <time datetime="{{post.date}}" pubdate="pubdate" class="post-time" title="{% include functions/date.html date=post.date simple=true %}">
-          {% include functions/date.html date=post.date %}
+        <time datetime="{{page.date}}" pubdate="pubdate" class="post-time">
+          {% include functions/date.html date=page.date %}
         </time>
+        •
+        <a href="#disqus_thread" class="plain">0 comentários</a>
       </p>
     </header>
 
@@ -37,5 +41,6 @@
 
   {% include footer.html %}
   {% include google_analytics.html %}
+  <script type="text/javascript" src="/js/post.js"></script>
 </body>
 </html>
