@@ -8,13 +8,14 @@
 
 html {
   font-family: 'Raleway', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 body {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding-left: 35px;
+  padding-right: 10px;
 }
 
 h1,
@@ -86,6 +87,7 @@ a.plain:active {
 blockquote {
   border-left: #d9ddff 5px solid;
   margin-left: 0;
+  margin-right: 0;
   color: #333;
   padding: .5rem .5rem .5rem 2em;
   background-color: #fafaff;
@@ -187,6 +189,8 @@ code {
   padding-top: 1.5rem;
   padding-bottom: .5em;
   overflow: auto;
+  /* width: 100%; */
+  /* min-width: 300px; */
 }
 
 .highlight pre code {
@@ -200,6 +204,7 @@ code {
 	white-space: -o-pre-wrap;              /* Opera 7 and up */
 
   word-wrap: break-word;                 /* IE 5.5+ and up */
+  /* min-width: 400px; */;
 }
 
 .highlight pre code::before {
@@ -349,7 +354,12 @@ body > footer hr {
   height: 20px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAByUlEQVQ4T6XUS6jNURTH8c9FKKVIHnkNZOAtuZkwoTwi73QpEwYYGJnIRCFSMjCSZxlQUpRXIgMmKAOvMjNlQAaeefardaR/1+2crNE5+7/3d6/1W7+1u3Qeo7EPGzAAT3EQ14Lq6pA3FXcwppdzR7GrE+BEPMSogl3FK/RgZK31dALcilN1cA8O1e9xeFRZP+gEOBR78RxnGyUfSbn41AmwL7nPYTPe9gXsh+XVzWR3u0r+0iCvwBX0x8V/ASfjPOY2Dj/BfHyo9WW4jEEpF929AWdWNq3OvU8pmFSQWeW9pQUbjK9YHy82gbMLNgK/ysDp5jdsx3ecwJIqswVbh+tNY88p2HD8xLbSbHGB7laGG3EGgUXPtbjZkqaVYTduYVhlFthJTMGL2pzRGoKF9f8z1tS5P1IHOAGP0SozpaWsRNYyq81Ri6bJ7F7TSwGexpb6sAPHG5vG4gAWlRTRaj9e92bMAN/ULKb9ufW/IsC0fCAOY3eDtgDTSs8f7dwU4DNMx0uk0xE7sSrOr8s24UK7wJ04VpsDvYHxiLcyfh8x769u98lNhpnBS1jdy85MyUrcbye7v40daLyXN28G3iEPaJ72PKJtx2/AUl3ncGhaDQAAAABJRU5ErkJggg==);
 
-  display: none;
+  opacity: 0;
+  -webkit-transition: opacity .1s linear;
+  -o-transition: opacity .1s linear;
+  transition: opacity .1s linear;
+
+  display: inline-block;
   font-size: 1rem;
   margin-right: 10px;
 }
@@ -366,7 +376,7 @@ body > footer hr {
 #post h5:target .header-permalink,
 #post h6:hover .header-permalink,
 #post h6:target .header-permalink {
-  display: inline-block;
+  opacity: 1;
 }
 
 #post .twitter-share-notice {
