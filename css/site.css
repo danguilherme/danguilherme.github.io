@@ -295,6 +295,10 @@ body > footer hr {
 #page {
 }
 
+#page #posts {
+  list-style: none;
+}
+
 #post {
     position: relative;
     /* padding-left: 25px; */
