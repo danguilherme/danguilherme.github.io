@@ -1,0 +1,22 @@
+title: Guilherme Ventura
+tagline: Na incessante jornada rumo ao conhecimento
+# url: http://blog.guilhermeventura.net
+
+highlighter: rouge
+permalink: /:title
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      layout: "post"
+      author: "guilherme_ventura"
+      comments: true
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "pages"
+    values:
+      layout: "page"
