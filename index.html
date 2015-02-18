@@ -9,7 +9,9 @@ type: pages
     <li>
       <div>
         <a href="{{ post.url }}" class="post-title">{{ post.title }}</a> « <time datetime="{% include functions/date.html date=post.date simple=true %}" class="post-time">{% include functions/date.html date=post.date simple=true %}</time>
-        <span class="comments-count"><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.url}}">0 comentários</a></span>
+        <span class="comments-count">
+          <a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.url}}" class="plain">0 comentários</a>
+        </span>
       </div>
       {{ post.excerpt }}
     </li>

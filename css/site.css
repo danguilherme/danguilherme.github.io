@@ -314,6 +314,16 @@ body > footer hr {
   font-size: 1.3rem;
 }
 
+#posts .comments-count {
+  padding-left: 18px;
+  margin-left: .5rem;
+  background-repeat: no-repeat;
+  /* Entypo conversation icon */
+  background-position-y: 0.2em;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAA4ElEQVQoU6XSL0uDURTH8c8Q8xCXDIa9AY0ixjWLzWR1GIT5LhTbljTKwnwBLs1ksYjgWxgKFpNMsChHno2HcS88D950uef3+54/9zSkzxom2MJKRjPDRSMTPMJNJlZ+/soBjnFVAWAOWEezMHzioA6gj9NStiEe6gC+sfofwM9Sr3Uq+IgZpAAj9BJD3EYLr3hBPwWI/gcJ81PR6j3u0A1NCpD7vTBcYxOHuJwDopyNCn++j3GhWySOyx5OsIM2pnhcAj7jPDGvxSKFPjZvFx28V6joT1Je5TPc4q2qOXS/nF0qtLr6LKoAAAAASUVORK5CYII=);
+  /* border-left: 1px solid black; */
+}
+
 #post {
     position: relative;
     /* padding-left: 25px; */
