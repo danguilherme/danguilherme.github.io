@@ -261,10 +261,15 @@ body > header nav {
   margin-left: 2rem;
 }
 
-body > header ul {
+body > header nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+body > header nav ul li {
+  display: inline-block;
+  margin-right: 10px;
 }
 
 body > article {
