@@ -1,7 +1,8 @@
 <p class="twitter-share-notice">
+  {% assign author = site.data.authors[page.author] %}
   Se você tiver qualquer dúvida ou comentário, por favor escreva-os abaixo.
   Se gostou deste post, você pode
-  <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}&via=JDanguilherme"
+  <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}&via={{author.twitter}}"
    target="_blank">compartilhá-lo com seus seguidores</a> ou
-  <a href="https://twitter.com/JDanguilherme">me seguir no Twitter</a>!
+  <a href="https://twitter.com/{{author.twitter}}">me seguir no Twitter</a>!
 </p>

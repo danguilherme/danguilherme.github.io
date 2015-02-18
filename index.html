@@ -7,7 +7,9 @@ type: pages
 <ul id="posts">
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> « <time datetime="{% include functions/date.html date=post.date simple=true %}">{% include functions/date.html date=post.date simple=true %}</time>
+      <div>
+        <a href="{{ post.url }}" class="post-title">{{ post.title }}</a> « <time datetime="{% include functions/date.html date=post.date simple=true %}" class="post-time">{% include functions/date.html date=post.date simple=true %}</time>
+      </div>
       {{ post.excerpt }}
     </li>
   {% endfor %}

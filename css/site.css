@@ -239,6 +239,7 @@ body > header a {
   text-decoration: none;
   border-bottom: 0;
   color: inherit;
+  font-weight: bold;
 }
 
 body > header a:hover {
@@ -295,8 +296,22 @@ body > footer hr {
 #page {
 }
 
-#page #posts {
+#posts {
   list-style: none;
+}
+
+#posts li > div {
+  margin-bottom: 1rem;
+}
+
+#posts .post-title {
+  /* font-weight: bold; */
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#posts time {
+  font-size: 1.3rem;
 }
 
 #post {
