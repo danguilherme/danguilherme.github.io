@@ -1,4 +1,4 @@
-/* http://www.colorhexa.com/b2b9ff */
+/* Google Material Palette: Blue (#2196F3) */
 
 * {
   -webkit-box-sizing: border-box;
@@ -15,7 +15,6 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 10px;
-  /* padding-right: 10px; */
 }
 
 h1,
@@ -54,20 +53,20 @@ h6 {
 }
 
 a {
-  color: #5060ff;
+  color: #2196F3;
   text-decoration: none;
-  border-bottom: 1px solid #5060ff;
+  border-bottom: 1px solid #2196F3;
   -webkit-transition: background-color .2s linear;
   -o-transition: background-color .2s linear;
   transition: background-color .2s linear;
 }
 
 a:hover {
-  background-color: #edeeff;
+  background-color: #E3F2FD;
 }
 
 a:active {
-  background-color: #d6dbff;
+  background-color: #BBDEFB;
 }
 
 a.plain {
@@ -85,12 +84,12 @@ a.plain:active {
 }
 
 blockquote {
-  border-left: #d9ddff 5px solid;
+  border-left: #BBDEFB 5px solid;
   margin-left: 0;
   margin-right: 0;
   color: #333;
   padding: .5rem .5rem .5rem 2em;
-  background-color: #fafaff;
+  background-color: rgba(227, 242, 253, .3);
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -133,19 +132,19 @@ dd {
 table {
   margin-bottom: 1rem;
   width: 100%;
-  border: 1px solid #e5e5e5;
+  border: 1px solid rgba(187, 222, 251, .2);
   border-collapse: collapse;
 }
 
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
+  background-color: rgba(227, 242, 253, .2);
 }
 
 td,
 th {
   padding: .5rem .5rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid rgba(187, 222, 251, .2);
 }
 
 th {
@@ -186,11 +185,9 @@ code {
 
 .highlight pre {
   position: relative;
-  padding-top: 1.5rem;
+  padding-top: 2.5rem; /* 2rem for language absolute el, .5rem for spacing */
   padding-bottom: .5em;
   overflow: auto;
-  /* width: 100%; */
-  /* min-width: 300px; */
 }
 
 .highlight pre code {
@@ -204,7 +201,6 @@ code {
 	white-space: -o-pre-wrap;              /* Opera 7 and up */
 
   word-wrap: break-word;                 /* IE 5.5+ and up */
-  /* min-width: 400px; */;
 }
 
 .highlight pre code::before {
@@ -217,9 +213,9 @@ code {
 
   display: block;
   padding: 0 5px;
-  line-height: 1.5rem;
+  line-height: 2rem;
 
-  background-color: #b2b9ff;
+  background-color: #2196F3;
   text-transform: uppercase;
   color: #fff;
   font-weight: bold;
@@ -282,13 +278,12 @@ body > footer {
 
   text-align: center;
 
-  background-color: #fff;
   margin-top: 3rem;
 }
 
 body > footer hr {
   width: 50%;
-  border: 1px solid #e2e2e2;
+  border: 1px solid #E3F2FD;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -419,8 +414,8 @@ body > footer hr {
 
 #post .author {
   padding: 1em;
-  border-top: #d9ddff 5px solid;
-  background-color: #fafaff;
+  border-top: #BBDEFB 5px solid;
+  background-color: rgba(227, 242, 253, .3);
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
