@@ -357,8 +357,31 @@ body > footer hr {
   margin: 0;
 }
 
+body .post-info .post-taxonomy {
+  margin-top: .2em;
+}
+
+body .post-info .post-taxonomy .post-category {
+  display: inline-block;
+  margin: 0;
+  margin-right: -.2em;
+  font-weight: bold;
+}
+
+body .post-info .post-taxonomy .post-tags {
+  display: inline;
+  padding: 0;
+}
+
+body .post-info .post-taxonomy .post-tags li {
+  display: inline-block;
+  list-style: none;
+  margin-right: -.2em;
+  font-style: italic;
+}
+
 #post .post-content {
-    padding-left: 25px;
+  padding-left: 25px;
 }
 
 #post h1,

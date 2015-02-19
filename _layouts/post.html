@@ -21,6 +21,17 @@
         </time>
         •
         <a href="#disqus_thread" data-disqus-identifier="{{page.url}}" class="plain">0 Comentários</a>
+
+        <div class="post-taxonomy">
+          <div class="post-category">#{{page.category}}</div>
+          {% if page.tags %}
+          <ul class="post-tags">
+            {% for tag in page.tags %}
+            <li>.{{tag}}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
       </p>
     </header>
 
