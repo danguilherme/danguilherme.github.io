@@ -92,6 +92,7 @@ blockquote {
   background-color: rgba(227, 242, 253, .3);
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  font-style: italic;
 }
 
 blockquote cite {
@@ -101,7 +102,7 @@ blockquote cite {
 
 blockquote cite::before {
   display: inline;
-  content: '— ';
+  content: 'â€” ';
 }
 
 abbr {
