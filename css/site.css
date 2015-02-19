@@ -380,8 +380,10 @@ body .post-info .post-taxonomy .post-tags li {
   font-style: italic;
 }
 
-#post .post-content {
-  padding-left: 25px;
+@media (max-width: 850px) {
+  #post .post-content {
+    padding-left: 25px;
+  }
 }
 
 #post h1,
