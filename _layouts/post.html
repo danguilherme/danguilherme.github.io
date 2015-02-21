@@ -4,15 +4,15 @@
   {% include head_content.html %}
   {% assign author = site.data.authors[page.author] %}
 
-  <meta name="og:title" content="{{page.title}}" />
-  <meta name="og:url" content="{{site.url}}{{page.url}}" />
+  <meta property="og:title" content="{{page.title}}" />
+  <meta property="og:url" content="{{site.url}}{{page.url}}" />
 
-  <meta name="og:type" content="article" />
-  <meta name="og:article:published_time" content="{{page.date}}">
-  <meta name="og:article:modified_time" content="{{page.date}}">
-  <meta name="og:article:author" content="{{author.name}}">
-  <meta name="og:article:section" content="{{page.category}}">
-  <meta name="og:article:tag" content="{{page.tags | join: ', '}}">
+  <meta property="og:type" content="article" />
+  <meta property="og:article:published_time" content="{{page.date}}">
+  <meta property="og:article:modified_time" content="{{page.date}}">
+  <meta property="og:article:author" content="{{author.name}}">
+  <meta property="og:article:section" content="{{page.category}}">
+  <meta property="og:article:tag" content="{{page.tags | join: ', '}}">
 
   <!--
 
