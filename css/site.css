@@ -102,7 +102,7 @@ blockquote cite {
 
 blockquote cite::before {
   display: inline;
-  content: 'â€” ';
+  content: 'ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ';
 }
 
 abbr {
@@ -210,7 +210,7 @@ code {
   left: 0;
   right: 0;
 
-  content: attr(data-lang);
+  /* content: attr(data-lang); */
 
   display: block;
   padding: 0 5px;
@@ -224,7 +224,7 @@ code {
 
 /* main header */
 body > header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 body > header h1 {
@@ -305,6 +305,11 @@ body > footer hr {
   margin-bottom: 1rem;
 }
 
+#posts li > div h2 {
+  margin-bottom: 0;
+  display: inline;
+}
+
 #posts .post-title {
   /* font-weight: bold; */
   font-size: 2rem;
@@ -316,7 +321,7 @@ body > footer hr {
 }
 
 #posts .comments-count {
-  padding-left: 18px;
+  padding-left: 20px;
   margin-left: .5rem;
   background-repeat: no-repeat;
   /* Entypo conversation icon */
@@ -327,14 +332,17 @@ body > footer hr {
 
 #post {
     position: relative;
-    /* padding-left: 25px; */
+}
+
+#post header {
+    cursor: default;
 }
 
 #post .post-info {
   min-width: 25%;
-  width: 75%;
+  width: 80%;
   text-align: center;
-  margin: 10px auto 3rem auto;
+  margin: 0 auto 3rem;
 }
 
 #post .post-info .post-title {
@@ -358,27 +366,41 @@ body > footer hr {
   margin: 0;
 }
 
-body .post-info .post-taxonomy {
-  margin-top: .2em;
+.post-info .post-taxonomy {
+  margin-top: 1em;
+  text-align: left;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.8em;
+  display: inline-block;
 }
 
-body .post-info .post-taxonomy .post-category {
+.post-info .post-taxonomy .post-category {
   display: inline-block;
   margin: 0;
-  margin-right: -.2em;
+  /* margin-right: -.2em; */
   font-weight: bold;
 }
 
-body .post-info .post-taxonomy .post-tags {
+.post-info .post-taxonomy .post-tags {
   display: inline;
   padding: 0;
+  padding-right: .5em;
 }
 
-body .post-info .post-taxonomy .post-tags li {
+.post-info .post-taxonomy .post-tags li {
   display: inline-block;
   list-style: none;
-  margin-right: -.2em;
+  margin-right: -0.6em;
   font-style: italic;
+}
+
+.post-info .post-taxonomy .post-tags,
+.post-info .post-taxonomy .css-properties .dimension {
+  margin-left: -0.6em;
+}
+
+.post-info .post-taxonomy .css-properties {
+  margin-left: 2em;
 }
 
 @media (max-width: 850px) {
@@ -387,23 +409,23 @@ body .post-info .post-taxonomy .post-tags li {
   }
 }
 
-#post h1,
-#post h2,
-#post h3,
-#post h4,
-#post h5,
-#post h6 {
+#post .post-content h1,
+#post .post-content h2,
+#post .post-content h3,
+#post .post-content h4,
+#post .post-content h5,
+#post .post-content h6 {
   position: relative;
   margin-left: -30px;
   padding-left: 30px;
 }
 
-#post h1 .header-permalink,
-#post h2 .header-permalink,
-#post h3 .header-permalink,
-#post h4 .header-permalink,
-#post h5 .header-permalink,
-#post h6 .header-permalink {
+#post .post-content h1 .header-permalink,
+#post .post-content h2 .header-permalink,
+#post .post-content h3 .header-permalink,
+#post .post-content h4 .header-permalink,
+#post .post-content h5 .header-permalink,
+#post .post-content h6 .header-permalink {
   position: absolute;
   /* box-sizing: content-box; */
   left: 0px;
@@ -424,18 +446,18 @@ body .post-info .post-taxonomy .post-tags li {
   margin-right: 10px;
 }
 
-#post h1:hover .header-permalink,
-#post h1:target .header-permalink,
-#post h2:hover .header-permalink,
-#post h2:target .header-permalink,
-#post h3:hover .header-permalink,
-#post h3:target .header-permalink,
-#post h4:hover .header-permalink,
-#post h4:target .header-permalink,
-#post h5:hover .header-permalink,
-#post h5:target .header-permalink,
-#post h6:hover .header-permalink,
-#post h6:target .header-permalink {
+#post .post-content h1:hover .header-permalink,
+#post .post-content h1:target .header-permalink,
+#post .post-content h2:hover .header-permalink,
+#post .post-content h2:target .header-permalink,
+#post .post-content h3:hover .header-permalink,
+#post .post-content h3:target .header-permalink,
+#post .post-content h4:hover .header-permalink,
+#post .post-content h4:target .header-permalink,
+#post .post-content h5:hover .header-permalink,
+#post .post-content h5:target .header-permalink,
+#post .post-content h6:hover .header-permalink,
+#post .post-content h6:target .header-permalink {
   opacity: 1;
 }
 

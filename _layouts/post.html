@@ -2,8 +2,42 @@
 <html lang="en">
 <head>
   {% include head_content.html %}
+  {% assign author = site.data.authors[page.author] %}
 
-  <meta name="description" content="{{post.excerpt | strip_html}}">
+  <meta name="og:title" content="{{page.title}}" />
+  <meta name="og:url" content="{{site.url}}{{page.url}}" />
+
+  <meta name="og:type" content="article" />
+  <meta name="og:article:published_time" content="{{page.date}}">
+  <meta name="og:article:modified_time" content="{{page.date}}">
+  <meta name="og:article:author" content="{{author.name}}">
+  <meta name="og:article:section" content="{{page.category}}">
+  <meta name="og:article:tag" content="{{page.tags | join: ', '}}">
+
+  <!--
+
+  {{page.content | number_of_words}}
+
+  {{page.content | number_of_words | divided_by: 275 }}
+
+  {% assign words = content | number_of_words %}
+  {% if words <= 90 %}
+  {% assign reading_time = '<span class="count">30</span> <span class="dimension">sec</span>' %}
+  {% elsif words < 270 %}
+  {% assign reading_time = '<span class="count">1</span> <span class="dimension">min</span>' %}
+  {% elsif words < 450 %}
+  {% assign reading_time = '<span class="count">2</span> <span class="dimension">min</span>' %}
+  {% elsif words < 630 %}
+  {% assign reading_time = '<span class="count">3</span> <span class="dimension">min</span>' %}
+  {% elsif words < 810 %}
+  {% assign reading_time = '<span class="count">4</span> <span class="dimension">min</span>' %}
+  {% elsif words < 990 %}
+  {% assign reading_time = '<span class="count">5</span> <span class="dimension">min</span>' %}
+  {% else %}
+  {% assign reading_time = words | divided_by:180 | prepend: '<span class="count">' | append: '</span> <span class="dimension">min</span>' %}
+  {% endif %}
+
+  -->
 
   <title>{{page.title}} - Guilherme Ventura</title>
 </head>
@@ -22,15 +56,20 @@
         •
         <a href="#disqus_thread" data-disqus-identifier="{{page.url}}" class="plain">0 Comentários</a>
 
-        <div class="post-taxonomy">
-          <div class="post-category">#{{page.category}}</div>
+        <div class="post-taxonomy css-rules">
+          <div class="post-category id-selector">#{{page.category}}</div>
           {% if page.tags %}
-          <ul class="post-tags">
+          <ul class="post-tags class-selector">
             {% for tag in page.tags %}
             <li>.{{tag}}</li>
             {% endfor %}
           </ul>
-          {% endif %}
+          {% endif %} {
+            <div class="css-properties">
+              <span class="css-property">read-time</span>: <span class="read-time css-value">{{reading_time}}</span>;
+            </div>
+          }
+          </div>
         </div>
       </p>
     </header>
