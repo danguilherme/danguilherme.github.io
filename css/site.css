@@ -210,7 +210,7 @@ code {
   left: 0;
   right: 0;
 
-  /* content: attr(data-lang); */
+  content: attr(data-lang);
 
   display: block;
   padding: 0 5px;
@@ -353,7 +353,7 @@ body > footer hr {
 
 #post .post-info .post-tagline {
   font-size: 1.7rem;
-  color: #ddd;
+  color: #2196F3;
   text-transform: uppercase;
   margin-bottom: 1rem;
 
