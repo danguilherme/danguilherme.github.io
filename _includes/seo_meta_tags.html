@@ -5,20 +5,17 @@
 {% endif %}
 
 <!-- Open Graph -->
+<meta property="og:site_name" content="{{site.tile}}">
 <meta property="og:title" content="{{page.title}} - {{site.title}}" />
 <meta property="og:url" content="{{site.url}}{{page.url | append: '/'}}" />
+<meta property="og:locale" content="pt_BR">
 
 {% if page.type == 'posts' %}
   <meta property="og:type" content="article" />
-  {% if author %}
-    <meta property="article:author:first_name" content="{{author.name | split: ' ' | first}}">
-    <meta property="article:author:last_name" content="{{author.name | split: ' ' | last}}">
-    <meta property="article:author:username" content="{{author.twitter}}">
-  {% endif %}
   <meta property="article:published_time" content="{{page.date}}">
   <meta property="article:modified_time" content="{{page.date}}">
   <meta property="article:section" content="{{page.category}}">
-  <meta property="article:tag" content="{{page.tags | join: ', '}}">
+  <meta property="article:tag" content="{{page.tags | join: ' '}}">
 {% else %}
   <meta property="og:type" content="website" />
 {% endif %}
