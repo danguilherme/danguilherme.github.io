@@ -1,0 +1,34 @@
+{% assign author = site.data.authors[page.author] %}
+
+{% if author %}
+  <meta property="author" content="{{author.name}}">
+{% endif %}
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{page.title}}" />
+<meta property="og:url" content="{{site.url}}{{page.url | append: '/'}}" />
+
+{% if page.type == 'posts' %}
+  <meta property="og:type" content="article" />
+  {% if author %}
+    <meta property="article:author" content="{{author.name}}">
+  {% endif %}
+  <meta property="article:published_time" content="{{page.date}}">
+  <meta property="article:modified_time" content="{{page.date}}">
+  <meta property="article:section" content="{{page.category}}">
+  <meta property="article:tag" content="{{page.tags | join: ', '}}">
+{% else %}
+  <meta property="og:type" content="website" />
+{% endif %}
+
+{% if page.type == 'posts' %}
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@{{author.twitter}}">
+<meta name="twitter:title" content="{{page.title}}">
+<meta name="twitter:url" content="{{site.url}}{{page.url | append: '/'}}">
+{% if author %}
+  <meta name="twitter:creator" content="@{{author.twitter}}">
+{% endif %}
+<meta name="twitter:description" content="{{page.excerpt | strip_newlines | strip_html | remove: '  ' | truncate: 180, '…'}}">
+{% endif %}

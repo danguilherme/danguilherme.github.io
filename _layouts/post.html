@@ -4,21 +4,6 @@
   {% include head_content.html %}
   {% assign author = site.data.authors[page.author] %}
 
-  <meta property="og:title" content="{{page.title}}" />
-  <meta property="og:url" content="{{site.url}}{{page.url}}" />
-
-  <meta property="og:type" content="article" />
-  <meta property="og:article:published_time" content="{{page.date}}">
-  <meta property="og:article:modified_time" content="{{page.date}}">
-  <meta property="og:article:author" content="{{author.name}}">
-  <meta property="og:article:section" content="{{page.category}}">
-  <meta property="og:article:tag" content="{{page.tags | join: ', '}}">
-
-  <!--
-
-  {{page.content | number_of_words}}
-
-  {{page.content | number_of_words | divided_by: 275 }}
 
   {% assign words = content | number_of_words %}
   {% if words <= 90 %}
@@ -36,8 +21,6 @@
   {% else %}
   {% assign reading_time = words | divided_by:180 | prepend: '<span class="count">' | append: '</span> <span class="dimension">min</span>' %}
   {% endif %}
-
-  -->
 
   <title>{{page.title}} - Guilherme Ventura</title>
 </head>
