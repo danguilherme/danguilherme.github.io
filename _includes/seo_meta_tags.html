@@ -5,7 +5,7 @@
 {% endif %}
 
 <!-- Open Graph -->
-<meta property="og:title" content="{{page.title}}" />
+<meta property="og:title" content="{{page.title}} - {{site.title}}" />
 <meta property="og:url" content="{{site.url}}{{page.url | append: '/'}}" />
 
 {% if page.type == 'posts' %}
@@ -21,14 +21,21 @@
   <meta property="og:type" content="website" />
 {% endif %}
 
-{% if page.type == 'posts' %}
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@{{author.twitter}}">
-<meta name="twitter:title" content="{{page.title}}">
-<meta name="twitter:url" content="{{site.url}}{{page.url | append: '/'}}">
-{% if author %}
-  <meta name="twitter:creator" content="@{{author.twitter}}">
-{% endif %}
-<meta name="twitter:description" content="{{page.excerpt | strip_newlines | strip_html | remove: '  ' | truncate: 180, '…'}}">
+
+{% if page.type == 'posts' %}
+  <meta name="twitter:title" content="{{page.title}} - {{site.title}}">
+  <meta name="twitter:url" content="{{site.url}}{{page.url | append: '/'}}">
+  <meta name="twitter:description" content="{{page.excerpt | strip_newlines | strip_html | remove: '  ' | truncate: 180, '…'}}">
+  {% if author %}
+    <meta name="twitter:site" content="@{{author.twitter}}">
+    <meta name="twitter:creator" content="@{{author.twitter}}">
+  {% endif %}
+{% else %}
+  <meta name="twitter:site" content="@JDanguilherme">
+  <meta name="twitter:creator" content="@JDanguilherme">
+  <meta name="twitter:title" content="{{site.title}}">
+  <meta name="twitter:url" content="{{site.url}}{{page.url}}">
+  <meta name="twitter:description" content="{{site.tagline}}">
 {% endif %}
