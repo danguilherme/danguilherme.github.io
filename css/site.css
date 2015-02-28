@@ -110,7 +110,7 @@ blockquote cite {
 
 blockquote cite::before {
   display: inline;
-  content: '— ';
+  content: 'â€” ';
 }
 
 abbr {
@@ -518,45 +518,60 @@ body > footer hr {
 }
 
 
-#blog-archives.category {
+#category-index {
   position: relative;
 }
 
-#blog-archives.category h2,
-#blog-archives.category time {
+#category-index .year-number,
+#category-index time {
   display: inline-block;
   vertical-align: top;
   margin: 0;
 }
 
-#blog-archives.category h2,
-#blog-archives.category time,
-#blog-archives.category .post h3 {
+#category-index .year-number,
+#category-index time,
+#category-index .post h3 {
   line-height: 3rem;
 }
 
-#blog-archives.category h2 {
-  position: absolute;
-  width: 60px;
+#category-index .category {
+  position: relative;
 }
 
-#blog-archives.category article {
+#category-index .category h2,
+#category-index article {
   margin-left: 60px;
   padding-left: 10px;
+}
+
+#category-index .category h2 {
+    margin-bottom: 0;
+    border-bottom: #2196F3 3px solid;
+    text-transform: uppercase;
+}
+
+#category-index .year-number {
+  position: absolute;
+  width: 60px;
+  margin: 0;
+}
+
+#category-index article {
   border-left: #2196F3 3px solid;
 }
 
-#blog-archives.category article:not(:first-of-type) {
+#category-index article:not(:first-of-type) {
   padding-top: 1em;
 }
 
-#blog-archives.category time {
+#category-index time {
   position: absolute;
   width: 15%;
   cursor: default;
 }
 
-#blog-archives.category time::before {
+#category-index time::before {
   content: '';
   position: absolute;
   top: 0.7em;
@@ -565,7 +580,7 @@ body > footer hr {
   border-left-color: #2196F3;
 }
 
-#blog-archives.category .post {
+#category-index .post {
     display: inline-block;
     margin-left: 15%;
     padding-left: 10px;
@@ -573,14 +588,14 @@ body > footer hr {
     overflow: hidden;
 }
 
-#blog-archives.category .post h3 {
+#category-index .post h3 {
   margin: 0;
 }
 
-#blog-archives.category .post p {
+#category-index .post p {
   margin: 0;
 }
 
-#blog-archives.category .post .tags {
+#category-index .post .tags {
   margin-top: .5em;
 }

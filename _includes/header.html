@@ -6,12 +6,13 @@
 
   <nav>
     <ul>
+      <li><a href="/categorias/">Categorias</a></li>
       {% for page in site.pages %}
-      {% if page.title %}
-      {% if page.type == 'pages' %}
-      <li><a href="{{page.url}}">{{ page.title }}</a></li>
-      {% endif %}
-      {% endif %}
+        {% if page.title %}
+          {% if page.type == 'pages' %}
+          <li><a href="{{page.url}}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endif %}
       {% endfor %}
     </ul>
   </nav>
