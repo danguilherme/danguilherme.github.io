@@ -110,7 +110,7 @@ blockquote cite {
 
 blockquote cite::before {
   display: inline;
-  content: 'ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ';
+  content: '— ';
 }
 
 abbr {
