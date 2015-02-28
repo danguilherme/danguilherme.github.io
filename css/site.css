@@ -17,6 +17,14 @@ body {
   padding: 0 10px;
 }
 
+input,
+textarea,
+keygen,
+select,
+button {
+  font-size: 1rem;
+}
+
 h1,
 h2,
 h3,
@@ -102,7 +110,7 @@ blockquote cite {
 
 blockquote cite::before {
   display: inline;
-  content: 'ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ';
+  content: 'ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ';
 }
 
 abbr {
@@ -173,15 +181,13 @@ img {
 }
 
 .highlight > pre,
+.highlight pre textarea,
 code {
   font-family: 'Source Code Pro', 'Consolas', monospace;
   background-color: #f9f9f9;
   border-radius: 5px;
   padding-left: .5em;
   padding-right: .5em;
-}
-
-code {
 }
 
 .highlight pre {
@@ -191,7 +197,8 @@ code {
   overflow: auto;
 }
 
-.highlight pre code {
+.highlight pre code,
+.highlight pre textarea {
   width: 100%;
   display: block;
   padding: 0;
@@ -204,7 +211,12 @@ code {
   word-wrap: break-word;                 /* IE 5.5+ and up */
 }
 
-.highlight pre code::before {
+.highlight pre code.copying-code {
+  display: none;
+}
+
+.highlight pre code::before,
+.highlight pre .code-text::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -220,6 +232,14 @@ code {
   text-transform: uppercase;
   color: #fff;
   font-weight: bold;
+}
+
+.highlight pre textarea {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  border-radius: 0;
+  resize: none;
 }
 
 /* main header */
@@ -463,6 +483,7 @@ body > footer hr {
 
 #post .twitter-share-notice {
   margin: 2rem 0;
+  font-style: italic;
 }
 
 #post .author {
@@ -494,4 +515,72 @@ body > footer hr {
 
 #post .post-comments {
   margin-top: 3rem;
+}
+
+
+#blog-archives.category {
+  position: relative;
+}
+
+#blog-archives.category h2,
+#blog-archives.category time {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+#blog-archives.category h2,
+#blog-archives.category time,
+#blog-archives.category .post h3 {
+  line-height: 3rem;
+}
+
+#blog-archives.category h2 {
+  position: absolute;
+  width: 60px;
+}
+
+#blog-archives.category article {
+  margin-left: 60px;
+  padding-left: 10px;
+  border-left: #2196F3 3px solid;
+}
+
+#blog-archives.category article:not(:first-of-type) {
+  padding-top: 1em;
+}
+
+#blog-archives.category time {
+  position: absolute;
+  width: 15%;
+  cursor: default;
+}
+
+#blog-archives.category time::before {
+  content: '';
+  position: absolute;
+  top: 0.7em;
+  left: -0.8em;
+  border: 0.7em transparent solid;
+  border-left-color: #2196F3;
+}
+
+#blog-archives.category .post {
+    display: inline-block;
+    margin-left: 15%;
+    padding-left: 10px;
+    max-width: 85%;
+    overflow: hidden;
+}
+
+#blog-archives.category .post h3 {
+  margin: 0;
+}
+
+#blog-archives.category .post p {
+  margin: 0;
+}
+
+#blog-archives.category .post .tags {
+  margin-top: .5em;
 }

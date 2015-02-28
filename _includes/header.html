@@ -8,7 +8,9 @@
     <ul>
       {% for page in site.pages %}
       {% if page.title %}
+      {% if page.type == 'pages' %}
       <li><a href="{{page.url}}">{{ page.title }}</a></li>
+      {% endif %}
       {% endif %}
       {% endfor %}
     </ul>

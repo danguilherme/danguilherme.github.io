@@ -5,6 +5,11 @@ url: http://blog.guilhermeventura.net
 highlighter: pygments
 permalink: /:title
 
+category_dir: 'categorias'
+category_title_prefix: ''
+
+author: 'Guilherme Ventura'
+
 defaults:
   -
     scope:

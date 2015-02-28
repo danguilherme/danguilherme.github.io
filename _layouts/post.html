@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
   {% include head_content.html %}
   {% assign author = site.data.authors[page.author] %}
@@ -40,9 +40,9 @@
         <a href="#disqus_thread" data-disqus-identifier="{{page.url}}" class="plain">0 Comentários</a>
 
         <div class="post-taxonomy css-rules">
-          <div class="post-category id-selector">#{{page.category}}</div>
+          <div class="post-category id-selector" title="Categoria ({{page.category}})"><a href="/{{site.category_dir}}/{{page.category}}" class="plain">#{{page.category}}</a></div>
           {% if page.tags %}
-          <ul class="post-tags class-selector">
+          <ul class="post-tags class-selector" title="Tags ({{page.tags | join: ', '}})">
             {% for tag in page.tags %}
             <li>.{{tag}}</li>
             {% endfor %}
