@@ -28,6 +28,7 @@
     {% when '12' %}
       {% assign month = 'Dezembro' %}
   {% endcase %}
+  
   {% assign day_of_week = include.date | date: "%-w" %}
   {% case day_of_week %}
     {% when '0' %}
@@ -45,6 +46,5 @@
     {% when '6' %}
       {% assign day_of_week = 'Sábado' %}
   {% endcase %}
-  {{include.simple}}
   {{ day_of_week }}, {{ include.date | date: '%d' }} de {{ month }} de {{ include.date | date: '%Y' }}
 {% endif %}

@@ -1,39 +1,58 @@
 ---
-layout: page
+layout: default
 footer: false
 ---
 
-<div id="category-index">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  {% include head_content.html %}
+
   {% if page.category %}
-    {% assign categories = page.category | split: " " %}
+    <title>Categoria: {{page.category}} - Guilherme Ventura</title>
   {% else %}
-    {% capture categories %}
-      {% for category in site.categories %}
-        {{ category[0] }}
-      {% endfor %}
-    {% endcapture %}
-
-    {% assign categories = categories | split:' ' | sort %}
+    <title>{{page.title}} - Guilherme Ventura</title>
   {% endif %}
+</head>
+<body>
+  {% include header.html %}
 
-  {% for category in categories %}
-    <div class="category">
-      <h2><a href="/categorias/{{category}}/" class="plain">{{category}}</a></h2>
-      {% for post in site.categories[category] %}
-        <div class="post-wrapper">
-          {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-          {% unless year == this_year %}
-            {% assign year = this_year %}
-            <h3 class="year-number">{{ year }}</h3>
-          {% endunless %}
-          <article>
-            {% include archive_post.html %}
-          </article>
-        </div>
-      {% endfor %}
+  <div id="category-index">
+    {% if page.category %}
+      {% assign categories = page.category | split: " " %}
+    {% else %}
+      {% capture categories %}
+        {% for category in site.categories %}
+          {{ category[0] }}
+        {% endfor %}
+      {% endcapture %}
 
-      {% comment %} Resetando 'year' para ser mostrado na próxima categoria {% endcomment %}
-      {% assign year = '' %}
-    </div>
-  {% endfor %}
-</div>
+      {% assign categories = categories | split:' ' | sort %}
+    {% endif %}
+
+    {% for category in categories %}
+      <div class="category">
+        <h2><a href="/categorias/{{category}}/" class="plain">{{category}}</a></h2>
+        {% for post in site.categories[category] %}
+          <div class="post-wrapper">
+            {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+            {% unless year == this_year %}
+              {% assign year = this_year %}
+              <h3 class="year-number">{{ year }}</h3>
+            {% endunless %}
+            <article>
+              {% include archive_post.html %}
+            </article>
+          </div>
+        {% endfor %}
+
+        {% comment %} Resetando 'year' para ser mostrado na próxima categoria {% endcomment %}
+        {% assign year = '' %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {% include footer.html %}
+  {% include google_analytics.html %}
+</body>
+</html>

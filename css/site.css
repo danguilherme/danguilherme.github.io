@@ -15,6 +15,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 10px;
+  transition: all 5s linear, padding .5s linear;
 }
 
 input,
@@ -575,7 +576,7 @@ body > footer ul li {
 
 #category-index time {
   position: absolute;
-  width: 15%;
+  width: 50px;
   cursor: default;
 }
 
@@ -590,9 +591,9 @@ body > footer ul li {
 
 #category-index .post {
     display: inline-block;
-    margin-left: 15%;
+    margin-left: 50px;
     padding-left: 10px;
-    max-width: 85%;
+    /* max-width: 90%; */
     overflow: hidden;
 }
 
