@@ -328,6 +328,8 @@ body > footer ul li {
 
 #posts {
   list-style: none;
+  padding: 0;
+  margin: 3rem 0;
 }
 
 #posts li > div {
