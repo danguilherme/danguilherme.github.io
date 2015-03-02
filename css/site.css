@@ -384,11 +384,12 @@ body > footer ul li {
 
 #post .post-info .post-tagline {
   font-size: 1.7rem;
-  color: #2196F3;
+  /* color: #2196F3; */
   text-transform: uppercase;
   margin-bottom: 1rem;
 
   margin: 0;
+  color: #90CAF9;
 }
 
 #post .post-info .post-metadata {
@@ -558,8 +559,10 @@ body > footer ul li {
 
 #category-index .category h2 {
     margin-bottom: 0;
+    display: inline-block;
     border-bottom: #2196F3 3px solid;
     text-transform: uppercase;
+    /* padding-right: 10px; */
 }
 
 #category-index .year-number {
