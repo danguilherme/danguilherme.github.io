@@ -8,7 +8,8 @@
 
 html {
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
+  font-size: 22px;
+  line-height: 150%;
 }
 
 body {
@@ -252,6 +253,8 @@ body > header {
 body > header h1 {
   font-size: 3rem;
   margin: 0;
+  line-height: 1;
+  font-weight: 400;
 }
 
 body > header a {
@@ -383,7 +386,7 @@ body > footer ul li {
 
 #post .post-info .post-title {
   font-size: 3rem;
-
+  line-height: 2.5rem;
   margin: 0;
 }
 
@@ -407,7 +410,8 @@ body > footer ul li {
   margin-top: 1em;
   text-align: left;
   font-family: 'Source Code Pro', monospace;
-  font-size: 0.8em;
+  font-size: 0.6rem;
+  line-height: 100%;
   display: inline-block;
 }
 
@@ -515,15 +519,18 @@ body > footer ul li {
 
 #post .author img {
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 #post .author .author-name {
-  margin-bottom: 1rem;
+  margin-bottom: .5em;
+  margin-bottom: .5rem;
 }
 
 #post .author .author-bio {
   font-size: .8em;
+  line-height: 120%;
 }
 
 #post .post-comments {

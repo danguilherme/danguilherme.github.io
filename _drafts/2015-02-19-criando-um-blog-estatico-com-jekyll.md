@@ -2,8 +2,12 @@
 title:    Criando Um Blog Estático Com Jekyll
 tagline:  Como se colocar na internet de maneira simples e fácil
 category: how-to
-tags:     jekyll github blogging
-excerpt: Vamos criar um blog estático!
+tags:     jekyll github blogging ruby
+excerpt:  Vamos criar um blog estático!
+
+author:   guilherme_ventura
+type:     posts
+layout:   post
 ---
 
 # Sobre o Blog
@@ -30,28 +34,34 @@ Um website estático é enviado ao usuário **exatamente como salvo**,  o oposto
 
 # Geradores
 
-... existem muitas opções para geração de sites estáticos ...
+Existem muitas opções para geração de sites estáticos, cada uma com suas peculiaridades. Algumas delas são:
 
-* Jekyll (Ruby);
-* DocPad (Node);
-* ...
+* [Jekyll](http://jekyllrb.com/ "Jekyll • Simple, blog-aware, static sites");
+* [Octopress](http://octopress.org/ "Octopress") (baseado no Jekyll);
+* [DocPad](https://docpad.org/ "DocPad - Streamlined Web Development");
+* [E muito mais][4].
 
-Neste post vou explicar a geração de **blogs** com **Jekyll**, usando a hospedagem do **GitHub Pages**.
+Neste post vou explicar a geração de **blogs** com **Jekyll**, hospedando-os com **GitHub Pages**. Não vou entrar em detalhes com todos pois o único do qual estudei mais a fundo foi o Jekyll.
 
 # Configurando o Jekyll
 
 O GitHub Pages suporta o Jekyll por padrão, o que significa que você não precisa comitar o site já gerado, já que isso é feito pelo serviço. Sendo assim, a instalação da ferramenta no seu computador não é obrigatória, mas ela pode ajudar na resolução de problemas caso haja algum erro na criação do site após um _commit_.
 
-Se você, como eu, acha interessante a instalação da ferramenta, é só seguir os passos do excelente guia do [GitHub Pages][4], que infelizmente se encontra apenas em inglês. Basicamente, os passos são os seguintes:
+Se você, como eu, acha interessante a instalação da ferramenta, é só seguir os passos do excelente guia do [GitHub Pages][5], que infelizmente se encontra apenas em inglês. Basicamente, os passos são os seguintes:
 
-1. [Faça o download e instale o Ruby][5]
-2. [Faça o download e instale o Python][6]*
-3. ...
+1. [Baixe e instale o Ruby][6]
+2. [Baixe e instale o Python][7]*
+
+_* A instalação do Python só é necessária caso você vá utilizar **[code highlighting][8]**. O Jekyll usa, por padrão, a ferramenta [Pygments][9] para gerar esses blocos. Existe uma alternativa em Ruby para essa ferramenta chamada [Rouge][10], mas o GitHub não a suporta._
 
 
 [1]: https://twitter.com/hashtag/1postperday "#1PostPerDay no Twitter"
 [2]: https://br.wordpress.com/ "WordPress.com"
 [3]: http://en.m.wikipedia.org/wiki/Static_web_page "Static web page - Wikipedia, the free encyclopedia"
-[4]: https://help.github.com/articles/using-jekyll-with-pages/ "Using Jekyll with Pages"
-[5]: "Instalar Ruby"
-[6]: https://edersonmelo.wordpress.com/2008/09/03/baixar-e-instalar-python/ "Instalar Python"
+[4]: https://github.com/pinceladasdaweb/Static-Site-Generators "pinceladasdaweb/Static-Site-Generators"
+[5]: https://help.github.com/articles/using-jekyll-with-pages/ "Using Jekyll with Pages"
+[6]: http://www.rubyonrails.com.br/down "Ruby Download"
+[7]: https://edersonmelo.wordpress.com/2008/09/03/baixar-e-instalar-python/ "Baixar e instalar Python"
+[8]: http://jekyllrb.com/docs/templates/#code-snippet-highlighting "Jekyll - Code snippet highlighting"
+[9]: http://pygments.org/ "Python syntax highlighter"
+[10]: https://github.com/jneen/rouge "Pure Ruby syntax highlighter"
