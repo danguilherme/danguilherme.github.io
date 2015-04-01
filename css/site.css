@@ -9,7 +9,7 @@
 html {
   font-family: 'Raleway', sans-serif;
   font-size: 22px;
-  line-height: 150%;
+  line-height: 1.5;
 }
 
 body {
@@ -175,7 +175,7 @@ img {
   overflow: hidden;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.2;
   word-wrap: break-word;
 }
 
@@ -229,7 +229,7 @@ code {
 
   display: block;
   padding: 0 5px;
-  line-height: 2rem;
+  line-height: 2;
 
   background-color: #2196F3;
   text-transform: uppercase;
@@ -303,7 +303,7 @@ body > article {
 
 body > footer {
   font-size: .7rem;
-  line-height: 2rem;
+  line-height: 2;
 
   padding: 0 1rem;
 
@@ -386,7 +386,7 @@ body > footer ul li {
 
 #post .post-info .post-title {
   font-size: 3rem;
-  line-height: 2.5rem;
+  line-height: 1;
   margin: 0;
 }
 
@@ -411,7 +411,7 @@ body > footer ul li {
   text-align: left;
   font-family: 'Source Code Pro', monospace;
   font-size: 0.6rem;
-  line-height: 100%;
+  line-height: 1;
   display: inline-block;
 }
 
@@ -530,7 +530,7 @@ body > footer ul li {
 
 #post .author .author-bio {
   font-size: .8em;
-  line-height: 120%;
+  line-height: 1.2;
 }
 
 #post .post-comments {
@@ -570,6 +570,7 @@ body > footer ul li {
     display: inline-block;
     border-bottom: #2196F3 3px solid;
     text-transform: uppercase;
+    line-height: 1;
     /* padding-right: 10px; */
 }
 
@@ -596,8 +597,8 @@ body > footer ul li {
 #category-index time::before {
   content: '';
   position: absolute;
-  top: 0.7em;
-  left: -0.8em;
+  top: 0.9em;
+  left: -0.6em;
   border: 0.7em transparent solid;
   border-left-color: #2196F3;
 }
