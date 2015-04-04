@@ -8,7 +8,7 @@
 
 html {
   font-family: 'Raleway', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.5;
 }
 
@@ -395,6 +395,7 @@ body > footer ul li {
   /* color: #2196F3; */
   text-transform: uppercase;
   margin-bottom: 1rem;
+  line-height: 1;
 
   margin: 0;
   color: #90CAF9;

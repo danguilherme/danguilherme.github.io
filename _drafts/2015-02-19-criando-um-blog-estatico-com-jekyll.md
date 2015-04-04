@@ -49,10 +49,20 @@ O GitHub Pages suporta o Jekyll por padrão, o que significa que você não prec
 
 Se você, como eu, acha interessante a instalação da ferramenta, é só seguir os passos do excelente guia do [GitHub Pages][5], que infelizmente se encontra apenas em inglês. Basicamente, os passos são os seguintes:
 
-1. [Baixe e instale o Ruby][6]
-2. [Baixe e instale o Python][7]*
+1. Baixe e instale o [Ruby][6]
+2. Instale [Bundler][7]
+3. Instale o Jekyll
+4. [Baixe e instale o Python][8]*
 
-_* A instalação do Python só é necessária caso você vá utilizar **[code highlighting][8]**. O Jekyll usa, por padrão, a ferramenta [Pygments][9] para gerar esses blocos. Existe uma alternativa em Ruby para essa ferramenta chamada [Rouge][10], mas o GitHub não a suporta._
+_* A instalação do Python só é necessária caso você vá utilizar **[code highlighting][9]**. O Jekyll usa, por padrão, a ferramenta [Pygments][10] para gerar esses blocos. Existe uma alternativa em Ruby para essa ferramenta chamada [Rouge][11], mas o GitHub não a suporta._
+
+# Conteúdo
+
+Como o Jekyll é um gerador de **sites** estáticos, não são apenas posts os itens capazes a serem gerados. Vamos dar uma olhada em cada item:
+
+## Páginas
+
+A página principal (index), a página sobre (...)
 
 
 [1]: https://twitter.com/hashtag/1postperday "#1PostPerDay no Twitter"
@@ -61,7 +71,8 @@ _* A instalação do Python só é necessária caso você vá utilizar **[code h
 [4]: https://github.com/pinceladasdaweb/Static-Site-Generators "pinceladasdaweb/Static-Site-Generators"
 [5]: https://help.github.com/articles/using-jekyll-with-pages/ "Using Jekyll with Pages"
 [6]: http://www.rubyonrails.com.br/down "Ruby Download"
-[7]: https://edersonmelo.wordpress.com/2008/09/03/baixar-e-instalar-python/ "Baixar e instalar Python"
-[8]: http://jekyllrb.com/docs/templates/#code-snippet-highlighting "Jekyll - Code snippet highlighting"
-[9]: http://pygments.org/ "Python syntax highlighter"
-[10]: https://github.com/jneen/rouge "Pure Ruby syntax highlighter"
+[7]: http://bundler.io/ "Bundler"
+[8]: https://edersonmelo.wordpress.com/2008/09/03/baixar-e-instalar-python/ "Baixar e instalar Python"
+[9]: http://jekyllrb.com/docs/templates/#code-snippet-highlighting "Jekyll - Code snippet highlighting"
+[10]: http://pygments.org/ "Python syntax highlighter"
+[11]: https://github.com/jneen/rouge "Pure Ruby syntax highlighter"
