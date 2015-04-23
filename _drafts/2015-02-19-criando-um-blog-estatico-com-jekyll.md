@@ -54,7 +54,7 @@ Se você, como eu, acha interessante a instalação da ferramenta, é só seguir
 3. Instale o Jekyll
 4. [Baixe e instale o Python][8]*
 
-_* A instalação do Python só é necessária caso você vá utilizar **[code highlighting][9]**. O Jekyll usa, por padrão, a ferramenta [Pygments][10] para gerar esses blocos. Existe uma alternativa em Ruby para essa ferramenta chamada [Rouge][11], mas o GitHub não a suporta._
+_* A instalação do Python só é necessária caso você vá utilizar **[code highlighting][9]**. O Jekyll usa, por padrão, a ferramenta [Pygments][10] para gerar esses blocos. Existe uma alternativa em Ruby para essa funcionalidade chamada [Rouge][11], mas o GitHub não a suporta._
 
 # Conteúdo
 
