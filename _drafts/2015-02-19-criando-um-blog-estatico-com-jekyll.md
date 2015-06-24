@@ -20,38 +20,37 @@ Depois que decidi criar um blog, pensei: qual plataforma eu deveria usar? Temos 
 >
 > <cite>[Wikipedia][3]</cite>
 
-<del>Pra que fazer um blog em português se vai colocar citações em inglês?</del>
+<del>Pra quê fazer um blog em português se vai colocar citações em inglês?</del>
 
 Desculpa, não sou muito bom com definições…
 
 Um website estático é enviado ao usuário **exatamente como salvo**,  o oposto de um website dinâmico, cujo conteúdo é **gerado a cada acesso**. Isso quer dizer que todos os usuários recebem o mesmo conteúdo, independente do contexto.
 
-É como se o servidor estivesse pegando os arquivos direto do sistema de arquivos e servindo eles quando requisitado, sem distinção ou tratamento nenhum, o que é diferente do já citado WordPress, onde seu conteúdo pode passar por dezenas de plugins, alterando o resultado obtido, que pode variar de usuário para usuário.
+É como se o servidor estivesse pegando os arquivos direto do sistema de arquivos e servindo eles quando requisitado, sem distinção ou tratamento nenhum, o que é diferente do já citado WordPress, onde seu conteúdo pode passar por milhares de plugins, alterando o resultado obtido, que pode variar de usuário para usuário.
 
 # Geradores
 
-... existem muitas opções para geração de sites estáticos ...
+Existem muitas opções para geração de sites estáticos, cada uma com suas peculiaridades. Algumas delas são:
 
-* Jekyll (Ruby);
-* DocPad (Node);
-* ...
+* [Jekyll](http://jekyllrb.com/ "Jekyll • Simple, blog-aware, static sites");
+* [Octopress](http://octopress.org/ "Octopress") (baseado no Jekyll);
+* [DocPad](https://docpad.org/ "DocPad - Streamlined Web Development");
+* [E muito mais][4].
 
-Neste post vou explicar a geração de **blogs** com **Jekyll**, usando a hospedagem do **GitHub Pages**.
+Neste post vou explicar a geração de **blogs** com **Jekyll**, hospedando-os com **GitHub Pages**. Não vou entrar em detalhes com todos pois o único do qual estudei mais a fundo foi o Jekyll.
 
 # Configurando o Jekyll
 
-O GitHub Pages suporta o Jekyll por padrão, o que significa que você não precisa comitar o site já gerado, já que isso é feito pelo serviço. Sendo assim, a instalação da ferramenta no seu computador não é obrigatória, mas ela pode ajudar na resolução de problemas caso haja algum erro na criação do site após um _commit_.
+Para configurar o Jekyll na minha máquina (Windows 8.1), eu segui os passos do excelente guia do [GitHub Pages][6], que infelizmente se encontra apenas em inglês. Como a geração do site é feita nos servidores do GitHub, a instalação da ferramenta no seu computador não é obrigatória, mas ela pode ajudar na resolução de problemas caso haja algum erro na criação do site após um commit.
 
-Se você, como eu, acha interessante a instalação da ferramenta, é só seguir os passos do excelente guia do [GitHub Pages][4], que infelizmente se encontra apenas em inglês. Basicamente, os passos são os seguintes:
-
-1. [Faça o download e instale o Ruby][5]
-2. [Faça o download e instale o Python][6]*
-3. ...
+Caso decida instalar, você precisa ter o Ruby configurado. Se quiser _code highlighting_, terá que instalar Python também, já que o GitHub só aceita o pygments como gerador para esse conteúdo. Para instalar instalados na sua máquina. Existem vários tutoriais 
 
 
-[1]: https://twitter.com/hashtag/1postperday "#1PostPerDay no Twitter"
+
+
+[1]: https://twitter.com/hashtag/1postperday?s=09 "#1PostPerDay no Twitter"
 [2]: https://br.wordpress.com/ "WordPress.com"
 [3]: http://en.m.wikipedia.org/wiki/Static_web_page "Static web page - Wikipedia, the free encyclopedia"
-[4]: https://help.github.com/articles/using-jekyll-with-pages/ "Using Jekyll with Pages"
-[5]: "Instalar Ruby"
-[6]: https://edersonmelo.wordpress.com/2008/09/03/baixar-e-instalar-python/ "Instalar Python"
+[4]: https://github.com/pinceladasdaweb/Static-Site-Generators#net "pinceladasdaweb/Static-Site-Generators"
+[5]: https://pages.github.com/ "GitHub Pages"
+[6]: https://help.github.com/articles/using-jekyll-with-pages/ "Using Jekyll with Pages"
