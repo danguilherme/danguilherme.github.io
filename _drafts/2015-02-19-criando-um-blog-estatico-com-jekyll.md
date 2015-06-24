@@ -2,8 +2,12 @@
 title:    Criando Um Blog Estático Com Jekyll
 tagline:  Como se colocar na internet de maneira simples e fácil
 category: how-to
-tags:     jekyll github blogging
-excerpt: Vamos criar um blog estático!
+tags:     jekyll github blogging ruby
+excerpt:  Vamos criar um blog estático!
+
+author:   guilherme_ventura
+type:     posts
+layout:   post
 ---
 
 # Sobre o Blog
@@ -45,12 +49,32 @@ Para configurar o Jekyll na minha máquina (Windows 8.1), eu segui os passos do 
 
 Caso decida instalar, você precisa ter o Ruby configurado. Se quiser _code highlighting_, terá que instalar Python também, já que o GitHub só aceita o pygments como gerador para esse conteúdo. Para instalar instalados na sua máquina. Existem vários tutoriais 
 
+Se você, como eu, acha interessante a instalação da ferramenta, é só seguir os passos do excelente guia do [GitHub Pages][5], que infelizmente se encontra apenas em inglês. Basicamente, os passos são os seguintes:
 
+1. Baixe e instale o [Ruby][6]
+2. Instale [Bundler][7]
+3. Instale o Jekyll
+4. [Baixe e instale o Python][8]*
+
+_* A instalação do Python só é necessária caso você vá utilizar **[code highlighting][9]**. O Jekyll usa, por padrão, a ferramenta [Pygments][10] para gerar esses blocos. Existe uma alternativa em Ruby para essa funcionalidade chamada [Rouge][11], mas o GitHub não a suporta._
+
+# Conteúdo
+
+Como o Jekyll é um gerador de **sites** estáticos, não são apenas posts os itens capazes a serem gerados. Vamos dar uma olhada em cada item:
+
+## Páginas
+
+A página principal (index), a página sobre (...)
 
 
 [1]: https://twitter.com/hashtag/1postperday?s=09 "#1PostPerDay no Twitter"
 [2]: https://br.wordpress.com/ "WordPress.com"
 [3]: http://en.m.wikipedia.org/wiki/Static_web_page "Static web page - Wikipedia, the free encyclopedia"
-[4]: https://github.com/pinceladasdaweb/Static-Site-Generators#net "pinceladasdaweb/Static-Site-Generators"
-[5]: https://pages.github.com/ "GitHub Pages"
-[6]: https://help.github.com/articles/using-jekyll-with-pages/ "Using Jekyll with Pages"
+[4]: https://github.com/pinceladasdaweb/Static-Site-Generators "pinceladasdaweb/Static-Site-Generators"
+[5]: https://help.github.com/articles/using-jekyll-with-pages/ "Using Jekyll with Pages"
+[6]: http://www.rubyonrails.com.br/down "Ruby Download"
+[7]: http://bundler.io/ "Bundler"
+[8]: https://edersonmelo.wordpress.com/2008/09/03/baixar-e-instalar-python/ "Baixar e instalar Python"
+[9]: http://jekyllrb.com/docs/templates/#code-snippet-highlighting "Jekyll - Code snippet highlighting"
+[10]: http://pygments.org/ "Python syntax highlighter"
+[11]: https://github.com/jneen/rouge "Pure Ruby syntax highlighter"
