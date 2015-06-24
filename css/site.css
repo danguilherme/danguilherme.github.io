@@ -8,7 +8,8 @@
 
 html {
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 body {
@@ -174,7 +175,7 @@ img {
   overflow: hidden;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.2;
   word-wrap: break-word;
 }
 
@@ -228,7 +229,7 @@ code {
 
   display: block;
   padding: 0 5px;
-  line-height: 2rem;
+  line-height: 2;
 
   background-color: #2196F3;
   text-transform: uppercase;
@@ -252,6 +253,8 @@ body > header {
 body > header h1 {
   font-size: 3rem;
   margin: 0;
+  line-height: 1;
+  font-weight: 400;
 }
 
 body > header a {
@@ -300,7 +303,7 @@ body > article {
 
 body > footer {
   font-size: .7rem;
-  line-height: 2rem;
+  line-height: 2;
 
   padding: 0 1rem;
 
@@ -383,7 +386,7 @@ body > footer ul li {
 
 #post .post-info .post-title {
   font-size: 3rem;
-
+  line-height: 1;
   margin: 0;
 }
 
@@ -395,6 +398,7 @@ body > footer ul li {
 
   margin: 0;
   color: #90CAF9;
+  line-height: 1;
 }
 
 #post .post-info .post-metadata {
@@ -407,7 +411,8 @@ body > footer ul li {
   margin-top: 1em;
   text-align: left;
   font-family: 'Source Code Pro', monospace;
-  font-size: 0.8em;
+  font-size: 0.6rem;
+  line-height: 1;
   display: inline-block;
 }
 
@@ -515,15 +520,18 @@ body > footer ul li {
 
 #post .author img {
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 #post .author .author-name {
-  margin-bottom: 1rem;
+  margin-bottom: .5em;
+  margin-bottom: .5rem;
 }
 
 #post .author .author-bio {
   font-size: .8em;
+  line-height: 1.2;
 }
 
 #post .post-comments {
@@ -563,6 +571,7 @@ body > footer ul li {
     display: inline-block;
     border-bottom: #2196F3 3px solid;
     text-transform: uppercase;
+    line-height: 1;
     /* padding-right: 10px; */
 }
 
@@ -589,8 +598,8 @@ body > footer ul li {
 #category-index time::before {
   content: '';
   position: absolute;
-  top: 0.7em;
-  left: -0.8em;
+  top: 0.9em;
+  left: -0.6em;
   border: 0.7em transparent solid;
   border-left-color: #2196F3;
 }
