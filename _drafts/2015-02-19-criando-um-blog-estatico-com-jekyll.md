@@ -24,13 +24,13 @@ Depois que decidi criar um blog, pensei: qual plataforma eu deveria usar? Temos 
 >
 > <cite>[Wikipedia][3]</cite>
 
-<del>Pra que fazer um blog em português se vai colocar citações em inglês?</del>
+<del>Pra quê fazer um blog em português se vai colocar citações em inglês?</del>
 
 Desculpa, não sou muito bom com definições…
 
 Um website estático é enviado ao usuário **exatamente como salvo**,  o oposto de um website dinâmico, cujo conteúdo é **gerado a cada acesso**. Isso quer dizer que todos os usuários recebem o mesmo conteúdo, independente do contexto.
 
-É como se o servidor estivesse pegando os arquivos direto do sistema de arquivos e servindo eles quando requisitado, sem distinção ou tratamento nenhum, o que é diferente do já citado WordPress, onde seu conteúdo pode passar por dezenas de plugins, alterando o resultado obtido, que pode variar de usuário para usuário.
+É como se o servidor estivesse pegando os arquivos direto do sistema de arquivos e servindo eles quando requisitado, sem distinção ou tratamento nenhum, o que é diferente do já citado WordPress, onde seu conteúdo pode passar por milhares de plugins, alterando o resultado obtido, que pode variar de usuário para usuário.
 
 # Geradores
 
@@ -45,7 +45,9 @@ Neste post vou explicar a geração de **blogs** com **Jekyll**, hospedando-os c
 
 # Configurando o Jekyll
 
-O GitHub Pages suporta o Jekyll por padrão, o que significa que você não precisa comitar o site já gerado, já que isso é feito pelo serviço. Sendo assim, a instalação da ferramenta no seu computador não é obrigatória, mas ela pode ajudar na resolução de problemas caso haja algum erro na criação do site após um _commit_.
+Para configurar o Jekyll na minha máquina (Windows 8.1), eu segui os passos do excelente guia do [GitHub Pages][6], que infelizmente se encontra apenas em inglês. Como a geração do site é feita nos servidores do GitHub, a instalação da ferramenta no seu computador não é obrigatória, mas ela pode ajudar na resolução de problemas caso haja algum erro na criação do site após um commit.
+
+Caso decida instalar, você precisa ter o Ruby configurado. Se quiser _code highlighting_, terá que instalar Python também, já que o GitHub só aceita o pygments como gerador para esse conteúdo. Para instalar instalados na sua máquina. Existem vários tutoriais 
 
 Se você, como eu, acha interessante a instalação da ferramenta, é só seguir os passos do excelente guia do [GitHub Pages][5], que infelizmente se encontra apenas em inglês. Basicamente, os passos são os seguintes:
 
@@ -65,7 +67,7 @@ Como o Jekyll é um gerador de **sites** estáticos, não são apenas posts os i
 A página principal (index), a página sobre (...)
 
 
-[1]: https://twitter.com/hashtag/1postperday "#1PostPerDay no Twitter"
+[1]: https://twitter.com/hashtag/1postperday?s=09 "#1PostPerDay no Twitter"
 [2]: https://br.wordpress.com/ "WordPress.com"
 [3]: http://en.m.wikipedia.org/wiki/Static_web_page "Static web page - Wikipedia, the free encyclopedia"
 [4]: https://github.com/pinceladasdaweb/Static-Site-Generators "pinceladasdaweb/Static-Site-Generators"

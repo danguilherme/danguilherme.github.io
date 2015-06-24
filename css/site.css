@@ -399,6 +399,7 @@ body > footer ul li {
 
   margin: 0;
   color: #90CAF9;
+  line-height: 1;
 }
 
 #post .post-info .post-metadata {
