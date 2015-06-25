@@ -7,13 +7,14 @@ docpadConfig = {
     pages: ->
       @getCollection("html").findAllLive({isPage:true}, [{ menuOrder: 1 }])
     posts: ->
-      @getCollection("html").findAllLive({layout: 'post'}, [{ date: 1 }])
+      @getCollection("html").findAllLive({relativeOutDirPath: 'posts'}, [{date:-1}]).on "add", (model) ->
+        model.setMetaDefaults({layout:"post"})
             
   templateData:
     # Specify some site properties
     site:
       # The production URL of our website
-      url: "http://danguilherme.github.io/hackeventos/"
+      url: "http://danguilherme.github.io"
 
       # The default title of our website
       title: "Blog - Guilherme Ventura"
@@ -51,6 +52,20 @@ docpadConfig = {
     getPreparedKeywords: ->
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(", ")
+
+
+  # -----------------------------
+  # Plugins Configuration
+  plugins:
+    dateurls:
+      collectionName: 'posts'
+    rss:
+      default:
+        collection: 'posts'
+        url: '/rss.xml'
+    related:
+      parentCollectionName: 'posts'
+
 }
 
 # Export the DocPad Configuration

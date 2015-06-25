@@ -4,12 +4,16 @@
   "description": "New DocPad project without using a skeleton",
   "dependencies": {
     "docpad": "~6.78.1",
+    "docpad-plugin-dateurls": "~2.4.0",
     "docpad-plugin-eco": "~2.1.0",
     "docpad-plugin-ghpages": "~2.4.4",
+    "docpad-plugin-highlightjs": "~2.3.0",
     "docpad-plugin-htmlmin": "~2.4.3",
     "docpad-plugin-jade": "~2.9.0",
     "docpad-plugin-livereload": "~2.6.1",
     "docpad-plugin-marked": "~2.3.0",
+    "docpad-plugin-related": "~2.2.2",
+    "docpad-plugin-rss": "~2.2.0",
     "docpad-plugin-stylus": "~2.9.0",
     "docpad-plugin-traceur": "~2.0.3"
   },
