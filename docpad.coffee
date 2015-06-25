@@ -3,6 +3,11 @@
 
 # Define the DocPad Configuration
 docpadConfig = {
+  collections:
+    pages: ->
+      @getCollection("html").findAllLive({isPage:true}, [{ menuOrder: 1 }])
+    posts: ->
+      @getCollection("html").findAllLive({layout: 'post'}, [{ date: 1 }])
             
   templateData:
     # Specify some site properties
