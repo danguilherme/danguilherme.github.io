@@ -1,0 +1,14 @@
+---
+layout: "default"
+date: 2015-06-24
+---
+
+<article id="post"><%- @content %></article>
+
+<section id="related-posts">
+  <h2>Related Posts</h2>
+
+  <% for document in @getRelatedDocuments(): %>
+    <a href="<%= document.url %>"><%= document.title %></a><br/>
+  <% end %>
+</section>

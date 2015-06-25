@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title><%= @getPreparedTitle() %></title>
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").add(["/styles/style.css", "/styles/highlight.js/zenburn.css"]).toHTML() %>
+</head>
+<body>
+  <header id="main-header">
+    <h1>Guilherme Ventura</h1>
+
+    <nav>
+      <ul id="links">
+        <% for page in @getCollection("pages").toJSON(): %>
+            <li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+                <a href="<%= page.url %>">
+                    <%= page.title %>
+                </a>
+            </li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1><%= @document.title %></h1>
+    <%- @content %>
+  </main>
+    
+  <%- @getBlock("scripts").toHTML() %>
+</body>
+</html>
