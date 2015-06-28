@@ -9,9 +9,9 @@
 
   <title><%= @getPreparedTitle() %></title>
   <%- @getBlock("meta").toHTML() %>
-  <%- @getBlock("styles").add(["/styles/style.css", "/styles/highlight.js/zenburn.css", "http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Marvel:400,700|Raleway:700,400"]).toHTML() %>
+  <%- @getBlock("styles").add(["/styles/style.css", "/styles/highlight.js/zenburn.css", "http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Marvel:400,700|Raleway:200,400,700"]).toHTML() %>
 </head>
-<body>
+<body id="<%= @document.layout %>">
   <header id="main-header">
     <div id="header-content">
       <h1><a href="/">Guilherme Ventura</a></h1>
@@ -30,7 +30,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="<%= @slugify(@document.title) %>">
     <%- @content %>
   </main>
 

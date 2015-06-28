@@ -1,6 +1,13 @@
 moment = require('moment')
 moment.locale('pt-br')
 
+author = {
+  name: "Guilherme Ventura"
+  email: "guilhermeventura2@gmail.com"
+  twitter: "danguilherme"
+  github: "danguilherme"
+}
+
 # Define the DocPad Configuration
 docpadConfig = {
   collections:
@@ -18,6 +25,7 @@ docpadConfig = {
 
       # The default title of our website
       title: "Blog - Guilherme Ventura"
+      author: author
 
       # The website description (for SEO)
       description: """
@@ -55,6 +63,15 @@ docpadConfig = {
 
     # Format date
     formatDate: (date, format="DD/MM/YYYY") -> return moment(date).format(format)
+
+    # Transforms "Texto de Exemplo" into "texto-de-exemplo"
+    slugify: (text) ->
+      return text.toString().toLowerCase()
+        .replace(/\s+/g, '-')     # Replace spaces with -
+        .replace(/[^\w\-]+/g, '') # Remove all non-word chars
+        .replace(/\-\-+/g, '-')   # Replace multiple - with single -
+        .replace(/^-+/, '')       # Trim - from start of text
+        .replace(/-+$/, '');      # Trim - from end of text
 
 
   # -----------------------------

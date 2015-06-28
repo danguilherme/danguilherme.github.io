@@ -49,6 +49,8 @@ h4,
 h5,
 h6
   font-family Marvel, sans-serif
+  margin-top 1em
+  margin-bottom 0
 
 h1
   font-size 2.5rem
@@ -108,10 +110,14 @@ abbr:hover
 
 code
   font-family "Source Code Pro", monospace
+  &.hljs
+    white-space pre-wrap
 
 table
+  margin 0
   margin-bottom 1rem
   width 100%
+  max-width 100%
   border 1px solid rgba(187, 222, 251, .2)
   border-collapse collapse
 
@@ -181,8 +187,6 @@ dl dt
 * BODY
 */
 main
-  margin 0 5px
-
   header,
   h1,
   h2,
@@ -231,7 +235,7 @@ main
       line-height 1
 
       color #90CAF9
-      line-height 1
+      font-weight 200
 
     time
       position absolute
@@ -280,3 +284,37 @@ main
       max-width max-width
       margin 0 auto
       white-space pre-wrap
+
+  #posts-list
+    padding 0
+    cursor default
+    li
+      display inline-block
+      margin-bottom 1em
+      width 45%
+      vertical-align top
+      &:nth-child(even)
+        margin-left 2.5%
+      &:nth-child(odd)
+        margin-right 2.5%
+      &:nth-child(1),
+      &:nth-child(2)
+        font-size 1.2em
+
+      time,
+      a,
+      span
+        display block
+
+      time
+        font-size .8em
+        color #aaa
+      a
+        font-weight bold
+      span
+        font-style italic
+/*
+* STYLE FOR PAGES
+*/
+// #page
+//   #home

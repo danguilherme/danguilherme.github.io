@@ -29,9 +29,5 @@ layout: "base"
 <section id="related-posts">
   <h2>Related Posts</h2>
 
-  <ul>
-    <% for document in @getRelatedDocuments(): %>
-      <li><a href="<%= document.url %>"><%= document.title %></a></li>
-    <% end %>
-  </ul>
+  <%= @partial('posts-list', {posts: @getRelatedDocuments() }) %>
 </section>
