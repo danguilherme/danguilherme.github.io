@@ -15,7 +15,8 @@
     "docpad-plugin-related": "~2.2.2",
     "docpad-plugin-rss": "~2.2.0",
     "docpad-plugin-stylus": "~2.9.0",
-    "docpad-plugin-traceur": "~2.0.3"
+    "docpad-plugin-traceur": "~2.0.3",
+    "moment": "^2.10.3"
   },
   "main": "node_modules/.bin/docpad-server",
   "scripts": {

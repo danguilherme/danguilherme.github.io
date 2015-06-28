@@ -1,5 +1,5 @@
-# DocPad Configuration File
-# http://docpad.org/docs/config
+moment = require('moment')
+moment.locale('pt-br')
 
 # Define the DocPad Configuration
 docpadConfig = {
@@ -9,7 +9,7 @@ docpadConfig = {
     posts: ->
       @getCollection("html").findAllLive({relativeOutDirPath: 'posts'}, [{date:-1}]).on "add", (model) ->
         model.setMetaDefaults({layout:"post"})
-            
+
   templateData:
     # Specify some site properties
     site:
@@ -52,6 +52,9 @@ docpadConfig = {
     getPreparedKeywords: ->
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(", ")
+
+    # Format date
+    formatDate: (date, format="DD/MM/YYYY") -> return moment(date).format(format)
 
 
   # -----------------------------

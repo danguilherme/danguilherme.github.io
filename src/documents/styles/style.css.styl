@@ -178,6 +178,7 @@ dl dt
 * BODY
 */
 main
+  header,
   h1,
   h2,
   h3,
@@ -189,14 +190,40 @@ main
   ol,
   dl,
   table,
-  div,
-  span
+  div
     max-width max-width
-    margin-left auto
-    margin-right auto
+    margin-left 5px
+    margin-right 5px
+    @media screen and (min-width: max-width)
+      margin-left auto
+      margin-right auto
 
-  h1
-    margin-bottom 0
+  header
+    h1
+      margin-bottom 0
+
+    time
+      display inline-block
+      margin-right 10px
+      width 50px
+      float left
+      border 1px solid #606060
+      cursor default
+      box-shadow inset #606060 0 0 5px
+      @media screen and (min-width: max-width)
+        margin-left -60px
+
+      span
+        display block
+        padding 0 5px
+        text-align center
+
+      .year
+        display none
+      .month
+        background rgba(255, 0, 0, 0.5)
+      .day
+        text-align center
 
   @media screen and (min-width: max-width)
     ul,
