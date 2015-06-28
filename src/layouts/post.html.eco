@@ -24,7 +24,22 @@ layout: "base"
   </ul> -->
 </header>
 
-<article id="post"><%- @content %></article>
+<article>
+  <%- @content %>
+
+  <section class="post-interactions">
+    <p class="twitter-share-notice">
+      <% author = @site.author %>
+      Se você tiver qualquer dúvida ou comentário, por favor escreva-os abaixo.
+      Curtiu o post? Você pode
+      <a href="https://twitter.com/intent/tweet?url=<%= @site.url  %><%=  @document.url  %>&text=<%=  @document.title  %>&via=<%= author.twitter %>"
+        title="Twittar sobre '<%= @document.title %>'"
+        target="_blank">compartilhá-lo com seus seguidores</a> ou
+      <a href="https://twitter.com/intent/follow?screen_name=<%= author.twitter %>" title="@<%= author.twitter %>">me seguir no Twitter</a>!
+    </p>
+  </section>
+
+</article>
 
 <section id="related-posts">
   <h2>Related Posts</h2>
