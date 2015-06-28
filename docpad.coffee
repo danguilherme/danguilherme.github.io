@@ -60,6 +60,10 @@ docpadConfig = {
   # -----------------------------
   # Plugins Configuration
   plugins:
+    stylus:
+      stylusOptions:
+        compress: true
+        'include css': true
     dateurls:
       collectionName: 'posts'
     rss:

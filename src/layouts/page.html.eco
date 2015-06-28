@@ -3,3 +3,5 @@ layout: "base"
 ---
 
 <h1><%= @document.title %></h1>
+
+<article id="page"><%- @content %></article>

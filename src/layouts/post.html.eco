@@ -4,13 +4,16 @@ layout: "base"
 
 <header>
   <!-- <time datetime="<%= @document.date.toISOString() %>"><%= @formatDate(@document.date, "MMM") %></time> -->
-  <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'DD/MM/YYYY HH:mm:ss') %>">
+  <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'LLL') %>">
     <span class="year"><%= @formatDate(@document.date, "YYYY") %></span>
     <span class="month"><%= @formatDate(@document.date, "MMM") %></span>
     <span class="day"><%= @formatDate(@document.date, "DD") %></span>
   </time>
 
-  <h1><%= @document.title %></h1>
+  <h1 class="post-title"><%= @document.title %></h1>
+  <% if @document.tagline: %>
+    <p class="post-tagline"><%= @document.tagline %></p>
+  <% end %>
 
   <span id="post-tags"><%= @document.tags.join(", ") %></span>
 
