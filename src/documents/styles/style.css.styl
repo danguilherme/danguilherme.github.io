@@ -1,30 +1,217 @@
+max-width = 800px
+theme-color = #2196F3
+
 /*
 * MIXINS
 */
 center-vertical()
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
+  position relative
+  top 50%
+  -webkit-transform translateY(-50%)
+  -ms-transform translateY(-50%)
+  -o-transform translateY(-50%)
+  transform translateY(-50%)
+
+transition()
+  -webkit-transition arguments
+  -ms-transition arguments
+  -o-transition arguments
+  transition arguments
 
 /*
 * BASE
 */
 * {
-  box-sizing: border-box;
+  box-sizing border-box
 }
 
 html
-  font-family Calibri, sans-serif;
+  font-family Raleway, sans-serif
   font-size 16px
-  line-height 20px
+  line-height 1.5
 
 body
   margin 0
   padding 0
 
+input,
+textarea,
+keygen,
+select,
+button
+  font-size 1em
+  font-size 1rem
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-family Marvel, sans-serif
+
+h1
+  font-size 2.5rem
+
+h2
+  font-size 2rem
+
+h3
+  font-size 1.7rem
+
+h4
+  font-size 1.5rem
+
+h5
+  font-size 1.3rem
+
+h6
+  font-size 1.1rem
+
+a
+  color theme-color
+  text-decoration none
+  transition color .2s
+
+  &:visited
+    color #64B5F6
+
+  &:hover
+    color #0D47A1
+
+blockquote
+  border-left #BBDEFB 5px solid
+  margin-left 0
+  margin-right 0
+  color #333
+  padding .5rem .5rem .5rem 2em
+  background-color rgba(227, 242, 253, .3)
+  border-top-right-radius 3px
+  border-bottom-right-radius 3px
+  font-style italic
+
+blockquote cite
+  display block
+  cursor default
+
+blockquote cite::before
+  display inline
+  content '— '
+
+abbr
+  cursor help
+  border-bottom dotted 1px #ddd
+  transition border-color .2s
+
+abbr:hover
+  border-bottom-color #777
+
+table
+  margin-bottom 1rem
+  width 100%
+  border 1px solid rgba(187, 222, 251, .2)
+  border-collapse collapse
+
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th
+  background-color rgba(227, 242, 253, .2)
+
+td,
+th
+  padding .5rem .5rem
+  border 1px solid rgba(187, 222, 251, .2)
+
+th
+  cursor default
+  text-align center
+
+img
+  display block
+  margin 0 0 1rem
+  max-width 100%
+  border-radius 3px
+
+dl dt
+  font-weight bold
+
 /*
 * HEADER
 */
+#main-header
+  background #2196F3
+  color white
+
+  #header-content
+    max-width max-width
+    padding 0 1em
+    margin 0 auto
+
+  h1
+    display inline-block
+    margin 0
+    padding-right 20px
+    border-radius 50px
+    border-right 5px solid #1E90EC
+
+  nav
+    display inline-block
+    margin-left 10px
+
+  ul,
+  li
+    display inline
+    padding 0
+
+  nav
+    center-vertical()
+    top 5px
+
+  a
+    color inherit
+    text-decoration none
+
+  .active a
+    font-weight bold
+    border-bottom 3px solid
+
+/*
+* BODY
+*/
+main
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl,
+  table,
+  div,
+  span
+    max-width max-width
+    margin-left auto
+    margin-right auto
+
+  h1
+    margin-bottom 0
+
+  @media screen and (min-width: max-width)
+    ul,
+    ol
+      padding-left 0
+
+      ul,
+      ol
+        padding-left 1.5em
+
+  pre.highlight
+    max-width 100%
+    background #3F3F3F
+
+    code.hljs
+      max-width max-width
+      margin 0 auto
+      white-space pre-wrap

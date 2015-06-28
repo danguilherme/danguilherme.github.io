@@ -1,8 +1,7 @@
 ---
 title:    Example Content
 tagline:  And this is a very nice tagline (in two lines)
-category: example
-tags:     markdown table html test
+tags:     example markdown table html test
 date:     2015-01-01
 ---
 

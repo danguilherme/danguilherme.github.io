@@ -1,14 +1,28 @@
 ---
-layout: "default"
-date: 2015-06-24
+layout: "base"
 ---
+
+<header>
+  <h1><%= @document.title %></h1>
+
+  <time datetime="<%= @document.date.toISOString() %>"><%= @document.date %></time>
+  <span id="post-tags"><%= @document.tags.join(", ") %></span>
+
+  <!-- <ul id="post-tags">
+    <% for tag in @document.tags: %>
+      <li><%= tag %></li>
+    <% end %>
+  </ul> -->
+</header>
 
 <article id="post"><%- @content %></article>
 
 <section id="related-posts">
   <h2>Related Posts</h2>
 
-  <% for document in @getRelatedDocuments(): %>
-    <a href="<%= document.url %>"><%= document.title %></a><br/>
-  <% end %>
+  <ul>
+    <% for document in @getRelatedDocuments(): %>
+      <li><a href="<%= document.url %>"><%= document.title %></a></li>
+    <% end %>
+  </ul>
 </section>
