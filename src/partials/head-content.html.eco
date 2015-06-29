@@ -1,0 +1,14 @@
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2196F3">
+
+<meta name="description" content="<%= @getPreparedDescription() %>">
+
+<%- @partial('seo') %>
+<%- @getBlock("meta").toHTML() %>
+
+<%- @getBlock("styles").add(@site.styles).toHTML() %>
+<link rel="stylesheet" media="print" href="/styles/print.css" />
+
+<link rel="alternate" type="application/rss+xml" title="<%= @site.title %> - RSS" href="/rss.xml" />

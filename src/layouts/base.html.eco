@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- @partial('head-content') %>
+  <title><%= @getPreparedTitle() %></title>
+</head>
+<body id="<%= @document.layout %>">
+  <header id="main-header">
+    <div id="header-content">
+      <h1><a href="/">Guilherme Ventura</a></h1>
+
+      <nav id="menu">
+        <%- @partial('menu', {menuItems: @generateMenu(@document.url, 'pages')}) %>
+      </nav>
+
+      <nav id="external-links">
+        <ul>
+          <li><a href="https://github.com/<%= @site.author.github %>">GitHub</a></li>
+          <li><a href="https://twitter.com/<%= @site.author.twitter %>">Twitter</a></li>
+          <li><a href="/rss.xml">Feed</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="<%= @slugify(@document.title) %>">
+    <%- @content %>
+  </main>
+
+  <footer id="main-footer">
+    <div id="footer-content">
+      Feito com <span class="love">♥</span> por <a href="https://twitter.com/<%= @site.author.twitter %>" target="_BLANK">@<%= @site.author.twitter %></a> usando <a href="https://docpad.org" target="_BLANK">DocPad</a>, <a href="https://nodejs.org/" target="_BLANK">Node.js</a>, <a href="https://learnboost.github.io/stylus/" target="_BLANK">Stylus</a> e JavaScript. Descubra mais no <a href="https://github.com/danguilherme/danguilherme.github.io" target="_BLANK">repositório do GitHub</a>.
+    </div>
+  </footer>
+
+  <%- @partial('google-analytics') %>
+  <%- @getBlock("scripts").add(@site.scripts).toHTML() %>
+</body>
+</html>

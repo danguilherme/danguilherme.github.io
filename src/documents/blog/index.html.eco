@@ -1,0 +1,14 @@
+---
+title:      "Blog"
+layout:     "page"
+menuOrder:  0
+---
+
+<% posts = @getCollection("posts") %>
+<% if posts.length: %>
+  <%= @partial('posts-list', {posts: posts.toJSON() }) %>
+<% else: %>
+  <p>
+    Nenhum post ainda... :(
+  </p>
+<% end %>
