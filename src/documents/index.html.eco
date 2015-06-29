@@ -1,10 +1,14 @@
 ---
-title: "Home"
-layout: "page"
-menuOrder: 0
+title:      "Olá"
+menuTitle:  "Home"
+layout:     "page"
+menuOrder:  0
 ---
 
-<p>Welcome to <code><%= @site.title %></code>!</p>
+<p>
+  Bem vindo à minha casa na internet! A preguiça não me deixou escrever muito aqui,
+  mas você pode checar o <a href="/blog">blog</a> pra ver se tem algo interessante.
+</p>
 
 <h2>Posts Recentes</h2>
 <%= @partial('posts-list', {posts: @getCollection("posts").toJSON() }) %>
