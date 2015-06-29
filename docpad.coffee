@@ -93,6 +93,8 @@ docpadConfig = {
         url: '/rss.xml'
     related:
       parentCollectionName: 'posts'
+    cleanurls:
+      static: true
 
 }
 
