@@ -1,9 +1,0 @@
-{% capture tags %}{{ post.tags | size }}{% endcapture %}
-<time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>{{ post.date | date: "<span class='day'>%d</span>/<span class='month'>%m</span>"}}</time>
-<div class="post">
-  <h3><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h3>
-  <p>{{post.excerpt | truncate: 180, '…'}}</p>
-  {% if tags != '0' %}
-  <div class="tags">{{ post.tags | join: ', ' }}</div>
-  {% endif %}
-</div>
