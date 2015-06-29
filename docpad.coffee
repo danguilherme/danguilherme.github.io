@@ -14,7 +14,7 @@ docpadConfig = {
     pages: ->
       @getCollection("html").findAllLive({ layout: 'page' }, [{ menuOrder: 1 }])
     posts: ->
-      @getCollection("html").findAllLive({relativeOutDirPath: 'blog'}, [{date:-1}]).on "add", (model) ->
+      @getCollection("html").findAllLive({relativeOutDirPath: 'blog', basename: $ne: "index"}, [{date:-1}]).on "add", (model) ->
         model.setMetaDefaults({layout:"post"})
 
   templateData:

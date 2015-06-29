@@ -1,0 +1,7 @@
+---
+title:      "Blog"
+layout:     "page"
+menuOrder:  0
+---
+
+<%= @partial('posts-list', {posts: @getCollection("posts").toJSON() }) %>
