@@ -108,8 +108,10 @@ abbr
 abbr:hover
   border-bottom-color #777
 
+.highlight textarea,
 code
   font-family "Source Code Pro", monospace
+  line-height 1.5
   &.hljs
     white-space pre-wrap
 
@@ -294,10 +296,33 @@ main
     max-width 100%
     background #3F3F3F
 
+    textarea
+      width 100%
+      display block
+      padding: 0.5em;
+
+      overflow-y hidden
+
+      white-space pre-wrap                 /* CSS3 browsers  */
+      white-space -moz-pre-wrap !important /* 1999+ Mozilla  */
+      white-space -pre-wrap                /* Opera 4 thru 6 */
+      white-space -o-pre-wrap              /* Opera 7 and up */
+
+      word-wrap break-word                 /* IE 5.5+ and up */
+
+      color #fff
+      border none
+      background-color transparent
+      outline none
+      border-radius 0
+      resize none
+
     code.hljs
       max-width max-width
       margin 0 auto
       white-space pre-wrap
+      &.copying-code
+        display: none;
 
   #posts-list
     padding 0

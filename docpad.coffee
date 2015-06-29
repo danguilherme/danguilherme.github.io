@@ -30,6 +30,10 @@ docpadConfig = {
         "http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Marvel:400,700|Raleway:200,400,700"
       ]
 
+      scripts: [
+        "/scripts/main.js"
+      ]
+
       # The default title of our website
       title: "Guilherme Ventura"
       author: author
