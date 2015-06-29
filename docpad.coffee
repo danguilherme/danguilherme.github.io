@@ -100,6 +100,9 @@ docpadConfig = {
       parentCollectionName: 'posts'
     cleanurls:
       static: true
+    ghpages:
+        deployRemote: 'origin'
+        deployBranch: 'master'
 
   environments:
     development:
