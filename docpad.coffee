@@ -12,10 +12,11 @@ author = {
 docpadConfig = {
   collections:
     pages: ->
-      @getCollection("html").findAllLive({ layout: 'page' }, [{ menuOrder: 1 }])
+      @getCollection("html").findAllLive({ layout: 'page' }, [{ menuOrder: 1 }]).on "add", (model) ->
+        model.setMetaDefaults({ htmlmin: true })
     posts: ->
       @getCollection("html").findAllLive({relativeOutDirPath: 'blog', basename: $ne: "index"}, [{date:-1}]).on "add", (model) ->
-        model.setMetaDefaults({layout:"post"})
+        model.setMetaDefaults({ htmlmin: true, layout: "post" })
 
   templateData:
     # Specify some site properties
@@ -30,7 +31,7 @@ docpadConfig = {
       ]
 
       # The default title of our website
-      title: "Blog - Guilherme Ventura"
+      title: "Guilherme Ventura"
       author: author
 
       # The website description (for SEO)
@@ -60,12 +61,12 @@ docpadConfig = {
     # Get the prepared site/document description
     getPreparedDescription: ->
       # if we have a document description, then we should use that, otherwise use the site"s description
-      @document.description or @site.description
+      @document.description or @document.tagline or @site.description
 
     # Get the prepared site/document keywords
     getPreparedKeywords: ->
       # Merge the document keywords with the site keywords
-      @site.keywords.concat(@document.keywords or []).join(", ")
+      (@document.keywords or @document.tags or []).concat(@site.keywords).join(", ")
 
     # Format date
     formatDate: (date, format="DD/MM/YYYY") -> return moment(date).format(format)
@@ -95,7 +96,6 @@ docpadConfig = {
       parentCollectionName: 'posts'
     cleanurls:
       static: true
-
 }
 
 # Export the DocPad Configuration

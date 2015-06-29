@@ -1,15 +1,7 @@
 <html>
 <head>
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#2196F3">
-
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - RSS" href="/atom.xml" />
-
+  <%- @partial('head-content') %>
   <title><%= @getPreparedTitle() %></title>
-  <%- @getBlock("meta").toHTML() %>
-  <%- @getBlock("styles").add(@site.styles).toHTML() %>
 </head>
 <body id="<%= @document.layout %>">
   <header id="main-header">
@@ -40,6 +32,7 @@
     </div>
   </footer>
 
+  <%- @partial('google-analytics') %>
   <%- @getBlock("scripts").toHTML() %>
 </body>
 </html>

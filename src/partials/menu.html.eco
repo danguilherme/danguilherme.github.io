@@ -1,3 +1,6 @@
+---
+htmlmin: true
+---
 <!-- Define `renderMenu` partial -->
 <% renderMenu = (items) => %>
 <ul>

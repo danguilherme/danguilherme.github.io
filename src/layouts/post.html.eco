@@ -16,6 +16,10 @@ layout: "base"
   <% end %>
 
   <span id="post-tags"><%= @document.tags.join(", ") %></span>
+
+  <span id="post-comments-count">
+    <a href="#disqus_thread" data-disqus-identifier="{{@document.url}}">0 Comentários</a>
+  </span>
 </header>
 
 <article>
