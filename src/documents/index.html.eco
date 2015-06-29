@@ -10,5 +10,8 @@ menuOrder:  0
   mas você pode checar o <a href="/blog">blog</a> e ver se tem algo interessante.
 </p>
 
-<h2>Posts Recentes</h2>
-<%= @partial('posts-list', {posts: @getCollection("posts").toJSON() }) %>
+<% posts = @getCollection("posts") %>
+<% if posts.length: %>
+  <h2>Posts Recentes</h2>
+  <%= @partial('posts-list', {posts: posts.toJSON() }) %>
+<% end %>

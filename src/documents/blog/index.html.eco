@@ -4,4 +4,11 @@ layout:     "page"
 menuOrder:  0
 ---
 
-<%= @partial('posts-list', {posts: @getCollection("posts").toJSON() }) %>
+<% posts = @getCollection("posts") %>
+<% if posts.length: %>
+  <%= @partial('posts-list', {posts: posts.toJSON() }) %>
+<% else: %>
+  <p>
+    Nenhum post ainda... :(
+  </p>
+<% end %>
