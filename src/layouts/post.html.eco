@@ -41,8 +41,11 @@ layout: "base"
 
 </article>
 
+<% related = @getRelatedDocuments() %>
+<% if related.length: %>
 <section id="related-posts">
   <h2>Posts Relacionados</h2>
 
-  <%= @partial('posts-list', {posts: @getRelatedDocuments() }) %>
+  <%= @partial('posts-list', {posts: related }) %>
 </section>
+<% end %>

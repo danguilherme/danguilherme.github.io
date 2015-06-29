@@ -15,7 +15,7 @@ docpadConfig = {
       @getCollection("html").findAllLive({ layout: 'page' }, [{ menuOrder: 1 }]).on "add", (model) ->
         model.setMetaDefaults({ htmlmin: true })
     posts: ->
-      @getCollection("html").findAllLive({relativeOutDirPath: 'blog', basename: $ne: "index"}, [{date:-1}]).on "add", (model) ->
+      @getCollection("html").findAllLive({relativeOutDirPath: 'blog', isDraft: { $ne: true }, basename: { $ne: "index" }}, [{date:-1}]).on "add", (model) ->
         model.setMetaDefaults({ htmlmin: true, layout: "post" })
 
   templateData:
@@ -96,6 +96,13 @@ docpadConfig = {
       parentCollectionName: 'posts'
     cleanurls:
       static: true
+
+  environments:
+    development:
+      collections:
+        posts: ->
+          @getCollection("html").findAllLive({relativeOutDirPath: 'blog', basename: $ne: "index" }, [{date:-1}]).on "add", (model) ->
+            model.setMetaDefaults({ layout: "post" })
 }
 
 # Export the DocPad Configuration
