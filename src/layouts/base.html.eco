@@ -16,15 +16,13 @@
     <div id="header-content">
       <h1><a href="/">Guilherme Ventura</a></h1>
 
-      <nav>
-        <ul id="links">
-          <% for page in @getCollection("pages").toJSON(): %>
-            <li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
-              <a href="<%= page.url %>">
-                <%= page.title %>
-              </a>
-            </li>
-          <% end %>
+      <nav id="menu">
+        <%- @partial('menu', {menuItems: @generateMenu(@document.url, 'pages')}) %>
+      </nav>
+
+      <nav id="external-links">
+        <ul>
+          <a href="https://github.com/<%= @site.author.github %>">GitHub</a>
         </ul>
       </nav>
     </div>

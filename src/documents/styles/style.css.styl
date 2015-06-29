@@ -155,6 +155,7 @@ dl dt
 #main-header
   background #2196F3
   color white
+  min-height 60px
 
   h1
     display inline-block
@@ -162,26 +163,35 @@ dl dt
     padding-right 20px
     border-radius 50px
     border-right 5px solid #1E90EC
-
-  nav
-    display inline-block
-    center-vertical()
-    top 5px
-
-  ul
-    display inline
-    padding 0
-  li
-    display inline-block
-    padding 0
-    margin-right 10px
   a
     color inherit
     text-decoration none
 
-  .active a
-    font-weight bold
-    border-bottom 3px solid
+  nav
+    display inline-block
+    height 60px
+    vertical-align top
+
+    strong
+      cursor default
+
+    ul
+      display inline-block
+      padding 0
+      margin 0
+      center-vertical()
+    li
+      display inline-block
+      padding 0
+      margin-right 10px
+
+  #external-links
+    float right
+
+#main-header::after
+  content ''
+  display block
+  clear both
 
 /*
 * BODY
