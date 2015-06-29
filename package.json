@@ -4,7 +4,6 @@
   "description": "New DocPad project without using a skeleton",
   "dependencies": {
     "docpad": "~6.78.1",
-    "docpad-plugin-dateurls": "~2.4.0",
     "docpad-plugin-eco": "~2.1.0",
     "docpad-plugin-ghpages": "~2.4.4",
     "docpad-plugin-highlightjs": "~2.3.0",

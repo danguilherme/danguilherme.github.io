@@ -12,9 +12,9 @@ author = {
 docpadConfig = {
   collections:
     pages: ->
-      @getCollection("html").findAllLive({isPage:true}, [{ menuOrder: 1 }])
+      @getCollection("html").findAllLive({ layout: 'page' }, [{ menuOrder: 1 }])
     posts: ->
-      @getCollection("html").findAllLive({relativeOutDirPath: 'posts'}, [{date:-1}]).on "add", (model) ->
+      @getCollection("html").findAllLive({relativeOutDirPath: 'blog'}, [{date:-1}]).on "add", (model) ->
         model.setMetaDefaults({layout:"post"})
 
   templateData:
@@ -22,6 +22,12 @@ docpadConfig = {
     site:
       # The production URL of our website
       url: "http://danguilherme.github.io"
+
+      styles: [
+        "/styles/style.css"
+        "/styles/highlight.js/zenburn.css"
+        "http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Marvel:400,700|Raleway:200,400,700"
+      ]
 
       # The default title of our website
       title: "Blog - Guilherme Ventura"
@@ -81,8 +87,6 @@ docpadConfig = {
       stylusOptions:
         compress: true
         'include css': true
-    dateurls:
-      collectionName: 'posts'
     rss:
       default:
         collection: 'posts'

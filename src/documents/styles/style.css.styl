@@ -165,17 +165,16 @@ dl dt
 
   nav
     display inline-block
-    margin-left 10px
-
-  ul,
-  li
-    display inline
-    padding 0
-
-  nav
     center-vertical()
     top 5px
 
+  ul
+    display inline
+    padding 0
+  li
+    display inline-block
+    padding 0
+    margin-right 10px
   a
     color inherit
     text-decoration none
@@ -251,7 +250,6 @@ main
 
       border 1px solid #606060
       cursor default
-      box-shadow inset #606060 0 0 5px
 
       @media screen and (min-width: max-width)
         margin-left -60px
@@ -264,8 +262,9 @@ main
       .year
         display none
       .month
-        background rgba(255, 0, 0, 0.5)
+        background theme-color
       .day
+        box-shadow inset #606060 0 0 3px
         text-align center
 
   @media screen and (min-width: max-width)

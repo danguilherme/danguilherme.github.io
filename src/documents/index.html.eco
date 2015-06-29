@@ -1,7 +1,6 @@
 ---
 title: "Home"
 layout: "page"
-isPage: true
 menuOrder: 0
 ---
 
