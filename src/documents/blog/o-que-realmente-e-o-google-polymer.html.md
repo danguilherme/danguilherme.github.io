@@ -12,7 +12,7 @@ Esse artigo vai te dar a resposta exata do que o [Polymer](https://www.polymer-p
 # 1. Ele não é um Polyfill Para a Tecnologia dos Web Components
 *Web Components: O futuro da web*. Você já deve ter visto isso em muitos lugares, e com certeza o Polymer ou foi citado ou foi o assunto principal, e por isso muitas pessoas confundem.
 
-Polymer é uma biblioteca que **facilita** a criação de Web Components, que são elementos HTML customizados, independentes e reutilizáveis.
+Polymer é uma biblioteca que **facilita** a criação de [Web Components](http://tableless.com.br/web-components-introducao/), que são elementos HTML customizados, independentes e reutilizáveis.
 
 O problema é que a especificação dessa tecnologia, que agrega Custom Elements, HTML Templates, Shadow DOM e HTML Imports, além de ser recente, ainda está em rascunho, não foi finalizada. Os browsers mais recentes (lê-se Google Chrome e Mozilla Firefox) suportam essa tecnologia experimentalmente sob uma flag, mas nossos usuários não terão (e nem devem ter) essas flags ativadas. E é aí que entra o verdadeiro polyfill: [`webcomponents.js`](https://github.com/WebComponents/webcomponentsjs).
 
