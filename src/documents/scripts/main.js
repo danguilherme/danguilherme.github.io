@@ -12,11 +12,14 @@
 
     for (var i = 0; i < codes.length; i++) {
       var code = codes[i];
-      code.addEventListener('dblclick', function(ev) {
+      code.addEventListener('tripleclick', function(ev) {
         selectCode(ev.currentTarget);
+
+        // do not bubble 'click' to document
+        ev.stopPropagation();
       });
 
-      code.setAttribute('title', "Clique duas vezes para selecionar tudo");
+      code.setAttribute('title', "Clique três vezes para selecionar tudo");
     }
   }
 
@@ -25,7 +28,7 @@
     codeTextContainer.classList.add('code-text');
 
     var codeText = document.createElement('textarea');
-    codeText.textContent = codeEl.textContent;
+    codeText.textContent = codeEl.textContent.trim();
     codeText.style.height = codeEl.offsetHeight + 'px';
 
     codeEl.classList.add('copying-code');

@@ -31,6 +31,7 @@ docpadConfig = {
       ]
 
       scripts: [
+        "/scripts/triple-click.js"
         "/scripts/main.js"
       ]
 
