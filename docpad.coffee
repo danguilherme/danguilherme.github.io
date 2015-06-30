@@ -27,7 +27,7 @@ docpadConfig = {
       styles: [
         "/styles/style.css"
         "/styles/highlight.js/zenburn.css"
-        "http://fonts.googleapis.com/css?family=Source+Code+Pro:400|Marvel:400,700|Raleway:200,400,700"
+        "http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Marvel:400,700|Raleway:200,400,700"
       ]
 
       scripts: [

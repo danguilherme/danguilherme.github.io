@@ -113,8 +113,14 @@ code
   font-family "Source Code Pro", monospace
   line-height 1.5
 
-  max-height 500px
+  max-height 20em
   overflow-y auto
+
+code
+  padding 0 3px
+  background-color #f9f9f9
+  border 1px solid #eaeaea
+  border-radius 3px
   &.hljs
     white-space pre-wrap
 
@@ -321,8 +327,9 @@ main
       max-width max-width
       margin 0 auto
       white-space pre-wrap
+      border none
       &.copying-code
-        display: none;
+        display none
 
     .xml .javascript
       opacity 1
