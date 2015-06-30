@@ -3,7 +3,6 @@ layout: "base"
 ---
 
 <header>
-  <!-- <time datetime="<%= @document.date.toISOString() %>"><%= @formatDate(@document.date, "MMM") %></time> -->
   <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'LLL') %>">
     <span class="year"><%= @formatDate(@document.date, "YYYY") %></span>
     <span class="month"><%= @formatDate(@document.date, "MMM") %></span>
@@ -18,7 +17,7 @@ layout: "base"
   <span id="post-tags"><%= @document.tags.join(", ") %></span>
   •
   <span id="post-comments-count">
-    <a href="#disqus_thread" data-disqus-identifier="{{@document.url}}">0 Comentários</a>
+    <a href="#disqus_thread" data-disqus-identifier="<%= @document.url %>">0 Comentários</a>
   </span>
 </header>
 
