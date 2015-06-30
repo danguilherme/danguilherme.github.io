@@ -1,9 +1,8 @@
 ---
 title:    Afinal, o que é o Polymer?
 tagline:  Respondendo de uma vez por todas o que realmente é a biblioteca da Google (e principalmente: o que ela não é)
-tags:     web-components polymer Google custom-elements
-
-isDraft:    true
+tags:     web-components polymer google custom-elements
+date:		2015-06-30T18:04:00
 ---
 
 É muito comum nos depararmos com essa pergunta, seja em fóruns, grupos do Facebook e até eventos da área. Infelizmente, também é muito comum obtermos respostas vagas ou até mesmo equivocadas sobre ela. E quando essas respostas vão se espalhando como em um telefone sem fio o desentendimento fica ainda maior.
@@ -17,7 +16,7 @@ Polymer é uma biblioteca que **facilita** a criação de Web Components, que s
 
 O problema é que a especificação dessa tecnologia, que agrega Custom Elements, HTML Templates, Shadow DOM e HTML Imports, além de ser recente, ainda está em rascunho, não foi finalizada. Os browsers mais recentes (lê-se Google Chrome e Mozilla Firefox) suportam essa tecnologia experimentalmente sob uma flag, mas nossos usuários não terão (e nem devem ter) essas flags ativadas. E é aí que entra o verdadeiro polyfill: [`webcomponents.js`](https://github.com/WebComponents/webcomponentsjs).
 
-Esse é o cara responsável por trazer as funcionalidades descritas nas especificações para os browsers atuais. **`webcomponents.js` é o polyfill.** Se você quiser criar os componentes "na unha", vai precisar dele pra usar as tecnologias enquanto elas não estiverem 100% disponíveis. O Polymer também precisa que ele esteja carregado para funcionar nos browsers atualmente (na verdade é uma versão menor dele, `webcomponents-lite.js`).
+Esse é o cara responsável por trazer as funcionalidades descritas nas especificações para os browsers atuais. **`webcomponents.js` é o polyfill.** Se você quiser criar componentes "na unha", vai precisar dele pra usar as tecnologias enquanto elas não estiverem 100% disponíveis. O Polymer também precisa que ele esteja carregado para funcionar nos browsers atualmente (na verdade é uma versão menor dele, `webcomponents-lite.js`).
 
 O Polymer tem foco em deixar a criação desses componentes customizados mais declarativa, *a la* HTML (afinal, é assim que fazemos com todos os outros elementos, né?), priorizando a expressividade com o [açúcar sintático](https://pt.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico) que ele provê.
 
@@ -136,7 +135,7 @@ Frameworks geralmente se encaixam no design pattern de [Inversão de Controle](h
 Para saber mais, Martin Fowler tem [um ótimo artigo](http://martinfowler.com/bliki/InversionOfControl.html) sobre isso.
 
 ## E por que Polymer é uma Biblioteca?
-Porque ele tem uma única e exclusiva função: facilitar a criação de Web Components. Só. Ele não vai se intrometer onde não é chamado e, quando você o chamar, ele vai fazer o que você pediu e nada mais.
+Porque ele tem uma única e exclusiva função: facilitar a criação de Web Components. Só. Ele não vai se intrometer onde não é chamado e, quando você o chamar, vai fazer o que você pediu e nada mais.
 
 # 3. Ele não é um Framework CSS / Showcase do Material Design
 Apesar do site do projeto ser construído sobre a especificação do [Material Design](https://www.google.com/design/spec/material-design), também da Google, o Polymer não é "o futuro Bootstrap" (sim, eu já ouvi falarem isso). Polymer e Bootstrap não são nem comparáveis, mas a esse ponto você já deve saber o porquê: o primeiro é um framework CSS e o segundo, uma biblioteca JavaScript.
@@ -145,8 +144,6 @@ O que existem, na verdade, são **elementos baseados no Material Design**. Eleme
 
 O website do projeto tem um [catálogo](https://elements.polymer-project.org/) bem bacana com todos os elementos já disponíveis, e uma das categorias é justamente a dos Paper Elements. Outra fonte de elementos é o [customelements.io](https://customelements.io/), com elementos desenvolvidos por toda a comunidade. Com tudo isso, da próxima vez que você tiver que resolver um problema a primeira coisa que você vai pensar é *"tem um elemento pra isso"*!
 
-# Referências:
+---
 
-- https://www.facebook.com/groups/desenvolvimentoweb/permalink/899772396747867/?comment_id=900186873373086&offset=0&total_comments=37&comment_tracking=%7B%22tn%22%3A%22R9%22%7D
-- http://pt.stackoverflow.com/questions/23619/o-que-%C3%A9-o-google-polymer/23658#23658
-- Não é "Material design": https://youtu.be/0LT6W5QVCJI?t=15m21s
+Bom, espero que isso tenha esclarecido um pouco as coisas. Vale muito a pena aprender como funciona e como utilizar os Web Components, com ou sem Polymer, eles realmente são o futuro da web.
