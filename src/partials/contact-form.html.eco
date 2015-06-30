@@ -1,0 +1,11 @@
+<form id="contact-form" action="//formspree.io/guilhermeventura2@gmail.com" method="POST">
+  <input type="hidden" name="_next" value="/index.html" />
+  <input type="hidden" name="_subject" value="Mensagem de contato do blog" />
+
+  <input type="text" name="name" placeholder="Seu nome">
+  <input type="email" name="_replyto" placeholder="Seu email (opcional)">
+
+  <textarea name="text" rows="10" placeholder="Em que posso ser útil?"></textarea>
+
+  <input type="submit" value="Enviar">
+</form>

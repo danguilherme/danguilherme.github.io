@@ -1,0 +1,17 @@
+---
+title:      "Olá"
+menuTitle:  "Home"
+layout:     "page"
+menuOrder:  0
+---
+
+<p>
+  Bem vindo à minha casa na internet! A preguiça não me deixou escrever muito aqui,
+  mas você pode checar o <a href="/blog">blog</a> e ver se tem algo interessante.
+</p>
+
+<% posts = @getCollection("posts") %>
+<% if posts.length: %>
+  <h2>Posts Recentes</h2>
+  <%= @partial('posts-list', {posts: posts.toJSON() }) %>
+<% end %>

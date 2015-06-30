@@ -1,0 +1,394 @@
+max-width = 800px
+theme-color = #2196F3
+
+/*
+* MIXINS
+*/
+center-vertical()
+  position relative
+  top 50%
+  -webkit-transform translateY(-50%)
+  -ms-transform translateY(-50%)
+  -o-transform translateY(-50%)
+  transform translateY(-50%)
+
+transition()
+  -webkit-transition arguments
+  -ms-transition arguments
+  -o-transition arguments
+  transition arguments
+
+/*
+* BASE
+*/
+* {
+  box-sizing border-box
+}
+
+html
+  font-family Raleway, sans-serif
+  font-size 16px
+  line-height 1.5
+
+body
+  margin 0
+  padding 0
+
+input,
+textarea,
+keygen,
+select,
+button
+  font-size 1em
+  font-size 1rem
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-family Marvel, sans-serif
+  margin-top 1em
+  margin-bottom 0
+
+h1
+  font-size 2.5rem
+
+h2
+  font-size 2rem
+
+h3
+  font-size 1.7rem
+
+h4
+  font-size 1.5rem
+
+h5
+  font-size 1.3rem
+
+h6
+  font-size 1.1rem
+
+a
+  color theme-color
+  text-decoration none
+  transition color .2s
+
+  &:visited
+    color #64B5F6
+
+  &:hover
+    color #0D47A1
+
+blockquote
+  border-left #BBDEFB 5px solid
+  margin-left 0
+  margin-right 0
+  color #333
+  padding .5rem .5rem .5rem 2em
+  background-color rgba(227, 242, 253, .3)
+  border-top-right-radius 3px
+  border-bottom-right-radius 3px
+  font-style italic
+
+blockquote cite
+  display block
+  cursor default
+
+blockquote cite::before
+  display inline
+  content '— '
+
+abbr
+  cursor help
+  border-bottom dotted 1px #ddd
+  transition border-color .2s
+
+abbr:hover
+  border-bottom-color #777
+
+.highlight textarea,
+code
+  font-family "Source Code Pro", monospace
+  line-height 1.5
+
+  max-height 20em
+  overflow-y auto
+
+code
+  padding 0 3px
+  background-color #f9f9f9
+  border 1px solid #eaeaea
+  border-radius 3px
+  &.hljs
+    white-space pre-wrap
+
+table
+  margin 0
+  margin-bottom 1rem
+  width 100%
+  max-width 100%
+  border 1px solid rgba(187, 222, 251, .2)
+  border-collapse collapse
+
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th
+  background-color rgba(227, 242, 253, .2)
+
+td,
+th
+  padding .5rem .5rem
+  border 1px solid rgba(187, 222, 251, .2)
+
+th
+  cursor default
+  text-align center
+
+img
+  display block
+  margin 0 0 1rem
+  max-width 100%
+  border-radius 3px
+
+dl dt
+  font-weight bold
+
+#header-content,
+#footer-content
+  max-width max-width
+  padding 0 1em
+  margin 0 auto
+
+/*
+* HEADER
+*/
+#main-header
+  background #2196F3
+  color white
+  min-height 60px
+
+  h1
+    display inline-block
+    margin 0
+    padding-right 20px
+    border-radius 50px
+    border-right 5px solid #1E90EC
+  a
+    color inherit
+    text-decoration none
+
+  nav
+    display inline-block
+    height 60px
+    vertical-align top
+
+    ul
+      display inline-block
+      padding 0
+      margin 0
+      center-vertical()
+      cursor default
+    li
+      display inline-block
+      padding 0
+      margin-right 10px
+
+  #external-links
+    float right
+
+    li
+      opacity 0.5
+      transition opacity .2s linear
+      &:hover
+        opacity 1
+
+#main-header::after
+  content ''
+  display block
+  clear both
+
+/*
+* BODY
+*/
+main
+  header,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl,
+  table,
+  div
+    max-width max-width
+    margin-left 5px
+    margin-right 5px
+    @media screen and (min-width: max-width)
+      margin-left auto
+      margin-right auto
+
+  header
+    margin-bottom 3rem
+
+    position relative
+
+    cursor default
+    text-align center
+
+    .post-title,
+    .post-tagline,
+    .post-tags
+      margin 0
+      margin-right auto
+      margin-left auto
+      width 80%
+
+    .post-title
+      font-size 3em
+      font-size 3rem
+
+    .post-tagline
+      font-size 1.7rem
+      /* color #2196F3; */
+      text-transform uppercase
+      margin-bottom 1rem
+      line-height 1
+
+      color #90CAF9
+      font-weight 200
+
+    time
+      position relative
+      top 1rem
+
+      display inline-block
+      margin-right 10px
+      width 50px
+
+      float left
+
+      border 1px solid #606060
+      cursor default
+
+      @media screen and (min-width: max-width)
+        margin-left -60px
+
+      span
+        display block
+        padding 0 5px
+        text-align center
+
+      .year
+        display none
+      .month
+        background theme-color
+      .day
+        box-shadow inset #606060 0 0 3px
+        text-align center
+
+  @media screen and (min-width: max-width)
+    ul,
+    ol
+      padding-left 0
+
+      ul,
+      ol
+        padding-left 1.5em
+
+  pre.highlight
+    max-width 100%
+    background #3F3F3F
+
+    textarea
+      width 100%
+      display block
+      padding: 0.5em;
+
+      white-space pre-wrap                 /* CSS3 browsers  */
+      white-space -moz-pre-wrap !important /* 1999+ Mozilla  */
+      white-space -pre-wrap                /* Opera 4 thru 6 */
+      white-space -o-pre-wrap              /* Opera 7 and up */
+
+      word-wrap break-word                 /* IE 5.5+ and up */
+
+      color #fff
+      border none
+      background-color transparent
+      outline none
+      border-radius 0
+      resize none
+
+    code.hljs
+      max-width max-width
+      margin 0 auto
+      white-space pre-wrap
+      border none
+      &.copying-code
+        display none
+
+    .xml .javascript
+      opacity 1
+
+  #posts-list
+    padding 0
+    cursor default
+    li
+      display inline-block
+      margin-bottom 1em
+      width 45%
+      vertical-align top
+      &:nth-child(even)
+        margin-left 2.5%
+      &:nth-child(odd)
+        margin-right 2.5%
+      &:nth-child(1),
+      &:nth-child(2)
+        font-size 1.2em
+
+      time,
+      a,
+      span
+        display block
+
+      time
+        font-size .8em
+        color #aaa
+      a
+        font-weight bold
+      span
+        font-style italic
+
+#main-footer
+  padding 0 1rem
+  margin-top 3rem
+
+  font-size .8rem
+  line-height 2
+  text-align center
+
+  border-top 1px solid alpha(theme-color, .1)
+
+  .love
+    color #D70021
+/*
+* STYLE FOR PAGES
+*/
+// #page
+//   #home
+
+/*
+* STYLE FOR BLOG POSTS
+*/
+#post
+  .gist .gist-data
+    padding 10px
+
+  .twitter-share-notice
+    margin-top 2rem
+    margin-bottom 2rem
+    font-style italic
