@@ -19,7 +19,7 @@ O problema é que a especificação dos Web Components, que agrega Custom Elemen
 
 Esse é o cara responsável por trazer as funcionalidades descritas nas especificações para os browsers atuais. **`webcomponents.js` é o polyfill.** Se você quiser criar os componentes "na unha", vai precisar dele pra usar as tecnologias enquanto elas não estiverem 100% disponíveis. O Polymer também precisa que ele esteja carregado para funcionar nos browsers atualmente (na verdade é uma versão menor dele, `webcomponents-lite.js`).
 
-O Polymer tem foco em deixar a criação desses componentes customizados mais declarativa, *a la* HTML (afinal, é assim que fazemos com todos os outros elementos, né?), priorizando a expressividade com o [açúcar sintático](https://pt.m.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico) que ele provê.
+O Polymer tem foco em deixar a criação desses componentes customizados mais declarativa, *a la* HTML (afinal, é assim que fazemos com todos os outros elementos, né?), priorizando a expressividade com o [açúcar sintático](https://pt.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico) que ele provê.
 
 ## Sem <del>Jequiti</del> Polymer
 ``` html
@@ -141,7 +141,7 @@ Porque ele tem uma única e exclusiva função: facilitar a criação de Web Com
 # 3. Ele não é um Framework CSS / Showcase do Material Design
 Apesar do site do projeto ser construído sobre a especificação do [Material Design](https://www.google.com/design/spec/material-design), também da Google, o Polymer não é "o futuro Bootstrap" (sim, eu já ouvi falarem isso). Polymer e Bootstrap não são nem comparáveis, mas a esse ponto você já deve saber o por que: o primeiro é um framework CSS e o segundo, uma biblioteca JavaScript.
 
-O que existem, na verdade, são **elementos baseados no Material Design**. Elementos customizados, criados com Polymer, como qualquer outro pode ser. Esses são chamados de [`paper-elements`](https://www.polymer-project.org/0.5/docs/elements/paper-button.html), que são nada mais nada menos que extensões dos elementos base ([`core-elements`](https://www.polymer-project.org/0.5/components/paper-elements/demo.html#paper-checkbox)) com estilos e animações diferenciados.
+O que existem, na verdade, são **elementos baseados no Material Design**. Elementos customizados, criados com Polymer, como qualquer outro pode ser. Esses são chamados de [`paper-elements`](https://www.polymer-project.org/0.5/components/paper-elements/demo.html), que são nada mais nada menos que extensões dos elementos base ([`core-elements`](https://www.polymer-project.org/0.5/components/core-elements/demo.html)) com estilos e animações diferenciados.
 
 O website do projeto tem um [catálogo](https://elements.polymer-project.org/) bem bacana com todos os elementos já disponíveis, e uma das categorias é justamente a dos Paper Elements. Outra fonte de elementos é o [customelements.io](https://customelements.io/). Com tudo isso, da próxima vez que você tiver que resolver um problema a primeira coisa que você vai pensar é *"tem um elemento pra isso"*!
 
