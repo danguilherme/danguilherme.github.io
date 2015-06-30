@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2196F3">
+
+<meta name="description" content="Respondendo de uma vez por todas o que realmente é a biblioteca da Google (e principalmente: o que ela não é)">
+
+<!-- SEO -->
+
+
+  <meta name="author" content="Guilherme Ventura">
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Guilherme Ventura">
+<meta property="og:title" content="Afinal, o que é o Polymer? | Guilherme Ventura" />
+<meta property="og:url" content="http://danguilherme.github.io/blog/o-que-realmente-e-o-google-polymer" />
+<meta property="og:locale" content="pt_BR">
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2015-06-30T04:22:44.022Z">
+  <meta property="article:modified_time" content="2015-06-30T04:22:44.022Z">
+  <meta property="article:section" content="web-components">
+  <meta property="article:tag" content="web-components, polymer, Google, custom-elements, blog, front-end, programação, javascript, css, html, csharp, C#, artigos">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Afinal, o que é o Polymer? | Guilherme Ventura">
+<meta name="twitter:description" content="Respondendo de uma vez por todas o que realmente é a biblioteca da Google (e principalmente: o que ela não é)">
+<meta name="twitter:site" content="@danguilherme">
+<meta name="twitter:creator" content="@danguilherme">
+<meta name="twitter:url" content="http://danguilherme.github.io/blog/o-que-realmente-e-o-google-polymer">
+<meta name="generator" content="DocPad v6.78.1" />
+
+<link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/styles/highlight.js/zenburn.css" /><link  rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Marvel:400,700|Raleway:200,400,700" />
+<link rel="stylesheet" media="print" href="/styles/print.css" />
+
+<link rel="alternate" type="application/rss+xml" title="Guilherme Ventura - RSS" href="/rss.xml" />
+
+  <title>Afinal, o que é o Polymer? | Guilherme Ventura</title>
+</head>
+<body id="post">
+  <header id="main-header">
+    <div id="header-content">
+      <h1><a href="/">Guilherme Ventura</a></h1>
+
+      <nav id="menu">
+        <!-- Define `renderMenu` partial -->
+
+<!-- Run `renderMenu` partial aginst passed `menuItems` meta-data  -->
+
+<ul>
+    
+        <!-- Highlight menu item if its `item.state` is not false -->
+        <li class="selected">
+            <!-- Remove link if we’re currently viewing this document -->
+            
+                <a href="/">Home</a>
+            
+            <!-- Render submenu if item has children -->
+            
+        </li>
+    
+        <!-- Highlight menu item if its `item.state` is not false -->
+        <li class="selected">
+            <!-- Remove link if we’re currently viewing this document -->
+            
+                <a href="/blog">Blog</a>
+            
+            <!-- Render submenu if item has children -->
+            
+        </li>
+    
+        <!-- Highlight menu item if its `item.state` is not false -->
+        <li>
+            <!-- Remove link if we’re currently viewing this document -->
+            
+                <a href="/sobre">Sobre</a>
+            
+            <!-- Render submenu if item has children -->
+            
+        </li>
+    
+</ul>
+
+      </nav>
+
+      <nav id="external-links">
+        <ul>
+          <li><a href="https://github.com/danguilherme">GitHub</a></li>
+          <li><a href="https://twitter.com/danguilherme">Twitter</a></li>
+          <li><a href="/rss.xml">Feed</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="afinal-o-que-o-polymer">
+    <header>
+  <!-- <time datetime="2015-06-30T04:22:44.022Z">Jun</time> -->
+  <time datetime="2015-06-30T04:22:44.022Z" title="30 de Junho de 2015 às 01:22">
+    <span class="year">2015</span>
+    <span class="month">Jun</span>
+    <span class="day">30</span>
+  </time>
+
+  <h1 class="post-title">Afinal, o que é o Polymer?</h1>
+  
+    <p class="post-tagline">Respondendo de uma vez por todas o que realmente é a biblioteca da Google (e principalmente: o que ela não é)</p>
+  
+
+  <span id="post-tags">web-components, polymer, Google, custom-elements</span>
+
+  <span id="post-comments-count">
+    <a href="#disqus_thread" data-disqus-identifier="{{@document.url}}">0 Comentários</a>
+  </span>
+</header>
+
+<article>
+  <p>É muito comum nos depararmos com essa pergunta, sejam em fóruns, grupos do Facebook e até eventos da área. Infelizmente, também é muito comum obtermos respostas vagas ou até mesmo equivocadas sobre ela. E quando essas respostas vão se espalhando como em um telefone sem fio o desentendimento fica ainda maior.</p>
+<p>Esse artigo vai te dar a resposta exata do que o <a href="https://www.polymer-project.org/">Polymer</a> é e, principalmente, <strong>o que ele não é</strong>.</p>
+<h1 id="1-ele-n-o-um-polyfill-para-a-tecnologia-dos-web-components">1. Ele não é um Polyfill Para a Tecnologia dos Web Components</h1>
+<p><em>Web Components: O futuro da web</em>. Você já deve ter visto isso em muitos lugares, e com certeza o Polymer ou foi citado ou foi o assunto principal, e por isso muitas pessoas confundem.</p>
+<p>Polymer é uma biblioteca que <strong>facilita</strong> a criação de Web Components, que são elementos HTML customizados, independentes e reutilizáveis.</p>
+<p>O problema é que a especificação dos Web Components, que agrega Custom Elements, HTML Templates, Shadow DOM e HTML Imports, além de ser recente, ainda está em rascunho, não foi finalizada. Os browsers mais recentes (lê-se Google Chrome e Mozilla Firefox) suportam essa tecnologia experimentalmente sob uma flag, mas nossos usuários não terão (e nem devem ter) essas flags ativadas. E é aí que entra o verdadeiro polyfill, <a href="https://github.com/WebComponents/webcomponentsjs"><code>webcomponents.js</code></a>.</p>
+<p>Esse é o cara responsável por trazer as funcionalidades descritas nas especificações para os browsers atuais. <strong><code>webcomponents.js</code> é o polyfill.</strong> Se você quiser criar os componentes &quot;na unha&quot;, vai precisar dele pra usar as tecnologias enquanto elas não estiverem 100% disponíveis. O Polymer também precisa que ele esteja carregado para funcionar nos browsers atualmente (na verdade é uma versão menor dele, <code>webcomponents-lite.js</code>).</p>
+<p>O Polymer tem foco em deixar a criação desses componentes customizados mais declarativa, <em>a la</em> HTML (afinal, é assim que fazemos com todos os outros elementos, né?), priorizando a expressividade com o <a href="https://pt.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico">açúcar sintático</a> que ele provê.</p>
+<h2 id="sem-del-jequiti-del-polymer">Sem <del>Jequiti</del> Polymer</h2>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-comment">&lt;!-- Defines element markup --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> :)<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(window, document, undefined)</span> </span>{
+    <span class="hljs-comment">// Refers to the "importer", which is index.html</span>
+    <span class="hljs-keyword">var</span> thatDoc = <span class="hljs-built_in">document</span>;
+
+    <span class="hljs-comment">// Refers to the "importee", which is src/hello-world.html</span>
+    <span class="hljs-keyword">var</span> thisDoc =  (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
+
+    <span class="hljs-comment">// Gets content from &lt;template&gt;</span>
+    <span class="hljs-keyword">var</span> template = thisDoc.querySelector(<span class="hljs-string">'template'</span>).content;
+
+    <span class="hljs-comment">// Creates an object based in the HTML Element prototype</span>
+    <span class="hljs-keyword">var</span> MyElementProto = <span class="hljs-built_in">Object</span>.create(HTMLElement.prototype);
+
+    <span class="hljs-comment">// Creates the "who" attribute and sets a default value</span>
+    MyElementProto.who = <span class="hljs-string">'World'</span>;
+
+    <span class="hljs-comment">// Fires when an instance of the element is created</span>
+    MyElementProto.createdCallback = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// Creates the shadow root</span>
+        <span class="hljs-keyword">var</span> shadowRoot = <span class="hljs-keyword">this</span>.createShadowRoot();
+
+        <span class="hljs-comment">// Adds a template clone into shadow root</span>
+        <span class="hljs-keyword">var</span> clone = thatDoc.importNode(template, <span class="hljs-literal">true</span>);
+        shadowRoot.appendChild(clone);
+
+        <span class="hljs-comment">// Caches &lt;strong&gt; DOM query</span>
+        <span class="hljs-keyword">this</span>.strong = shadowRoot.querySelector(<span class="hljs-string">'strong'</span>);
+
+        <span class="hljs-comment">// Checks if the "who" attribute has been overwritten</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasAttribute(<span class="hljs-string">'who'</span>)) {
+            <span class="hljs-keyword">var</span> who = <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'who'</span>);
+            <span class="hljs-keyword">this</span>.setWho(who);
+        }
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.setWho(<span class="hljs-keyword">this</span>.who);
+        }
+    };
+
+    <span class="hljs-comment">// Fires when an attribute was added, removed, or updated</span>
+    MyElementProto.attributeChangedCallback = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(attr, oldVal, newVal)</span> </span>{
+        <span class="hljs-keyword">if</span> (attr === <span class="hljs-string">'who'</span>) {
+            <span class="hljs-keyword">this</span>.setWho(newVal);
+        }
+    };
+
+    <span class="hljs-comment">// Sets new value to "who" attribute</span>
+    MyElementProto.setWho = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(val)</span> </span>{
+        <span class="hljs-keyword">this</span>.who = val;
+
+        <span class="hljs-comment">// Sets "who" value into &lt;strong&gt;</span>
+        <span class="hljs-keyword">this</span>.strong.textContent = <span class="hljs-keyword">this</span>.who;
+    };
+
+    <span class="hljs-comment">// Registers &lt;hello-world&gt; in the main document</span>
+    <span class="hljs-built_in">window</span>.MyElement = thatDoc.registerElement(<span class="hljs-string">'hello-world'</span>, {
+        prototype: MyElementProto
+    });
+})(<span class="hljs-built_in">window</span>, <span class="hljs-built_in">document</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p><a href="https://github.com/webcomponents/hello-world-element/blob/master/hello-world.html">Elemento simples criado com Vanilla JS.</a></p>
+<h2 id="com-polymer">Com Polymer</h2>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-comment">&lt;!-- Imports polymer --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"import"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"../polymer/polymer.html"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Defines element markup --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">dom-module</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"hello-world"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>{{who}}<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> :)<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dom-module</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Registers custom element --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+Polymer({
+    is: <span class="hljs-string">'hello-world'</span>,
+    properties: {
+        who: {
+            type: <span class="hljs-built_in">String</span>,
+            value: <span class="hljs-string">'World'</span>
+        }
+    }
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p><a href="https://github.com/webcomponents/hello-world-polymer/blob/master/hello-world.html">Mesmo elemento criado com Polymer.</a></p>
+<p>De 65 para 22 linhas. Sem contar o two-way data-binding e a facilidade de leitura do código.</p>
+<p>Existem outras bibliotecas que também têm como objetivo facilitar a criação de componentes, como <a href="http://x-tags.org/">X-Tags</a>, da Mozilla, e <a href="http://bosonic.github.io/">Bosonic</a>.</p>
+<h1 id="2-ele-uma-biblioteca-n-o-um-framework">2. Ele é uma Biblioteca, não um Framework</h1>
+<p>A discussão &quot;<a href="http://stackoverflow.com/q/148747/1574059">Biblioteca vs Framework</a>&quot;  é velha e confusa, por isso antes vou defini-las sob meu ponto de vista.</p>
+<h2 id="diferen-a-entre-biblioteca-e-framework">Diferença Entre Biblioteca e Framework</h2>
+<p>TL;DR:  </p>
+<ul>
+<li><strong>Biblioteca</strong>: você chama</li>
+<li><strong>Framework</strong>: você é chamado</li>
+</ul>
+<p>Falando no contexto de código, bibliotecas contém funções (métodos, objetos, etc) para soluções de problemas específicos, e que podem ser chamadas quando e como precisarmos. Alguns exemplos são bibliotecas para manipulação de imagens, criação de PDFs ou para fazer requisições HTTP. Já os frameworks são um conjunto de bibliotecas baseadas em um conceito, um design, e seu código deve se adequar a ele (não o contrário). Podemos citar como exemplos <a href="https://angularjs.org/">Angular.js</a> e <a href="http://www.sencha.com/products/extjs/">Ext JS</a>.</p>
+<p>Frameworks geralmente se encaixam no design pattern de <a href="https://pt.wikipedia.org/wiki/Invers%C3%A3o_de_controle">Inversão de Controle</a>.
+Para saber mais, Martin Fowler tem <a href="http://martinfowler.com/bliki/InversionOfControl.html">um ótimo artigo</a> sobre isso.</p>
+<h2 id="e-por-que-polymer-uma-biblioteca-">E Por Que Polymer É Uma Biblioteca?</h2>
+<p>Porque ele tem uma única e exclusiva função: facilitar a criação de Web Components. Apenas isso. Ele não vai se intrometer onde não é chamado e, quando você o chamar, ele vai fazer o que você pediu e nada mais.</p>
+<h1 id="3-ele-n-o-um-framework-css-showcase-do-material-design">3. Ele não é um Framework CSS / Showcase do Material Design</h1>
+<p>Apesar do site do projeto ser construído sobre a especificação do <a href="https://www.google.com/design/spec/material-design">Material Design</a>, também da Google, o Polymer não é &quot;o futuro Bootstrap&quot; (sim, eu já ouvi falarem isso). Polymer e Bootstrap não são nem comparáveis, mas a esse ponto você já deve saber o por que: o primeiro é um framework CSS e o segundo, uma biblioteca JavaScript.</p>
+<p>O que existem, na verdade, são <strong>elementos baseados no Material Design</strong>. Elementos customizados, criados com Polymer, como qualquer outro pode ser. Esses são chamados de <a href="https://www.polymer-project.org/0.5/components/paper-elements/demo.html"><code>paper-elements</code></a>, que são nada mais nada menos que extensões dos elementos base (<a href="https://www.polymer-project.org/0.5/components/core-elements/demo.html"><code>core-elements</code></a>) com estilos e animações diferenciados.</p>
+<p>O website do projeto tem um <a href="https://elements.polymer-project.org/">catálogo</a> bem bacana com todos os elementos já disponíveis, e uma das categorias é justamente a dos Paper Elements. Outra fonte de elementos é o <a href="https://customelements.io/">customelements.io</a>. Com tudo isso, da próxima vez que você tiver que resolver um problema a primeira coisa que você vai pensar é <em>&quot;tem um elemento pra isso&quot;</em>!</p>
+<h1 id="refer-ncias-">Referências:</h1>
+<ul>
+<li><a href="https://www.facebook.com/groups/desenvolvimentoweb/permalink/899772396747867/?comment_id=900186873373086&amp;offset=0&amp;total_comments=37&amp;comment_tracking=%7B%22tn%22%3A%22R9%22%7D">https://www.facebook.com/groups/desenvolvimentoweb/permalink/899772396747867/?comment_id=900186873373086&amp;offset=0&amp;total_comments=37&amp;comment_tracking=%7B%22tn%22%3A%22R9%22%7D</a></li>
+<li><a href="http://pt.stackoverflow.com/questions/23619/o-que-%C3%A9-o-google-polymer/23658#23658">http://pt.stackoverflow.com/questions/23619/o-que-%C3%A9-o-google-polymer/23658#23658</a></li>
+<li>Não é &quot;Material design&quot;: <a href="https://youtu.be/0LT6W5QVCJI?t=15m21s">https://youtu.be/0LT6W5QVCJI?t=15m21s</a></li>
+</ul>
+
+
+  <section class="post-interactions">
+    <p class="twitter-share-notice">
+      
+      Se você tiver qualquer dúvida ou comentário, por favor escreva-os abaixo.
+      Curtiu o post? Você pode
+      <a href="https://twitter.com/intent/tweet?url=http://danguilherme.github.io/blog/o-que-realmente-e-o-google-polymer&text=Afinal, o que é o Polymer?&via=danguilherme"
+        title="Twittar sobre 'Afinal, o que é o Polymer?'"
+        target="_blank">compartilhá-lo com seus seguidores</a> ou
+      <a href="https://twitter.com/intent/follow?screen_name=danguilherme" title="@danguilherme">me seguir no Twitter</a>!
+    </p>
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'danguilherme'; // required: replace example with your forum shortname
+  var disqus_identifier = '/blog/o-que-realmente-e-o-google-polymer';
+  var disqus_title = 'Afinal, o que é o Polymer?';
+  var disqus_url = 'http://danguilherme.github.io/blog/o-que-realmente-e-o-google-polymer';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+
+  // Comments count
+  (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+  }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
+
+
+  </main>
+
+  <footer id="main-footer">
+    <div id="footer-content">
+      Feito com <span class="love">♥</span> por <a href="https://twitter.com/danguilherme" target="_BLANK">@danguilherme</a> usando <a href="https://docpad.org" target="_BLANK">DocPad</a>, <a href="https://nodejs.org/" target="_BLANK">Node.js</a>, <a href="https://learnboost.github.io/stylus/" target="_BLANK">Stylus</a> e JavaScript. Descubra mais no <a href="https://github.com/danguilherme/danguilherme.github.io" target="_BLANK">repositório do GitHub</a>.
+    </div>
+  </footer>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59821168-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  <script defer="defer"  src="/scripts/triple-click.js"></script><script defer="defer"  src="/scripts/main.js"></script>
+</body>
+</html>

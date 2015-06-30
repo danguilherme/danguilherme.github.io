@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Guilherme Ventura]]></title>
+        <description><![CDATA[Blog do Guilherme]]></description>
+        <link>http://danguilherme.github.io</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Tue, 30 Jun 2015 04:23:01 GMT</lastBuildDate>
+        <atom:link href="http://danguilherme.github.io/rss.xml" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[[object Object]]]></author>
+        <pubDate>Tue, 30 Jun 2015 04:22:49 GMT</pubDate>
+        <item>
+            <title><![CDATA[Afinal, o que é o Polymer?]]></title>
+            <description><![CDATA[<p>É muito comum nos depararmos com essa pergunta, sejam em fóruns, grupos do Facebook e até eventos da área. Infelizmente, também é muito comum obtermos respostas vagas ou até mesmo equivocadas sobre ela. E quando essas respostas vão se espalhando como em um telefone sem fio o desentendimento fica ainda maior.</p>
+<p>Esse artigo vai te dar a resposta exata do que o <a href="https://www.polymer-project.org/">Polymer</a> é e, principalmente, <strong>o que ele não é</strong>.</p>
+<h1 id="1-ele-n-o-um-polyfill-para-a-tecnologia-dos-web-components">1. Ele não é um Polyfill Para a Tecnologia dos Web Components</h1>
+<p><em>Web Components: O futuro da web</em>. Você já deve ter visto isso em muitos lugares, e com certeza o Polymer ou foi citado ou foi o assunto principal, e por isso muitas pessoas confundem.</p>
+<p>Polymer é uma biblioteca que <strong>facilita</strong> a criação de Web Components, que são elementos HTML customizados, independentes e reutilizáveis.</p>
+<p>O problema é que a especificação dos Web Components, que agrega Custom Elements, HTML Templates, Shadow DOM e HTML Imports, além de ser recente, ainda está em rascunho, não foi finalizada. Os browsers mais recentes (lê-se Google Chrome e Mozilla Firefox) suportam essa tecnologia experimentalmente sob uma flag, mas nossos usuários não terão (e nem devem ter) essas flags ativadas. E é aí que entra o verdadeiro polyfill, <a href="https://github.com/WebComponents/webcomponentsjs"><code>webcomponents.js</code></a>.</p>
+<p>Esse é o cara responsável por trazer as funcionalidades descritas nas especificações para os browsers atuais. <strong><code>webcomponents.js</code> é o polyfill.</strong> Se você quiser criar os componentes &quot;na unha&quot;, vai precisar dele pra usar as tecnologias enquanto elas não estiverem 100% disponíveis. O Polymer também precisa que ele esteja carregado para funcionar nos browsers atualmente (na verdade é uma versão menor dele, <code>webcomponents-lite.js</code>).</p>
+<p>O Polymer tem foco em deixar a criação desses componentes customizados mais declarativa, <em>a la</em> HTML (afinal, é assim que fazemos com todos os outros elementos, né?), priorizando a expressividade com o <a href="https://pt.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico">açúcar sintático</a> que ele provê.</p>
+<h2 id="sem-del-jequiti-del-polymer">Sem <del>Jequiti</del> Polymer</h2>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-comment">&lt;!-- Defines element markup --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> :)<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(window, document, undefined)</span> </span>{
+    <span class="hljs-comment">// Refers to the "importer", which is index.html</span>
+    <span class="hljs-keyword">var</span> thatDoc = <span class="hljs-built_in">document</span>;
+
+    <span class="hljs-comment">// Refers to the "importee", which is src/hello-world.html</span>
+    <span class="hljs-keyword">var</span> thisDoc =  (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
+
+    <span class="hljs-comment">// Gets content from &lt;template&gt;</span>
+    <span class="hljs-keyword">var</span> template = thisDoc.querySelector(<span class="hljs-string">'template'</span>).content;
+
+    <span class="hljs-comment">// Creates an object based in the HTML Element prototype</span>
+    <span class="hljs-keyword">var</span> MyElementProto = <span class="hljs-built_in">Object</span>.create(HTMLElement.prototype);
+
+    <span class="hljs-comment">// Creates the "who" attribute and sets a default value</span>
+    MyElementProto.who = <span class="hljs-string">'World'</span>;
+
+    <span class="hljs-comment">// Fires when an instance of the element is created</span>
+    MyElementProto.createdCallback = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// Creates the shadow root</span>
+        <span class="hljs-keyword">var</span> shadowRoot = <span class="hljs-keyword">this</span>.createShadowRoot();
+
+        <span class="hljs-comment">// Adds a template clone into shadow root</span>
+        <span class="hljs-keyword">var</span> clone = thatDoc.importNode(template, <span class="hljs-literal">true</span>);
+        shadowRoot.appendChild(clone);
+
+        <span class="hljs-comment">// Caches &lt;strong&gt; DOM query</span>
+        <span class="hljs-keyword">this</span>.strong = shadowRoot.querySelector(<span class="hljs-string">'strong'</span>);
+
+        <span class="hljs-comment">// Checks if the "who" attribute has been overwritten</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.hasAttribute(<span class="hljs-string">'who'</span>)) {
+            <span class="hljs-keyword">var</span> who = <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'who'</span>);
+            <span class="hljs-keyword">this</span>.setWho(who);
+        }
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.setWho(<span class="hljs-keyword">this</span>.who);
+        }
+    };
+
+    <span class="hljs-comment">// Fires when an attribute was added, removed, or updated</span>
+    MyElementProto.attributeChangedCallback = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(attr, oldVal, newVal)</span> </span>{
+        <span class="hljs-keyword">if</span> (attr === <span class="hljs-string">'who'</span>) {
+            <span class="hljs-keyword">this</span>.setWho(newVal);
+        }
+    };
+
+    <span class="hljs-comment">// Sets new value to "who" attribute</span>
+    MyElementProto.setWho = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(val)</span> </span>{
+        <span class="hljs-keyword">this</span>.who = val;
+
+        <span class="hljs-comment">// Sets "who" value into &lt;strong&gt;</span>
+        <span class="hljs-keyword">this</span>.strong.textContent = <span class="hljs-keyword">this</span>.who;
+    };
+
+    <span class="hljs-comment">// Registers &lt;hello-world&gt; in the main document</span>
+    <span class="hljs-built_in">window</span>.MyElement = thatDoc.registerElement(<span class="hljs-string">'hello-world'</span>, {
+        prototype: MyElementProto
+    });
+})(<span class="hljs-built_in">window</span>, <span class="hljs-built_in">document</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p><a href="https://github.com/webcomponents/hello-world-element/blob/master/hello-world.html">Elemento simples criado com Vanilla JS.</a></p>
+<h2 id="com-polymer">Com Polymer</h2>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-comment">&lt;!-- Imports polymer --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"import"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"../polymer/polymer.html"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Defines element markup --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">dom-module</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"hello-world"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">template</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>{{who}}<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> :)<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dom-module</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Registers custom element --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+Polymer({
+    is: <span class="hljs-string">'hello-world'</span>,
+    properties: {
+        who: {
+            type: <span class="hljs-built_in">String</span>,
+            value: <span class="hljs-string">'World'</span>
+        }
+    }
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p><a href="https://github.com/webcomponents/hello-world-polymer/blob/master/hello-world.html">Mesmo elemento criado com Polymer.</a></p>
+<p>De 65 para 22 linhas. Sem contar o two-way data-binding e a facilidade de leitura do código.</p>
+<p>Existem outras bibliotecas que também têm como objetivo facilitar a criação de componentes, como <a href="http://x-tags.org/">X-Tags</a>, da Mozilla, e <a href="http://bosonic.github.io/">Bosonic</a>.</p>
+<h1 id="2-ele-uma-biblioteca-n-o-um-framework">2. Ele é uma Biblioteca, não um Framework</h1>
+<p>A discussão &quot;<a href="http://stackoverflow.com/q/148747/1574059">Biblioteca vs Framework</a>&quot;  é velha e confusa, por isso antes vou defini-las sob meu ponto de vista.</p>
+<h2 id="diferen-a-entre-biblioteca-e-framework">Diferença Entre Biblioteca e Framework</h2>
+<p>TL;DR:  </p>
+<ul>
+<li><strong>Biblioteca</strong>: você chama</li>
+<li><strong>Framework</strong>: você é chamado</li>
+</ul>
+<p>Falando no contexto de código, bibliotecas contém funções (métodos, objetos, etc) para soluções de problemas específicos, e que podem ser chamadas quando e como precisarmos. Alguns exemplos são bibliotecas para manipulação de imagens, criação de PDFs ou para fazer requisições HTTP. Já os frameworks são um conjunto de bibliotecas baseadas em um conceito, um design, e seu código deve se adequar a ele (não o contrário). Podemos citar como exemplos <a href="https://angularjs.org/">Angular.js</a> e <a href="http://www.sencha.com/products/extjs/">Ext JS</a>.</p>
+<p>Frameworks geralmente se encaixam no design pattern de <a href="https://pt.wikipedia.org/wiki/Invers%C3%A3o_de_controle">Inversão de Controle</a>.
+Para saber mais, Martin Fowler tem <a href="http://martinfowler.com/bliki/InversionOfControl.html">um ótimo artigo</a> sobre isso.</p>
+<h2 id="e-por-que-polymer-uma-biblioteca-">E Por Que Polymer É Uma Biblioteca?</h2>
+<p>Porque ele tem uma única e exclusiva função: facilitar a criação de Web Components. Apenas isso. Ele não vai se intrometer onde não é chamado e, quando você o chamar, ele vai fazer o que você pediu e nada mais.</p>
+<h1 id="3-ele-n-o-um-framework-css-showcase-do-material-design">3. Ele não é um Framework CSS / Showcase do Material Design</h1>
+<p>Apesar do site do projeto ser construído sobre a especificação do <a href="https://www.google.com/design/spec/material-design">Material Design</a>, também da Google, o Polymer não é &quot;o futuro Bootstrap&quot; (sim, eu já ouvi falarem isso). Polymer e Bootstrap não são nem comparáveis, mas a esse ponto você já deve saber o por que: o primeiro é um framework CSS e o segundo, uma biblioteca JavaScript.</p>
+<p>O que existem, na verdade, são <strong>elementos baseados no Material Design</strong>. Elementos customizados, criados com Polymer, como qualquer outro pode ser. Esses são chamados de <a href="https://www.polymer-project.org/0.5/components/paper-elements/demo.html"><code>paper-elements</code></a>, que são nada mais nada menos que extensões dos elementos base (<a href="https://www.polymer-project.org/0.5/components/core-elements/demo.html"><code>core-elements</code></a>) com estilos e animações diferenciados.</p>
+<p>O website do projeto tem um <a href="https://elements.polymer-project.org/">catálogo</a> bem bacana com todos os elementos já disponíveis, e uma das categorias é justamente a dos Paper Elements. Outra fonte de elementos é o <a href="https://customelements.io/">customelements.io</a>. Com tudo isso, da próxima vez que você tiver que resolver um problema a primeira coisa que você vai pensar é <em>&quot;tem um elemento pra isso&quot;</em>!</p>
+<h1 id="refer-ncias-">Referências:</h1>
+<ul>
+<li><a href="https://www.facebook.com/groups/desenvolvimentoweb/permalink/899772396747867/?comment_id=900186873373086&amp;offset=0&amp;total_comments=37&amp;comment_tracking=%7B%22tn%22%3A%22R9%22%7D">https://www.facebook.com/groups/desenvolvimentoweb/permalink/899772396747867/?comment_id=900186873373086&amp;offset=0&amp;total_comments=37&amp;comment_tracking=%7B%22tn%22%3A%22R9%22%7D</a></li>
+<li><a href="http://pt.stackoverflow.com/questions/23619/o-que-%C3%A9-o-google-polymer/23658#23658">http://pt.stackoverflow.com/questions/23619/o-que-%C3%A9-o-google-polymer/23658#23658</a></li>
+<li>Não é &quot;Material design&quot;: <a href="https://youtu.be/0LT6W5QVCJI?t=15m21s">https://youtu.be/0LT6W5QVCJI?t=15m21s</a></li>
+</ul>
+]]></description>
+            <link>http://danguilherme.github.io/blog/o-que-realmente-e-o-google-polymer</link>
+            <guid isPermaLink="true">http://danguilherme.github.io/blog/o-que-realmente-e-o-google-polymer</guid>
+            <dc:creator><![CDATA[[object Object]]]></dc:creator>
+            <pubDate>Tue, 30 Jun 2015 04:22:44 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Example Content]]></title>
+            <description><![CDATA[<div class="message">
+  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
+</div>
+
+<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+<blockquote>
+<p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p><cite><a href="http://google.com">Nobody-knows-who</a></cite></p>
+</blockquote>
+<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+<h2 id="inline-html-elements">Inline HTML elements</h2>
+<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
+<ul>
+<li><strong>To bold text</strong>, use <code>&lt;strong&gt;</code>.</li>
+<li><em>To italicize text</em>, use <code>&lt;em&gt;</code>.</li>
+<li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code>&lt;abbr&gt;</code>, with an optional <code>title</code> attribute for the full phrase.</li>
+<li>Citations, like <cite>&mdash; Mark otto</cite>, should use <code>&lt;cite&gt;</code>.</li>
+<li><del>Deleted</del> text should use <code>&lt;del&gt;</code> and <ins>inserted</ins> text should use <code>&lt;ins&gt;</code>.</li>
+<li>Superscript <sup>text</sup> uses <code>&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code>&lt;sub&gt;</code>.</li>
+</ul>
+<p>Most of these elements are styled by browsers with few modifications on our part.</p>
+<h2 id="list">List</h2>
+<ol>
+<li>Item one</li>
+<li>Item two<ol>
+<li>Item two - one</li>
+</ol>
+</li>
+</ol>
+<h2 id="heading">Heading</h2>
+<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+<h3 id="code">Code</h3>
+<p>Cum sociis natoque penatibus et magnis dis <code>code element</code> montes, nascetur ridiculus mus.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">// Example can be run directly in your JavaScript console</span>
+
+<span class="hljs-comment">// Create a function that takes two arguments and returns the sum of those arguments - increasing code highlight width</span>
+<span class="hljs-keyword">var</span> adder = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"return a + b"</span>);
+
+<span class="hljs-comment">// Call the function</span>
+adder(<span class="hljs-number">2</span>, <span class="hljs-number">6</span>);
+<span class="hljs-comment">// &gt; 8</span>
+</code></pre>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-class">.highlight</span> <span class="hljs-tag">pre</span> <span class="hljs-tag">code</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+
+  <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value"> pre-wrap</span></span>;                 <span class="hljs-comment">/* CSS3 browsers  */</span>
+  <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value"> -moz-pre-wrap <span class="hljs-important">!important</span></span></span>; <span class="hljs-comment">/* 1999+ Mozilla  */</span>
+  <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value"> -pre-wrap</span></span>;                <span class="hljs-comment">/* Opera 4 thru 6 */</span>
+  <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value"> -o-pre-wrap</span></span>;              <span class="hljs-comment">/* Opera 7 and up */</span>
+
+  <span class="hljs-rule"><span class="hljs-attribute">word-wrap</span>:<span class="hljs-value"> break-word</span></span>;                 <span class="hljs-comment">/* IE 5.5+ and up */</span>
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+<h3 id="gists-via-github-pages">Gists via GitHub Pages</h3>
+<p>Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui.</p>
+<p>{% gist 5555251 gist.md %}</p>
+<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.</p>
+<h3 id="lists">Lists</h3>
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+<ul>
+<li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+<li>Donec id elit non mi porta gravida at eget metus.</li>
+<li>Nulla vitae elit libero, a pharetra augue.</li>
+</ul>
+<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+<ol>
+<li>Vestibulum id ligula porta felis euismod semper.</li>
+<li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+<li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+</ol>
+<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+<dl>
+  <dt>HyperText Markup Language (HTML)</dt>
+  <dd>The language used to describe and define the content of a Web page</dd>
+
+  <dt>Cascading Style Sheets (CSS)</dt>
+  <dd>Used to describe the appearance of Web content</dd>
+
+  <dt>JavaScript (JS)</dt>
+  <dd>The programming language used to build advanced Web sites and applications</dd>
+</dl>
+
+<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<h3 id="images">Images</h3>
+<p>Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.</p>
+<p><img src="http://placehold.it/800x400" alt="placeholder" title="Large example image">
+<img src="http://placehold.it/400x200" alt="placeholder" title="Medium example image">
+<img src="http://placehold.it/200x200" alt="placeholder" title="Small example image"></p>
+<h3 id="tables">Tables</h3>
+<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Upvotes</th>
+      <th>Downvotes</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td>Totals</td>
+      <td>21</td>
+      <td>23</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td>10</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Charlie</td>
+      <td>7</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<hr>
+<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
+]]></description>
+            <link>http://danguilherme.github.io/blog/example-content</link>
+            <guid isPermaLink="true">http://danguilherme.github.io/blog/example-content</guid>
+            <dc:creator><![CDATA[[object Object]]]></dc:creator>
+            <pubDate>Thu, 01 Jan 2015 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
