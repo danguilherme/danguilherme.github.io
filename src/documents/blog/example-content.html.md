@@ -3,6 +3,8 @@ title:    Example Content
 tagline:  And this is a very nice tagline (in two lines)
 tags:     example markdown table html test
 date:     2015-01-01
+
+isDraft:  true
 ---
 
 <div class="message">

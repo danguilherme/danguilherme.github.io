@@ -22,12 +22,12 @@ docpadConfig = {
     # Specify some site properties
     site:
       # The production URL of our website
-      url: "http://danguilherme.github.io"
+      url: "https://danguilherme.github.io"
 
       styles: [
         "/styles/style.css"
         "/styles/highlight.js/zenburn.css"
-        "http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Marvel:400,700|Raleway:200,400,700"
+        "https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Marvel:400,700|Raleway:200,400,700"
       ]
 
       scripts: [
@@ -100,6 +100,7 @@ docpadConfig = {
     related:
       parentCollectionName: 'posts'
     cleanurls:
+      trailingSlashes: false
       static: true
     ghpages:
         deployRemote: 'origin'
