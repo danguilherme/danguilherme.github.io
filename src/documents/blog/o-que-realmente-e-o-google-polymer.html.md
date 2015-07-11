@@ -138,7 +138,7 @@ Para saber mais, Martin Fowler tem [um ótimo artigo](http://martinfowler.com/bl
 Porque ele tem uma única e exclusiva função: facilitar a criação de Web Components. Só. Ele não vai se intrometer onde não é chamado e, quando você o chamar, vai fazer o que você pediu e nada mais.
 
 # 3. Ele não é um Framework CSS / Showcase do Material Design
-Apesar do site do projeto ser construído sobre a especificação do [Material Design](https://www.google.com/design/spec/material-design), também da Google, o Polymer não é "o futuro Bootstrap" (sim, eu já ouvi falarem isso). Polymer e Bootstrap não são nem comparáveis, mas a esse ponto você já deve saber o porquê: o primeiro é um framework CSS e o segundo, uma biblioteca JavaScript.
+Apesar do [site do projeto](https://www.polymer-project.org/) ser construído sobre a especificação do [Material Design](https://www.google.com/design/spec/material-design), também da Google, o Polymer não é "o futuro Bootstrap" (sim, eu já ouvi falarem isso). Bootstrap e Polymer não são nem comparáveis, mas a esse ponto você já deve saber o porquê: o primeiro é um framework CSS e o segundo, uma biblioteca JavaScript.
 
 O que existem, na verdade, são **elementos baseados no Material Design**. Elementos customizados, criados com Polymer, como qualquer outro pode ser. Esses são chamados de [`paper-elements`](https://www.polymer-project.org/0.5/components/paper-elements/demo.html), que são nada mais nada menos que extensões dos elementos base ([`core-elements`](https://www.polymer-project.org/0.5/components/core-elements/demo.html)) com estilos e animações diferenciados.
 
