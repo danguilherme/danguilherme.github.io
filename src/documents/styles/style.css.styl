@@ -341,15 +341,20 @@ main
     li
       display inline-block
       margin-bottom 1em
-      width 45%
       vertical-align top
-      &:nth-child(even)
-        margin-left 2.5%
-      &:nth-child(odd)
-        margin-right 2.5%
-      &:nth-child(1),
-      &:nth-child(2)
+      
+      width 100%
+      &:nth-child(1)
         font-size 1.2em
+
+      @media screen and (min-width: max-width)
+        width 45%
+        &:nth-child(even)
+          margin-left 2.5%
+        &:nth-child(odd)
+          margin-right 2.5%
+        &:nth-child(2)
+          font-size 1.2em
 
       time,
       a,
