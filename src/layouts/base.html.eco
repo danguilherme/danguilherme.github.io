@@ -29,7 +29,7 @@
 
   <footer id="main-footer">
     <div id="footer-content">
-      Feito com <span class="love">♥</span> por <a href="https://twitter.com/<%= @site.author.twitter %>" target="_BLANK">@<%= @site.author.twitter %></a> usando <a href="https://docpad.org" target="_BLANK">DocPad</a>, <a href="https://nodejs.org/" target="_BLANK">Node.js</a>, <a href="https://learnboost.github.io/stylus/" target="_BLANK">Stylus</a> e JavaScript. Descubra mais no <a href="https://github.com/danguilherme/danguilherme.github.io" target="_BLANK">repositório do GitHub</a>.
+      Feito com <span class="love">♥</span> por <a href="https://twitter.com/<%= @site.author.twitter %>" target="_BLANK">@<%= @site.author.twitter %></a> usando <a href="https://docpad.org/" target="_BLANK">DocPad</a>, <a href="https://nodejs.org/" target="_BLANK">Node.js</a>, <a href="https://learnboost.github.io/stylus/" target="_BLANK">Stylus</a> e JavaScript. Descubra mais no <a href="https://github.com/danguilherme/danguilherme.github.io/tree/source" target="_BLANK">repositório do GitHub</a>.
     </div>
   </footer>
 

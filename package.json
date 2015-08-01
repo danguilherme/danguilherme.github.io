@@ -1,7 +1,7 @@
 {
-  "name": "no-skeleton.docpad",
+  "name": "website",
   "version": "0.1.0",
-  "description": "New DocPad project without using a skeleton",
+  "description": "Guilherme Ventura's personal website",
   "dependencies": {
     "docpad": "~6.78.1",
     "docpad-plugin-cleanurls": "~2.7.0",
