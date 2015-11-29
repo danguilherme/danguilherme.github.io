@@ -1,3 +1,4 @@
+fs = require('fs')
 moment = require('moment')
 moment.locale('pt-br')
 
@@ -112,6 +113,42 @@ docpadConfig = {
         posts: ->
           @getCollection("html").findAllLive({relativeOutDirPath: 'blog', basename: $ne: "index" }, [{date:-1}]).on "add", (model) ->
             model.setMetaDefaults({ layout: "post" })
+}
+
+docpadConfig.templateData.blog = {
+  getPostContent: (post, contentRelativePath) ->
+    try
+      # throws if any accessibility checks fail, and does nothing otherwise.
+      fs.accessSync("out\\blog\\content\\#{post.basename}\\#{contentRelativePath}");
+    catch error
+      console.warn("getPostContent: '#{contentRelativePath}' does not exist for '#{post.title}'");
+      return null;
+    return "blog\\content\\#{post.basename}\\#{contentRelativePath}";
+    # https://placehold.it/300x100/aaa/dfd?text=Example+Content
+
+  getPostCoverSrc: (thumbnailPlugin, post) ->
+    coverUrl = @getPostContent(post, "cover.png");
+
+    if coverUrl
+      coverUrl = thumbnailPlugin("blog/content/#{post.basename}/cover.png", {w: 300, h: 100}, 'zoomcrop');
+
+    if !coverUrl && post.isDraft
+      # not supposed to be shown by published articles, just for tests
+      coverUrl = "http://dummyimage.com/300x100/292929/e3e3e3&text=#{post.title}";
+
+    return coverUrl;
+
+  getPostImageSrc: (thumbnailPlugin, post) ->
+    coverUrl = @getPostContent(post, "cover.png");
+
+    if coverUrl
+      coverUrl = thumbnailPlugin("blog/content/#{post.basename}/cover.png", {w: 500, h: 300}, 'zoomcrop');
+
+    if !coverUrl && post.isDraft
+      # not supposed to be shown by published articles, just for tests
+      coverUrl = "http://dummyimage.com/500x300/292929/e3e3e3&text=#{post.title}";
+
+    return coverUrl;
 }
 
 # Export the DocPad Configuration

@@ -248,8 +248,16 @@ main
       margin-left auto
       width 80%
 
+    .post-cover
+      width 100%
+      margin 1em auto 0
+      z-index -1
+
+      img
+        margin 0 auto
+        padding 0
+
     .post-title
-      margin-top 1em
       font-size 3em
       font-size 3rem
 
@@ -264,8 +272,9 @@ main
       font-weight 200
 
     time
-      position relative
+      position absolute
       top 1rem
+      left 0
 
       display inline-block
       margin-right 10px
@@ -273,11 +282,12 @@ main
 
       float left
 
+      background-color #fff
       border 1px solid #606060
       cursor default
 
       @media screen and (min-width: max-width)
-        margin-left -60px
+        left -60px
 
       span
         display block
@@ -342,7 +352,7 @@ main
       display inline-block
       margin-bottom 1em
       vertical-align top
-      
+
       width 100%
       &:nth-child(1)
         font-size 1.2em
@@ -360,6 +370,11 @@ main
       a,
       span
         display block
+
+      img
+        text-align center
+        margin 0 auto
+        height 100px
 
       time
         font-size .8em

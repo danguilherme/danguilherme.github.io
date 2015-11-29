@@ -9,6 +9,12 @@ layout: "base"
     <span class="day"><%= @formatDate(@document.date, "DD") %></span>
   </time>
 
+  <% if @blog.getPostCoverSrc(@getThumbnail, post): %>
+  <div class="post-cover">
+    <img src="<%= @blog.getPostImageSrc(@getThumbnail, @document) %>" alt="Capa de '<%= @document.title %>'">
+  </div>
+  <% end %>
+
   <h1 class="post-title"><%= @document.title %></h1>
   <% if @document.tagline: %>
     <p class="post-tagline"><%= @document.tagline %></p>
