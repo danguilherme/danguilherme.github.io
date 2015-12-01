@@ -26,7 +26,7 @@ Como a especificação está sendo escrita nesse momento, a maioria dos browsers
 * [twitter-post](https://github.com/danguilherme/twitter-post/tree/vanilla)
 
 
-[1]: Web Components no Tableless
+[1]: http://tableless.com.br/web-components-introducao/
 [2]: Web Components no iMasters
 [3]: /deep/ e ::shadow depreciados
 [4]: vanilla.js
