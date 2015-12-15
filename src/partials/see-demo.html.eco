@@ -1,0 +1,3 @@
+<blockquote>
+  <a href="<%- @document.url %>/demo">Veja a demo desse artigo.</a>
+</blockquote>
