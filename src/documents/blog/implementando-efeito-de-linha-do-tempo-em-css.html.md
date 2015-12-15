@@ -7,6 +7,9 @@ date:     2015-12-14
 isDraft:  true
 ---
 
+Vou tentar fazer pastagens mais frequentes, curtas e diretas. Para começar vou 
+fazer um post rápido sobre como criar um efeito de 
+
 ```scss
 $timeline-color: #080;
 $timeline-column-size: 100px;
