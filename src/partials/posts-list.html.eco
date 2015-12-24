@@ -2,7 +2,7 @@
   <% for post in @posts: %>
     <li>
       <a href="<%= post.url %>"
-        data-ga-category="blog-link"
+        data-ga-category="blog"
         data-ga-action="thumbnail-click"
         data-ga-label="<%= post.title %>">
         <% if @blog.getPostCoverSrc(@getThumbnail, post): %>
@@ -11,7 +11,7 @@
       </a>
       <time datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
       <a href="<%= post.url %>"
-        data-ga-category="blog-link"
+        data-ga-category="blog"
         data-ga-label="<%= post.title %>"><%= post.title %></a>
       <span><%= post.tagline %></span>
     </li>
