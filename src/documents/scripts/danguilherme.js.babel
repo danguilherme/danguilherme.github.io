@@ -1,0 +1,31 @@
+;(function(window, document, undefined) {
+  var onLoadFns = [];
+  var documentIsReady = false;
+
+  document.addEventListener('readystatechange', () => {
+    if (document.readyState == 'complete') onDocumentReady();
+  });
+
+  function onDocumentReady() {
+    var documentIsReady = true;
+    onLoadFns.forEach(fn => executeOnLoadFunction(fn));
+    onLoadFns = [];
+  };
+
+  function executeOnLoadFunction(fn) {
+    if (typeof fn !== 'function') return;
+    fn.call(window);
+  }
+
+  window.danguilherme = function danguilherme(onLoad) {
+    if (typeof onLoad !== 'function') {
+      console.warn("`danguilherme` only accepts functions to execute when document is ready");
+      return;
+    }
+
+    if (documentIsReady)
+      executeOnLoadFunction(onLoad);
+    else
+      onLoadFns.push(onLoad);
+  }
+}(window, document))

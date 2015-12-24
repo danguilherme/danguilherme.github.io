@@ -1,6 +1,7 @@
 fs = require('fs')
 moment = require('moment')
 moment.locale('pt-br')
+pkg = require('./package.json')
 
 author = {
   name: "Guilherme Ventura"
@@ -24,6 +25,7 @@ docpadConfig = {
     site:
       # The production URL of our website
       url: "https://danguilherme.github.io"
+      version: pkg.version
 
       styles: [
         "/styles/style.css"
@@ -32,8 +34,10 @@ docpadConfig = {
       ]
 
       scripts: [
+        "/scripts/danguilherme.js"
         "/scripts/triple-click.js"
         "/scripts/main.js"
+        "/scripts/google-analytics.js"
       ]
 
       # The default title of our website

@@ -9,7 +9,9 @@ htmlmin: true
         <li<% if item.state: %> class="selected"<% end %>>
             <!-- Remove link if we’re currently viewing this document -->
             <% if item.state != 'current': %>
-                <a href="<%= item.url %>"><%= item.title %></a>
+                <a href="<%= item.url %>"
+                  data-ga-category="menu-link"
+                  data-ga-label="<%= item.title.toLowerCase() %>"><%= item.title %></a>
             <% else: %>
                 <strong><%= item.title %></strong>
             <% end %>
@@ -21,5 +23,5 @@ htmlmin: true
     <% end %>
 </ul>
 <% end %>
-<!-- Run `renderMenu` partial aginst passed `menuItems` meta-data  -->
+<!-- Run `renderMenu` partial against passed `menuItems` meta-data  -->
 <%= renderMenu @menuItems %>

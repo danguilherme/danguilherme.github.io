@@ -7,7 +7,11 @@
 <body id="<%= @document.layout %>">
   <header id="main-header">
     <div id="header-content">
-      <h1><a href="/">Guilherme Ventura</a></h1>
+      <h1>
+        <a href="/"
+          data-ga-category="site-link"
+          data-ga-label="home">Guilherme Ventura</a>
+      </h1>
 
       <nav id="menu">
         <%- @partial('menu', {menuItems: @generateMenu(@document.url, 'pages')}) %>
@@ -15,9 +19,21 @@
 
       <nav id="external-links">
         <ul>
-          <li><a href="https://github.com/<%= @site.author.github %>">GitHub</a></li>
-          <li><a href="https://twitter.com/<%= @site.author.twitter %>">Twitter</a></li>
-          <li><a href="/rss.xml">Feed</a></li>
+          <li>
+            <a href="https://github.com/<%= @site.author.github %>"
+                data-ga-category="static-menu-link"
+                data-ga-label="github">GitHub</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/<%= @site.author.twitter %>"
+                data-ga-category="static-menu-link"
+                data-ga-label="twitter">Twitter</a>
+          </li>
+          <li>
+            <a href="/rss.xml"
+              data-ga-category="static-menu-link"
+              data-ga-label="feed">Feed</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -29,11 +45,25 @@
 
   <footer id="main-footer">
     <div id="footer-content">
-      Feito com <span class="love">♥</span> por <a href="https://twitter.com/<%= @site.author.twitter %>" target="_BLANK">@<%= @site.author.twitter %></a> usando <a href="https://docpad.org/" target="_BLANK">DocPad</a>, <a href="https://nodejs.org/" target="_BLANK">Node.js</a>, <a href="https://learnboost.github.io/stylus/" target="_BLANK">Stylus</a> e JavaScript. Descubra mais no <a href="https://github.com/danguilherme/danguilherme.github.io/tree/source" target="_BLANK">repositório do GitHub</a>.
+      Feito com <span class="love">♥</span> por
+      <a href="https://twitter.com/<%= @site.author.twitter %>" target="_BLANK"
+        data-ga-category="footer-link"
+        data-ga-label="twitter">@<%= @site.author.twitter %></a> usando
+      <a href="https://docpad.org/" target="_BLANK"
+        data-ga-category="footer-link"
+        data-ga-label="docpad">DocPad</a>,
+      <a href="https://nodejs.org/" target="_BLANK"
+        data-ga-category="footer-link"
+        data-ga-label="nodejs">Node.js</a>,
+      <a href="https://learnboost.github.io/stylus/" target="_BLANK"
+        data-ga-category="footer-link"
+        data-ga-label="stylus">Stylus</a> e JavaScript. Descubra mais no
+      <a href="https://github.com/danguilherme/danguilherme.github.io/tree/source" target="_BLANK"
+        data-ga-category="footer-link"
+        data-ga-label="github">repositório do GitHub</a>.
     </div>
   </footer>
 
-  <%- @partial('google-analytics') %>
   <%- @getBlock("scripts").add(@site.scripts).toHTML() %>
 </body>
 </html>

@@ -1,12 +1,11 @@
-;(function() {
-  document.addEventListener('readystatechange', function() {
-    if (document.readyState == 'complete') onDocumentReady();
-  });
-
-  function onDocumentReady() {
+danguilherme(function() {
+  function init() {
     prepareCodeSelect();
   };
 
+  /////////////////////////////////
+  // SELECT CODE ON TRIPLE-CLICK //
+  /////////////////////////////////
   function prepareCodeSelect() {
     var codes = document.querySelectorAll('code.hljs');
 
@@ -14,6 +13,10 @@
       var code = codes[i];
       code.addEventListener('tripleclick', function(ev) {
         selectCode(ev.currentTarget);
+
+        ga('send', 'event',
+          'code-select',
+          'triple-click');
 
         // do not bubble 'click' to document
         ev.stopPropagation();
@@ -45,4 +48,6 @@
 
     document.addEventListener('click', removeTextArea);
   }
-}());
+
+  init();
+});
