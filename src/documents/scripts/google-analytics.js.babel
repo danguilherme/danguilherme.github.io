@@ -13,8 +13,8 @@ danguilherme(function gaOnDocumentReady() {
     var blogPostTrackableLinks = els2array(document.querySelectorAll(`${POST_SELECTOR} a`));
     blogPostTrackableLinks.forEach(el => {
       el.addEventListener('click', createLinkTrackCallback({
-        category: 'blog-post-link',
-        action: 'click',
+        category: 'blog-post',
+        action: 'link-click',
         label: 'post-link'
       }));
     });
@@ -26,9 +26,9 @@ danguilherme(function gaOnDocumentReady() {
       .filter(el => blogPostTrackableLinks.indexOf(el) === -1)
       .forEach(el => {
         el.addEventListener('click', createLinkTrackCallback({
-          category: 'site-link',
-          action: 'click',
-          label: 'sem-label'
+          category: 'website',
+          action: 'link-click',
+          label: undefined
         }));
       });
   }

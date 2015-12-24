@@ -26,7 +26,7 @@ layout: "base"
     <span id="post-comments-count">
       <a href="#disqus_thread"
         data-disqus-identifier="<%= @document.url %>"
-        data-ga-label="discuss_comments">0 Comentários</a>
+        data-ga-label="discuss-comments">0 Comentários</a>
     </span>
   </header>
 
@@ -40,8 +40,11 @@ layout: "base"
         Curtiu o post? Você pode
         <a href="https://twitter.com/intent/tweet?url=<%= @site.url  %><%=  @document.url  %>&text=<%=  @document.title  %>&via=<%= author.twitter %>"
           title="Twittar sobre '<%= @document.title %>'"
-          target="_blank">compartilhá-lo com seus seguidores</a> ou
-        <a href="https://twitter.com/intent/follow?screen_name=<%= author.twitter %>" title="@<%= author.twitter %>">me seguir no Twitter</a>!
+          target="_blank"
+          data-ga-label="tweet">compartilhá-lo com seus seguidores</a> ou
+        <a href="https://twitter.com/intent/follow?screen_name=<%= author.twitter %>"
+          title="@<%= author.twitter %>"
+          data-ga-label="twitter-follow">me seguir no Twitter</a>!
       </p>
 
       <%= @partial('disqus') %>

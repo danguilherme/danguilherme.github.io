@@ -10,7 +10,7 @@ htmlmin: true
             <!-- Remove link if we’re currently viewing this document -->
             <% if item.state != 'current': %>
                 <a href="<%= item.url %>"
-                  data-ga-category="menu-link"
+                  data-ga-category="left-menu"
                   data-ga-label="<%= item.title.toLowerCase() %>"><%= item.title %></a>
             <% else: %>
                 <strong><%= item.title %></strong>
