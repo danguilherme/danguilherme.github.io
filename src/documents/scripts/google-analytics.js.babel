@@ -42,11 +42,11 @@ danguilherme(function gaOnDocumentReady() {
         anchor.dataset.gaAction || defaults.action,
         anchor.dataset.gaLabel || anchor.href || defaults.label);
 
-      console.log('send', 'event',
-        anchor.dataset.gaCategory || defaults.category,
-        anchor.dataset.gaAction || defaults.action,
-        anchor.dataset.gaLabel || anchor.href || defaults.label);
-      event.preventDefault();
+      // console.log('send', 'event',
+      //   anchor.dataset.gaCategory || defaults.category,
+      //   anchor.dataset.gaAction || defaults.action,
+      //   anchor.dataset.gaLabel || anchor.href || defaults.label);
+      // event.preventDefault();
     };
   }
 
