@@ -28,7 +28,7 @@ danguilherme(function gaOnDocumentReady() {
         el.addEventListener('click', createLinkTrackCallback({
           category: 'site-link',
           action: 'click',
-          label: undefined
+          label: 'sem-label'
         }));
       });
   }

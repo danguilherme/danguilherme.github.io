@@ -3,13 +3,6 @@
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', 'UA-59821168-1', 'auto');
 ga('send', 'pageview');
-ga('set', {
-  appId: 'Danguilherme Blog',
-  appVersion: "<%= @site.version %>"
-});
-<% if @getEnvironment() == 'development': %>
-ga('set', 'campaignSource', 'testing');
-<% end %>
 </script>
 <script async src='//www.google-analytics.com/analytics.js'></script>
 <!-- End Google Analytics -->
