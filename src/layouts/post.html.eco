@@ -64,6 +64,5 @@ layout: "base"
   <script>
   // Sets the page field to "/about.html".
   ga('set', 'title', "Blog Post: <%= @document.title %>");
-  console.log(ga.q)
   </script>
 </div>

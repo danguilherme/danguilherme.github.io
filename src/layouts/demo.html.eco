@@ -3,8 +3,8 @@ layout: "base"
 article_url: "Rááá"
 ---
 
-<% @article_basename = @document.relativeBase.substring(@document.relativeBase.indexOf('\\') + 1, @document.relativeBase.lastIndexOf('\\demo')) %>
-<% @article_url = "\\#{@document.relativeBase.substring(0, @document.relativeBase.lastIndexOf('\\'))}" %>
+<% @article_basename = @document.relativeBase.substring(@document.relativeBase.indexOf('/') + 1, @document.relativeBase.lastIndexOf('/demo')) %>
+<% @article_url = "/#{@document.relativeBase.substring(0, @document.relativeBase.lastIndexOf('/'))}" %>
 
 <article id="demo-<%- @article_basename %>">
   <h1>Demo</h1>

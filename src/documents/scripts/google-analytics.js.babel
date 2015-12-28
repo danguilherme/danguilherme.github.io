@@ -3,6 +3,7 @@ danguilherme(function gaOnDocumentReady() {
   // tem que entrar o IP de localhost (127.0.0.1)
   // - 'localhost' está na black list do Google Analytics, pra não sujar os dados reais
   const POST_SELECTOR = '#blog-post';
+  const DEMO_SELECTOR = '#demo';
 
   function init() {
     configureLinksClickTracking();
@@ -19,11 +20,21 @@ danguilherme(function gaOnDocumentReady() {
       }));
     });
 
+      var demoPostTrackableLinks = els2array(document.querySelectorAll(`${DEMO_SELECTOR} a`));
+      demoPostTrackableLinks.forEach(el => {
+        el.addEventListener('click', createLinkTrackCallback({
+          category: 'demo',
+          action: 'link-click',
+          label: 'demo-link'
+        }));
+      });
+
     var siteTrackableLinks = els2array(
       document.querySelectorAll(`a[data-ga-category], a[data-ga-action], a[data-ga-label], a`)
     );
     siteTrackableLinks
       .filter(el => blogPostTrackableLinks.indexOf(el) === -1)
+      .filter(el => demoPostTrackableLinks.indexOf(el) === -1)
       .forEach(el => {
         el.addEventListener('click', createLinkTrackCallback({
           category: 'website',
