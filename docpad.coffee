@@ -130,6 +130,15 @@ docpadConfig.templateData.blog = {
     return "blog\\#{post.basename}\\#{contentRelativePath}";
     # https://placehold.it/300x100/aaa/dfd?text=Example+Content
 
+  getPostOriginalImageSrc: (thumbnailPlugin, post) ->
+    coverUrl = "blog/#{post.basename}/cover.png";
+
+    if !coverUrl && post.isDraft
+      # not supposed to be shown by published articles, just for tests
+      coverUrl = "http://dummyimage.com/500x300/292929/e3e3e3&text=#{post.title}";
+
+    return coverUrl;
+
   getPostCoverSrc: (thumbnailPlugin, post) ->
     coverUrl = thumbnailPlugin("blog/#{post.basename}/cover.png", {w: 300, h: 100}, 'zoomcrop');
 

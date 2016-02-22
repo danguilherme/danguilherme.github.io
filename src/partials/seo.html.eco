@@ -3,6 +3,9 @@ htmlmin: true
 ---
 <!-- SEO -->
 <% author = @site.author %>
+<% post_image = if @document.layout == 'post' then '/'+@blog.getPostOriginalImageSrc(@getThumbnail, @document) else "" %>
+
+
 <% if author: %>
   <meta name="author" content="<%= author.name %>">
 <% end %>
@@ -15,6 +18,9 @@ htmlmin: true
 
 <% if @document.layout == 'post': %>
   <meta property="og:type" content="article" />
+  <% if post_image: %>
+    <meta property="og:image" content="<%= @site.url %><%= post_image %>">
+  <% end %>
   <meta property="article:published_time" content="<%= @document.date.toISOString() %>">
   <meta property="article:modified_time" content="<%= @document.date.toISOString() %>">
   <meta property="article:section" content="<%= (@document.tags or [])[0] %>">
@@ -31,3 +37,6 @@ htmlmin: true
 <meta name="twitter:site" content="@<%= author.twitter %>">
 <meta name="twitter:creator" content="@<%= author.twitter %>">
 <meta name="twitter:url" content="<%= @site.url %><%= @document.url %>">
+<% if post_image: %>
+  <meta name="twitter:image" content="<%= @site.url %><%= post_image %>">
+<% end %>
