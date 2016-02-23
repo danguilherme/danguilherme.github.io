@@ -21,7 +21,7 @@ Assim como beta é diferente de estável. Um serviço em beta, que era o caso do
 
 O Chrome é geralmente mais utilizado por desenvolvedores por ser um dos primeiros a implementar as specs, mesmo as que ainda estão em draft. Não é pelo fato de **ser o Google Chrome**, mas pelo fato dele suportar tal API. Além do mais, desenvolver no [browser mais utilizado atualmente](http://gs.statcounter.com/#browser-ww-monthly-201501-201601-bar "Gráfico de uso dos navegadores (imagem abaixo)") é compreensível.
 
-![Estatística de uso dos navegadores](<%- @document.basename %>/browser-usage-chart.png "Estatística de uso dos navegadores")
+![Estatística de uso dos navegadores](<%= @blog.getPostContent(@document, "browser-usage-chart.png") %> "Estatística de uso dos navegadores")
 
 Infelizmente, suportar ou não outros browsers é uma decisão de negócio, e se a escolha é suportar um navegador específico (seja Chrome, Firefox, Edge ou Safari), essa é uma decisão bem ruim. A web é muito maior do que esses quatro podem suportar, sem contar que, suportando apenas um deles, uma grande parcela de seus possíveis usuários não será alcançada. É isso que os "Open Web Standards" buscam cumprir, uma plataforma unificada de desenvolvimento, com padrões e APIs bem documentadas, onde a gente possa desenvolver um único código que atenda qualquer user agent (mas a gente sabe que não é assim tão fácil, né?).
 

@@ -123,15 +123,14 @@ docpadConfig.templateData.blog = {
   getPostContent: (post, contentRelativePath) ->
     try
       # throws if any accessibility checks fail, and does nothing otherwise.
-      fs.accessSync("out\\blog\\#{post.basename}\\#{contentRelativePath}");
+      fs.accessSync("out/blog/#{post.basename}/#{contentRelativePath}");
     catch error
       console.warn("getPostContent: '#{contentRelativePath}' does not exist for '#{post.title}'");
       return null;
-    return "blog\\#{post.basename}\\#{contentRelativePath}";
-    # https://placehold.it/300x100/aaa/dfd?text=Example+Content
+    return "/blog/#{post.basename}/#{contentRelativePath}";
 
-  getPostOriginalImageSrc: (thumbnailPlugin, post) ->
-    coverUrl = "blog/#{post.basename}/cover.png";
+  getPostOriginalImageSrc: (post) ->
+    coverUrl = @getPostContent(post, "cover.png");
 
     if !coverUrl && post.isDraft
       # not supposed to be shown by published articles, just for tests

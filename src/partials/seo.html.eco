@@ -3,7 +3,7 @@ htmlmin: true
 ---
 <!-- SEO -->
 <% author = @site.author %>
-<% post_image = if @document.layout == 'post' then '/'+@blog.getPostOriginalImageSrc(@getThumbnail, @document) else "" %>
+<% post_image = if @document.layout == 'post' then @blog.getPostOriginalImageSrc(@document) else "" %>
 
 
 <% if author: %>
