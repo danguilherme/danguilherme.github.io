@@ -3,6 +3,9 @@ title:      "Olá"
 menuTitle:  "Home"
 layout:     "page"
 menuOrder:  0
+
+priority: 1
+changefreq: "daily"
 ---
 
 <p>

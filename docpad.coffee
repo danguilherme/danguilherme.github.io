@@ -19,6 +19,10 @@ docpadConfig = {
     posts: ->
       @getCollection("html").findAllLive({relativeOutDirPath: 'blog', isDraft: { $ne: true }, basename: { $ne: "index" }}, [{date:-1}]).on "add", (model) ->
         model.setMetaDefaults({ htmlmin: true, layout: "post" })
+    sitemap: ->
+      # everything but drafts
+      @getCollection("html").findAllLive({ isDraft: { $ne: true } }, []).on "add", (model) ->
+        model.setMetaDefaults({ changefreq: "monthly" })
 
   templateData:
     # Specify some site properties
@@ -108,8 +112,14 @@ docpadConfig = {
       trailingSlashes: false
       static: true
     ghpages:
-        deployRemote: 'origin'
-        deployBranch: 'master'
+      deployRemote: 'origin'
+      deployBranch: 'master'
+    sitemap:
+      collectionName: 'sitemap'
+      cachetime: 600000
+			changefreq: 'weekly'
+			priority: 0.5
+			filePath: 'sitemap.xml'
 
   environments:
     development:
