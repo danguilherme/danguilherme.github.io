@@ -135,7 +135,7 @@ docpadConfig.templateData.blog = {
       # throws if any accessibility checks fail, and does nothing otherwise.
       fs.accessSync("out/blog/#{post.basename}/#{contentRelativePath}");
     catch error
-      console.warn("getPostContent: '#{contentRelativePath}' does not exist for '#{post.title}'");
+      # console.warn("getPostContent: '#{contentRelativePath}' does not exist for '#{post.title}'");
       return null;
     return "/blog/#{post.basename}/#{contentRelativePath}";
 
