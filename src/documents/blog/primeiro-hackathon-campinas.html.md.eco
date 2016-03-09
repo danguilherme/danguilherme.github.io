@@ -56,7 +56,7 @@ O credenciamento não demorou nem um minuto, talvez pelo fato de eu ser o único
 
 A abertura foi no teatro, e depois da apresentação inicial, feita por representantes da IMA e da Sensedia, com todas aquelas coisas que a gente já conhece bem, subimos umas escadas e chegamos a um escritório repleto de baias.
 
-![Baias da IMA onde aconteceu o hackathon](<%= @blog.getPostContent(@document, "local.jpg") %> "Espaço para a programação das soluções")
+![Baias da IMA onde aconteceu o hackathon](<%= @blog.getPostContent(@document, "local.jpeg") %> "Espaço para a programação das soluções")
 
 Estava tudo muito bem organizado, cada baia com identificação de qual grupo acomodaria, com ponto de rede, filtro de linha e cadeiras confortáveis.
 
@@ -73,7 +73,7 @@ Não vou entrar nos detalhes do projeto agora, pois ainda não sei se daremos co
 
 Para o desenvolvimento, fiquei com a responsabilidade de desenvolver o back-end em Ruby, enquanto outros dois membros do time trabalhavam no front-end em Ionic, bem próximo ao designer. Nós tivemos grande entrosamento como time, mas eu senti que esse entrosamento foi se perdendo ao longo do evento, mais no caso de entregar as soluções. Uma coisa que acho que faltou foi comunicação. Mas enfim, isso é coisa que quero cobrir no outro post.
 
-![Minha equipe no evento](<%= @blog.getPostContent(@document, "time.jpg") %> "Meu time! Da esquerda pra direita: Will, Júlio, Ícaro e eu")
+![Minha equipe no evento](<%= @blog.getPostContent(@document, "time.jpeg") %> "Meu time! Da esquerda pra direita: Will, Júlio, Ícaro e eu")
 
 Tínhamos frutas à disposição, acesso à lanchonete, podíamos andar pra onde quiséssemos, sem problema nenhum. Em algum momento da tarde, passou uma garota distribuindo RedBulls pra todos, e olha... a produtividade do pessoal caiu, no mínimo, uns 85%. Peço encarecidamente à RedBull para que patrocine mais eventos que eu participe! Só um pedido, sem nada de mais. Depois da meia-noite, membros da equipe passavam distribuindo frutas, achocolatados, água, entre outras coisas. Acho que era pra evitar o desperdício, mas nem ligo, eu já estava me sentindo mimado.
 
@@ -87,7 +87,7 @@ Assistimos a todas as apresentações, cada uma com cinco minutos para apresenta
 
 Todas as ideias eram muito boas, era uma apresentação melhor que a outra. O fim de cada apresentação era marcado com uma música pelo "MC", e aí começavam as perguntas dos jurados, que perguntaram desde "vocês já pensaram em como implementar essa solução no mundo real?" até "pensaram em expandir essa solução para outros municípios além de Campinas?".
 
-![Apresentação da equipe "Cidade Acessível"](<%= @blog.getPostContent(@document, "fim.jpg") %> "Apresentação da equipe 'Cidade Acessível'")
+![Apresentação da equipe "Cidade Acessível"](<%= @blog.getPostContent(@document, "fim.jpeg") %> "Apresentação da equipe 'Cidade Acessível'")
 
 Fomos o quarto ou quinto grupo a se apresentar, e, apesar de ter sido uma apresentação muito boa, não conseguimos mostrar um app funcional—ele demorou para carregar os dados do serviço e achamos melhor apresentar os layouts criados pelo designer, aproveitando nossos preciosos cinco minutos e o fato de termos uma ideia bem concreta do que seria nossa solução e o que ela traria de benefícios para a cidade. Infelizmente, isso não foi o suficiente.
 
