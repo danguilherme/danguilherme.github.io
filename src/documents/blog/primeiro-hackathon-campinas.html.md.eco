@@ -1,0 +1,106 @@
+---
+title:    1º Hackathon de Campinas: Eu Fui!
+tagline:  Soluções inteligentes para a população em 24 horas de código
+tags:     hackathon campinas
+date:     2016-03-09
+
+isDraft:  true
+---
+
+Nesse fim de semana, dias 6 e 7 de março, aconteceu o 1° Hackathon da cidade de Campinas, com 24 horas seguidas de programação intensa, com pessoas desconhecidas, e com certeza eu não queria estar fora dessa!
+
+O evento foi realizado pela [IMA](https://ima.sp.gov.br/) com apoio da [Sensedia](http://sensedia.com/), empresas sediadas em Campinas. A Sensedia eu já conhecia de outros eventos, além de ser uma empresa que nasceu da empresa onde trabalho atualmente, CI&T. Eu me perguntava mesmo quem era IMA. _Informática de Municípios Associados._ Ok, mas o que eles fazem? Pelo que entendi, eles são responsáveis por toda a infraestrutura digital de Campinas. Todos os sistemas e dados, são desenvolvidos e arquitetados por eles - são aproximadamente 800 funcionários, ~200 só na área de tecnologia. Pois é, eu deveria conhecê-los.
+
+Vou tentar descrever cada detalhe do evento: o antes, o durante e um pouquinho do depois. Espero que você curta e se sinta um dos maratonistas. Parece que me empolguei bastante na hora de escrever esse texto, virou até um dossiê. Caso você seja como qualquer outro usuário da internet que não gosta de ler textos longos, aqui vai um breve índice. Sinta-se livre para pular para qualquer parte do texto!
+
+* [Como fiquei sabendo do evento](#do-conhecimento-do-hackathon)
+* [Processo de inscrição](#a-inscri-o)
+* [O hackathon!](#o-evento)
+* [Encerramento/premiações](#encerramento)
+
+# Do Conhecimento do Hackathon
+Antes de mais nada, acho interessante compartilhar como fiquei sabendo do evento. Há muito tempo atrás, depois de ter participado do meu primeiro hackathon (e ter curtido bastante!), criei um [alerta no Google](https://www.google.com.br/alerts) para me notificar sempre que a expressão "Hackathon Campinas" fosse encontrada. Ele não me trouxe nada até meados de janeiro, quando recebi a notícia do 1º Hackathon Campinas (não lembro da onde), e me inscrevi. Já adicionei uma entrada somente com a palavra "Hackathon", pra ampliar a busca!
+
+# A inscrição
+A inscrição tinha que ser feita num bom e velho Google Form. Pelo que me lembro, tínhamos que pôr o nome, idade e um resumo da nossa experiência profissional, onde éramos avisados de que haveria uma pré-seleção. Eu preenchi o form normalmente, sem muitas expectativas - procuro não gerar expectativa à toa!
+
+Como eu não conhecia a IMA no momento, sinceramente eu estava pensando que o hackathon ia ser bem meia boca no quesito organização, mas vou falar disso mais pra frente nesse artigo. Já me adianto que **subestimei completamente a organização do evento**.
+
+Eis que dia 17 de fevereiro recebi um email com o assunto "**Parabéns, você foi selecionado para o Hackathon Campinas!**". Só alegria! No email, fomos informados dos prêmios para as equipes vencedoras:
+
+- 1º Lugar: **R$ 6.000,00** - R$ 1.500,00/participante
+- 2º Lugar: **R$ 4.000,00** - R$ 1.000,00/participante
+- 3º Lugar: **R$ 2.000,00** - R$ 500,00/participante
+
+Na verdade, esses números estavam no regulamento, mas sabe aquela parte do "**Eu li e aceito os termos...**"? Pois é. Só fui ler depois de ter sido selecionado.
+
+Também fomos instruídos a pagar a inscrição, que era de **R$ 35,00**, o preço de uma **caixa de leite**. Literalmente, pois o valor da inscrição era para doar caixas de leite para instituições de caridade locais, pagos por nós participantes e inteirado pela própria IMA (infelizmente não lembro os valores exatos agora, mas foram três instituições beneficiadas). Isso, para mim, foi um grande ato de responsabilidade social, além de mostrar que eles não estavam atrás de lucro no evento (além das ideias de apps desenvolvidos durante ele), mostraram que se preocupam com a sociedade em que vivemos.
+
+## Conhecendo a Equipe
+Fomos apresentados aos nossos parceiros de equipe na segunda-feira antes do final de semana do hackathon (dia 29 de fevereiro). Ao mesmo tempo, eles liberaram o que parecia ser o protótipo da API REST: conseguíamos requisitar os dados (se não fossem recursos filhos), mas os filtros não funcionavam. Mas correu tudo bem, conseguimos discutir sobre a API e os dados que ela fornece.
+
+Em pouco mais de uma hora e meia de reunião, divididas em dois dias, conseguimos nos conhecer um pouco melhor e ter uma ideia do que poderíamos fazer no dia do evento.
+
+# O Evento
+No sábado, 5 de março, acordei atrasado, pra variar. O último email de contato informava, em negrito, que esperava todos os participantes **às 08:00h**. Mas deu tudo certo, o teatro da IMA, onde aconteceu todo o evento, tinha transporte rápido e fácil partindo da rodoviária, cheguei 08:20 e ainda deu tempo de tomar um café.
+
+## Recepção
+Chegando no local, todo mundo muito educado, sorridente e feliz, apesar de ser oito horas da manhã de um sábado. Só eu que não gosto de acordar cedo no fim de semana? Ok, não é. Naquela hora até eu tava feliz.
+
+O credenciamento não demorou nem um minuto, talvez pelo fato de eu ser o único chegando naquele horário. Junto do meu crachá de desenvolvedor, recebi um pote de pipoca com três Torcidas (o salgadinho) e a camiseta do evento, muito bonita por sinal. Aliás, a organização das pessoas estava assim:
+
+- **Camiseta branca: maratonistas**.
+- **Camiseta grená: senseis**. Auxiliavam tanto em dúvidas técnicas quanto de negócio. Haviam 2 ou 3 profissionais da Sensedia e o resto era da IMA (pelo menos na hora que eu perguntei).
+(Juro que não sabia que o nome da cor era grená, foi o que nos falaram na hora de descrever quem eram os senseis. Quem reconhece essa cor de primeira, por favor se manifeste. Se você não sabe, [isso é grená: #831D1C](https://pt.wikipedia.org/wiki/Gren%C3%A1).)
+- **Camiseta preta: staff**. Toda a equipe. Quem não era sensei, maratonista ou visitante, estava de preto. Não sei, mas parece que vi um tipo de hierarquia ali, pois algumas mangas de camiseta tinha um desenho e outras não. Mas chega uma altura que a gente não confia mais na própria visão.
+
+A abertura foi no teatro, e depois da apresentação inicial, feita por representantes da IMA e da Sensedia, com todas aquelas coisas que a gente já conhece bem, subimos umas escadas e chegamos a um escritório repleto de baias.
+
+![Baias da IMA onde aconteceu o hackathon](<%= @blog.getPostContent(@document, "local.jpg") %> "Espaço para a programação das soluções")
+
+Estava tudo muito bem organizado, cada baia com identificação de qual grupo acomodaria, com ponto de rede, filtro de linha e cadeiras confortáveis.
+
+Dentro do pote de pipoca, tinha muito mais do que Torcida. Era Club Social, bolo Ana Maria, biscoito, Polenguinho... Sem contar os vale-lanches, sucos e refrigerantes que nos deram. Estou comendo os snacks até hoje!
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="pt" dir="ltr">Só na correria no <a href="https://twitter.com/hashtag/hackathon?src=hash">#hackathon</a>, mas fome nóis num passa <a href="https://t.co/irsDYaeLug">pic.twitter.com/irsDYaeLug</a></p>&mdash; Guilherme Ventura (@danguilherme) <a href="https://twitter.com/danguilherme/status/706250429680713729">March 5, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## Código
+
+Depois de receber nossas senhas individuais para acesso à rede wifi, eu e meu time sentamos para conversar sobre a nossa ideia. Após muita conversa, acabamos com duas ideias que achamos muito boas, e deixamos para nossos usuários finais decidirem o que faríamos. Um de nós saiu para a rua, aproveitando que tínhamos a liberdade para ir aonde quiséssemos no evento, para fazer uma pesquisa de campo. No retorno, houve uma vitória de 6 a 9 para uma das ideias, e então começamos a desenvolvê-la.
+
+Não vou entrar nos detalhes do projeto agora, pois ainda não sei se daremos continuidade nele. Com certeza farei um post muito detalhista sobre os dois dias de hackathon, mas creio que só na próxima semana.
+
+Para o desenvolvimento, fiquei com a responsabilidade de desenvolver o back-end em Ruby, enquanto outros dois membros do time trabalhavam no front-end em Ionic, bem próximo ao designer. Nós tivemos grande entrosamento como time, mas eu senti que esse entrosamento foi se perdendo ao longo do evento, mais no caso de entregar as soluções. Uma coisa que acho que faltou foi comunicação. Mas enfim, isso é coisa que quero cobrir no outro post.
+
+![Minha equipe no evento](<%= @blog.getPostContent(@document, "time.jpg") %> "Meu time! Da esquerda pra direita: Will, Júlio, Ícaro e eu")
+
+Tínhamos frutas à disposição, acesso à lanchonete, podíamos andar pra onde quiséssemos, sem problema nenhum. Em algum momento da tarde, passou uma garota distribuindo RedBulls pra todos, e olha... a produtividade do pessoal caiu, no mínimo, uns 85%. Peço encarecidamente à RedBull para que patrocine mais eventos que eu participe! Só um pedido, sem nada de mais. Depois da meia-noite, membros da equipe passavam distribuindo frutas, achocolatados, água, entre outras coisas. Acho que era pra evitar o desperdício, mas nem ligo, eu já estava me sentindo mimado.
+
+O dia ia amanhecendo e o tempo para finalizar o app acabando. Eu podia ouvir ao fundo a voz da mulher do tradutor do Google, e alguma pessoa da sala respondendo as perguntas dela. Era muito interessante. Estranho que só comecei a ouvir a voz dela de manhã, então parecia que não testaram muito o que quer que tinham desenvolvido. Enfim, chegou as 09:00 e o dia de desenvolvimento acabou.
+
+# Encerramento
+
+Todos nós descemos para o teatro. Todo mundo cansado, com cara de mau, tentando manter o olho aberto. A partir daqui, o que eu escrever pode ser meia verdade porque, nessa hora, depois de ter parado de trabalhar e estar sentado no banco do teatro sem fazer nada além de olhar para o palco, fiquei bêbado de sono, então posso ter deixado algo passar.
+
+Assistimos a todas as apresentações, cada uma com cinco minutos para apresentar a ideia e outros cinco para a banca julgadora fazer as perguntas—só não me pergunte os nomes dos jurados, os únicos que me lembro eram os presidentes da Sensedia e da IMA, Marcilio Oliveira e Fábio Pagani (sim, das únicas empresas que citei aqui!), mas também haviam representantes da cidade de Campinas.
+
+Todas as ideias eram muito boas, era uma apresentação melhor que a outra. O fim de cada apresentação era marcado com uma música pelo "MC", e aí começavam as perguntas dos jurados, que perguntaram desde "vocês já pensaram em como implementar essa solução no mundo real?" até "pensaram em expandir essa solução para outros municípios além de Campinas?".
+
+![Apresentação da equipe "Cidade Acessível"](<%= @blog.getPostContent(@document, "fim.jpg") %> "Apresentação da equipe 'Cidade Acessível'")
+
+Fomos o quarto ou quinto grupo a se apresentar, e, apesar de ter sido uma apresentação muito boa, não conseguimos mostrar um app funcional—ele demorou para carregar os dados do serviço e achamos melhor apresentar os layouts criados pelo designer, aproveitando nossos preciosos cinco minutos e o fato de termos uma ideia bem concreta do que seria nossa solução e o que ela traria de benefícios para a cidade. Infelizmente, isso não foi o suficiente.
+
+[A equipe vencedora desenvolveu um sistema para alertar as pessoas sobre riscos de doenças contagiosas em determinada região.](http://correio.rac.com.br/_conteudo/2016/03/campinas_e_rmc/416903-aplicativo-mapeia-area-de-contagio-da-dengue-e-zika.html) A apresentação foi impecável. O grupo começou evitando o _cliché_ de falar sobre a dengue, pelo menos diretamente, falando sobre doenças contagiosas, como caxumba e raiva. Foi explicado todo o processo de diagnóstico de um paciente, mostrando como o grupo pretendia coletar as informações necessárias para fazer o aplicativo funcionar. Não lembro de eles terem mostrado um protótipo funcional, mas lembro de ver um mapa com um range que mostrava se o local que a pessoa está no momento estava em risco e com alguns pins onde casos foram registrados. A ideia era realmente muito boa.
+
+Em segundo lugar, ficou o grupo da mulher do tradutor, denominado Cidade Acessível. A solução dos caras foi fazer o portal da prefeitura totalmente acessível aos deficientes visuais, com comandos de voz e atendimento personalizado.
+
+Em terceiro, ficou o grupo que fez alguns gráficos para mostrar as informações de despesas e receitas da cidade. Esses eu acho que ganharam pela complexidade, e pelo trabalho que deve ter dado para normalizar aquela base que tinha **muitos** dados -- e bastante estranhos!
+
+# E Fim
+
+Infelizmente, uma hora tem que acabar... Foi muito bom! O melhor hackathon que eu já fui sem sombra de dúvidas, e vai demorar para algum outro mudar isso! Organização impecável, respeito com os maratonistas, só gente boa... Sinceramente, não tenho palavras para descrever.
+
+Eu não participei pelos prêmios, tanto que quando me inscrevi nem sabia que eles existiam. Eu participei pela oportunidade de passar 24 horas programando com outras pessoas com a mesma vontade, e consegui! No último dia saí mais do que satisfeito de lá.
+
+Disseram que esse era apenas o **primeiro** hackathon de Campinas. Que venham os próximos! Meus alerts no Google já estão ativos!
