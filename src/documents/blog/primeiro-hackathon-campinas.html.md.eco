@@ -2,7 +2,7 @@
 title:    1º Hackathon de Campinas: Eu Fui!
 tagline:  Soluções inteligentes para a população em 24 horas de código
 tags:     hackathon campinas
-date:     2016-03-10T02:15:00+00:00
+date:     2016-03-10T02:50:00+00:00
 ---
 
 Nesse fim de semana, dias 6 e 7 de março, aconteceu o 1° Hackathon da cidade de Campinas, com 24 horas seguidas de programação intensa, com pessoas desconhecidas, e com certeza eu não queria estar fora dessa!
@@ -52,6 +52,9 @@ O credenciamento não demorou nem um minuto, talvez pelo fato de eu ser o único
 (Juro que não sabia que o nome da cor era grená, foi o que nos falaram na hora de descrever quem eram os senseis. Quem reconhece essa cor de primeira, por favor se manifeste. Se você não sabe, [isso é grená: #831D1C](https://pt.wikipedia.org/wiki/Gren%C3%A1).)
 - **Camiseta preta: staff**. Toda a equipe. Quem não era sensei, maratonista ou visitante, estava de preto. Não sei, mas parece que vi um tipo de hierarquia ali, pois algumas mangas de camiseta tinha um desenho e outras não. Mas chega uma altura que a gente não confia mais na própria visão.
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="pt" dir="ltr">Hackathon IMA começando! <a href="https://t.co/EVGWxybGyc">pic.twitter.com/EVGWxybGyc</a></p>&mdash; Guilherme Ventura (@danguilherme) <a href="https://twitter.com/danguilherme/status/706083785889157120">March 5, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 A abertura foi no teatro, e depois da apresentação inicial, feita por representantes da IMA e da Sensedia, com todas aquelas coisas que a gente já conhece bem, subimos umas escadas e chegamos a um escritório repleto de baias.
 
 ![Baias da IMA onde aconteceu o hackathon](<%= @blog.getPostContent(@document, "local.jpeg") %> "Espaço para a programação das soluções")
@@ -87,13 +90,17 @@ Todas as ideias eram muito boas, era uma apresentação melhor que a outra. O fi
 
 ![Apresentação da equipe "Cidade Acessível"](<%= @blog.getPostContent(@document, "fim.jpeg") %> "Apresentação da equipe 'Cidade Acessível'")
 
-Fomos o quarto ou quinto grupo a se apresentar, e, apesar de ter sido uma apresentação muito boa, não conseguimos mostrar um app funcional—ele demorou para carregar os dados do serviço e achamos melhor apresentar os layouts criados pelo designer, aproveitando nossos preciosos cinco minutos e o fato de termos uma ideia bem concreta do que seria nossa solução e o que ela traria de benefícios para a cidade. Infelizmente, isso não foi o suficiente.
+Fomos o quarto ou quinto grupo a se apresentar e, apesar de ter sido uma apresentação muito boa, não conseguimos mostrar um app funcional—ele demorou para carregar os dados do serviço e achamos melhor apresentar os layouts criados pelo designer, aproveitando nossos preciosos cinco minutos e o fato de termos uma ideia bem concreta do que seria nossa solução e o que ela traria de benefícios para a cidade. Infelizmente, isso não foi o suficiente.
 
-[A equipe vencedora desenvolveu um sistema para alertar as pessoas sobre riscos de doenças contagiosas em determinada região.](http://correio.rac.com.br/_conteudo/2016/03/campinas_e_rmc/416903-aplicativo-mapeia-area-de-contagio-da-dengue-e-zika.html) A apresentação foi impecável. O grupo começou evitando o _cliché_ de falar sobre a dengue, pelo menos diretamente, falando sobre doenças contagiosas, como caxumba e raiva. Foi explicado todo o processo de diagnóstico de um paciente, mostrando como o grupo pretendia coletar as informações necessárias para fazer o aplicativo funcionar. Não lembro de eles terem mostrado um protótipo funcional, mas lembro de ver um mapa com um range que mostrava se o local que a pessoa está no momento estava em risco e com alguns pins onde casos foram registrados. A ideia era realmente muito boa.
+Depois de todos terem se apresentado, houve uma pausa. Fomos tomar um ar, pegar um sol depois de passsar a noite toda acordados. Uns 30 minutos depois voltamos ao teatro, e daí começou uma verdadeira cerimônia. Um cara desconhecido (pelo menos para mim) com jeito, voz e frases de apresentador tomou conta do microfone. Todo animado, com jeitão de apresentador de programa da tarde de domingo, fazendo piadas e tentando animar o público que estava dormindo sentado. Haviam mais pessoas no teatro além da gente, acho que eram algumas pessoas importantes e alguns familiares, mas pra gente foi só enrolação. Ouvimos discursos de uns três secretários, do presidente da IMA, e por fim, do prefeito de Campinas, Jonas Donizette, que desandou a falar. Eram palavras bonitas, sim, de motivação. Que estávamos lá para "fazer a diferença", que quem muda a cidade é o cidadão e etc. Mas o que todos nós queríamos saber mesmo era quem tinha ganhado! Estávamos exaustos e ansiosos, desculpe, nada pessoal.
 
-Em segundo lugar, ficou o grupo da mulher do tradutor, denominado Cidade Acessível. A solução dos caras foi fazer o portal da prefeitura totalmente acessível aos deficientes visuais, com comandos de voz e atendimento personalizado.
+Enfim, chegou o momento. [A equipe vencedora desenvolveu um sistema para alertar as pessoas sobre riscos de doenças contagiosas em determinada região.](http://correio.rac.com.br/_conteudo/2016/03/campinas_e_rmc/416903-aplicativo-mapeia-area-de-contagio-da-dengue-e-zika.html) A apresentação foi impecável. O grupo começou evitando o _cliché_ de falar sobre a dengue, pelo menos diretamente, falando sobre doenças contagiosas, como caxumba e raiva. Foi explicado todo o processo de diagnóstico de um paciente, mostrando como o grupo pretendia coletar as informações necessárias para fazer o aplicativo funcionar. Não lembro de eles terem mostrado um protótipo funcional, mas lembro de ver um mapa com um range que mostrava se o local que a pessoa está no momento estava em risco e com alguns pins onde casos foram registrados. A ideia era realmente muito boa.
+
+Em segundo lugar, ficou o grupo da mulher do tradutor, denominado _Cidade Acessível_. A solução dos caras foi fazer o portal da prefeitura totalmente acessível aos deficientes visuais, com comandos de voz e atendimento personalizado.
 
 Em terceiro, ficou o grupo que fez alguns gráficos para mostrar as informações de despesas e receitas da cidade. Esses eu acho que ganharam pela complexidade, e pelo trabalho que deve ter dado para normalizar aquela base que tinha **muitos** dados -- e bastante estranhos!
+
+Eles citaram que pelo nível de complexidade das aplicações haveriam duas menções honrosas. Não sei se o apresentador se perdeu ou o que aconteceu, mas estou esperando até agora. Se você souber quem foram, por favor me dá um toque.
 
 # E Fim
 
