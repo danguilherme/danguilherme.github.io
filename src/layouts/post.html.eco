@@ -2,6 +2,9 @@
 layout: "base"
 ---
 
+<%- @getBlock('styles').add(['/styles/share-button/share-button.css']).toHTML() %>
+<%- @getBlock('scripts').add(['/scripts/share-button/share-button.js', '/scripts/blog-post.js']).toHTML() %>
+
 <div id="blog-post">
   <header>
     <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'LLL') %>">
@@ -9,7 +12,6 @@ layout: "base"
       <span class="month"><%= @formatDate(@document.date, "MMM") %></span>
       <span class="day"><%= @formatDate(@document.date, "DD") %></span>
     </time>
-
     <% if @blog.getPostCoverSrc(@getThumbnail, @document): %>
     <div class="post-cover">
       <img src="<%= @blog.getPostImageSrc(@getThumbnail, @document) %>" alt="Capa de '<%= @document.title %>'">
@@ -28,6 +30,8 @@ layout: "base"
         data-disqus-identifier="<%= @document.url %>"
         data-ga-label="discuss-comments">0 Comentários</a>
     </span>
+
+    <share-button id="share-header" class="share"></share-button>
   </header>
 
   <article>
@@ -45,6 +49,10 @@ layout: "base"
         <a href="https://twitter.com/intent/follow?screen_name=<%= author.twitter %>"
           title="@<%= author.twitter %>"
           data-ga-label="twitter-follow">me seguir no Twitter</a>!
+      </p>
+
+      <p>
+        <share-button id="share-footer" class="share"></share-button>
       </p>
 
       <%= @partial('disqus') %>

@@ -1,0 +1,46 @@
+(function() {
+  function getMetaContent(attrSelector) {
+    var el = document.querySelector(`meta[${attrSelector}]`);
+    return el ? el.getAttribute('content') : "";
+  }
+
+  function getDocumentTitle() {
+    return getMetaContent('property="og:title"') ||
+      getMetaContent('name="twitter:title"');
+  }
+
+  var sharer = new ShareButton({
+    ui: {
+      flyout: 'bottom center',
+      button_font: false,
+      buttonText: "Compartilhar"
+    },
+    networks: {
+      googlePlus: {
+        enabled: true
+      },
+      twitter: {
+        enabled: true,
+        description: getDocumentTitle() + " via @<%= @site.author.twitter %>"
+      },
+      facebook: {
+        enabled: true
+      },
+      pinterest: {
+        enabled: false
+      },
+      reddit: {
+        enabled: false
+      },
+      linkedin: {
+        enabled: true
+      },
+      whatsapp: {
+        enabled: true
+      },
+      email: {
+        enabled: true
+      }
+    }
+  });
+}());
