@@ -1,4 +1,6 @@
 danguilherme(function gaOnDocumentReady() {
+  const DEBUG = false;
+
   // Para testar o Google Analytics em tempo real,
   // tem que entrar o IP de localhost (127.0.0.1)
   // - 'localhost' está na black list do Google Analytics, pra não sujar os dados reais
@@ -20,17 +22,17 @@ danguilherme(function gaOnDocumentReady() {
       }));
     });
 
-      var demoPostTrackableLinks = els2array(document.querySelectorAll(`${DEMO_SELECTOR} a`));
-      demoPostTrackableLinks.forEach(el => {
-        el.addEventListener('click', createLinkTrackCallback({
-          category: 'demo',
-          action: 'link-click',
-          label: 'demo-link'
-        }));
-      });
+    var demoPostTrackableLinks = els2array(document.querySelectorAll(`${DEMO_SELECTOR} a`));
+    demoPostTrackableLinks.forEach(el => {
+      el.addEventListener('click', createLinkTrackCallback({
+        category: 'demo',
+        action: 'link-click',
+        label: 'demo-link'
+      }));
+    });
 
     var siteTrackableLinks = els2array(
-      document.querySelectorAll(`a[data-ga-category], a[data-ga-action], a[data-ga-label], a`)
+      document.querySelectorAll(`[data-ga-category], [data-ga-action], [data-ga-label], a`)
     );
     siteTrackableLinks
       .filter(el => blogPostTrackableLinks.indexOf(el) === -1)
@@ -53,11 +55,9 @@ danguilherme(function gaOnDocumentReady() {
         anchor.dataset.gaAction || defaults.action,
         anchor.dataset.gaLabel || anchor.href || defaults.label);
 
-      // console.log('send', 'event',
-      //   anchor.dataset.gaCategory || defaults.category,
-      //   anchor.dataset.gaAction || defaults.action,
-      //   anchor.dataset.gaLabel || anchor.href || defaults.label);
-      // event.preventDefault();
+      if (DEBUG)
+      // Use a extensão Google Analytics Debugger
+        event.preventDefault();
     };
   }
 

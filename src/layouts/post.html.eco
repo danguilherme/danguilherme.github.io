@@ -33,7 +33,7 @@ layout: "base"
     •
     <span id="post-share">
       <span class="share-button">
-        <share-button id="share-footer" class="share"></share-button>
+        <share-button id="share-header" class="share" data-ga-label="toggle-share-buttons-heading"></share-button>
         <%- @icon('share') %> Compartilhar
       </span>
     </span>
@@ -58,7 +58,7 @@ layout: "base"
 
       <p id="social-share">
         <span class="share-button">
-          <share-button id="share-footer" class="share"></share-button>
+          <share-button id="share-footer" class="share" data-ga-label="toggle-share-buttons-footer"></share-button>
           <%- @icon('share') %> Compartilhar
         </span>
       </p>

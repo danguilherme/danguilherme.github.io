@@ -10,6 +10,15 @@
       getMetaContent('name="twitter:title"');
   }
 
+  function createAfterShareCallback(network) {
+    return function() {
+      ga('send', 'event',
+        'blog-post',
+        'share',
+        network);
+    }
+  }
+
   var sharer = new ShareButton({
     ui: {
       flyout: 'bottom center',
@@ -18,14 +27,17 @@
     },
     networks: {
       googlePlus: {
-        enabled: true
+        enabled: true,
+        after: createAfterShareCallback('google-plus')
       },
       twitter: {
         enabled: true,
-        description: getDocumentTitle() + " via @<%= @site.author.twitter %>"
+        description: getDocumentTitle() + " via @<%= @site.author.twitter %>",
+        after: createAfterShareCallback('twitter')
       },
       facebook: {
-        enabled: true
+        enabled: true,
+        after: createAfterShareCallback('facebook')
       },
       pinterest: {
         enabled: false
@@ -34,13 +46,16 @@
         enabled: false
       },
       linkedin: {
-        enabled: true
+        enabled: true,
+        after: createAfterShareCallback('linkedin')
       },
       whatsapp: {
-        enabled: true
+        enabled: true,
+        after: createAfterShareCallback('whatsapp')
       },
       email: {
-        enabled: true
+        enabled: true,
+        after: createAfterShareCallback('email')
       }
     }
   });
