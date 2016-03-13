@@ -431,13 +431,32 @@ main
 
   .icon-share
     fill: theme-color
+    vertical-align text-top
+    transition fill .2s
 
-  share-button
-    padding 0
-    background: transparent
+
+  .share-button
+    position relative
     color: theme-color
-    font-weight normal
-    text-transform none
-    font-family inherit
-    &::before
-      display none
+    transition color .2s
+    white-space: nowrap;
+
+    share-button
+      position absolute
+      left 0
+      right 0
+      top 0
+      bottom 0
+
+      background: transparent
+      &::before
+        display none
+
+    &:hover
+      color #0D47A1
+      .icon-share
+        fill #0D47A1
+
+  #social-share
+    text-align center
+    padding 10px

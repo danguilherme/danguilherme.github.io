@@ -30,8 +30,13 @@ layout: "base"
         data-disqus-identifier="<%= @document.url %>"
         data-ga-label="discuss-comments">0 Comentários</a>
     </span>
-
-    <share-button id="share-header" class="share"></share-button>
+    •
+    <span id="post-share">
+      <span class="share-button">
+        <share-button id="share-footer" class="share"></share-button>
+        <%- @icon('share') %> Compartilhar
+      </span>
+    </span>
   </header>
 
   <article>
@@ -51,8 +56,11 @@ layout: "base"
           data-ga-label="twitter-follow">me seguir no Twitter</a>!
       </p>
 
-      <p>
-        <share-button id="share-footer" class="share"></share-button>
+      <p id="social-share">
+        <span class="share-button">
+          <share-button id="share-footer" class="share"></share-button>
+          <%- @icon('share') %> Compartilhar
+        </span>
       </p>
 
       <%= @partial('disqus') %>

@@ -1,3 +1,4 @@
+// https://github.com/carrot/share-button
 (function() {
   function getMetaContent(attrSelector) {
     var el = document.querySelector(`meta[${attrSelector}]`);
@@ -13,7 +14,7 @@
     ui: {
       flyout: 'bottom center',
       button_font: false,
-      buttonText: "Compartilhar"
+      buttonText: ""
     },
     networks: {
       googlePlus: {
@@ -42,5 +43,11 @@
         enabled: true
       }
     }
+  });
+
+  document.addEventListener('click', function(evt) {
+    if (evt.target.tagName === "SHARE-BUTTON")
+      return;
+    sharer.close(); // não funcionando
   });
 }());
