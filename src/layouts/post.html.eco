@@ -23,7 +23,7 @@ layout: "base"
       <p class="post-tagline"><%= @document.tagline %></p>
     <% end %>
 
-    <span id="post-tags"><%= @document.tags.join(", ") %></span>
+    <span id="post-tags"><%- @icon('tag') %> <%= @document.tags.join(", ") %></span>
     •
     <span id="post-comments-count">
       <a href="#disqus_thread"
@@ -76,9 +76,4 @@ layout: "base"
     <%= @partial('posts-list', {posts: related }) %>
   </section>
   <% end %>
-
-  <script>
-  // Sets the page field to "/about.html".
-  ga('set', 'title', "Blog Post: <%= @document.title %>");
-  </script>
 </div>

@@ -76,12 +76,18 @@ a
   text-decoration none
   transition color .2s
 
+  .icon
+    transition fill .2s
+    fill theme-color
+
   &:visited
     color #64B5F6
 
   &:hover,
   &:focus
     color #0D47A1
+    .icon
+      fill #0D47A1
 
 blockquote
   border-left theme-color 5px solid
@@ -161,6 +167,7 @@ dl dt
 	width: 1em;
 	height: 1em;
 	fill: currentColor;
+  vertical-align middle
 }
 
 #header-content,
