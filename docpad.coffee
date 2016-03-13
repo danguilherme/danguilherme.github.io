@@ -58,6 +58,9 @@ docpadConfig = {
           blog, front-end, programação, javascript, css, html, csharp, C#, artigos
           """
 
+    icon: (icon) ->
+        return "<svg class=\"icon icon-#{icon}\"><use xlink:href=\"/styles/iconset/symbol-defs.svg#icon-#{icon}\"></use></svg>";
+
     # -----------------------------
     # Helper Functions
 

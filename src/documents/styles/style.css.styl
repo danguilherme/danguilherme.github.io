@@ -156,6 +156,13 @@ img
 dl dt
   font-weight bold
 
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
 #header-content,
 #footer-content
   max-width max-width
@@ -422,9 +429,15 @@ main
     margin-bottom 2rem
     font-style italic
 
+  .icon-share
+    fill: theme-color
+
   share-button
-    padding 5px
-    background: lighten(theme-color, 95%)
+    padding 0
+    background: transparent
     color: theme-color
+    font-weight normal
+    text-transform none
+    font-family inherit
     &::before
       display none
