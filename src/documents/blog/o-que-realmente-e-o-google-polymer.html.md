@@ -9,7 +9,7 @@ date:     2015-06-30T21:04:00+00:00
 
 Esse artigo vai te dar a resposta exata do que o [Polymer](https://www.polymer-project.org/) é e, principalmente, **do que ele não é**.
 
-# 1. Ele não é um Polyfill Para a Tecnologia dos Web Components
+## 1. Ele não é um Polyfill Para a Tecnologia dos Web Components
 *Web Components: O futuro da web*. Você já deve ter visto isso em muitos lugares, e com certeza o Polymer ou foi citado ou foi o assunto principal, e por isso muitas pessoas confundem.
 
 Polymer é uma biblioteca que **facilita** a criação de [Web Components](http://tableless.com.br/web-components-introducao/), que são elementos HTML customizados, independentes e reutilizáveis.
@@ -20,7 +20,7 @@ Esse é o cara responsável por trazer as funcionalidades descritas nas especifi
 
 O Polymer tem foco em deixar a criação desses componentes customizados mais declarativa, *a la* HTML (afinal, é assim que fazemos com todos os outros elementos, né?), priorizando a expressividade com o [açúcar sintático](https://pt.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico) que ele provê.
 
-## Sem <del>Jequiti</del> Polymer
+### Sem <del>Jequiti</del> Polymer
 ``` html
 <!-- Defines element markup -->
 <template>
@@ -90,7 +90,7 @@ O Polymer tem foco em deixar a criação desses componentes customizados mais de
 ```
 [Elemento simples criado com Vanilla JS.](https://github.com/webcomponents/hello-world-element/blob/master/hello-world.html)
 
-## Com Polymer
+### Com Polymer
 ``` html
 <!-- Imports polymer -->
 <link rel="import" href="../polymer/polymer.html">
@@ -121,10 +121,10 @@ De 65 para 22 linhas. Sem contar o two-way data-binding e a facilidade de leitur
 
 Existem outras bibliotecas que também têm como objetivo facilitar a criação de componentes, como [X-Tags](http://x-tags.org/), da Mozilla, e [Bosonic](http://bosonic.github.io/).
 
-# 2. Ele é uma Biblioteca, não um Framework
+## 2. Ele é uma Biblioteca, não um Framework
 A discussão "[Biblioteca vs Framework](http://stackoverflow.com/q/148747/1574059)"  é velha e confusa, por isso antes vou defini-las sob meu ponto de vista.
 
-## Diferença Entre Biblioteca e Framework
+### Diferença Entre Biblioteca e Framework
 TL;DR:  
 - **Biblioteca**: você chama
 - **Framework**: você é chamado
@@ -134,10 +134,10 @@ Falando no contexto de código, bibliotecas contém funções (métodos, objetos
 Frameworks geralmente se encaixam no design pattern de [Inversão de Controle](https://pt.wikipedia.org/wiki/Invers%C3%A3o_de_controle).
 Para saber mais, Martin Fowler tem [um ótimo artigo](http://martinfowler.com/bliki/InversionOfControl.html) sobre isso.
 
-## E por que Polymer é uma Biblioteca?
+### E por que Polymer é uma Biblioteca?
 Porque ele tem uma única e exclusiva função: facilitar a criação de Web Components. Só. Ele não vai se intrometer onde não é chamado e, quando você o chamar, vai fazer o que você pediu e nada mais.
 
-# 3. Ele não é um Framework CSS / Showcase do Material Design
+## 3. Ele não é um Framework CSS / Showcase do Material Design
 Apesar do [site do projeto](https://www.polymer-project.org/) ser construído sobre a especificação do [Material Design](https://www.google.com/design/spec/material-design), também da Google, o Polymer não é "o futuro Bootstrap" (sim, eu já ouvi falarem isso). Bootstrap e Polymer não são nem comparáveis, mas a esse ponto você já deve saber o porquê: o primeiro é um framework CSS e o segundo, uma biblioteca JavaScript.
 
 O que existem, na verdade, são **elementos baseados no Material Design**. Elementos customizados, criados com Polymer, como qualquer outro pode ser. Esses são chamados de [`paper-elements`](https://www.polymer-project.org/0.5/components/paper-elements/demo.html), que são nada mais nada menos que extensões dos elementos base ([`core-elements`](https://www.polymer-project.org/0.5/components/core-elements/demo.html)) com estilos e animações diferenciados.

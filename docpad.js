@@ -1,21 +1,15 @@
-var author, docpadConfig, fs, moment, pkg;
-
-fs = require('fs');
-
-moment = require('moment');
-
-moment.locale('pt-br');
-
-pkg = require('./package.json');
-
-author = {
+var fs = require('fs');
+var moment = require('moment');
+var pkg = require('./package.json');
+var author = {
   name: "Guilherme Ventura",
   email: "guilhermeventura2@gmail.com",
   twitter: "danguilherme",
   github: "danguilherme"
 };
 
-docpadConfig = {
+moment.locale('pt-br');
+var docpadConfig = {
   collections: {
     pages: function() {
       return this

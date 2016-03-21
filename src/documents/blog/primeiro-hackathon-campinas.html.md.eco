@@ -16,10 +16,10 @@ Vou tentar descrever cada detalhe do evento: o antes, o durante e um pouquinho d
 * [O hackathon!](#o-evento)
 * [Encerramento/premiações](#encerramento)
 
-# Do Conhecimento do Hackathon
+## Do Conhecimento do Hackathon
 Antes de mais nada, acho interessante compartilhar como fiquei sabendo do evento. Há muito tempo atrás, depois de ter participado do meu primeiro hackathon (e ter curtido bastante!), criei um [alerta no Google](https://www.google.com.br/alerts) para me notificar sempre que a expressão "Hackathon Campinas" fosse encontrada. Ele não me trouxe nada até meados de janeiro, quando recebi a notícia do 1º Hackathon Campinas (não lembro da onde), e me inscrevi. Já adicionei uma entrada somente com a palavra "Hackathon", pra ampliar a busca!
 
-# A inscrição
+## A inscrição
 A inscrição tinha que ser feita num bom e velho Google Form. Pelo que me lembro, tínhamos que pôr o nome, idade e um resumo da nossa experiência profissional, onde éramos avisados de que haveria uma pré-seleção. Eu preenchi o form normalmente, sem muitas expectativas - procuro não gerar expectativa à toa!
 
 Como eu não conhecia a IMA no momento, sinceramente eu estava pensando que o hackathon ia ser bem meia boca no quesito organização, mas vou falar disso mais pra frente nesse artigo. Já me adianto que **subestimei completamente a organização do evento**.
@@ -34,15 +34,15 @@ Na verdade, esses números estavam no regulamento, mas sabe aquela parte do "**E
 
 Também fomos instruídos a pagar a inscrição, que era de **R$ 35,00**, o preço de uma **caixa de leite**. Literalmente, pois o valor da inscrição era para doar caixas de leite para instituições de caridade locais, pagos por nós participantes e inteirado pela própria IMA (infelizmente não lembro os valores exatos agora, mas foram três instituições beneficiadas). Isso, para mim, foi um grande ato de responsabilidade social, além de mostrar que eles não estavam atrás de lucro no evento (além das ideias de apps desenvolvidos durante ele), mostraram que se preocupam com a sociedade em que vivemos.
 
-## Conhecendo a Equipe
+### Conhecendo a Equipe
 Fomos apresentados aos nossos parceiros de equipe na segunda-feira antes do final de semana do hackathon (dia 29 de fevereiro). Ao mesmo tempo, eles liberaram o que parecia ser o protótipo da API REST: conseguíamos requisitar os dados (se não fossem recursos filhos), mas os filtros não funcionavam. Mas correu tudo bem, conseguimos discutir sobre a API e os dados que ela fornece.
 
 Em pouco mais de uma hora e meia de reunião, divididas em dois dias, conseguimos nos conhecer um pouco melhor e ter uma ideia do que poderíamos fazer no dia do evento.
 
-# O Evento
+## O Evento
 No sábado, 5 de março, acordei atrasado, pra variar. O último email de contato informava, em negrito, que esperava todos os participantes **às 08:00h**. Mas deu tudo certo, o teatro da IMA, onde aconteceu todo o evento, tinha transporte rápido e fácil partindo da rodoviária, cheguei 08:20 e ainda deu tempo de tomar um café.
 
-## Recepção
+### Recepção
 Chegando no local, todo mundo muito educado, sorridente e feliz, apesar de ser oito horas da manhã de um sábado. Só eu que não gosto de acordar cedo no fim de semana? Ok, não é. Naquela hora até eu tava feliz.
 
 O credenciamento não demorou nem um minuto, talvez pelo fato de eu ser o único chegando naquele horário. Junto do meu crachá de desenvolvedor, recebi um pote de pipoca com três Torcidas (o salgadinho) e a camiseta do evento, muito bonita por sinal. Aliás, a organização das pessoas estava assim:
@@ -66,7 +66,7 @@ Dentro do pote de pipoca, tinha muito mais do que Torcida. Era Club Social, bolo
 <blockquote class="twitter-tweet" data-lang="en"><p lang="pt" dir="ltr">Só na correria no <a href="https://twitter.com/hashtag/hackathon?src=hash">#hackathon</a>, mas fome nóis num passa <a href="https://t.co/irsDYaeLug">pic.twitter.com/irsDYaeLug</a></p>&mdash; Guilherme Ventura (@danguilherme) <a href="https://twitter.com/danguilherme/status/706250429680713729">March 5, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## Código
+### Código
 
 Depois de receber nossas senhas individuais para acesso à rede wifi, eu e meu time sentamos para conversar sobre a nossa ideia. Após muita conversa, acabamos com duas ideias que achamos muito boas, e deixamos para nossos usuários finais decidirem o que faríamos. Um de nós saiu para a rua, aproveitando que tínhamos a liberdade para ir aonde quiséssemos no evento, para fazer uma pesquisa de campo. No retorno, houve uma vitória de 6 a 9 para uma das ideias, e então começamos a desenvolvê-la.
 
@@ -80,7 +80,7 @@ Tínhamos frutas à disposição, acesso à lanchonete, podíamos andar pra onde
 
 O dia ia amanhecendo e o tempo para finalizar o app acabando. Eu podia ouvir ao fundo a voz da mulher do tradutor do Google, e alguma pessoa da sala respondendo as perguntas dela. Era muito interessante. Estranho que só comecei a ouvir a voz dela de manhã, então parecia que não testaram muito o que quer que tinham desenvolvido. Enfim, chegou as 09:00 e o dia de desenvolvimento acabou.
 
-# Encerramento
+## Encerramento
 
 Todos nós descemos para o teatro. Todo mundo cansado, com cara de mau, tentando manter o olho aberto. A partir daqui, o que eu escrever pode ser meia verdade porque, nessa hora, depois de ter parado de trabalhar e estar sentado no banco do teatro sem fazer nada além de olhar para o palco, fiquei bêbado de sono, então posso ter deixado algo passar.
 
@@ -102,7 +102,7 @@ Em terceiro, ficou o grupo que fez alguns gráficos para mostrar as informaçõe
 
 Eles citaram que pelo nível de complexidade das aplicações haveriam duas menções honrosas. Não sei se o apresentador se perdeu ou o que aconteceu, mas estou esperando até agora. Se você souber quem foram, por favor me dá um toque.
 
-# E Fim
+## E Fim
 
 Infelizmente, uma hora tem que acabar... Foi muito bom! O melhor hackathon que eu já fui sem sombra de dúvidas, e vai demorar para algum outro mudar isso! Organização impecável, respeito com os maratonistas, só gente boa... Sinceramente, não tenho palavras para descrever.
 

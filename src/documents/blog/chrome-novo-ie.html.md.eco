@@ -11,11 +11,11 @@ Há pouco tempo atrás, surgiu um post com título um tanto quanto sensacionalis
 
 Infelizmente não vivi muito na época de domínio do Internet Explorer (não conheci o Netscape, me julguem). Sim, tive um Positivo com Internet Explorer, que vivia cheio daquelas barras de ferramentas de terceiros, que pra abrir uma página era bater na URL e ir tomar um café, mas isso foi por pouco mais de dois anos, e nessa época eu só ficava nos joguinhos da Miniclip, não produzia nada mesmo. Portanto, o que vou expor aqui é minha visão de como é a realidade dos navegadores hoje, do ponto de vista de um desenvolvedor.
 
-# Os Usuários Escolhem Navegar Pelo Chrome
+## Os Usuários Escolhem Navegar Pelo Chrome
 
 O primeiro ponto, o mais óbvio, é que os usuários do Chrome **escolheram ser usuários do Chrome**. Eles tiveram que baixar o navegador manualmente, não contaram com a comodidade de já tê-lo instalado em seu Sistema Operacional, que é o caso do IE e Safari (até o Firefox já vem no Ubuntu 14.04). Claro que o Chrome OS é um desses casos, mas convenhamos que ele não se encaixa como um SO convencional.
 
-# Desenvolvimento é Diferente de Produção
+## Desenvolvimento é Diferente de Produção
 
 Assim como beta é diferente de estável. Um serviço em beta, que era o caso do Inbox e Whatsapp Web, que funciona apenas em um navegador é completamente aceitável. Em casos notórios, como os já citados, a comunidade de desenvolvimento já cai em cima, justamente pra evitar esse esquema anti-cross-browser.
 
@@ -27,7 +27,7 @@ Infelizmente, suportar ou não outros browsers é uma decisão de negócio, e se
 
 Eu, particularmente, uso o Chrome pela sua simplicidade e suas ferramentas de desenvolvimento. Não consigo usar os devtools do Firefox, já tentei e me perco todo naquilo. Não é por isso que não vou testar meus websites nele, a única diferença é que será com uma frequência menor, ou para testar alguma funcionalidade chave. Quem desenvolve para um browser **específico**, utilizando [detecção de browser](https://css-tricks.com/browser-detection-is-bad/) ao invés de [funcionalidade](http://quirksmode.org/js/support.html), está fazendo algo muito errado, que vai gerar retrabalho num futuro próximo.
 
-# Uso Inadequado de APIs Específicas do Browser
+## Uso Inadequado de APIs Específicas do Browser
 
 Pesquisando para esse post, descobri que a API de FileSystem, utilizada em todos os exemplos dados pelo Paulo Higa em seu post (exceto o Inbox), não é um padrão W3C:
 
@@ -38,6 +38,6 @@ Ela virou uma API específica para o Chrome. A verdade é que o navegador é sim
 
 A Microsoft agiu errado ao implementar o upload de pastas no OneDrive apenas no Chrome, que suporta isso? Absolutamente não! Se eles têm o tempo e recursos necessários para implementar tanto o upload de pastas onde é suportado e o upload em lote onde não é, que o faça, melhor para os usuários de ambos os browsers. Além disso, não é porque o Chrome suporta essa funcionalidade não endorsada pelo W3C que eles devem implementar também.
 
-# Conclusão: Habemus Bom Senso
+## Conclusão: Habemus Bom Senso
 
 Não adianta levantar um problema sem sugerir nenhuma solução. Tudo bem que isso está fora de nosso controle—não somos a Google—mas podemos fazer algo quanto a isso. Como desenvolvedores, podemos simplesmente não endorsar essas tecnologias não utilizando-as. Como usuários, podemos fazer como fizemos com o Whatsapp Web, mostrando aos desenvolvedores que *isso é feio* (isso mesmo, xingar muito no Twitter). Se seu website funciona apenas no Google Chrome, a culpa é sua, não dele.
