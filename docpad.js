@@ -1,4 +1,4 @@
-var fs = require('fs');
+var  fs = require('fs');
 var moment = require('moment');
 var pkg = require('./package.json');
 var author = {
@@ -22,15 +22,21 @@ var docpadConfig = {
         });
     },
     posts: function() {
-      return this.getCollection("html").findAllLive({
-        relativeOutDirPath: 'blog',
-        basename: { $ne: "index" }
-      }, [{ date: -1 }]).on("add", function(model) {
-        return model.setMetaDefaults({
-          htmlmin: true,
-          layout: "post"
+      return this
+        .getCollection("html")
+        .findAllLive({
+          relativeOutDirPath: 'blog',
+          basename: { $ne: "index" }
+        }, [{ date: -1 }])
+        .on("add", function(model) {
+          return model.setMetaDefaults({
+            htmlmin: true,
+            layout: "post"
+          });
+        })
+        .findAllLive({
+          isDraft: { $ne: true }
         });
-      });
     },
     sitemap: function() {
       return this
@@ -130,24 +136,24 @@ var docpadConfig = {
   },
 
   environments: {
-    // development: {
-    //   collections: {
-    //     posts: function() {
-    //       return this.getCollection("html").findAllLive({
-    //         relativeOutDirPath: 'blog',
-    //         basename: {
-    //           $ne: "index"
-    //         }
-    //       }, [{
-    //         date: -1
-    //       }]).on("add", function(model) {
-    //         return model.setMetaDefaults({
-    //           layout: "post"
-    //         });
-    //       });
-    //     }
-    //   }
-    // }
+    development: {
+      collections: {
+        posts: function() {
+          return this
+            .getCollection("html")
+            .findAllLive({
+              relativeOutDirPath: 'blog',
+              basename: { $ne: "index" }
+            }, [{ date: -1 }])
+            .on("add", function(model) {
+              return model.setMetaDefaults({
+                htmlmin: true,
+                layout: "post"
+              });
+            });
+        }
+      }
+    }
   }
 };
 
