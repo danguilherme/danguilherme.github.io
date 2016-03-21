@@ -5,7 +5,26 @@ layout: "base"
 <%- @getBlock('styles').add(['/styles/share-button/share-button.css']).toHTML() %>
 <%- @getBlock('scripts').add(['/scripts/share-button/share-button.js', '/scripts/blog-post.js']).toHTML() %>
 
-<div id="blog-post">
+<div id="blog-post <%- if @document.isDraft then 'draft' %>">
+  <% if @document.isDraft: %>
+    <div class="draft-notice">
+      <%- @icon('circle-cross') %>
+      <div>
+        <p>
+          Você não deveria estar aqui!
+        </p>
+        <p>
+           Esse post é um rascunho. Como o blog é
+           <a href="https://github.com/danguilherme/danguilherme.github.io/tree/source" target="_BLANK"
+             data-ga-category="draft-notice"
+             data-ga-label="github">aberto no GitHub</a>,
+             não vi sentido em remover essa página, mas fique ciente que o que está aqui pode estar
+             errado ou não ser nem um pouco útil... :)
+        </p>
+      </div>
+    </div>
+  <% end %>
+
   <header>
     <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'LLL') %>">
       <span class="year"><%= @formatDate(@document.date, "YYYY") %></span>

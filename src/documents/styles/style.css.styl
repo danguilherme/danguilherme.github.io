@@ -428,6 +428,43 @@ main
     width 200px
     border 1px solid theme-color
 
+  .draft-notice {
+    margin: 1em 0;
+    padding: 1em;
+
+    border: 1px solid theme-color;
+    border-radius: 10px;
+    background-color lighten(theme-color, 95%)
+  }
+
+  .draft-notice::after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+
+  .draft-notice .icon {
+    float: left;
+    font-size: 4em;
+    fill: theme-color;
+    margin-right: 5px;
+  }
+
+  .draft-notice div {
+    margin: 0;
+  }
+
+  .draft-notice p {
+    margin: 1em 0 0;
+  }
+
+  .draft-notice p:first-child {
+    margin-top: 0;
+  }
+
+  #post-comments-count
+    white-space: nowrap;
+
   .gist .gist-data
     padding 10px
 
@@ -441,11 +478,10 @@ main
     vertical-align text-top
     transition fill .2s
 
-
   .share-button
     position relative
     color: theme-color
-    transition color .2s
+    transition border-color .2s, color .2s
     white-space: nowrap;
 
     share-button
@@ -467,3 +503,11 @@ main
   #social-share
     text-align center
     padding 10px
+
+    .share-button
+      padding 10px
+      border 1px solid theme-color
+      border-radius 5px
+
+      &:hover
+        border-color #0D47A1
