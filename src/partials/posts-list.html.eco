@@ -6,7 +6,10 @@
         data-ga-action="thumbnail-click"
         data-ga-label="<%= post.title %>">
         <% if @blog.getPostCoverSrc(@getThumbnail, post): %>
-          <img src="<%= @blog.getPostCoverSrc(@getThumbnail, post) %>" alt="Capa de '<%= post.title %>'" class="post-cover">
+          <img src="<%= @blog.getPostCoverSrc(@getThumbnail, post) %>" alt="Capa de '<%= post.title %>'"
+            class="post-cover"
+            width="300"
+            height="100">
         <% end %>
       </a>
       <time datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
