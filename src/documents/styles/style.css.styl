@@ -21,9 +21,6 @@ body
   margin 0
   padding 0
   height 100%
-  font-size 14px
-  @media screen and (min-width: 500px)
-    font-size 2em
 
 input,
 textarea,
@@ -161,8 +158,8 @@ dl dt
   vertical-align middle
 }
 
-#header-content,
-#footer-content
+.header-content,
+.footer-content
   max-width max-width
   padding 0 1em
   margin 0 auto
@@ -170,7 +167,7 @@ dl dt
 /*
 * HEADER
 */
-#main-header
+.site-header
   background #2196F3
   color white
   min-height 60px
@@ -202,7 +199,7 @@ dl dt
       padding 0
       margin-right 10px
 
-  #external-links
+  .header-external-links
     float right
 
     li
@@ -211,7 +208,7 @@ dl dt
       &:hover
         opacity 1
 
-#main-header::after
+.site-header::after
   content ''
   display block
   clear both
@@ -240,7 +237,7 @@ main
       margin-left auto
       margin-right auto
 
-  header
+  #blog-post header
     margin-bottom 3rem
 
     position relative
@@ -295,7 +292,7 @@ main
       border 1px solid #606060
       cursor default
 
-      @media screen and (min-width: max-width)
+      @media screen and (min-width: max-width + (70px * 2))
         left -60px
 
       span
@@ -311,7 +308,7 @@ main
         box-shadow inset #606060 0 0 3px
         text-align center
 
-  @media screen and (min-width: max-width)
+  @media screen and (min-width: max-width + 50px)
     ul,
     ol
       padding-left 0
@@ -393,7 +390,7 @@ main
       span
         font-style italic
 
-#main-footer
+.site-footer
   padding 0 1rem
   margin-top 3rem
 

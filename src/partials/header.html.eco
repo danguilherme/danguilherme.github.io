@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="header-content">
+    <h1>
+      <a href="/"
+        data-ga-label="home">Guilherme Ventura</a>
+    </h1>
+
+    <nav class="header-menu">
+      <%- @partial('menu', {menuItems: @generateMenu(@document.url, 'pages')}) %>
+    </nav>
+
+    <nav class="header-external-links">
+      <ul>
+        <li>
+          <a href="https://github.com/<%= @site.author.github %>"
+              data-ga-category="right-static-menu"
+              data-ga-label="github">GitHub</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/<%= @site.author.twitter %>"
+              data-ga-category="right-static-menu"
+              data-ga-label="twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="/rss.xml"
+            data-ga-category="right-static-menu"
+            data-ga-label="feed">Feed</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

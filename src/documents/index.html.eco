@@ -5,7 +5,7 @@ layout:     "home"
 priority: 1
 changefreq: "daily"
 ---
-<article>
+<article id="home-content">
   <section id="centered-content">
     <h1>Guilherme Ventura</h1>
     <h2>Just another <span id="adjective">dreamer</span></h2>
@@ -57,9 +57,24 @@ changefreq: "daily"
   </section>
 </article>
 
+<div id="site-content">
+  <%- @partial('header') %>
 
+  <p>
+    Bem vindo à minha casa na internet! A preguiça não me deixou escrever muito aqui,
+    mas você pode checar o <a href="/blog" data-ga-label="blog">blog</a> e ver se tem algo interessante.
+  </p>
 
-<script type="text/javascript">
+  <% posts = @getCollection("posts") %>
+  <% if posts.length: %>
+    <h2>Posts Recentes</h2>
+    <%= @partial('posts-list', {posts: posts.toJSON() }) %>
+  <% end %>
+
+  <%- @partial('footer') %>
+</div>
+
+<script type="text/javascript" defer>
 (function() {
   var ADJECTIVES = [
     'dreamer', 'learner', 'enthusiast',
@@ -83,16 +98,15 @@ changefreq: "daily"
   }, 5000);
 
   changeAdjective();
+
+  function fc() {
+    var home = document.getElementById('home-content');
+    var site = document.getElementById('site-content');
+
+    site.style.marginTop = home.scrollHeight + 'px';
+  }
+
+  fc();
+  window.addEventListener('resize', fc);
 })();
 </script>
-<!--
-<p>
-  Bem vindo à minha casa na internet! A preguiça não me deixou escrever muito aqui,
-  mas você pode checar o <a href="/blog" data-ga-label="blog">blog</a> e ver se tem algo interessante.
-</p>
-
-<% posts = @getCollection("posts") %>
-<% if posts.length: %>
-  <h2>Posts Recentes</h2>
-  <%= @partial('posts-list', {posts: posts.toJSON() }) %>
-<% end %> -->

@@ -5,7 +5,7 @@ layout: "base"
 <%- @getBlock('styles').add(['/styles/share-button/share-button.css']).toHTML() %>
 <%- @getBlock('scripts').add(['/scripts/share-button/share-button.js', '/scripts/blog-post.js']).toHTML() %>
 
-<div id="blog-post <%- if @document.isDraft then 'draft' %>">
+<div id="blog-post" class="<%- if @document.isDraft then 'draft' %>">
   <% if @document.isDraft: %>
     <div class="draft-notice">
       <%- @icon('circle-cross') %>
