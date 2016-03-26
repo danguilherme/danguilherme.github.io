@@ -12,11 +12,13 @@
             height="100">
         <% end %>
       </a>
-      <time datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
-      <a href="<%= post.url %>"
-        data-ga-category="blog"
-        data-ga-label="<%= post.title %>"><%= post.title %></a>
-      <span><%= post.tagline %></span>
+      <div class="post-details">
+        <time datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
+        <a href="<%= post.url %>"
+          data-ga-category="blog"
+          data-ga-label="<%= post.title %>"><%= post.title %></a>
+        <span><%= post.tagline %></span>
+      </div>
     </li>
   <% end %>
 </ul>

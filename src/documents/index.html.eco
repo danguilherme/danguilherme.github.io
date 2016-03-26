@@ -17,7 +17,7 @@ changefreq: "daily"
 
       <ul class="social-links">
         <li class="blog">
-          <a href="/blog/" target="_blank" title="Guilherme Ventura Blog"
+          <a href="/blog/" title="Guilherme Ventura Blog"
             data-ga-category="home"
             data-ga-action="social-link-click"
             data-ga-label="blog">Blog</a>
