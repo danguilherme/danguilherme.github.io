@@ -1,22 +1,6 @@
-max-width = 800px
-theme-color = #2196F3
-
-/*
-* MIXINS
-*/
-center-vertical()
-  position relative
-  top 50%
-  -webkit-transform translateY(-50%)
-  -ms-transform translateY(-50%)
-  -o-transform translateY(-50%)
-  transform translateY(-50%)
-
-transition()
-  -webkit-transition arguments
-  -ms-transition arguments
-  -o-transition arguments
-  transition arguments
+@import 'variables.css.styl'
+@import 'mixins.css.styl'
+@import 'home.css.styl'
 
 /*
 * BASE
@@ -29,10 +13,17 @@ html
   font-family Raleway, sans-serif
   font-size 16px
   line-height 1.5
+  height 100%
+  > object
+    display none
 
 body
   margin 0
   padding 0
+  height 100%
+  font-size 14px
+  @media screen and (min-width: 500px)
+    font-size 2em
 
 input,
 textarea,
@@ -163,10 +154,10 @@ dl dt
   font-weight bold
 
 .icon {
-	display: inline-block;
-	width: 1em;
-	height: 1em;
-	fill: currentColor;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
   vertical-align middle
 }
 
@@ -414,6 +405,7 @@ main
 
   .love
     color #D70021
+
 /*
 * STYLE FOR PAGES
 */

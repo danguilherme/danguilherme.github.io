@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <%- @partial('head-content') %>
+  <title><%= @getPreparedTitle() %></title>
+</head>
+<body id="<%= @document.layout %>">
+
+  <main id="<%= @slugify(@document.title) %>">
+    <%- @content %>
+  </main>
+
+  <%- @getBlock("scripts").add(@site.scripts).toHTML() %>
+</body>
+</html>

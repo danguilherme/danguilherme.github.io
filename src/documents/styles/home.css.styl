@@ -1,0 +1,95 @@
+@import 'variables.css.styl'
+@import 'mixins.css.styl'
+
+/*
+* STYLE FOR HOME
+*/
+#home
+  color white
+  line-height 1.3
+  &, h1, h2
+    font-family: 'Dosis', sans-serif;
+  h1, h2
+    margin-bottom: 0;
+    margin-top: 0;
+
+    line-height: 1;
+  h1
+    font-size 2em
+  h2
+    margin-bottom: 0.1em;
+
+    font-size: 1.3em;
+    text-transform: lowercase;
+  main
+    height 100%
+    *
+      margin-left 0
+      margin-right 0
+  article
+    background theme-color
+    height 100%
+  #centered-content
+    display inline-block
+    center()
+    max-width 100%
+    text-align center
+
+    #footer {
+      margin-top: 1em;
+    }
+
+    #footer p {
+      margin: 0;
+    }
+
+
+    #adjective {
+      -webkit-transition: color .5s linear, text-shadow .5s linear, opacity .5s linear;
+      -o-transition: color .5s linear, text-shadow .5s linear, opacity .5s linear;
+      transition: color .5s linear, text-shadow .5s linear, opacity .5s linear;
+    }
+
+    #adjective.blur {
+      color: transparent;
+      text-shadow: 0 0 15px rgba(255,255,255,0.5);
+      opacity: .9;
+    }
+
+    /* FOOTER */
+    ul.social-links {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    ul.social-links > li {
+      display: inline-block;
+      list-style: none;
+      margin-left: 0px;
+      margin-right: 0px;
+      cursor: default;
+    }
+
+    ul.social-links a {
+      -webkit-transition: color .2s linear, text-shadow .2s linear;
+      -moz-transition: color .2s linear, text-shadow .2s linear;
+      -ms-transition: color .2s linear, text-shadow .2s linear;
+      -o-transition: color .2s linear, text-shadow .2s linear;
+      transition: color .2s linear, text-shadow .2s linear;
+      color: white;
+      text-decoration: none;
+    }
+
+    ul.social-links a:hover {
+        /*color: rgba(0, 115, 207, 1); /*#2196F3;*/
+        color: transparent;
+        text-shadow: #fff 0 0 2px;
+    }
+
+    ul.social-links > li:not(:last-of-type)::after {
+      display: inline-block;
+      content: "•";
+      color: rgba(255,255,255, .3);
+    }

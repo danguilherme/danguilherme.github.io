@@ -61,7 +61,7 @@ var docpadConfig = {
       styles: [
         "/styles/style.css",
         "/styles/highlight.js/zenburn.css",
-        "https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Marvel:400,700|Raleway:200,400,700"
+        "https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Marvel:400,700|Raleway:200,400,700|Dosis:300,700"
       ],
       scripts: [
         "/scripts/danguilherme.js",
@@ -151,6 +151,13 @@ var docpadConfig = {
                 layout: "post"
               });
             });
+        }
+      },
+      plugins: {
+        stylus: {
+          stylusOptions: {
+            compress: false
+          }
         }
       }
     }

@@ -1,13 +1,79 @@
 ---
-title:      "Olá"
-menuTitle:  "Home"
-layout:     "page"
-menuOrder:  0
+title:      "Guilherme Ventura"
+layout:     "home"
 
 priority: 1
 changefreq: "daily"
 ---
+<article>
+  <section id="centered-content">
+    <h1>Guilherme Ventura</h1>
+    <h2>Just another <span id="adjective">dreamer</span></h2>
 
+    <div id="footer">
+      <p>
+        Don't be shy. Connect!
+      </p>
+
+      <ul class="social-links">
+        <li class="blog">
+          <a href="https://danguilherme.github.io/blog/" target="_blank" title="Guilherme Ventura Blog"
+            data-ga-action="social-link-click" data-ga-label="blog">Blog</a>
+        </li>
+        <li class="github">
+          <a href="https://github.com/danguilherme" target="_blank" title="/danguilherme"
+            data-ga-action="social-link-click" data-ga-label="github">GitHub</a>
+        </li>
+        <li class="linkedin">
+          <a href="https://linkedin.com/in/danguilherme/en" target="_blank" title="Guilherme Ventura"
+            data-ga-action="social-link-click" data-ga-label="linkedin">LinkedIn</a>
+        </li>
+        <li class="twitter">
+          <a href="//twitter.com/intent/follow?screen_name=danguilherme" target="_blank" title="@danguilherme"
+            data-ga-action="social-link-click" data-ga-label="twitter">Twitter</a>
+        </li>
+        <li class="google-plus">
+          <a href="//plus.google.com/+GuilhermeVenturaDanguilherme" target="_blank" title="+GuilhermeVenturaDanguilherme"
+            data-ga-action="social-link-click" data-ga-label="google-plus">Google+</a>
+        </li>
+        <li class="email">
+          <a href="mailto:guilhermeventura2@gmail.com" target="_blank" title="guilhermeventura2@gmail.com"
+            data-ga-action="social-link-click" data-ga-label="email">Email</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</article>
+
+
+
+<script type="text/javascript">
+(function() {
+  var ADJECTIVES = [
+    'dreamer', 'learner', 'enthusiast',
+    'developer', 'curious', 'listener'
+  ];
+  var targetEl = document.getElementById('adjective');
+  var idx = 0;
+
+  function changeAdjective () {
+    if (ADJECTIVES.length == idx)
+      idx = 0;
+    targetEl.classList.add('blur');
+    setTimeout(function() {
+      targetEl.textContent = ADJECTIVES[idx++];
+      targetEl.classList.remove('blur');
+    }, 500);
+  }
+
+  setInterval(function() {
+    changeAdjective();
+  }, 5000);
+
+  changeAdjective();
+})();
+</script>
+<!--
 <p>
   Bem vindo à minha casa na internet! A preguiça não me deixou escrever muito aqui,
   mas você pode checar o <a href="/blog" data-ga-label="blog">blog</a> e ver se tem algo interessante.
@@ -17,4 +83,4 @@ changefreq: "daily"
 <% if posts.length: %>
   <h2>Posts Recentes</h2>
   <%= @partial('posts-list', {posts: posts.toJSON() }) %>
-<% end %>
+<% end %> -->
