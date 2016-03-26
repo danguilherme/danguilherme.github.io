@@ -33,7 +33,11 @@ layout: "base"
     </time>
     <% if @blog.getPostCoverSrc(@getThumbnail, @document): %>
     <div class="post-cover">
-      <img src="<%= @blog.getPostImageSrc(@getThumbnail, @document) %>" alt="Capa de '<%= @document.title %>'">
+      <img
+        src="<%= @blog.getPostImageSrc(@getThumbnail, @document) %>"
+        alt="Capa de '<%= @document.title %>'"
+        width="500"
+        height="300">
     </div>
     <% end %>
 
