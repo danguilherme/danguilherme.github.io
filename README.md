@@ -17,5 +17,6 @@ Repositório do meu blog e futuro site.
 - Instalar [GraphicsMagick](http://www.graphicsmagick.org/)
   + Windows: http://www.graphicsmagick.org/INSTALL-windows.html
   + Ubuntu: `sudo apt-get install graphicsmagick`
+  + Mac OS: `brew install graphicsmagick`
 - `npm install`
 - `npm start`
