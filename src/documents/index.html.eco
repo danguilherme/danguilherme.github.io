@@ -4,7 +4,9 @@ layout:     "home"
 
 priority: 1
 changefreq: "daily"
+scripts: ['scripts/home.js']
 ---
+
 <article id="home-content">
   <section id="centered-content">
     <h1>Guilherme Ventura</h1>
@@ -55,6 +57,8 @@ changefreq: "daily"
       </ul>
     </div>
   </section>
+
+  <div id="home-arrow" class="arrow bounce"></div>
 </article>
 
 <div id="site-content">

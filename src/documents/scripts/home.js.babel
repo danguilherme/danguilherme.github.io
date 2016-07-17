@@ -1,0 +1,5 @@
+danguilherme(() => {
+  window.an = function() {
+    
+  }
+});
