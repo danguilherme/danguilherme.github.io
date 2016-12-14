@@ -2,7 +2,7 @@
 title:    Introdução ao Termux
 tagline:  Um terminal completo na tela do seu Android
 tags:     produtividade ferramentas android linux terminal
-date:     2016-12-14T02:00:00+00:00
+date:     2016-12-14T19:00:00+00:00
 ---
 
 <style>
