@@ -1,8 +1,8 @@
 ---
-title:    Introduzindo: Termux
+title:    Introdução ao Termux
 tagline:  Um terminal completo na tela do seu Android
 tags:     produtividade ferramentas android linux terminal
-date:     2016-07-28T12:08:00+00:00
+date:     2016-12-14T02:00:00+00:00
 
 isDraft:    true
 ---
@@ -37,8 +37,8 @@ Nesse post introdutório, vou apresentar como instalar e tirar o melhor proveito
 ## Instalando o Termux
 Baixe e instale o [app pela Google Play](https://play.google.com/store/apps/details?id=com.termux).
 
-Por ser um viciado em atalhos, senti a necessidade de um teclado mais *hackudo* para mexer no terminal pelo celular.
-Creio que não fui o único, pois existe o [Hacker's Keyboard](https://play.google.com/store/apps/details?id=org.pocketworkstation.pckeyboard):
+Por ser viciado em atalhos, senti a necessidade de um teclado mais *hackudo* para mexer no terminal.
+Creio que não fui o único, pois existe o [Hacker's Keyboard](https://play.google.com/store/apps/details?id=org.pocketworkstation.pckeyboard),
 um teclado com teclas exclusivas para `ctrl`, `alt`, `shift`, e outras coisas que você encontra em
 um teclado físico convencional.
 Apesar das [teclas de atalho do Termux](https://termux.com/touch-keyboard.html),
@@ -50,26 +50,6 @@ $ apt update
 ```
 Esse comando atualiza o índice de pacotes do gerenciador, então ele deve ser executado assim que
 o app é instalado, e também com uma certa frequência durante o uso no dia a dia.
-
-
-
-
-
-
-
-
-### Dica: Atalhos para Pastas do sistema
-```
-$ termux-setup-storage
-```
-
-
-
-
-
-
-
-
 
 ## Configurando o Terminal
 Após a execução do `apt update`, é comum a execução do seguinte comando:
@@ -94,36 +74,52 @@ $ apt install coreutils
         data-loop="0"
         data-speed="3"></script>
 
+## Armazenamento
+Existem três tipos de [armazenamento no Termux](https://termux.com/storage.html):
 
+1. **Armazenamento do aplicativo:** É onde você está quando inicia o Termux (valor da variável `$HOME`).
+2. **Armazenamento interno compartilhado:** Armazemanto disponível para todos os apps, no dispositivo.
+3. **Armazenamento externo:** Armazenamento no cartão de memória.
 
+Para facilitar na navegação entre essas áreas, recomendo a execução do seguinte comando:
+``` bash
+$ termux-setup-storage
+```
+Esse comando, [como explicado na documentação](https://termux.com/storage.html), garante a permissão de leitura
+de arquivos e cria a pasta `$HOME/storage`. O conteúdo dessa pasta são vários atalhos para armazenamentos do sistema,
+entre eles:
 
+- `~/storage/shared`<br>
+  A raíz do **armazenamento interno compartilhado**.
+- `~/storage/external`<br>
+  A raíz do **armazenamento externo**, se houver.
 
+## Hello World
+Agora que está tudo certo, vamos ver se isso é um terminal de verdade usando o clássico pacote `cowsay`:
 
-
-
-
-
------
-
-[Inspiração](https://medium.freecodecamp.com/building-a-node-js-application-on-android-part-1-termux-vim-and-node-js-dfa90c28958f#.4y05h2orc)
-
-1. Instalar o [Termux](https://play.google.com/store/apps/details?id=com.termux)
-    - Apesar das [teclas de atalho do Termux](https://termux.com/touch-keyboard.html), recomendo instalar um teclado com teclas iguais ao de um teclado convencional, como o [Hacker's Keyboard](https://play.google.com/store/apps/details?id=org.pocketworkstation.pckeyboard)
-1. Ja roda `apt update`
-    - This commands needs to be run initially directly after installation and regularly afterwards to receive updates.
-1. Instalar `cowsay`
-    - Fazer um hello world
-1. Instalar package `coreutils`
-
-    Esse pacote provê alguns comandos básicos do shell que a maioria dos scripts por aí afora utilizam (como o Rails, como veremos mais a frente)
-
-    [Video instalando coreutils]
-1. Instalar `ruby`
-1. Instalar `rails`
-1. Execute `termux-setup-storage` para gerar symlinks com pastas do sistema
-
-
+``` bash
+$ apt install cowsay
+$ cowsay "Olá, Termux"
+```
 <script type="text/javascript" src="https://asciinema.org/a/bsdiuvltg2wt4voqqe6m5aeyl.js" async
         id="asciicast-bsdiuvltg2wt4voqqe6m5aeyl"
-        data-preload="1"
+        data-autoplay="0"
+        data-loop="0"
+        data-t="40"
         data-speed="6"></script>
+
+Funciona que é uma beleza.
+
+*Ao infinito e além!*
+
+---
+
+Seja no caminho do trabalho, ou pra checar aquele comando na hora do almoço (quem nunca?),
+você pode recorrer ao Termux sempre que precisar, e ele dificilmente te deixará na mão.
+Já consegui criar e subir uma aplicação Rails no celular, testando no próprio navegador.
+É lindo cara.
+
+Espero ter feito uma boa introdução ao Termux, pois acredito que esse é um daqueles apps que vale
+a pena compartilhar com os coleguinhas.
+Esse post foi inspirado em um post do [Free Code Camp](https://www.freecodecamp.com/):
+[Building a Node.js application on Android - Part 1: Termux, Vim and Node.js](https://medium.freecodecamp.com/building-a-node-js-application-on-android-part-1-termux-vim-and-node-js-dfa90c28958f#.4y05h2orc).
