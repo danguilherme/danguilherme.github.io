@@ -4,7 +4,7 @@ layout:     "home"
 
 priority: 1
 changefreq: "daily"
-scripts: ['scripts/home.js']
+scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'scripts/home.js']
 ---
 
 <article id="home-content">
@@ -58,7 +58,7 @@ scripts: ['scripts/home.js']
     </div>
   </section>
 
-  <div id="home-arrow" class="arrow bounce"></div>
+  <a id="home-arrow" class="arrow bounce" href="#site-header"></a>
 </article>
 
 <div id="site-content">

@@ -1,0 +1,28 @@
+{
+  "name": "website",
+  "description": "Guilherme Ventura's personal website",
+  "main": "index.html",
+  "authors": [
+    "Guilherme Ventura <guilhermeventura2@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "guilherme",
+    "ventura",
+    "portfolio",
+    "website"
+  ],
+  "homepage": "https://github.com/danguilherme/danguilherme.github.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/files/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^10.2.0"
+  }
+}
