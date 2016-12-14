@@ -34,12 +34,13 @@ como `cat`, `grep` e `vim`, e também ferramentas como Node e <abbr title="Inter
 
 Nesse post introdutório, vou apresentar como instalar e tirar o melhor proveito desse terminal.
 
-# Instalando o Termux
+## Instalando o Termux
 Baixe e instale o [app pela Google Play](https://play.google.com/store/apps/details?id=com.termux).
 
 Por ser um viciado em atalhos, senti a necessidade de um teclado mais *hackudo* para mexer no terminal pelo celular.
-E creio que não fui o único, pois existe o [Hacker's Keyboard](https://play.google.com/store/apps/details?id=org.pocketworkstation.pckeyboard): um teclado interessante, com teclas exclusivas para `ctrl`, `alt`, `shift`, e outras coisas que você encontra
-em um teclado físico.
+Creio que não fui o único, pois existe o [Hacker's Keyboard](https://play.google.com/store/apps/details?id=org.pocketworkstation.pckeyboard):
+um teclado com teclas exclusivas para `ctrl`, `alt`, `shift`, e outras coisas que você encontra em
+um teclado físico convencional.
 Apesar das [teclas de atalho do Termux](https://termux.com/touch-keyboard.html),
 ainda o acho melhor para mexer no terminal.
 
@@ -48,19 +49,40 @@ Ao abrir o aplicativo, execute os seguintes comandos no terminal:
 $ apt update
 ```
 Esse comando atualiza o índice de pacotes do gerenciador, então ele deve ser executado assim que
-o app é instalado, mas também com frequência durante o dia a dia de uso.
+o app é instalado, e também com uma certa frequência durante o uso no dia a dia.
 
-> Após a execução desse comando, é comum a execução de:
-> ``` bash
-> $ apt upgrade
-> ```
-> Esse comando atualiza os pacotes instalados de acordo com sua versão nova no índice.
->
-> Não se preocupe quanto a banda de internet, ele sempre pergunta se você tem certeza de fazer
-> o download, mostrando quantos MB serão baixados.
+
+
+
+
+
+
+
+### Dica: Atalhos para Pastas do sistema
+```
+$ termux-setup-storage
+```
+
+
+
+
+
+
+
+
+
+## Configurando o Terminal
+Após a execução do `apt update`, é comum a execução do seguinte comando:
+``` bash
+$ apt upgrade
+```
+O `apt upgrade` atualiza os pacotes instalados de acordo com sua versão atualizada no índice.
+
+Não se preocupe quanto à banda de internet, o Termux sempre confirma se você tem certeza de fazer
+o download antes de fazê-lo, mostrando quantos MB serão baixados.
 
 Agora podemos começar a instalar pacotes.
-O único básico que precisamos instalar é o `coreutils`.
+O único pacote **essencial** que precisamos instalar é o `coreutils`.
 Esse pacote provê alguns comandos básicos do shell que a maioria dos scripts por aí afora utilizam
 (como o Rails).
 ``` bash
@@ -77,9 +99,6 @@ $ apt install coreutils
 
 
 
-```
-$ termux-setup-storage
-```
 
 
 
