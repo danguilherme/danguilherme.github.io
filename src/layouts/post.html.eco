@@ -10,9 +10,9 @@ layout: "base"
     <div class="draft-notice">
       <%- @icon('circle-cross') %>
       <div>
-        <p>
+        <h2>
           Você não deveria estar aqui!
-        </p>
+        </h2>
         <p>
            Esse post é um rascunho. Como o blog é
            <a href="https://github.com/danguilherme/danguilherme.github.io/tree/source" target="_BLANK"
@@ -27,9 +27,9 @@ layout: "base"
 
   <header>
     <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'LLL') %>">
-      <span class="year"><%= @formatDate(@document.date, "YYYY") %></span>
-      <span class="month"><%= @formatDate(@document.date, "MMM") %></span>
       <span class="day"><%= @formatDate(@document.date, "DD") %></span>
+      <span class="month"><%= @formatDate(@document.date, "MMM") %></span>
+      <span class="year"><%= @formatDate(@document.date, "YYYY") %></span> 
     </time>
     <% if @blog.getPostCoverSrc(@getThumbnail, @document): %>
     <div class="post-cover">

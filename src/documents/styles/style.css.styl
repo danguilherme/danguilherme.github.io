@@ -60,22 +60,22 @@ h6
   font-size 1.1rem
 
 a
-  color theme-color
-  text-decoration none
+  color darken(theme-color, 30%)
+  text-decoration underline
   transition color .2s
 
   .icon
     transition fill .2s
-    fill theme-color
+    fill darken(theme-color, 30%)
 
   &:visited
-    color #64B5F6
+    color darken(theme-color, 50%)
 
   &:hover,
   &:focus
-    color #0D47A1
+    color theme-color
     .icon
-      fill #0D47A1
+      fill theme-color
 
 blockquote
   border-left theme-color 5px solid
@@ -213,6 +213,11 @@ dl dt
   display block
   clear both
 
+#sobre img
+  float left
+  margin-right 15px
+  margin-bottom 15px
+
 /*
 * BODY
 */
@@ -301,9 +306,9 @@ main
         text-align center
 
       .year
-        display none
-      .month
         background theme-color
+      .month
+        background lighten(theme-color, 50%)
       .day
         box-shadow inset #606060 0 0 3px
         text-align center
@@ -387,6 +392,7 @@ main
         color #aaa
       a
         font-weight bold
+        text-decoration none
       span
         font-style italic
 
