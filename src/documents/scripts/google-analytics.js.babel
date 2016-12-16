@@ -1,5 +1,5 @@
 danguilherme(function gaOnDocumentReady() {
-  const DEBUG = false;
+  const DEBUG = true;
 
   // Para testar o Google Analytics em tempo real,
   // tem que entrar o IP de localhost (127.0.0.1)
@@ -48,12 +48,16 @@ danguilherme(function gaOnDocumentReady() {
 
   function createLinkTrackCallback(defaults) {
     return function onLinkTrackedActionHappens(event) {
-      var anchor = event.currentTarget;
+      let anchor = event.currentTarget;
+      let label = anchor.dataset.gaLabel || anchor.href || defaults.label;
+
+      if(anchor.dataset.gaUseTextAsLabel !== undefined)
+        label = anchor.innerText.trim();
 
       ga('send', 'event',
         anchor.dataset.gaCategory || defaults.category,
         anchor.dataset.gaAction || defaults.action,
-        anchor.dataset.gaLabel || anchor.href || defaults.label);
+        label);
 
       if (DEBUG)
       // Use a extensão Google Analytics Debugger

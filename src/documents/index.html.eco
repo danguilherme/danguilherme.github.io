@@ -58,7 +58,10 @@ scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'script
     </div>
   </section>
 
-  <a id="home-arrow" class="arrow bounce" href="#site-header"></a>
+  <a id="home-arrow" class="arrow bounce" href="#site-header"
+    data-ga-category="home"
+    data-ga-action="see-content"
+    data-ga-label="Seta para baixo"></a>
 </article>
 
 <div id="site-content">

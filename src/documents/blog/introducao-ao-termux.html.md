@@ -110,6 +110,12 @@ Funciona que é uma beleza.
 
 *Ao infinito e além!*
 
+``` bash
+apt install git node ruby # ...e o que mais você quiser!
+```
+
+É só instalar e começar a usar.
+
 ---
 
 Seja no caminho do trabalho, ou pra checar aquele comando na hora do almoço (quem nunca?),

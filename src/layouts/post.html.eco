@@ -48,11 +48,11 @@ layout: "base"
 
     <span id="post-tags"><%- @icon('tag') %> <%= @document.tags.join(", ") %></span>
     •
-    <span id="post-comments-count">
-      <a href="#disqus_thread"
-        data-disqus-identifier="<%= @document.url %>"
-        data-ga-label="discuss-comments">0 Comentários</a>
-    </span>
+    <a id="post-comments-count"
+      href="#disqus_thread"
+      data-disqus-identifier="<%= @document.url %>"
+      data-ga-action="see-comments"
+      data-ga-use-text-as-label>0 Comentários</a>
     •
     <span id="post-share">
       <span class="share-button">
