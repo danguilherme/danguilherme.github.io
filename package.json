@@ -23,6 +23,7 @@
   },
   "main": "node_modules/.bin/docpad-server",
   "scripts": {
+    "prestart": "npm install && bower install",
     "start": "node_modules/.bin/docpad-server",
     "watch": "node_modules/.bin/docpad.cmd run",
     "publish": "docpad.cmd deploy-ghpages --env static"

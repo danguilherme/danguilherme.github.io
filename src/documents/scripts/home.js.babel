@@ -1,10 +1,50 @@
 danguilherme(() => {
-  smoothScroll.init({
-    selector: '#home-arrow', // Selector for links (must be a class, ID, data attribute, or element tag)
-    selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
-    speed: 500, // Integer. How fast to complete the scroll in milliseconds
-    easing: 'easeInOutCirc', // Easing pattern to use
-    offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
-    callback: function (anchor, toggle) {} // Function to run after scrolling
-  });
+  init();
+
+  function init() {
+    configureAdjectiveChanges();
+
+    fixContentTop();
+    window.addEventListener('resize', fixContentTop);
+
+    smoothScroll.init({
+      selector: '#home-arrow', // Selector for links (must be a class, ID, data attribute, or element tag)
+      selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+      speed: 500, // Integer. How fast to complete the scroll in milliseconds
+      easing: 'easeInOutCirc', // Easing pattern to use
+      offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+      callback: function (anchor, toggle) {} // Function to run after scrolling
+    });
+  }
+
+  function configureAdjectiveChanges() {
+    const WORD_SHOW_INTERVAL = 3; // in seconds
+    const WORD_TRANSITION_INTERVAL = .5; // in seconds (same as keyframe on home.css.styl)
+    const ADJECTIVES = [
+      'dreamer', 'learner', 'developer',
+      'curious', 'listener', 'enthusiast'
+    ];
+
+    const targetEl = document.getElementById('adjective');
+    let idx = 1;
+
+    setInterval(changeAdjective, WORD_SHOW_INTERVAL * 1000);
+
+    function changeAdjective() {
+      if (ADJECTIVES.length == idx) idx = 0;
+
+      targetEl.classList.add('blur');
+      setTimeout(function () {
+        targetEl.textContent = ADJECTIVES[idx++];
+        targetEl.classList.remove('blur');
+      }, WORD_TRANSITION_INTERVAL * 1000);
+    }
+  }
+
+  function fixContentTop() {
+    let home = document.getElementById('home-content');
+    let site = document.getElementById('site-content');
+
+    site.style.marginTop = home.scrollHeight + 'px';
+  }
 });

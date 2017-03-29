@@ -14,9 +14,14 @@ Repositório do meu blog e futuro site.
 * [Stylus](https://learnboost.github.io/stylus/) - pré-processador CSS, também no Node.js.
 
 ## Executar
-- Instalar [GraphicsMagick](http://www.graphicsmagick.org/)
-  + Windows: http://www.graphicsmagick.org/INSTALL-windows.html
-  + Ubuntu: `sudo apt-get install graphicsmagick`
-  + Mac OS: `brew install graphicsmagick`
-- `npm install`
-- `npm start`
+
+**Pré-requisitos:**
+- Node (v4+)
+- Bower (`npm i -g bower`)
+
+**Passo a passo:**
+1. Instalar [GraphicsMagick](http://www.graphicsmagick.org/)
+    - Windows: [download and install](http://www.graphicsmagick.org/INSTALL-windows.html)
+    - Ubuntu: `sudo apt-get install graphicsmagick`
+    - Mac OS: `brew install graphicsmagick`
+1. `npm start`
