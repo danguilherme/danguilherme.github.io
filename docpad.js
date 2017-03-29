@@ -4,6 +4,8 @@ var pkg = require('./package.json');
 var author = {
   name: "Guilherme Ventura",
   email: "guilhermeventura2@gmail.com",
+  facebookId: 100002397085708,
+  facebookUrl: 'https://facebook.com/danguilherme',
   twitter: "danguilherme",
   github: "danguilherme"
 };
@@ -180,20 +182,24 @@ docpadConfig.templateData.blog = {
 
     return coverUrl;
   },
+  postCoverWidth: 300,
+  postCoverHeight: 100,
   getPostCoverSrc: function(thumbnailPlugin, post) {
     var coverUrl = thumbnailPlugin("blog/" + post.basename + "/cover.png", {
-      w: 300,
-      h: 100
+      w: this.postCoverWidth,
+      h: this.postCoverHeight
     }, 'zoomcrop');
     if (!coverUrl && post.isDraft)
       coverUrl = "http://dummyimage.com/300x100/292929/e3e3e3&text=" + post.title;
 
     return coverUrl;
   },
+  postImageWidth: 300,
+  postImageHeight: 100,
   getPostImageSrc: function(thumbnailPlugin, post) {
     var coverUrl = thumbnailPlugin("blog/" + post.basename + "/cover.png", {
-      w: 500,
-      h: 300
+      w: this.postImageWidth,
+      h: this.postImageHeight
     }, 'zoomcrop');
 
     if (!coverUrl && post.isDraft)

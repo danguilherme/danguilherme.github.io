@@ -13,7 +13,7 @@ htmlmin: true
 <!-- Open Graph -->
 <meta property="og:site_name" content="<%= @site.title %>">
 <meta property="og:title" content="<%= @getPreparedTitle() %>" />
-<meta property="og:url" content="<%= @site.url %><%= @document.url %>/" />
+<meta property="og:url" content="<%= @site.url %><%= @document.url %>" />
 <meta property="og:locale" content="pt_BR">
 
 <% if @document.layout == 'post': %>
@@ -21,6 +21,8 @@ htmlmin: true
   <% if post_image: %>
     <meta property="og:image" content="<%= @site.url %><%= post_image %>">
   <% end %>
+  <meta property="article:author" content="<%= author.facebookUrl %>" />
+  <meta property="article:publisher" content="<%= author.facebookUrl %>" />
   <meta property="article:published_time" content="<%= @document.date.toISOString() %>">
   <meta property="article:modified_time" content="<%= @document.date.toISOString() %>">
   <meta property="article:section" content="<%= (@document.tags or [])[0] %>">
@@ -28,6 +30,9 @@ htmlmin: true
 <% else: %>
   <meta property="og:type" content="website" />
 <% end %>
+
+<!-- Facebook -->
+<meta property="fb:profile_id" content="<%= author.facebookId %>" />
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
