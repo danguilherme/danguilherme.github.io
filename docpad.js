@@ -79,7 +79,7 @@ var docpadConfig = {
 
     getPreparedTitle: function() {
       if (this.document.title && (this.document.title != this.site.title)) {
-        return this.document.title + " | " + this.site.title;
+        return this.document.title + " - " + this.site.title;
       } else {
         return this.site.title;
       }
@@ -87,8 +87,11 @@ var docpadConfig = {
     getPreparedDescription: function() {
       return this.document.description || this.document.tagline || this.site.description;
     },
+    getDocumentKeywords: function() {
+      return (this.document.keywords || this.document.tags || []);
+    },
     getPreparedKeywords: function() {
-      return (this.document.keywords || this.document.tags || []).concat(this.site.keywords).join(", ");
+      return this.getDocumentKeywords().concat(this.site.keywords).join(", ");
     },
 
     // utilitários
