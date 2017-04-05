@@ -197,8 +197,8 @@ docpadConfig.templateData.blog = {
 
     return coverUrl;
   },
-  postImageWidth: 300,
-  postImageHeight: 100,
+  postImageWidth: 500,
+  postImageHeight: 300,
   getPostImageSrc: function(thumbnailPlugin, post) {
     var coverUrl = thumbnailPlugin("blog/" + post.basename + "/cover.png", {
       w: this.postImageWidth,

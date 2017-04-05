@@ -30,9 +30,7 @@ layout: "base"
     <div class="post-cover">
       <img
         src="<%= @blog.getPostImageSrc(@getThumbnail, @document) %>"
-        alt="Capa de '<%= @document.title %>'"
-        width="500"
-        height="300">
+        alt="Capa de '<%= @document.title %>'">
     </div>
     <% end %>
 
