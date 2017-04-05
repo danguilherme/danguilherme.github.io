@@ -21,6 +21,7 @@ body
   margin 0
   padding 0
   height 100%
+  color text-color
 
 input,
 textarea,
@@ -60,22 +61,24 @@ h6
   font-size 1.1rem
 
 a
-  color darken(theme-color, 30%)
+  color link-color
   text-decoration underline
   transition color .2s
 
   .icon
     transition fill .2s
-    fill darken(theme-color, 30%)
+    fill link-color
 
   &:visited
-    color darken(theme-color, 50%)
+    color link-visited-color
+    .icon
+      fill link-visited-color
 
   &:hover,
   &:focus
-    color theme-color
+    color link-active-color
     .icon
-      fill theme-color
+      fill link-active-color
 
 blockquote
   border-left theme-color 5px solid
@@ -281,37 +284,12 @@ main
 
       color #90CAF9
       font-weight 200
+      @media screen and (max-width: mobile-breakpoint)
+        font-size: 1.2rem;
 
-    time
-      position absolute
-      top 1rem
-      left 0
-
-      display inline-block
-      margin-right 10px
-      width 50px
-
-      float left
-
-      background-color #fff
-      border 1px solid #606060
-      cursor default
-
-      @media screen and (min-width: max-width + (70px * 2))
-        left -60px
-
-      span
-        display block
-        padding 0 5px
-        text-align center
-
-      .year
-        background theme-color
-      .month
-        background lighten(theme-color, 50%)
-      .day
-        box-shadow inset #606060 0 0 3px
-        text-align center
+    .post-metadata > *:not(:last-child)::after
+      content: ' • ';
+      color: text-color;
 
   @media screen and (min-width: max-width + 50px)
     ul,
@@ -457,7 +435,7 @@ main
     margin-top: 0;
   }
 
-  #post-comments-count
+  .post-comments-anchor
     white-space: nowrap;
     text-decoration: none;
 
@@ -469,16 +447,15 @@ main
     margin-bottom 2rem
     font-style italic
 
-  .icon-share
-    fill: theme-color
-    vertical-align text-top
-    transition fill .2s
-
   .share-button
     position relative
-    color: theme-color
+    color: link-color
     transition border-color .2s, color .2s
     white-space: nowrap;
+    .icon-share
+      fill: link-color
+      vertical-align text-top
+      transition fill .2s
 
     share-button
       position absolute
@@ -492,9 +469,9 @@ main
         display none
 
     &:hover
-      color #0D47A1
+      color link-active-color
       .icon-share
-        fill #0D47A1
+        fill link-active-color
 
   #social-share
     text-align center
@@ -502,8 +479,8 @@ main
 
     .share-button
       padding 10px
-      border 1px solid theme-color
+      border 1px solid link-color
       border-radius 5px
 
       &:hover
-        border-color #0D47A1
+        border-color link-active-color

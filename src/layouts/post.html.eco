@@ -26,11 +26,6 @@ layout: "base"
   <% end %>
 
   <header>
-    <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'LLL') %>">
-      <span class="day"><%= @formatDate(@document.date, "DD") %></span>
-      <span class="month"><%= @formatDate(@document.date, "MMM") %></span>
-      <span class="year"><%= @formatDate(@document.date, "YYYY") %></span> 
-    </time>
     <% if @blog.getPostCoverSrc(@getThumbnail, @document): %>
     <div class="post-cover">
       <img
@@ -46,20 +41,32 @@ layout: "base"
       <p class="post-tagline"><%= @document.tagline %></p>
     <% end %>
 
-    <span id="post-tags"><%- @icon('tag') %> <%= @document.tags.join(", ") %></span>
-    •
-    <a id="post-comments-count"
-      href="#disqus_thread"
-      data-disqus-identifier="<%= @document.url %>"
-      data-ga-action="see-comments"
-      data-ga-use-text-as-label>0 Comentários</a>
-    •
-    <span id="post-share">
-      <span class="share-button">
-        <share-button id="share-header" class="share" data-ga-label="toggle-share-buttons-heading"></share-button>
-        <%- @icon('share') %> Compartilhar
+    <div class="post-metadata">
+      <span class="post-publishing-date">
+        <%- @icon('calendar') %>
+        <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'LLL') %>">
+          <span class="day"><%= @formatDate(@document.date, "DD") %></span>/<span class="month"><%= @formatDate(@document.date, "MMM").toLowerCase() %></span>/<span class="year"><%= @formatDate(@document.date, "YYYY") %></span>
+        </time>
       </span>
-    </span>
+      <span id="post-tags">
+        <%- @icon('tag') %>
+        <span><%= @document.tags.join(", ") %></span>
+      </span>
+      <a class="post-comments-anchor"
+        href="#disqus_thread"
+        data-ga-action="see-comments"
+        data-ga-use-text-as-label>
+          <%- @icon('comment') %>
+          <span class="disqus-comment-count"
+            data-disqus-identifier="<%= @document.url %>">0 Comentários</span>
+      </a>
+      <span id="post-share">
+        <span class="share-button">
+          <share-button id="share-header" class="share" data-ga-label="toggle-share-buttons-heading"></share-button>
+          <%- @icon('share') %> Compartilhar
+        </span>
+      </span>
+    </div>
   </header>
 
   <article>
