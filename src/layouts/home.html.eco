@@ -1,7 +1,6 @@
 ---
 layout: "skeleton"
 ---
-<!-- <link href='https://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'> -->
 <%- @content %>
 
 <%- @getBlock("scripts").add((@site.scripts).concat(@document.scripts or [])).toHTML() %>

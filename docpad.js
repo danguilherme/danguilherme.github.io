@@ -63,7 +63,7 @@ var docpadConfig = {
       styles: [
         "/styles/style.css",
         "/styles/highlight.js/zenburn.css",
-        "https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Marvel:400,700|Raleway:200,400,700|Dosis:300,700"
+        "https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Tenor+Sans|Raleway:200,400,700|Dosis:300,700"
       ],
       scripts: [
         "/scripts/danguilherme.js",
@@ -79,7 +79,7 @@ var docpadConfig = {
 
     getPreparedTitle: function() {
       if (this.document.title && (this.document.title != this.site.title)) {
-        return this.document.title + " - " + this.site.title;
+        return this.document.title + " | " + this.site.title;
       } else {
         return this.site.title;
       }
