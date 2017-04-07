@@ -8,8 +8,7 @@
 <%- @partial('seo') %>
 <%- @getBlock("meta").toHTML() %>
 
-<%- @getBlock("styles").add(@site.styles).toHTML() %>
-<link rel="stylesheet" media="print" href="/styles/print.css" />
+<%- @getBlock("styles").add((@site.styles).concat(@document.styles or [])).toHTML() %>
 
 <link rel="alternate" type="application/rss+xml" title="<%= @site.title %> - RSS" href="/rss.xml" />
 

@@ -62,6 +62,7 @@ var docpadConfig = {
       version: pkg.version,
       styles: [
         "/styles/style.css",
+        "/styles/print.css",
         "/styles/highlight.js/zenburn.css",
         "https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Tenor+Sans|Raleway:200,400,700|Dosis:300,700"
       ],

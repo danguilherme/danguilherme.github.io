@@ -10,6 +10,6 @@
     <%- @content %>
   </main>
 
-  <%- @getBlock("scripts").add(@site.scripts).toHTML() %>
+  <%- @getBlock("scripts").add((@site.scripts).concat(@document.scripts or [])).toHTML() %>
 </body>
 </html>
