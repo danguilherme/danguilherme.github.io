@@ -1,0 +1,14 @@
+@media print {
+  abbr[title]::after,
+  a[href]::after {
+    font-style: italic;
+    vertical-align: super;
+    font-size: .7em;
+  }
+  abbr[title]::after {
+    content: ' (' attr(title) ')';
+  }
+  a[href^=http]::after {
+    content: ' (' attr(href) ')';
+  }
+}
