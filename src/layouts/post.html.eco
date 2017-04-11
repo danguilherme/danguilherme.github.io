@@ -8,7 +8,7 @@ layout: "base"
 <div id="blog-post" class="<%- if @document.isDraft then 'draft' %>">
   <% if @document.isDraft: %>
     <div class="draft-notice">
-      <%- @icon('circle-cross') %>
+      <%- @icon('icon-flag') %>
       <div>
         <h2>
           Você não deveria estar aqui!
@@ -18,8 +18,8 @@ layout: "base"
            <a href="https://github.com/danguilherme/danguilherme.github.io/tree/source" target="_BLANK"
              data-ga-category="draft-notice"
              data-ga-label="github">aberto no GitHub</a>,
-             não vi sentido em remover essa página, mas fique ciente que o que está aqui pode estar
-             errado ou não ser nem um pouco útil... :)
+             deixei disponível por aqui, mas fique ciente que a informação pode estar
+             errada ou não ser nem um pouco útil... 😉
         </p>
       </div>
     </div>

@@ -11,5 +11,8 @@
     "**/node_modules": true,
     "**/bower_components": true,
     "out": true
+  },
+  "files.associations": {
+    "*.md.eco": "markdown"
   }
 }

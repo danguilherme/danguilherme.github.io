@@ -1,0 +1,68 @@
+---
+title:    VanHackathon 2017 - O hackathon sem fronteiras
+tagline:  Como foi participar de um hackathon 100% remoto
+tags:     eventos hackathon
+date:     2017-04-11T12:00:00+00:00
+isDraft:  true
+---
+
+Nesse último final de semana aconteceu o [VanHackathon][1], um hackathon para conectar talentos com oportunidades em diversos países. O evento começou na sexta-feira, dia 7 de abril, às 19h, e terminou no mesmo horário do domingo.
+
+Empresas como [Booking][2], [Thinkific][3] e a própria [VanHack][4] criaram seus desafios e auxiliaram os desenvolvedores no desenvolvimento durante as 48 horas de evento.
+
+![Desafio da Booking](<%= @blog.getPostContent(@document, "booking-challenge.png") %> "O desafio da booking na procura por desenvolvedores back-end")
+
+Os times foram formados basicamente pelo [Slack][5], canal onde os vanhackers se comunicam. Algumas pessoas já se conheciam e até programaram lado a lado nesses dois dias, mas esse não foi meu caso.
+
+Meu time foi montado na segunda-feira da semana do hackathon: *fparreira*, desenvolvedor PHP, e *mc9*, designer e desenvolvedora full stack. Comigo como desenvolvedor front-end, nosso time estava completo. Fizemos uma reunião na quinta pra nos conhecermos e alinhar nossas ideias, e acredito que encontrar pessoas com as expectativas mais alinhadas era impossível!
+
+Na sexta, nas primeiras horas do evento ficamos sabendo que nosso back-ender não ia poder entrar por problemas de saúde... Aí bate o desespero.
+
+![Ficamos desesperados](<%= @blog.getPostContent(@document, "bob-esponja-desesperado.gif") %> "E agora, José?")
+
+Depois dos breves minutos de choro na posição fetal, ainda escolhemos [um dos desafios mais difíceis][6] pra fazer. O desafio não era muito técnico, já que foi aconselhado usar tecnologias JavaScript de ponta a ponta (Node e MongoDB no back, AngularJS no front), mas o **negócio era muito específico**. Tínhamos que desenvolver um aplicativo de investimento com um funcionalidades sociais, onde as pessoas poderiam ver o que outros investidores estão fazendo (incluindo investidores profissionais) e até imitar suas ações no sistema.
+
+> - *Por onde começar?*
+> - *Como funciona esse mundo de investimentos?*
+> - *O que usuários desse tipo de aplicação esperam?*
+> - *Teríamos acesso a que tipo de informação?*
+
+Essas eram só algumas das muitas perguntas que tínhamos, e algumas nós nem sabíamos como formular. Mas mesmo assim escolhemos esse projeto por encaixar no nosso time (mesmo na busca por outro desenvolvedor back-end), pelo tamanho do desafio que ele nos traria e sua utilidade—eu nunca ouvi falar de uma aplicação do ramo que tenha essa veia social, que sempre agrega em um serviço.
+
+Estudamos sobre o negócio, tiramos algumas dúvidas com o pessoal da empresa (sempre muito atenciosos, obrigado!) e então resolvemos colocar a mão na massa. A Carol foi dormir porque já não tinha dormido aquela noite, e eu fui adiantar as coisas no back-end, aprendendo Mongo no caminho.
+
+No outro dia, um pouco desanimado, comuniquei novamente que precisava de um dev Node.js, e eis que me aparece *mak_chang*, um dev que agregou **e muito** no time. Sem exageros. Entendeu do negócio muito rápido, ajudou nos mock-ups e programou as APIs no back-end. O projeto foi salvo!
+
+![Ficamos aliviados](<%= @blog.getPostContent(@document, "yeah.gif") %> "Agora vai!")
+
+No fim, foi desenvolvido um **protótipo funcional**, para mostrar a ideia que tínhamos de um sistema de investimento mais social. No domingo, às 18 horas e 58 minutos, submeti o projeto na plataforma.
+
+<blockquote class="twitter-tweet" data-lang="pt"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/vanhackathon?src=hash">#vanhackathon</a>: done. Don&#39;t know what to say, great event!<br>In 48 hrs of event, slept 8. Can&#39;t even think anymore. Thanks <a href="https://twitter.com/GoVanHack">@GoVanHack</a>!</p>&mdash; Guilherme Ventura (@danguilherme) <a href="https://twitter.com/danguilherme/status/851219163381157888">9 de abril de 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+A principal lição aprendida (relembrada) nessas 48 horas foi que **problemas de negócio são muito mais importantes que problemas técnicos**. Nós nos preocupamos muito com isso, mas isso evidenciou que o que move o sistema é o negócio, não a linguagem em que é desenvolvido (isso é uma nota para mim mesmo, ainda tenho dificuldade em separar uma coisa da outra).
+
+Outra coisa importante: em um hackathon, não escolha projetos com regras de negócio obscuras, pois isso vai atrapalhar sua performance. E caso suas regras sejam muito complexas (mesmo que você as entenda perfeitamente), corte-a, implemente somente as partes mais importantes. É um hackathon, mostre mocks onde não há informações cruciais, **foque nas funcionalidades que diferenciam sua solução**. Isso é o básico de um hackathon, mas é sempe bom lembrar né.
+
+---
+
+Foi uma ótima experiência, e mal posso esperar para o próxmo! Nosso projeto está no ar, pra quem quiser ver:
+
+- Back-end: https://github.com/the-artisans/buzzer-back
+- Front-end: https://github.com/the-artisans/buzzer-front
+- Website: http://buzzerapp.surge.sh/ *(lembre-se, protótipo funcional)* 😄
+
+Aproveite e [veja os desafios que estavam disponíveis][8], são bem interessantes e é sempre bom praticar!
+
+---
+
+**Dica de amigo:** A VanHack—empresa organizadora do evento, que conecta talentos com oportunidades de fora—tá com uma super promoção no [pacote premium][7] deles até a próxima quinta, 13/04. Nele você tem aulas de inglês com professores nativos, revisão de currículo, *cover letter*, e uma comunidade bem bacana, tudo a $45,00 por mês (dólares canadenses, claro). Se pensa em ter experiências diferentes, [dá uma olhada lá][7]. Eu me cadastrei hoje mesmo! o/
+
+[1]: http://vanhack.com/hackathon "VanHackathon"
+[2]: https://booking.com/
+[3]: https://www.thinkific.com/
+[4]: http://www.vanhack.com/
+[5]: https://vanhackathon.slack.com
+[6]: http://app.vanhack.com/Challenges/Details?id=37
+[7]: http://vanhack.com/premium
+[8]: http://app.vanhack.com/Challenges
