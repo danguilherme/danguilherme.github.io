@@ -1,9 +1,13 @@
 ---
-title:      "Sobre"
-layout:     "page"
-menuOrder:  2
+identifier: "sobre"
+title: "Quem sou eu?"
+layout: "page"
+menuTitle: "Sobre Mim"
+menuOrder: 2
 ---
 <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=192" alt="Uma foto minha" width="192" height="192">
+
+**Oi, eu não sou o Goku!**
 
 Meu nome é Guilherme Ventura, tenho 21 anos e sou estudante de Ciência da Computação. Trabalho com desenvolvimento em JavaScript há mais ou menos 3 anos, me aperfeiçoando puramente na linguagem. Também tenho experiência com C#, SQL/T-SQL e Java. Estudo regularmente outras linguagens e frameworks também, como Ruby e Ruby on Rails, Angular, Ionic, e a lista vai! Estou sempre atrás de conhecimento em diversas áreas.
 

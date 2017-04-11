@@ -4,23 +4,24 @@ htmlmin: true
 <!-- Define `renderMenu` partial -->
 <% renderMenu = (items) => %>
 <ul>
-    <% for item in items: %>
-        <!-- Highlight menu item if its `item.state` is not false -->
-        <li<% if item.state: %> class="selected"<% end %>>
-            <!-- Remove link if we’re currently viewing this document -->
-            <% if item.state != 'current': %>
-                <a href="<%= item.url %>"
-                  data-ga-category="left-menu"
-                  data-ga-label="<%= item.title.toLowerCase() %>"><%= item.title %></a>
-            <% else: %>
-                <strong><%= item.title %></strong>
-            <% end %>
-            <!-- Render submenu if item has children -->
-            <% if item.children: %>
-                <%- renderMenu(item.children) %>
-            <% end %>
-        </li>
-    <% end %>
+  <% for item in items: %>
+    <% menuTitle = item.menuTitle || item.title %>
+    <!-- Highlight menu item if its `item.state` is not false -->
+    <li<% if item.state: %> class="selected"<% end %>>
+      <!-- Remove link if we’re currently viewing this document -->
+      <% if item.state != 'current': %>
+        <a href="<%= item.url %>"
+          data-ga-category="left-menu"
+          data-ga-label="<%= menuTitle %>"><%= menuTitle %></a>
+      <% else: %>
+        <strong><%= item.title %></strong>
+      <% end %>
+      <!-- Render submenu if item has children -->
+      <% if item.children: %>
+        <%- renderMenu(item.children) %>
+      <% end %>
+    </li>
+  <% end %>
 </ul>
 <% end %>
 <!-- Run `renderMenu` partial against passed `menuItems` meta-data  -->

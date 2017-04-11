@@ -7,7 +7,7 @@
 <body id="<%= @document.layout %>">
   <%- @partial('header') %>
 
-  <main id="<%= @slugify(@document.title) %>">
+  <main id="<%= @slugify(@document.identifier || @document.title) %>">
     <%- @content %>
   </main>
 

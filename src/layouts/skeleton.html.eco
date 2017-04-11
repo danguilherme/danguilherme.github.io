@@ -6,7 +6,7 @@
 </head>
 <body id="<%= @document.layout %>">
 
-  <main id="<%= @slugify(@document.title) %>">
+  <main id="<%= @slugify(@document.identifier || @document.title) %>">
     <%- @content %>
   </main>
 

@@ -68,8 +68,9 @@ scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'script
   <%- @partial('header') %>
 
   <p>
-    Bem vindo à minha casa na internet! A preguiça não me deixou escrever muito aqui,
-    mas você pode checar o <a href="/blog" data-ga-label="blog">blog</a> e ver se tem algo interessante.
+    Bem vindo à minha casa na internet!<br>
+    Ainda estou aperfeiçoando o site está em construção, mas procuro escrever com certa
+    frequência <a href="/blog" data-ga-label="blog">no blog</a>. Passa lá e vê se tem algo novo! 😄
   </p>
 
   <% posts = @getCollection("posts") %>
