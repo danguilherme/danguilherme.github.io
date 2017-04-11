@@ -1,9 +1,8 @@
 ---
-title:    VanHackathon 2017 - O hackathon sem fronteiras
+title:    VanHackathon 2017 - O Hackathon Sem Fronteiras
 tagline:  Como foi participar de um hackathon 100% remoto
 tags:     eventos hackathon
-date:     2017-04-11T12:00:00+00:00
-isDraft:  true
+date:     2017-04-11T15:00:00+00:00
 ---
 
 Nesse último final de semana aconteceu o [VanHackathon][1], um hackathon para conectar talentos com oportunidades em diversos países. O evento começou na sexta-feira, dia 7 de abril, às 19h, e terminou no mesmo horário do domingo.
@@ -14,11 +13,11 @@ Empresas como [Booking][2], [Thinkific][3] e a própria [VanHack][4] criaram seu
 
 Os times foram formados basicamente pelo [Slack][5], canal onde os vanhackers se comunicam. Algumas pessoas já se conheciam e até programaram lado a lado nesses dois dias, mas esse não foi meu caso.
 
-Meu time foi montado na segunda-feira da semana do hackathon: *fparreira*, desenvolvedor PHP, e *mc9*, designer e desenvolvedora full stack. Comigo como desenvolvedor front-end, nosso time estava completo. Fizemos uma reunião na quinta pra nos conhecermos e alinhar nossas ideias, e acredito que encontrar pessoas com as expectativas mais alinhadas era impossível!
+Meu time foi montado na segunda-feira da semana do hackathon: *fparreira*, desenvolvedor PHP, e [*mc9*](https://mc9-dev.com/), designer e desenvolvedora full stack. Comigo como desenvolvedor front-end, nosso time estava completo. Fizemos uma reunião na quinta pra nos conhecermos e alinhar nossas ideias, e acredito que encontrar pessoas com as expectativas mais alinhadas era impossível!
 
-Na sexta, nas primeiras horas do evento ficamos sabendo que nosso back-ender não ia poder entrar por problemas de saúde... Aí bate o desespero.
+Na sexta, nas primeiras horas do evento ficamos sabendo que nosso *back-ender* não ia poder entrar por problemas de saúde... Aí bate o desespero.
 
-![Ficamos desesperados](<%= @blog.getPostContent(@document, "bob-esponja-desesperado.gif") %> "E agora, José?")
+![Ficamos desesperados](<%= @blog.getPostContent(@document, "bob-esponja-desesperado.gif") %> "É Bob, sei como é fazer hamburgueres na correria...")
 
 Depois dos breves minutos de choro na posição fetal, ainda escolhemos [um dos desafios mais difíceis][6] pra fazer. O desafio não era muito técnico, já que foi aconselhado usar tecnologias JavaScript de ponta a ponta (Node e MongoDB no back, AngularJS no front), mas o **negócio era muito específico**. Tínhamos que desenvolver um aplicativo de investimento com um funcionalidades sociais, onde as pessoas poderiam ver o que outros investidores estão fazendo (incluindo investidores profissionais) e até imitar suas ações no sistema.
 
@@ -31,7 +30,7 @@ Essas eram só algumas das muitas perguntas que tínhamos, e algumas nós nem sa
 
 Estudamos sobre o negócio, tiramos algumas dúvidas com o pessoal da empresa (sempre muito atenciosos, obrigado!) e então resolvemos colocar a mão na massa. A Carol foi dormir porque já não tinha dormido aquela noite, e eu fui adiantar as coisas no back-end, aprendendo Mongo no caminho.
 
-No outro dia, um pouco desanimado, comuniquei novamente que precisava de um dev Node.js, e eis que me aparece *mak_chang*, um dev que agregou **e muito** no time. Sem exageros. Entendeu do negócio muito rápido, ajudou nos mock-ups e programou as APIs no back-end. O projeto foi salvo!
+No outro dia, um pouco desanimado, comuniquei novamente que precisava de um dev Node.js, e eis que me aparece [*mak_chang*](https://github.com/malikid), um dev que agregou **e muito** no time. Sem exageros. Entendeu do negócio muito rápido, ajudou nos mock-ups e programou as APIs no back-end. O projeto foi salvo!
 
 ![Ficamos aliviados](<%= @blog.getPostContent(@document, "yeah.gif") %> "Agora vai!")
 
@@ -48,9 +47,9 @@ Outra coisa importante: em um hackathon, não escolha projetos com regras de neg
 
 Foi uma ótima experiência, e mal posso esperar para o próxmo! Nosso projeto está no ar, pra quem quiser ver:
 
-- Back-end: https://github.com/the-artisans/buzzer-back
-- Front-end: https://github.com/the-artisans/buzzer-front
-- Website: http://buzzerapp.surge.sh/ *(lembre-se, protótipo funcional)* 😄
+- Back-end: <a href="https://github.com/the-artisans/buzzer-back" target="_BLANK">https://github.com/the-artisans/buzzer-back</a>
+- Front-end: <a href="https://github.com/the-artisans/buzzer-front" target="_BLANK">https://github.com/the-artisans/buzzer-front</a>
+- Website: <a href="http://buzzerapp.surge.sh/" target="_BLANK">http://buzzerapp.surge.sh/</a> *(lembre-se, protótipo funcional)* 😄
 
 Aproveite e [veja os desafios que estavam disponíveis][8], são bem interessantes e é sempre bom praticar!
 
