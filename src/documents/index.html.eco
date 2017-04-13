@@ -7,7 +7,7 @@ changefreq: "daily"
 scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'scripts/home.js']
 ---
 
-<article id="home-content">
+<article id="landing">
   <section id="centered-content">
     <h1>Guilherme Ventura</h1>
     <h2>Just another <span id="adjective">dreamer</span></h2>
@@ -69,14 +69,19 @@ scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'script
 
   <p>
     Bem vindo à minha casa na internet!<br>
-    Ainda estou aperfeiçoando o site está em construção, mas procuro escrever com certa
+    Ainda estou aperfeiçoando o site, mas procuro escrever com certa
     frequência <a href="/blog" data-ga-label="blog">no blog</a>. Passa lá e vê se tem algo novo! 😄
   </p>
 
   <% posts = @getCollection("posts") %>
   <% if posts.length: %>
-    <h2>Posts Recentes</h2>
-    <%= @partial('posts-list', {posts: posts.toJSON() }) %>
+    <div class="recent-blog-posts">
+      <h2>Posts Recentes</h2>
+        <%= @partial('posts-list', {posts: posts.toJSON().slice(0, 4) }) %>
+        <% if posts.length > 4: %>
+          <a href="/blog" class="see-all-posts">Ver todos os posts →</a>
+        <% end %>
+    </div>
   <% end %>
 
   <%- @partial('footer') %>

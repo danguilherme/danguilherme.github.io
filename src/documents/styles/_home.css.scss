@@ -28,7 +28,7 @@
   main {
     height: 100%;
   }
-  #home-content {
+  #landing {
     position: fixed;
     top: 0;
     right: 0;
@@ -149,6 +149,16 @@
       max-width: 100%;
       margin-left: 0;
       margin-right: 0;
+    }
+    .recent-blog-posts {
+      #posts-list {
+        margin-bottom: 0;
+      }
+      .see-all-posts {
+        display: block;
+        text-align: right;
+        text-transform: lowercase;
+      }
     }
   }
 }
