@@ -70,7 +70,8 @@ scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'script
   <p>
     Bem vindo à minha casa na internet!<br>
     Ainda estou aperfeiçoando o site, mas procuro escrever com certa
-    frequência <a href="/blog" data-ga-label="blog">no blog</a>. Passa lá e vê se tem algo novo! 😄
+    frequência <a href="/blog" data-ga-label="blog">no blog</a>. Passa lá e vê
+    se tem algo interessante! 😄
   </p>
 
   <% posts = @getCollection("posts") %>
