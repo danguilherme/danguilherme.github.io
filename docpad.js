@@ -30,7 +30,7 @@ var docpadConfig = {
           basename: { $ne: "index" }
         }, [{ date: -1 }]);
     },
-    'posts_pt-br': function() {
+    'posts_pt-br': function () {
       return this
         .getCollection("html")
         .findAllLive({
@@ -44,7 +44,7 @@ var docpadConfig = {
           });
         });
     },
-    'posts_en': function() {
+    'posts_en': function () {
       // should get only docs in English
       // issue: https://github.com/docpad/docpad/issues/1062
       return this

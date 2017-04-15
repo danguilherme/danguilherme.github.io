@@ -74,7 +74,7 @@ scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'script
     se tem algo interessante! 😄
   </p>
 
-  <% posts = @getCollection("posts") %>
+  <% posts = @getCollection("posts_en") %>
   <% if posts.length: %>
     <div class="recent-blog-posts">
       <h2>Posts Recentes</h2>

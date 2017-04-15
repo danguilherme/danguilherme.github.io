@@ -5,6 +5,11 @@ htmlmin: true
 <% renderMenu = (items) => %>
 <ul>
   <% for item in items: %>
+    <!-- show only documents with the same language -->
+    <% currentDocumentLang = @document.lang %>
+    <% menuItemDocumentLang = @langFromUrl(item.url) %>
+    <% if currentDocumentLang != menuItemDocumentLang then continue %>
+
     <% menuTitle = item.menuTitle || item.title %>
     <!-- Highlight menu item if its `item.state` is not false -->
     <li<% if item.state: %> class="selected"<% end %>>

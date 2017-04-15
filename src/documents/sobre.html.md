@@ -2,8 +2,12 @@
 identifier: "sobre"
 title: "Quem sou eu?"
 layout: "page"
+
 menuTitle: "Sobre Mim"
 menuOrder: 2
+
+multilanguage:
+  en: about-me.html
 ---
 <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=192" alt="Uma foto minha" width="192" height="192">
 
