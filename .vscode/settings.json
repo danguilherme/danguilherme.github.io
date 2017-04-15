@@ -13,6 +13,7 @@
     "out": true
   },
   "files.associations": {
-    "*.md.eco": "markdown"
+    "*.md.eco": "markdown",
+    "*.babel.eco": "javascript"
   }
 }

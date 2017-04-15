@@ -11,15 +11,15 @@ layout: "base"
       <%- @icon('flag') %>
       <div>
         <h2>
-          Você não deveria estar aqui!
+          You shouldn't be here!
         </h2>
         <p>
-           Esse post é um rascunho. Como o blog é
+           This is a draft. As the blog is
            <a href="https://github.com/danguilherme/danguilherme.github.io/tree/source" target="_BLANK"
              data-ga-category="draft-notice"
-             data-ga-label="github">aberto no GitHub</a>,
-             deixei disponível por aqui, mas fique ciente que a informação pode estar
-             errada ou não ser nem um pouco útil... 😉
+             data-ga-label="github">open on GitHub</a>,
+             it's available here anyway, but you should know that the information here
+             may be incorrect or totally useless. 😉
         </p>
       </div>
     </div>
@@ -30,7 +30,7 @@ layout: "base"
     <div class="post-cover">
       <img
         src="<%= @blog.getPostImageSrc(@getThumbnail, @document) %>"
-        alt="Capa de '<%= @document.title %>'">
+        alt="Cover for '<%= @document.title %>'">
     </div>
     <% end %>
 
@@ -43,7 +43,7 @@ layout: "base"
       <span class="post-publishing-date">
         <%- @icon('calendar') %>
         <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'LLL') %>">
-          <span class="day"><%= @formatDate(@document.date, "DD") %></span>/<span class="month"><%= @formatDate(@document.date, "MMM").toLowerCase() %></span>/<span class="year"><%= @formatDate(@document.date, "YYYY") %></span>
+          <%= @formatDate(@document.date, "MMM Do YYYY", @document.lang) %>
         </time>
       </span>
       <span id="post-tags">
@@ -61,15 +61,15 @@ layout: "base"
       <span id="post-share">
         <span class="share-button">
           <share-button id="share-header" class="share" data-ga-label="toggle-share-buttons-heading"></share-button>
-          <%- @icon('share') %> Compartilhar
+          <%- @icon('share') %> Share
         </span>
       </span>
     </div>
   </header>
 
   <article>
-    <% if @hasLang('en'): %>
-      <a href="<%= @toLang('en') %>">Read the English version here.</a>
+    <% if @hasLang('pt-br'): %>
+      <a href="<%= @toLang('pt-br') %>">Leia a versão em português aqui.</a>
       <hr>
     <% end %>
 
@@ -78,21 +78,21 @@ layout: "base"
     <section class="post-interactions">
       <p class="twitter-share-notice">
         <% author = @site.author %>
-        Se você tiver qualquer dúvida ou comentário, por favor escreva-os abaixo.
-        Curtiu o post? Você pode
+        If you have any doubt or comment, please write them below.
+        Liked the article? You can
         <a href="https://twitter.com/intent/tweet?url=<%= @site.url  %><%=  @document.url  %>&text=<%=  @document.title  %>&via=<%= author.twitter %>"
-          title="Twittar sobre '<%= @document.title %>'"
+          title="Tweet about '<%= @document.title %>'"
           target="_blank"
-          data-ga-label="tweet">compartilhá-lo com seus seguidores</a> ou
+          data-ga-label="tweet">share it with your followers</a> or
         <a href="https://twitter.com/intent/follow?screen_name=<%= author.twitter %>"
           title="@<%= author.twitter %>"
-          data-ga-label="twitter-follow">me seguir no Twitter</a>!
+          data-ga-label="twitter-follow">follow me on Twitter</a>!
       </p>
 
       <p id="social-share">
         <span class="share-button">
           <share-button id="share-footer" class="share" data-ga-label="toggle-share-buttons-footer"></share-button>
-          <%- @icon('share') %> Compartilhar
+          <%- @icon('share') %> Share
         </span>
       </p>
 

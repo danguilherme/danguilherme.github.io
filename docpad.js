@@ -1,4 +1,4 @@
-var  fs = require('fs');
+var fs = require('fs');
 var moment = require('moment');
 var pkg = require('./package.json');
 var author = {
@@ -10,41 +10,61 @@ var author = {
   github: "danguilherme"
 };
 
-moment.locale('pt-br');
 var docpadConfig = {
   collections: {
-    pages: function() {
+    pages: function () {
       return this
         .getCollection("html")
         .findAllLive({ layout: 'page' }, [{ menuOrder: 1 }])
-        .on("add", function(model) {
+        .on("add", function (model) {
           return model.setMetaDefaults({
             htmlmin: true
           });
         });
     },
-    posts: function() {
+    posts: function () {
       return this
         .getCollection("html")
         .findAllLive({
-          relativeOutDirPath: 'blog',
+          relativeOutDirPath: { $in: ['en\\blog', 'blog'] },
+          basename: { $ne: "index" }
+        }, [{ date: -1 }]);
+    },
+    'posts_pt-br': function() {
+      return this
+        .getCollection("html")
+        .findAllLive({
+          relativeOutDirPath: { $in: ['blog'] },
           basename: { $ne: "index" }
         }, [{ date: -1 }])
-        .on("add", function(model) {
+        .on("add", function (model) {
           return model.setMetaDefaults({
             htmlmin: true,
             layout: "post"
           });
-        })
-        .findAllLive({
-          isDraft: { $ne: true }
         });
     },
-    sitemap: function() {
+    'posts_en': function() {
+      // should get only docs in English
+      // issue: https://github.com/docpad/docpad/issues/1062
+      return this
+        .getCollection("html")
+        .findAllLive({
+          relativeOutDirPath: { $in: ['en\\blog'] },
+          basename: { $ne: "index" }
+        }, [{ date: -1 }])
+        .on("add", function (model) {
+          return model.setMetaDefaults({
+            htmlmin: true,
+            layout: "en\\post"
+          });
+        });
+    },
+    sitemap: function () {
       return this
         .getCollection("html")
         .findAllLive({ isDraft: { $ne: true } }, [])
-        .on("add", function(model) {
+        .on("add", function (model) {
           return model.setMetaDefaults({
             changefreq: "monthly"
           });
@@ -78,34 +98,36 @@ var docpadConfig = {
       keywords: "blog, front-end, programação, javascript, css, html, csharp, C#, artigos"
     },
 
-    getPreparedTitle: function() {
+    getPreparedTitle: function () {
       if (this.document.title && (this.document.title != this.site.title)) {
         return this.document.title + " | " + this.site.title;
       } else {
         return this.site.title;
       }
     },
-    getPreparedDescription: function() {
+    getPreparedDescription: function () {
       return this.document.description || this.document.tagline || this.site.description;
     },
-    getDocumentKeywords: function() {
+    getDocumentKeywords: function () {
       return (this.document.keywords || this.document.tags || []);
     },
-    getPreparedKeywords: function() {
+    getPreparedKeywords: function () {
       return this.getDocumentKeywords().concat(this.site.keywords).join(", ");
     },
 
     // utilitários
-    icon: function(icon) {
+    icon: function (icon) {
       return "<svg class=\"icon icon-" + icon + "\"><use xlink:href=\"/styles/iconset/symbol-defs.svg#icon-" + icon + "\"></use></svg>";
     },
-    formatDate: function(date, format) {
+    formatDate: function (date, format, locale) {
       if (format == null) {
         format = "DD/MM/YYYY";
       }
+      locale = locale || 'pt-br';
+      moment.locale(locale);
       return moment(date).format(format);
     },
-    slugify: function(text) {
+    slugify: function (text) {
       return text.toString().toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '').replace(/\-\-+/g, '-').replace(/^-+/, '').replace(/-+$/, '');
     }
   },
@@ -138,27 +160,16 @@ var docpadConfig = {
     sitemap: {
       collectionName: 'sitemap',
       cachetime: 600000
+    },
+    polyglot: {
+      languages: ["pt-br", "en"],
+      mainLanguage: "pt-br",
+      omitMainFolder: true
     }
   },
 
   environments: {
     development: {
-      collections: {
-        posts: function() {
-          return this
-            .getCollection("html")
-            .findAllLive({
-              relativeOutDirPath: 'blog',
-              basename: { $ne: "index" }
-            }, [{ date: -1 }])
-            .on("add", function(model) {
-              return model.setMetaDefaults({
-                htmlmin: true,
-                layout: "post"
-              });
-            });
-        }
-      },
       plugins: {
         stylus: {
           stylusOptions: {
@@ -171,7 +182,7 @@ var docpadConfig = {
 };
 
 docpadConfig.templateData.blog = {
-  getPostContent: function(post, contentRelativePath) {
+  getPostContent: function (post, contentRelativePath) {
     try {
       fs.accessSync("out/blog/" + post.basename + "/" + contentRelativePath);
     } catch (error) {
@@ -179,7 +190,7 @@ docpadConfig.templateData.blog = {
     }
     return "/blog/" + post.basename + "/" + contentRelativePath;
   },
-  getPostOriginalImageSrc: function(post) {
+  getPostOriginalImageSrc: function (post) {
     var coverUrl = this.getPostContent(post, "cover.png");
     if (!coverUrl && post.isDraft)
       coverUrl = "http://dummyimage.com/500x300/292929/e3e3e3&text=" + post.title;
@@ -188,7 +199,7 @@ docpadConfig.templateData.blog = {
   },
   postCoverWidth: 300,
   postCoverHeight: 100,
-  getPostCoverSrc: function(thumbnailPlugin, post) {
+  getPostCoverSrc: function (thumbnailPlugin, post) {
     var coverUrl = thumbnailPlugin("blog/" + post.basename + "/cover.png", {
       w: this.postCoverWidth,
       h: this.postCoverHeight
@@ -200,7 +211,7 @@ docpadConfig.templateData.blog = {
   },
   postImageWidth: 500,
   postImageHeight: 300,
-  getPostImageSrc: function(thumbnailPlugin, post) {
+  getPostImageSrc: function (thumbnailPlugin, post) {
     var coverUrl = thumbnailPlugin("blog/" + post.basename + "/cover.png", {
       w: this.postImageWidth,
       h: this.postImageHeight

@@ -13,6 +13,7 @@
     "docpad-plugin-livereload": "~2.9.0",
     "docpad-plugin-marked": "~2.3.0",
     "docpad-plugin-menu": "~2.1.0",
+    "docpad-plugin-multilanguage": "https://github.com/danguilherme/docpad-plugin-multilanguage.git",
     "docpad-plugin-nodesass": "~2.8.2",
     "docpad-plugin-partials": "~2.9.2",
     "docpad-plugin-related": "~2.2.2",

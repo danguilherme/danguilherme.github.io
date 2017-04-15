@@ -1,0 +1,39 @@
+---
+title:    Página de exemplo
+tagline:  Esse é um artigo poliglota
+tags:     teste
+date:     2016-12-14T19:00:00+00:00
+isDraft:  true
+multilanguage:
+  en: blog/example-page.html
+---
+
+- Lang: <%= @document.lang %>
+- Tradução: <%= @toLang('pt-br') %>
+- hasPt: <%= @hasLang('pt-br') %>
+- hasEn: <%= @hasLang('en') %>
+- other: <%= JSON.stringify(@otherLangs()) %>
+
+<hr>
+
+<h1>Polyglot <small><%= @polyglot %></small></h1>
+
+<% items_pt = @getCollection("lang_pt-br") %>
+<% items_en = @getCollection("lang_en") %>
+<h2>Pt-br</h2>
+<% if items_pt: %>
+  <ul>
+  <% for item in items_pt.toJSON(): %>
+    <li><%= item.title %> : <%= item.url %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<h2>En</h2>
+<% if items_en: %>
+  <ul>
+  <% for item in items_en.toJSON(): %>
+    <li><%= item.title %> : <%= item.url %></li>
+  <% end %>
+  </ul>
+<% end %>

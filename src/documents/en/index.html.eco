@@ -10,16 +10,16 @@ scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'script
 <article id="landing">
   <section id="centered-content">
     <h1>Guilherme Ventura</h1>
-    <h2>Apenas mais um <span id="adjective">dreamer</span></h2>
+    <h2>Just another <span id="adjective">dreamer</span></h2>
 
     <div id="footer">
       <p>
-        Não seja tímido. Conecte-se!
+        Don't be shy. Connect!
       </p>
 
       <ul class="social-links">
         <li class="blog">
-          <a href="/blog/" title="Meu Blog"
+          <a href="/blog/" title="Guilherme Ventura Blog"
             data-ga-category="home"
             data-ga-action="social-link-click"
             data-ga-label="blog">Blog</a>
@@ -85,5 +85,5 @@ scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'script
     </div>
   <% end %>
 
-  <%- @partial('footer') %>
+  <%- @partial('en\\footer') %>
 </div>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="<%= @document.lang or 'pt-br' %>">
 <head>
   <%- @partial('head-content') %>
   <title><%= @getPreparedTitle() %></title>
 </head>
-<body id="<%= @document.layout %>">
+<body id="<%= @slugify(@document.layout) %>">
   <%- @partial('header') %>
 
   <main id="<%= @slugify(@document.identifier || @document.title) %>">
     <%- @content %>
   </main>
 
-  <%- @partial('footer') %>
+  <%- @partial("#{@document.langPrefix}footer") %>
 
   <%- @getBlock("scripts").add((@site.scripts).concat(@document.scripts or [])).toHTML() %>
 </body>

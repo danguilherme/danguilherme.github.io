@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="footer-content">
+    Made with <span class="love">♥</span> by
+    <a href="https://twitter.com/<%= @site.author.twitter %>" target="_BLANK"
+      data-ga-category="footer"
+      data-ga-label="twitter">@<%= @site.author.twitter %></a> with
+    <a href="https://docpad.org/" target="_BLANK"
+      data-ga-category="footer"
+      data-ga-label="docpad">DocPad</a>,
+    <a href="https://nodejs.org/" target="_BLANK"
+      data-ga-category="footer"
+      data-ga-label="nodejs">Node.js</a>,
+    <a href="https://learnboost.github.io/stylus/" target="_BLANK"
+      data-ga-category="footer"
+      data-ga-label="stylus">Stylus</a> and JavaScript. Discover more in the
+    <a href="https://github.com/danguilherme/danguilherme.github.io/tree/source" target="_BLANK"
+      data-ga-category="footer"
+      data-ga-label="github">GitHub repo</a>.
+  </div>
+</footer>

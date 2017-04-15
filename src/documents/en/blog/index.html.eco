@@ -7,11 +7,11 @@ priority: 1
 changefreq: "daily"
 ---
 
-<% posts = @getCollection("posts_pt-br") %>
+<% posts = @getCollection("posts_en") %>
 <% if posts.length: %>
   <%= @partial('posts-list', {posts: posts.toJSON() }) %>
 <% else: %>
   <p>
-    Nenhum post ainda...
+    No posts published yet...
   </p>
 <% end %>
