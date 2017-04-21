@@ -8,10 +8,11 @@ isDraft:  true
 
 
 - Lang: <%= @document.lang %>
-- Tradução: <%= @toLang('pt-br') %>
-- hasPt: <%= @hasLang('pt-br') %>
-- hasEn: <%= @hasLang('en') %>
-- other: <%= JSON.stringify(@otherLangs()) %>
+- Lang from URL: <%= @langFromUrl(@document.url) %>
+- Translation: <%= @toLang('pt-br') %>
+- Has Portuguese: <%= @hasLang('pt-br') %>
+- Has English: <%= @hasLang('en') %>
+- Other languages: <%= JSON.stringify(@otherLangs()) %>
 
 <hr>
 

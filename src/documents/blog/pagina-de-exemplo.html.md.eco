@@ -4,15 +4,16 @@ tagline:  Esse é um artigo poliglota
 tags:     teste
 date:     2016-12-14T19:00:00+00:00
 isDraft:  true
-multilanguage:
+translations:
   en: blog/example-page.html
 ---
 
 - Lang: <%= @document.lang %>
-- Tradução: <%= @toLang('pt-br') %>
-- hasPt: <%= @hasLang('pt-br') %>
-- hasEn: <%= @hasLang('en') %>
-- other: <%= JSON.stringify(@otherLangs()) %>
+- Lang from URL: <%= @langFromUrl(@document.url) %>
+- Translation: <%= @toLang('pt-br') %>
+- Has Portuguese: <%= @hasLang('pt-br') %>
+- Has English: <%= @hasLang('en') %>
+- Other languages: <%= JSON.stringify(@otherLangs()) %>
 
 <hr>
 
