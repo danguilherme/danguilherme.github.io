@@ -13,7 +13,9 @@ styles: ['/styles/home.css']
 
 <article class="presentation">
   <section class="landing">
-    <aside class="translate"><a href="/<%= @toLang('pt-br') %>">Prefiro em português</a></aside>
+    <aside class="translate">
+      <%- @partial('translated-link', { href: @toLang('pt-br') || '/', content: 'Prefiro em português' }) %>
+    </aside>
     <header>
       <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=200" alt="A pic of mine" width="200" height="200">
       <div class="headings">
@@ -45,13 +47,13 @@ styles: ['/styles/home.css']
             data-ga-label="linkedin">LinkedIn</a>
         </li>
         <li class="twitter">
-          <a href="//twitter.com/intent/follow?screen_name=danguilherme" target="_blank" title="@danguilherme"
+          <a href="https://twitter.com/danguilherme" target="_blank" title="@danguilherme"
             data-ga-category="home"
             data-ga-action="social-link-click"
             data-ga-label="twitter">Twitter</a>
         </li>
         <li class="google-plus">
-          <a href="//plus.google.com/+GuilhermeVenturaDanguilherme" target="_blank" title="+GuilhermeVenturaDanguilherme"
+          <a href="https://plus.google.com/+GuilhermeVenturaDanguilherme" target="_blank" title="+GuilhermeVenturaDanguilherme"
             data-ga-category="home"
             data-ga-action="social-link-click"
             data-ga-label="google-plus">Google+</a>

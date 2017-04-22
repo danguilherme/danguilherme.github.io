@@ -1,0 +1,1 @@
+<a href="<%= @href %>" hreflang="<%= @langFromUrl(@href) %>"><%= @content %></a>
