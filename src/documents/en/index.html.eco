@@ -1,6 +1,8 @@
 ---
 title:      "Guilherme Ventura"
-layout:     "home"
+layout:     "base"
+noHeader:   true
+noFooter:   true
 
 priority: 1
 changefreq: "daily"

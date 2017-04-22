@@ -17,9 +17,9 @@
     fn.call(window);
   }
 
-  window.danguilherme = function danguilherme(onLoad) {
+  window.onDocumentReady = function danguilherme(onLoad) {
     if (typeof onLoad !== 'function') {
-      console.warn("`danguilherme` only accepts functions to execute when document is ready");
+      console.warn("`onDocumentReady` only accepts functions to execute when document is ready");
       return;
     }
 
@@ -28,4 +28,7 @@
     else
       onLoadFns.push(onLoad);
   }
+
+  // backwards compatibility
+  window.danguilherme = window.onDocumentReady;
 }(window, document))

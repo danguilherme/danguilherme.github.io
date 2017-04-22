@@ -1,3 +1,4 @@
+@import '_variables.css.scss';
 @mixin center() {
   position: relative;
   top: 50%;
@@ -23,10 +24,65 @@
   transform: translateX(-50%);
 }
 
-@mixin transition() {
-  -webkit-transition: arguments;
-  -ms-transition: arguments;
-  transition: arguments;
+@mixin transition($properties, $timing, $function) {
+  $expressions: '';
+  @each $prop in $properties {
+    @if $expressions=='' {
+      $expressions: #{$prop} #{$timing} #{$function};
+    }
+    @else {
+      $expressions: #{$expressions},
+      #{$prop} #{$timing} #{$function};
+    }
+  }
+  transition: $expressions;
+}
+
+@mixin media-mobile {
+  @media screen and (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-large-desktop {
+  @media screen and (min-width: $large-desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media($type) {
+  @if $type==small {
+    @include media-mobile {
+      @content;
+    }
+  }
+  @if $type==tablet {
+    @include media-tablet {
+      @content;
+    }
+  }
+  @else if $type==desktop {
+    @include media-desktop {
+      @content;
+    }
+  }
+  @else if $type==large {
+    @include media-large-desktop {
+      @content;
+    }
+  }
 }
 
 // comment

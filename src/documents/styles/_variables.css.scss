@@ -1,6 +1,16 @@
 $max-width: 800px;
-$mobile-breakpoint: 500px;
+
+// based on: http://getbootstrap.com/css/#grid-media-queries
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 992px;
+$large-desktop-breakpoint: 1200px;
+
 $theme-color: #2196F3;
+
+$base-font-size: 18px;
+$base-line-height: 1.5;
+
 $text-color: #333;
 $link-color: darken($theme-color, 10%);
 $link-visited-color: darken($theme-color, 20%);

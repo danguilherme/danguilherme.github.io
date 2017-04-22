@@ -1,0 +1,5 @@
+<script id="document-metadata">
+  window.documentMetadata = {
+    lang: '<%= @document.lang %>'
+  };
+</script>

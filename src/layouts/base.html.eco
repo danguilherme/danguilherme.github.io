@@ -5,14 +5,19 @@
   <title><%= @getPreparedTitle() %></title>
 </head>
 <body id="<%= @slugify(@document.layout) %>">
-  <%- @partial('header') %>
+  <% if !@document.noHeader: %>
+    <%- @partial('header') %>
+  <% end %>
 
   <main id="<%= @slugify(@document.identifier || @document.title) %>">
     <%- @content %>
   </main>
 
-  <%- @partial("#{@document.langPrefix}footer") %>
+  <% if !@document.noFooter: %>
+    <%- @partial("#{@document.langPrefix}footer") %>
+  <% end %>
 
   <%- @getBlock("scripts").add((@site.scripts).concat(@document.scripts or [])).toHTML() %>
+  <%- @partial("document-metadata-export") %>
 </body>
 </html>
