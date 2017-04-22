@@ -1,5 +1,4 @@
 ---
-identifier: "home"
 title:      "Guilherme Ventura"
 layout:     "base"
 noHeader:   true
@@ -7,27 +6,22 @@ noFooter:   true
 
 priority: 1
 changefreq: "daily"
-scripts: ['/bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', '/scripts/home.js']
-styles: ['/styles/home.css']
+scripts: ['bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', 'scripts/home.js']
 ---
 
-<article class="presentation">
-  <section class="landing">
-    <aside class="translate"><a href="/<%= @toLang('pt-br') %>">Prefiro em português</a></aside>
-    <header>
-      <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=200" alt="A pic of mine" width="200" height="200">
-      <div class="headings">
-        <h1>Guilherme Ventura</h1>
-        <h2>Front-end Developer</h2>
-      </div>
-    </header>
+<article id="landing">
+  <section id="centered-content">
+    <h1>Guilherme Ventura</h1>
+    <h2>Just another <span id="adjective">dreamer</span></h2>
 
-    <p>I am just another <span id="adjective">dreamer</span>. Get in touch!</p>
+    <div id="footer">
+      <p>
+        Don't be shy. Connect!
+      </p>
 
-    <footer>
       <ul class="social-links">
         <li class="blog">
-          <a href="/<%= @document.langPrefix %>blog/" title="Read my blog"
+          <a href="/blog/" title="Guilherme Ventura Blog"
             data-ga-category="home"
             data-ga-action="social-link-click"
             data-ga-label="blog">Blog</a>
@@ -61,7 +55,37 @@ styles: ['/styles/home.css']
             data-ga-category="home"
             data-ga-action="social-link-click"
             data-ga-label="email">Email</a>
+        </li>
       </ul>
-    </footer>
+    </div>
   </section>
+
+  <a id="home-arrow" class="arrow bounce" href="#site-header"
+    data-ga-category="home"
+    data-ga-action="see-content"
+    data-ga-label="Seta para baixo"></a>
 </article>
+
+<div id="site-content">
+  <%- @partial('header') %>
+
+  <p>
+    Bem vindo à minha casa na internet!<br>
+    Ainda estou aperfeiçoando o site, mas procuro escrever com certa
+    frequência <a href="/blog" data-ga-label="blog">no blog</a>. Passa lá e vê
+    se tem algo interessante! 😄
+  </p>
+
+  <% posts = @getCollection("posts_en") %>
+  <% if posts.length: %>
+    <div class="recent-blog-posts">
+      <h2>Posts Recentes</h2>
+        <%= @partial('posts-list', {posts: posts.toJSON().slice(0, 4) }) %>
+        <% if posts.length > 4: %>
+          <a href="/blog" class="see-all-posts">Ver todos os posts →</a>
+        <% end %>
+    </div>
+  <% end %>
+
+  <%- @partial('en\\footer') %>
+</div>

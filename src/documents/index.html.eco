@@ -13,6 +13,7 @@ styles: ['/styles/home.css']
 
 <article class="presentation">
   <section class="landing">
+    <aside class="translate"><a href="<%= @toLang('en') %>">I prefer in English</a></aside>
     <header>
       <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=200" alt="Uma foto minha" width="200" height="200">
       <div class="headings">
@@ -24,7 +25,6 @@ styles: ['/styles/home.css']
     <p>Sou apenas mais um <span id="adjective">sonhador</span>. Conecte-se!</p>
 
     <footer>
-
       <ul class="social-links">
         <li class="blog">
           <a href="/<%= @document.langPrefix %>blog/" title="Meu Blog"

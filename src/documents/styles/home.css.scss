@@ -1,7 +1,6 @@
 @import '_variables.css.scss';
 @import '_mixins.css.scss';
 @import '_helpers.css.scss';
-$contrast-color: #fff;
 @keyframes bounce {
   0%,
   20%,
@@ -29,7 +28,7 @@ $contrast-color: #fff;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: $contrast-color;
+    color: $theme-contrast-color;
     @include media-tablet {
       font-size: 2rem;
     }
@@ -45,6 +44,16 @@ $contrast-color: #fff;
       margin: 0;
       padding: 0;
       line-height: 1;
+    }
+    .translate {
+      position: absolute;
+      top: 0;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      a {
+        color: $theme-contrast-color;
+      }
     }
     header {
       display: flex;
@@ -68,8 +77,6 @@ $contrast-color: #fff;
         .headings {
           margin-left: 1em;
         }
-      }
-      @include media(desktop) {
       }
     }
     ul {
@@ -103,11 +110,11 @@ $contrast-color: #fff;
         }
         a {
           transition: color .2s linear, text-shadow .2s linear;
-          color: $contrast-color;
+          color: $theme-contrast-color;
           text-decoration: none;
           &:hover {
             color: transparent;
-            text-shadow: $contrast-color 0 0 2px;
+            text-shadow: $theme-contrast-color 0 0 2px;
           }
         }
       }
