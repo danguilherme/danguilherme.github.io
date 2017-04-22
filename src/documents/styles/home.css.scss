@@ -17,12 +17,21 @@
   }
 }
 
-#home {
+body.page-home {
+  .site-header {
+    display: none;
+  }
+  .section {
+    padding: 3em 2em;
+  }
   .landing {
+    background-color: $theme-color;
+    background-image: url('../images/square_bg.png');
+    background-attachment: fixed;
     font-size: 1.2rem;
-    height: 100vh;
-    margin-left: .5em;
-    margin-right: .5em;
+    min-height: 100vh;
+    padding: .5em;
+    padding-top: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,6 +129,8 @@
       }
     }
   }
+  .introduction {
+  }
 }
 
 
@@ -128,12 +139,6 @@
 */
 
 #home {
-  background-color: $theme-color;
-  background-image: url('../images/square_bg.png');
-  background-attachment: fixed;
-  main {
-    height: 100vh;
-  }
   #landing {
     position: fixed;
     top: 0;

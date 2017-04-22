@@ -2,8 +2,6 @@
 identifier: "home"
 title:      "Guilherme Ventura"
 layout:     "base"
-noHeader:   true
-noFooter:   true
 
 priority: 1
 changefreq: "daily"

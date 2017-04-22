@@ -4,18 +4,15 @@
   <%- @partial('head-content') %>
   <title><%= @getPreparedTitle() %></title>
 </head>
-<body id="<%= @slugify(@document.layout) %>">
-  <% if !@document.noHeader: %>
-    <%- @partial('header') %>
-  <% end %>
+<% documentSlug = @slugify(@document.identifier || @document.title) %>
+<body id="<%= @slugify(@document.layout) %>" class="page-<%= documentSlug %>">
+  <%- @partial('header') %>
 
-  <main id="<%= @slugify(@document.identifier || @document.title) %>">
+  <main id="<%= documentSlug %>">
     <%- @content %>
   </main>
 
-  <% if !@document.noFooter: %>
-    <%- @partial("#{@document.langPrefix}footer") %>
-  <% end %>
+  <%- @partial("#{@document.langPrefix}footer") %>
 
   <%- @getBlock("scripts").add((@site.scripts).concat(@document.scripts or [])).toHTML() %>
   <%- @partial("document-metadata-export") %>

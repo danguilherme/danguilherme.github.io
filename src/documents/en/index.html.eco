@@ -12,7 +12,7 @@ styles: ['/styles/home.css']
 ---
 
 <article class="presentation">
-  <section class="landing">
+  <section class="section landing">
     <aside class="translate">
       <%- @partial('translated-link', { href: @toLang('pt-br') || '/', content: 'Prefiro em português' }) %>
     </aside>
@@ -24,7 +24,7 @@ styles: ['/styles/home.css']
       </div>
     </header>
 
-    <p>I am just another <span id="adjective">dreamer</span>. Get in touch!</p>
+    <p>I am just another <span id="adjective">dreamer</span>. <span class="no-break">Get in touch!</span></p>
 
     <footer>
       <ul class="social-links">
@@ -65,5 +65,21 @@ styles: ['/styles/home.css']
             data-ga-label="email">Email</a>
       </ul>
     </footer>
+  </section>
+  <section class="section introduction">
+    <h1>Hello Stranger</h1>
+    <p>It's good to have you here</p>
+  </section>
+  <section class="section skills">
+    <h1>I am a Web Developer</h1>
+    <p>Javascript runs through my vains</p>
+  </section>
+  <section class="section portfolio">
+    <h1>What I've Built</h1>
+    <p>[Portfolio preview]</p>
+  </section>
+  <section class="section writings">
+    <h1>Writings</h1>
+    <p>[Posts list]</p>
   </section>
 </article>
