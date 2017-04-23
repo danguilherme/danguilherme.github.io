@@ -82,30 +82,50 @@ styles: ['/styles/home.css']
       data-ga-action="see-content"
       data-ga-label="down-arrow"><span class="sr-only">see content</span></a>
   </section>
+
   <section id="scroll-target-start" class="section introduction">
     <h2 class="section-title">Hello Stranger</h2>
     <p>It's good to have you here</p>
     <a href="/about" class="call-to-action">Know My Story</a>
   </section>
+
   <section class="section skills right separator">
     <h2 class="section-title">I am a Web Developer</h2>
-    <p>Javascript runs through my vains</p>
+    <p>Javascript runs through my vains.</p>
+    <img class="js-logo" src="/images/js.svg" alt="JavaScript logo" width="200px" height="200px">
     <a href="<%= @site.author.githubUrl %>" class="call-to-action">Take a look at my GitHub</a>
   </section>
+
   <section class="section portfolio left separator">
     <h2 class="section-title">What I've Built</h2>
-    <p>[Portfolio preview]</p>
-    <a href="/portfolio" class="call-to-action">See my portfolio</a>
+    <p>
+      I like to spend time in some personal projects.
+      <br>
+      Check some of my work:
+    </p>
+    <ul>
+      <li>Cartagrafia</li>
+      <li>Uno online</li>
+      <li>3 bancos</li>
+      <li>Spotivy</li>
+    </ul>
+    <a href="/portfolio" class="call-to-action">Check my portfolio</a>
   </section>
+
   <section class="section writings right separator">
     <h2 class="section-title">Writings</h2>
-    <p>Heres is a list of my recent blog posts</p>
+    <p>
+      I take some time to write a little about tech.
+      <br>
+      Heres is a list of my recent blog posts.
+    </p>
+
     <% posts = @getCollection("posts") %>
     <% if posts.length: %>
       <div class="recent-blog-posts">
         <%= @partial('posts-list', {posts: posts.toJSON().slice(0, maxPosts) }) %>
         <% if posts.length > maxPosts: %>
-          <a href="/blog" class="call-to-action see-all-posts">See all blog posts →</a>
+          <a href="/blog" class="call-to-action see-all-posts">See all blog posts</a>
         <% end %>
       </div>
     <% end %>

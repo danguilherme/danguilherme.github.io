@@ -28,7 +28,7 @@ body.page-home {
     overflow: hidden;
   }
   .section {
-    padding: 100px 2rem;
+    padding: 100px 2rem 200px;
     &.separator.left,
     &.separator.right {
       position: relative;
@@ -198,6 +198,11 @@ body.page-home {
     &::before {
       background-color: #f3e721;
     }
+    .js-logo {
+      float: left;
+      margin: 1em;
+      border: #000 1px solid;
+    }
     .call-to-action {
       @include call-to-action(#f3e721, inherit);
     }
@@ -213,7 +218,7 @@ body.page-home {
   }
   .writings {
     background-color: $theme-color;
-    padding-bottom: 5rem;
+    padding-bottom: 200px;
     &::before {
       background-color: $theme-color;
     }
