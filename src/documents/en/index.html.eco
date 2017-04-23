@@ -20,6 +20,7 @@ styles: ['/styles/home.css']
         data-ga-action="see-translation"
         data-ga-label="pt-br">Prefiro em português</a>
     </aside>
+
     <header>
       <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=200" alt="A pic of mine" width="200" height="200">
       <div class="headings">
@@ -28,7 +29,11 @@ styles: ['/styles/home.css']
       </div>
     </header>
 
-    <p>I am just another <span id="adjective">dreamer</span>. <span class="no-break">Get in touch!</span></p>
+    <p>
+      I am just another <span id="adjective">dreamer</span>.
+      <br>
+      <span class="no-break">Get in touch!</span>
+    </p>
 
     <footer>
       <ul class="social-links">
@@ -69,8 +74,13 @@ styles: ['/styles/home.css']
             data-ga-label="email">Email</a>
       </ul>
     </footer>
+
+    <a id="see-content-handle" class="arrow bounce" href="#scroll-target-start"
+      data-ga-category="home"
+      data-ga-action="see-content"
+      data-ga-label="down-arrow"><span class="sr-only">see content</span></a>
   </section>
-  <section class="section introduction">
+  <section id="scroll-target-start" class="section introduction">
     <h1>Hello Stranger</h1>
     <p>It's good to have you here</p>
   </section>
