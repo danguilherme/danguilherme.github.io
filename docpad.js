@@ -7,7 +7,12 @@ var author = {
   facebookId: 100002397085708,
   facebookUrl: 'https://facebook.com/danguilherme',
   twitter: "danguilherme",
-  github: "danguilherme"
+  twitterUrl: "https://twitter.com/danguilherme",
+  github: "danguilherme",
+  githubUrl: "https://github.com/danguilherme",
+  linkedinUrl: "https://linkedin.com/in/danguilherme",
+  googlePlus: "GuilhermeVenturaDanguilherme",
+  googlePlusUrl: "https://plus.google.com/+GuilhermeVenturaDanguilherme"
 };
 
 var docpadConfig = {

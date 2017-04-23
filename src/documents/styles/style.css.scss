@@ -2,6 +2,29 @@
 @import '_mixins.css.scss';
 @import '_theme.css.scss';
 
+@keyframes footer-links-hover {
+  50% {
+    transform: translateY(150%);
+  }
+  51% {
+    transform: translateY(-150%);
+    fill: $theme-color;
+  }
+  100% {
+    transform: translateY(0);
+    fill: $theme-contrast-color;
+  }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale( .75 ); }
+  20% { transform: scale( 1 ); }
+  40% { transform: scale( .75 ); }
+  60% { transform: scale( 1 ); }
+  80% { transform: scale( .75 ); }
+  100% { transform: scale( .75 ); }
+}
+
 
 html {
   font-family: Raleway, sans-serif;
@@ -245,16 +268,103 @@ h6 {
 //     }
 //   }
 // }
-
 .site-footer {
-  padding: 0 1rem;
+  position: relative;
+  background-color: $theme-color;
+  color: $theme-contrast-color;
   margin-top: 3rem;
+  padding-bottom: 1rem;
   font-size: .8rem;
-  line-height: 2;
   text-align: center;
-  border-top: 1px solid rgba($theme-color, .1);
-  .love {
-    color: #D70021;
+  a,
+  a:visited,
+  a:hover {
+    color: $theme-contrast-color;
+  }
+  .reference-balloons {
+    display: flex;
+    justify-content: center;
+    margin: 0 1rem;
+    padding: 0;
+    line-height: 0;
+    list-style: none;
+    font-size: 2rem;
+    transform: translateY(-50%);
+    @include media(tablet) {
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+    @include media(large) {
+      margin-left: 30%;
+      margin-right: 30%;
+    }
+    .balloon {
+      flex: 1 1 auto;
+      a {
+        display: inline-block;
+        padding: 15px;
+        line-height: 0;
+        background-color: $theme-contrast-color;
+        border-radius: 50%;
+        overflow: hidden;
+        transition: background-color .2s linear;
+        &,
+        &:visited {
+          .icon {
+            fill: $theme-color;
+          }
+        }
+        &:hover {
+          background-color: $theme-color;
+          .icon {
+            animation: footer-links-hover .3s forwards;
+          }
+        }
+      }
+    }
+  }
+  .footer-content {
+    p {
+      max-width: 400px;
+      margin: 0 auto 15px;
+    }
+    .love {
+      display: inline-block;
+      vertical-align: middle;
+      color: #D70021;
+      animation: heartbeat 1s infinite;
+      font-size: 2em;
+
+      // heart drawing
+      $heart-width: 20px;
+      $heart-height: 20px;
+      & {
+        position: relative;
+        width: $heart-width;
+        height: $heart-height;
+        animation: heartbeat 1s infinite;
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: "";
+        left: $heart-width * .5;
+        top: 0;
+        width: $heart-width  * .5;
+        height: $heart-width * .8;
+        background: #D70021;
+        border-radius: ($heart-width * .5) ($heart-width * .5) 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+
+      &:after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+    }
   }
 }
 
