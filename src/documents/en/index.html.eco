@@ -77,23 +77,28 @@ styles: ['/styles/home.css']
       </ul>
     </footer>
 
-    <a id="see-content-handle" class="arrow bounce" href="#scroll-target-start"
+    <a id="see-content-handle" class="arrow bounce" href="#content-start"
       data-ga-category="home"
       data-ga-action="see-content"
       data-ga-label="down-arrow"><span class="sr-only">see content</span></a>
   </section>
 
-  <section id="scroll-target-start" class="section introduction">
+  <section id="content-start" class="section introduction">
     <h2 class="section-title">Hello Stranger</h2>
     <p>It's good to have you here</p>
-    <a href="/about" class="call-to-action">Know My Story</a>
+    <a href="/en/about-me/" class="call-to-action"
+      ga-category="introduction"
+      ga-label="my-story">Know My Story</a>
   </section>
 
   <section class="section skills right separator">
     <h2 class="section-title">I am a Web Developer</h2>
     <p>Javascript runs through my vains.</p>
     <img class="js-logo" src="/images/js.svg" alt="JavaScript logo" width="200px" height="200px">
-    <a href="<%= @site.author.githubUrl %>" class="call-to-action">Take a look at my GitHub</a>
+    <a href="<%= @site.author.githubUrl %>" class="call-to-action"
+      target="_blank"
+      ga-category="skills"
+      ga-label="github">Take a look at my GitHub</a>
   </section>
 
   <section class="section portfolio left separator">
@@ -109,7 +114,9 @@ styles: ['/styles/home.css']
       <li>3 bancos</li>
       <li>Spotivy</li>
     </ul>
-    <a href="/portfolio" class="call-to-action">Check my portfolio</a>
+    <a href="/portfolio/" class="call-to-action"
+      ga-category="portfolio"
+      ga-label="portfolio">Check my portfolio</a>
   </section>
 
   <section class="section writings right separator">
@@ -125,7 +132,9 @@ styles: ['/styles/home.css']
       <div class="recent-blog-posts">
         <%= @partial('posts-list', {posts: posts.toJSON().slice(0, maxPosts) }) %>
         <% if posts.length > maxPosts: %>
-          <a href="/blog" class="call-to-action see-all-posts">See all blog posts</a>
+          <a href="/en/blog" class="call-to-action see-all-posts"
+            ga-category="writings"
+            ga-label="see-all-posts">See all blog posts</a>
         <% end %>
       </div>
     <% end %>

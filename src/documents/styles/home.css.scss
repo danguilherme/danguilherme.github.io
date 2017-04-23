@@ -108,9 +108,10 @@ body.page-home {
         border-radius: 50%;
         border: 2px solid $theme-color;
         box-shadow: darken($theme-color, 15%) 0px 0px 0px 1px;
+        margin: 0;
       }
       h1 {
-        font-size: 1.7em;
+        font-size: 1.5em;
       }
       .job-title {
         font-weight: bold;
@@ -119,6 +120,7 @@ body.page-home {
       }
       @include media(tablet) {
         flex-direction: row;
+        margin: 0;
         .headings {
           margin-left: 1em;
         }

@@ -1,5 +1,5 @@
 danguilherme(function gaOnDocumentReady() {
-  const DEBUG = true;
+  const DEBUG = false;
 
   // Para testar o Google Analytics em tempo real,
   // tem que entrar o IP de localhost (127.0.0.1)
