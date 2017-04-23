@@ -11,6 +11,8 @@ scripts: ['/bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', '/scri
 styles: ['/styles/home.css']
 ---
 
+<% maxPosts = 2; %>
+
 <article class="presentation">
   <section class="section landing">
     <aside class="translate">
@@ -25,7 +27,7 @@ styles: ['/styles/home.css']
       <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=200" alt="A pic of mine" width="200" height="200">
       <div class="headings">
         <h1>Guilherme Ventura</h1>
-        <h2>Front-end Developer</h2>
+        <p class="job-title">Front-end Developer</p>
       </div>
     </header>
 
@@ -81,19 +83,31 @@ styles: ['/styles/home.css']
       data-ga-label="down-arrow"><span class="sr-only">see content</span></a>
   </section>
   <section id="scroll-target-start" class="section introduction">
-    <h3 class="section-title">Hello Stranger</h3>
+    <h2 class="section-title">Hello Stranger</h2>
     <p>It's good to have you here</p>
+    <a href="/about" class="call-to-action">Know My Story</a>
   </section>
   <section class="section skills right separator">
-    <h3 class="section-title">I am a Web Developer</h3>
+    <h2 class="section-title">I am a Web Developer</h2>
     <p>Javascript runs through my vains</p>
+    <a href="<%= @site.author.githubUrl %>" class="call-to-action">Take a look at my GitHub</a>
   </section>
   <section class="section portfolio left separator">
-    <h3 class="section-title">What I've Built</h3>
+    <h2 class="section-title">What I've Built</h2>
     <p>[Portfolio preview]</p>
+    <a href="/portfolio" class="call-to-action">See my portfolio</a>
   </section>
   <section class="section writings right separator">
-    <h3 class="section-title">Writings</h3>
-    <p>[Posts list]</p>
+    <h2 class="section-title">Writings</h2>
+    <p>Heres is a list of my recent blog posts</p>
+    <% posts = @getCollection("posts") %>
+    <% if posts.length: %>
+      <div class="recent-blog-posts">
+        <%= @partial('posts-list', {posts: posts.toJSON().slice(0, maxPosts) }) %>
+        <% if posts.length > maxPosts: %>
+          <a href="/blog" class="call-to-action see-all-posts">See all blog posts →</a>
+        <% end %>
+      </div>
+    <% end %>
   </section>
 </article>

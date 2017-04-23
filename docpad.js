@@ -139,11 +139,8 @@ var docpadConfig = {
 
 
   plugins: {
-    stylus: {
-      stylusOptions: {
-        compress: true,
-        'include css': true
-      }
+    nodesass: {
+      options: { outputStyle: 'compressed' }
     },
     rss: {
       "default": {
@@ -185,6 +182,39 @@ var docpadConfig = {
     }
   }
 };
+
+let blogHelpers = {
+  postImageWidth: 1024,
+  postImageHeight: 512,
+  getPostImageSrc: function (post) {
+    let spec = { w: this.postImageWidth, h: this.postImageHeight };
+    let coverUrl = this.getThumbnail(
+      "blog/" + post.basename + "/cover.png",
+      'zoomcrop',
+      spec);
+
+    if (!coverUrl && post.isDraft)
+      coverUrl = `http://dummyimage.com/${spec.w}x${spec.h}/292929/e3e3e3&text=${post.title}`;
+
+    return coverUrl;
+  },
+  postThumbWidth: 768,
+  postThumbHeight: 384,
+  getPostThumb: function getPostThumb(post) {
+    let spec = { w: this.postThumbWidth, h: this.postThumbHeight };
+    let coverUrl = this.getThumbnail(
+      "blog/" + post.basename + "/cover.png",
+      'zoomcrop',
+      spec);
+
+    if (!coverUrl && post.isDraft)
+      coverUrl = `http://dummyimage.com/${spec.w}x${spec.h}/292929/e3e3e3&text=${post.title}`;
+
+    return coverUrl;
+  }
+};
+
+Object.assign(docpadConfig.templateData, blogHelpers);
 
 docpadConfig.templateData.blog = {
   getPostContent: function (post, contentRelativePath) {

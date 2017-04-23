@@ -1,6 +1,9 @@
 @import '_variables.css.scss';
 @import '_mixins.css.scss';
 @import '_helpers.css.scss';
+@import 'hover.scss';
+@import '../../../node_modules/hover.css/scss/effects/background-transitions/_sweep-to-right.scss';
+
 @keyframes bounce {
   0%,
   20%,
@@ -76,12 +79,10 @@ body.page-home {
       font-size: 2rem;
     }
     &,
-    h1,
-    h2 {
+    h1 {
       font-family: 'Dosis', sans-serif;
     }
     h1,
-    h2,
     ul,
     p {
       margin: 0;
@@ -111,7 +112,8 @@ body.page-home {
       h1 {
         font-size: 1.7em;
       }
-      h2 {
+      .job-title {
+        font-weight: bold;
         text-transform: lowercase;
         font-size: 1.2em;
       }
@@ -123,7 +125,9 @@ body.page-home {
       }
     }
     #adjective {
-      @include transition(color text-shadow opacity, .5s, linear);
+      @include transition(color text-shadow opacity,
+      .5s,
+      linear);
       &.blur {
         color: transparent;
         text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
@@ -180,10 +184,22 @@ body.page-home {
       }
     }
   }
+  .introduction {
+    background-color: #21f3e7;
+    &::before {
+      background-color: #21f3e7;
+    }
+    .call-to-action {
+      @include call-to-action(#21f3e7, inherit);
+    }
+  }
   .skills {
     background-color: #f3e721;
     &::before {
       background-color: #f3e721;
+    }
+    .call-to-action {
+      @include call-to-action(#f3e721, inherit);
     }
   }
   .portfolio {
@@ -191,12 +207,87 @@ body.page-home {
     &::before {
       background-color: #f37e21;
     }
+    .call-to-action {
+      @include call-to-action(#f37e21, inherit);
+    }
   }
   .writings {
     background-color: $theme-color;
     padding-bottom: 5rem;
     &::before {
       background-color: $theme-color;
+    }
+    .posts-list {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+      list-style: none;
+      color: $theme-contrast-color;
+      text-align: left;
+      @include media(large) {
+        .post-brief {
+          margin-left: 5em;
+          margin-right: 5em;
+        }
+      }
+      .post-brief {
+        position: relative;
+        max-width: 768px; // same size as cover thumb width in docpad.js
+        margin-bottom: 1rem;
+        border: 1px solid $bg-color;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: background-color .2s linear;
+        &:hover {
+          background-color: $bg-color;
+          color: $theme-color;
+          .post-lang {
+            border-color: $theme-color;
+          }
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+        p,
+        .post-cover {
+          margin: 0;
+          border-radius: 0;
+        }
+        .post-info,
+        .post-tagline {
+          padding: 0 10px;
+        }
+        .post-cover {
+          background-color: $bg-color;
+        }
+        .post-title {
+          margin: 0;
+        }
+        p .post-lang {
+          border: 1px solid $bg-color;
+          border-radius: 3px;
+          padding: 0 2px;
+          transition: border-color .2s linear;
+        }
+        footer {
+          text-align: right;
+          .see-post {
+            display: inline-block;
+            padding: 10px;
+            border-top: 1px solid $bg-color;
+            border-left: 1px solid $bg-color;
+            border-top-left-radius: 5px;
+            background: $bg-color;
+            color: $theme-color;
+          }
+        }
+      }
+    }
+    .call-to-action {
+      @include call-to-action($theme-color, $theme-contrast-color);
     }
   }
   .site-footer {
@@ -206,7 +297,6 @@ body.page-home {
     }
   }
 }
-
 
 /*
 * STYLE FOR HOME

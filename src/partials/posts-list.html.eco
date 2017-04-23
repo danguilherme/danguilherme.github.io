@@ -1,23 +1,33 @@
-<ul id="posts-list">
+<ul class="posts-list">
   <% for post in @posts: %>
-    <li class="<%= if post.isDraft then 'draft' %>">
+    <% postLang = @langFromUrl(post.url) %>
+    <li class="post-brief <%= if post.isDraft then 'draft' %>" lang="<%= postLang %>">
       <a href="<%= post.url %>"
+        hreflang="<%= postLang %>"
         data-ga-category="blog"
-        data-ga-action="thumbnail-click"
         data-ga-label="<%= post.title %>">
-        <% if @blog.getPostCoverSrc(@getThumbnail, post): %>
-          <img src="<%= @blog.getPostCoverSrc(@getThumbnail, post) %>"
-            class="post-cover"
-            alt="Capa de '<%= post.title %>'">
-        <% end %>
-      </a>
-      <div class="post-details">
-        <time datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
-        <a href="<%= post.url %>"
-          data-ga-category="blog"
-          data-ga-label="<%= post.title %>"><%= post.title %></a>
-        <span><%= post.tagline %></span>
-      </div>
+        <article>
+          <header>
+            <% coverSrc = @getPostThumb(post) %>
+            <% if coverSrc: %>
+              <img src="<%= coverSrc %>"
+                class="post-cover"
+                alt="Capa de '<%= post.title %>'">
+            <% end %>
+            <div class="post-info">
+              <time datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
+              <h3 class="post-title"><%= post.title %></h3>
+            </div>
+          </header>
+          <p class="post-tagline">
+            <span class="post-lang"><%= postLang %></span>
+            <span><%= post.tagline %></span>
+          </p>
+          <footer>
+            <span class="see-post">Read post →</span>
+          </footer>
+        </article>
+      </a
     </li>
   <% end %>
 </ul>

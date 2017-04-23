@@ -36,6 +36,9 @@ html {
   &>object {
     display: none;
   }
+  @include media(tablet) {
+    font-size: $base-font-size * 1.3;
+  }
 }
 
 body {
