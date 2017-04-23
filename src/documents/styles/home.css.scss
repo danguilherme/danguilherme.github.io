@@ -21,8 +21,38 @@ body.page-home {
   .site-header {
     display: none;
   }
+  main {
+    overflow: hidden;
+  }
   .section {
-    padding: 3em 2em;
+    padding: 100px 2rem;
+    &.separator.left,
+    &.separator.right {
+      position: relative;
+      &::before {
+        position: absolute;
+        width: 150%;
+        height: 100px;
+        top: 0;
+        content: '';
+      }
+    }
+    &.separator.right::before {
+      right: 0;
+      transform: rotate(3deg);
+      transform-origin: top right;
+    }
+    &.separator.left::before {
+      left: 0;
+      transform: rotate(-3deg);
+      transform-origin: top left;
+    }
+    &.right {
+      text-align: right;
+    }
+    .section-title {
+      margin-top: 0;
+    }
   }
   .landing {
     display: flex;
@@ -150,7 +180,30 @@ body.page-home {
       }
     }
   }
-  .introduction {
+  .skills {
+    background-color: #f3e721;
+    &::before {
+      background-color: #f3e721;
+    }
+  }
+  .portfolio {
+    background-color: #f37e21;
+    &::before {
+      background-color: #f37e21;
+    }
+  }
+  .writings {
+    background-color: $theme-color;
+    padding-bottom: 5rem;
+    &::before {
+      background-color: $theme-color;
+    }
+  }
+  .site-footer {
+    margin-top: 0;
+    .balloon a {
+      border: $bg-color 1px solid;
+    }
   }
 }
 

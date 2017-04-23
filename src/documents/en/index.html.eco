@@ -81,19 +81,19 @@ styles: ['/styles/home.css']
       data-ga-label="down-arrow"><span class="sr-only">see content</span></a>
   </section>
   <section id="scroll-target-start" class="section introduction">
-    <h1>Hello Stranger</h1>
+    <h3 class="section-title">Hello Stranger</h3>
     <p>It's good to have you here</p>
   </section>
-  <section class="section skills">
-    <h1>I am a Web Developer</h1>
+  <section class="section skills right separator">
+    <h3 class="section-title">I am a Web Developer</h3>
     <p>Javascript runs through my vains</p>
   </section>
-  <section class="section portfolio">
-    <h1>What I've Built</h1>
+  <section class="section portfolio left separator">
+    <h3 class="section-title">What I've Built</h3>
     <p>[Portfolio preview]</p>
   </section>
-  <section class="section writings">
-    <h1>Writings</h1>
+  <section class="section writings right separator">
+    <h3 class="section-title">Writings</h3>
     <p>[Posts list]</p>
   </section>
 </article>
