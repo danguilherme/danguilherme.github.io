@@ -18,7 +18,7 @@ styles: ['/styles/home.css']
       <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=200" alt="Uma foto minha" width="200" height="200">
       <div class="headings">
         <h1>Guilherme Ventura</h1>
-        <h2>Front-end Developer</h2>
+        <p class="job-title">Front-end Developer</p>
       </div>
     </header>
 

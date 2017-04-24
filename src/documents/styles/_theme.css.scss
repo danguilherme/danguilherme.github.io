@@ -149,14 +149,6 @@ dl dt {
   vertical-align: middle;
 }
 
-// TODO: review
-.header-content,
-.footer-content {
-  max-width: $max-width;
-  padding: 0 1em;
-  margin: 0 auto;
-}
-
 // helpers
 .no-break {
   white-space: nowrap;

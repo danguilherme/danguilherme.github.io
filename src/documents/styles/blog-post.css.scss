@@ -38,7 +38,7 @@ $aside-col-width: 300px;
   .draft-notice {
     position: relative;
     margin: $padding-spacing;
-    margin-top: 3rem;
+    margin-top: 0;
     border: $theme-color 1px solid;
     border-radius: 5px;
     header {
@@ -47,9 +47,9 @@ $aside-col-width: 300px;
       padding: $padding-spacing;
       .icon {
         position: absolute;
-        top: 0;
+        top: 5px;
         right: $padding-spacing;
-        transform: translateY(-95%);
+        transform: translateY(-95%) rotate(15deg);
         color: $theme-color;
         font-size: 3rem;
       }
@@ -257,9 +257,4 @@ $aside-col-width: 300px;
     font-weight: 200;
     line-height: 0;
   }
-}
-
-// TEMP
-#site-header {
-  display: none;
 }

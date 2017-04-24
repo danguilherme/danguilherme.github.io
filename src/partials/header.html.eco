@@ -1,6 +1,6 @@
 <header id="site-header" class="site-header">
   <div class="header-content">
-    <h1>
+    <h1 class="site-title">
       <a href="/<%= @document.langPrefix %>"
         data-ga-label="home">Guilherme Ventura</a>
     </h1>
@@ -12,12 +12,14 @@
     <nav class="header-external-links">
       <ul>
         <li>
-          <a href="https://github.com/<%= @site.author.github %>"
+          <a href="<%= @site.author.githubUrl %>"
+              title="<%= @site.author.github %>"
               data-ga-category="right-static-menu"
               data-ga-label="github">GitHub</a>
         </li>
         <li>
-          <a href="https://twitter.com/<%= @site.author.twitter %>"
+          <a href="<%= @site.author.twitterUrl %>"
+              title="@<%= @site.author.twitter %>"
               data-ga-category="right-static-menu"
               data-ga-label="twitter">Twitter</a>
         </li>

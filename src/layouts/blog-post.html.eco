@@ -46,22 +46,22 @@ layout: "base"
     </div>
   </header>
 
-  <% if @document.isDraft: %>
-    <section class="draft-notice">
-      <header>
-        <%- @icon('pencil') %>
-        <h3>Esse post é um rascunho.</h3>
-      </header>
-      <p>
-          Se você chegou até ele e pretende continuar lendo,
-          fique ciente que a informação pode estar errada ou
-          não ser nem um pouco útil... 😉
-      </p>
-    </section>
-  <% end %>
-
   <div class="columns-container">
     <div class="main-column post-main">
+      <% if @document.isDraft: %>
+        <section class="draft-notice">
+          <header>
+            <%- @icon('pencil') %>
+            <h3>Esse post é um rascunho.</h3>
+          </header>
+          <p>
+              Se você chegou até ele e pretende continuar lendo,
+              fique ciente que a informação pode estar errada ou
+              não ser nem um pouco útil... 😉
+          </p>
+        </section>
+      <% end %>
+
       <% if @hasLang('en'): %>
         <a href="<%= @toLang('en') %>" hreflang="en">Read the English version here.</a>
         <hr>
