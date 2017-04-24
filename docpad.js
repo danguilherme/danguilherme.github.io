@@ -45,7 +45,7 @@ var docpadConfig = {
         .on("add", function (model) {
           return model.setMetaDefaults({
             htmlmin: true,
-            layout: "post"
+            layout: "blog-post"
           });
         });
     },
@@ -61,7 +61,7 @@ var docpadConfig = {
         .on("add", function (model) {
           return model.setMetaDefaults({
             htmlmin: true,
-            layout: "en\\post"
+            layout: "en\\blog-post"
           });
         });
     },
@@ -186,7 +186,7 @@ var docpadConfig = {
 let blogHelpers = {
   postImageWidth: 1024,
   postImageHeight: 512,
-  getPostImageSrc: function (post) {
+  getPostImage: function (post) {
     let spec = { w: this.postImageWidth, h: this.postImageHeight };
     let coverUrl = this.getThumbnail(
       "blog/" + post.basename + "/cover.png",

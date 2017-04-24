@@ -1,0 +1,265 @@
+@import '_variables.css.scss';
+@import '_mixins.css.scss';
+$title-max-width: 800px;
+$tagline-max-width: $title-max-width * .7;
+$main-col-width: 600px;
+$aside-col-width: 300px;
+
+#blog-post,
+#enblog-post {
+  .share-button {
+    position: relative;
+    color: $link-color;
+    transition: border-color .2s, color .2s;
+    white-space: nowrap;
+    .icon-share {
+      fill: $link-color;
+      vertical-align: text-top;
+      transition: fill .2s;
+    }
+    share-button {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: transparent;
+      &::before {
+        display: none;
+      }
+    }
+    &:hover {
+      color: $link-active-color;
+      .icon-share {
+        fill: $link-active-color;
+      }
+    }
+  }
+  .draft-notice {
+    position: relative;
+    margin: $padding-spacing;
+    margin-top: 3rem;
+    border: $theme-color 1px solid;
+    border-radius: 5px;
+    header {
+      background-color: $theme-color;
+      color: $theme-contrast-color;
+      padding: $padding-spacing;
+      .icon {
+        position: absolute;
+        top: 0;
+        right: $padding-spacing;
+        transform: translateY(-95%);
+        color: $theme-color;
+        font-size: 3rem;
+      }
+      h3 {
+        margin: 0;
+      }
+    }
+    p {
+      margin: 0;
+      padding: $padding-spacing;
+    }
+  }
+  .header {
+    max-width: 1024px; // same size as cover image width in docpad.js
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    text-align: center;
+    cursor: default;
+    .cover {
+      margin: 0 auto 1rem;
+      border-radius: 0;
+    }
+    .title {
+      max-width: $title-max-width;
+      margin: 0 auto;
+      line-height: .8;
+    }
+    .tagline {
+      max-width: $tagline-max-width;
+      margin: 0 10%;
+      font-size: 1.3rem;
+      font-weight: 200;
+      text-transform: uppercase;
+      line-height: 1;
+      color: lighten($theme-color, 15%);
+      @include media(tablet) {
+        font-size: 1.7rem;
+      }
+      @media (min-width: $tagline-max-width) {
+        margin: 0 auto;
+      }
+    }
+    .metadata {
+      padding: 0 $padding-spacing;
+      .meta-info:not(:last-child)::after {
+        content: ' • ';
+        color: $text-color;
+      }
+      .comments-anchor {
+        white-space: nowrap;
+        text-decoration: none;
+      }
+    }
+  }
+  .main-column,
+  .aside-column,
+  .comments {
+    padding: 0 $padding-spacing;
+  }
+  .body {
+    hr {
+      width: 30%;
+      border: 1px solid $theme-color;
+    }
+    p img,
+    .twitter-tweet {
+      margin: 0 auto;
+    }
+    .gist .gist-data {
+      padding: 10px;
+    }
+    .highlight {
+      position: relative;
+      code {
+        border: none;
+        border-radius: 0;
+      }
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        background-color: #3F3F3F;
+        width: 15px;
+        top: 0;
+        bottom: 0;
+      }
+      &::before {
+        left: -15px;
+      }
+      &::after {
+        right: -15px;
+      }
+      @include media(tablet) {
+        &::before {
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+        }
+        &::after {
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+      }
+    }
+  }
+  .interactions {
+    .twitter-share-notice {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    #social-share {
+      text-align: center;
+      padding: $padding-spacing;
+      .share-button {
+        padding: $padding-spacing;
+        border: 1px solid $link-color;
+        border-radius: 5px;
+        &:hover {
+          border-color: $link-active-color;
+        }
+      }
+    }
+  }
+  .comments {
+    max-width: $main-col-width;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  .columns-container {
+    .aside-column {
+      margin-top: 2rem;
+      section {
+        margin-bottom: 1rem;
+        p {
+          margin: 0;
+        }
+      }
+      .title {
+        margin: 0;
+        margin-bottom: .5em;
+        font-size: 1.3em;
+      }
+      .about-the-author {
+        .avatar {
+          float: left;
+          margin: 0;
+          margin-right: 10px;
+        }
+        &::after {
+          content: '';
+          clear: both;
+          display: block;
+        }
+      }
+      .related-posts {
+        .posts-list {
+          margin: 0;
+          align-items: stretch;
+          justify-content: flex-start;
+          .post-brief {
+            margin: 0;
+            border: none;
+            border-radius: 0;
+            max-width: 200px;
+          }
+        }
+      }
+    }
+  }
+  @include media(tablet) {
+    .columns-container {
+      display: flex;
+      align-items: flex-start;
+      max-width: $main-col-width + $aside-col-width;
+      margin: 0 auto;
+      .main-column {
+        flex: 1 1 auto;
+      }
+      .aside-column {
+        font-size: .8rem;
+        flex: 0 0 $aside-col-width;
+        margin-top: 0;
+        .related-posts .posts-list .post-brief {
+          max-width: none;
+        }
+      }
+    }
+  }
+  @include media(large) {
+    .columns-container {
+      max-width: ($main-col-width + $aside-col-width) * 1.3;
+      .aside-column {
+        flex: 0 0 ($aside-col-width * 1.3);
+      }
+    }
+  }
+  .blog-post-content::after {
+    content: '~~~';
+    display: block;
+    color: darken($bg-color, 15%);
+    font-size: 3rem;
+    text-align: center;
+    margin: 5rem;
+    font-weight: 200;
+    line-height: 0;
+  }
+}
+
+// TEMP
+#site-header {
+  display: none;
+}

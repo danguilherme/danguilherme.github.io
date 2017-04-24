@@ -1,5 +1,7 @@
 <script id="document-metadata">
   window.documentMetadata = {
+    title: '<%= @document.title %>',
+    preparedTitle: '<%= @getPreparedTitle() %>',
     lang: '<%= @document.lang %>'
   };
 </script>

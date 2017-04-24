@@ -3,6 +3,7 @@
 <head>
   <%- @partial('head-content') %>
   <title><%= @getPreparedTitle() %></title>
+  <%- @getBlock("scripts").add(@site.scripts).toHTML() %>
 </head>
 <% documentSlug = @slugify(@document.identifier || @document.title) %>
 <body id="<%= @slugify(@document.layout) %>" class="page-<%= documentSlug %>">
@@ -14,7 +15,7 @@
 
   <%- @partial("#{@document.langPrefix}footer") %>
 
-  <%- @getBlock("scripts").add((@site.scripts).concat(@document.scripts or [])).toHTML() %>
+  <%- @getBlock("scripts").add(@document.scripts or []).toHTML() %>
   <%- @partial("document-metadata-export") %>
 </body>
 </html>

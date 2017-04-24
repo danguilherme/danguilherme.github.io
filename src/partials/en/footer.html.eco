@@ -30,12 +30,13 @@
   <div class="footer-content">
     <p>
       Made with <span class="love"><span class="sr-only">love</span></span> by
-      <a href="https://twitter.com/<%= @site.author.twitter %>" target="_BLANK"
+      <a href="<%= @site.author.twitterUrl %>" target="_BLANK"
+        title="<%= @site.author.name %>"
         data-ga-category="footer"
         data-ga-label="twitter">@<%= @site.author.twitter %></a>.
     </p>
     <p>
-      Site generated with <a href="https://docpad.org/" target="_BLANK"
+      Site created with <a href="https://docpad.org/" target="_BLANK"
       data-ga-category="footer"
       data-ga-label="docpad">DocPad</a>, a static website generator.
       Discover more in the

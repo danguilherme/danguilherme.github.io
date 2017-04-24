@@ -1,17 +1,64 @@
 // https://github.com/carrot/share-button
-(function() {
-  function getMetaContent(attrSelector) {
-    var el = document.querySelector(`meta[${attrSelector}]`);
-    return el ? el.getAttribute('content') : "";
+onDocumentReady(function () {
+  const CODE_SELECT_INSTRUCTIONS = "Clique três vezes para selecionar tudo";
+
+  function init() {
+    prepareCodeSelect();
+
+    var sharer = new ShareButton({
+      ui: {
+        flyout: 'bottom center',
+        button_font: false,
+        buttonText: ""
+      },
+      networks: {
+        googlePlus: {
+          enabled: true,
+          after: createAfterShareCallback('google-plus')
+        },
+        twitter: {
+          enabled: true,
+          description: getDocumentTitle() + " via @<%= @site.author.twitter %>",
+          after: createAfterShareCallback('twitter')
+        },
+        facebook: {
+          enabled: true,
+          after: createAfterShareCallback('facebook')
+        },
+        pinterest: {
+          enabled: false
+        },
+        reddit: {
+          enabled: false
+        },
+        linkedin: {
+          enabled: true,
+          after: createAfterShareCallback('linkedin')
+        },
+        whatsapp: {
+          enabled: true,
+          after: createAfterShareCallback('whatsapp')
+        },
+        email: {
+          enabled: true,
+          after: createAfterShareCallback('email')
+        }
+      }
+    });
+
+    document.addEventListener('click', function (evt) {
+      if (evt.target.tagName === "SHARE-BUTTON")
+        return;
+      sharer.close(); // não funcionando
+    });
   }
 
   function getDocumentTitle() {
-    return getMetaContent('property="og:title"') ||
-      getMetaContent('name="twitter:title"');
+    return window.documentMetadata.title;
   }
 
   function createAfterShareCallback(network) {
-    return function() {
+    return function () {
       ga('send', 'event',
         'blog-post',
         'share',
@@ -19,50 +66,51 @@
     }
   }
 
-  var sharer = new ShareButton({
-    ui: {
-      flyout: 'bottom center',
-      button_font: false,
-      buttonText: ""
-    },
-    networks: {
-      googlePlus: {
-        enabled: true,
-        after: createAfterShareCallback('google-plus')
-      },
-      twitter: {
-        enabled: true,
-        description: getDocumentTitle() + " via @<%= @site.author.twitter %>",
-        after: createAfterShareCallback('twitter')
-      },
-      facebook: {
-        enabled: true,
-        after: createAfterShareCallback('facebook')
-      },
-      pinterest: {
-        enabled: false
-      },
-      reddit: {
-        enabled: false
-      },
-      linkedin: {
-        enabled: true,
-        after: createAfterShareCallback('linkedin')
-      },
-      whatsapp: {
-        enabled: true,
-        after: createAfterShareCallback('whatsapp')
-      },
-      email: {
-        enabled: true,
-        after: createAfterShareCallback('email')
-      }
-    }
-  });
+  /////////////////////////////////
+  // SELECT CODE ON TRIPLE-CLICK //
+  /////////////////////////////////
+  function prepareCodeSelect() {
+    var codes = document.querySelectorAll('code.hljs');
 
-  document.addEventListener('click', function(evt) {
-    if (evt.target.tagName === "SHARE-BUTTON")
-      return;
-    sharer.close(); // não funcionando
-  });
-}());
+    for (var i = 0; i < codes.length; i++) {
+      var code = codes[i];
+      code.addEventListener('tripleclick', function (ev) {
+        selectCode(ev.currentTarget);
+
+        ga('send', 'event',
+          'code-select',
+          'triple-click');
+
+        // do not bubble 'click' to document
+        ev.stopPropagation();
+      });
+
+      code.setAttribute('title', CODE_SELECT_INSTRUCTIONS);
+    }
+  }
+
+  function selectCode(codeEl) {
+    var codeTextContainer = document.createElement('div');
+    codeTextContainer.classList.add('code-text');
+
+    var codeText = document.createElement('textarea');
+    codeText.textContent = codeEl.textContent.trim();
+    codeText.style.height = codeEl.offsetHeight + 'px';
+
+    codeEl.classList.add('copying-code');
+
+    codeTextContainer.appendChild(codeText);
+    codeEl.parentNode.insertBefore(codeTextContainer, codeEl);
+    codeText.select();
+
+    var removeTextArea = function () {
+      codeEl.classList.remove('copying-code');
+      codeTextContainer.remove();
+      document.removeEventListener('click', removeTextArea);
+    };
+
+    document.addEventListener('click', removeTextArea);
+  }
+
+  init();
+});

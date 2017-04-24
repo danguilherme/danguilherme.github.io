@@ -120,6 +120,68 @@ h6 {
   }
 }
 
+/**
+* POSTS LIST COMPONENT
+*/
+.posts-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  .post-brief {
+    position: relative;
+    max-width: 768px; // same size as cover thumb width in docpad.js
+    margin-bottom: 1rem;
+    border: 1px solid $theme-color;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background-color .2s linear;
+    &:hover {
+      background-color: $theme-color;
+      color: $theme-contrast-color;
+      .post-lang {
+        border-color: $theme-contrast-color;
+      }
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    p,
+    .post-cover {
+      margin: 0;
+      border-radius: 0;
+    }
+    .post-info,
+    .post-tagline {
+      padding: 0 10px;
+    }
+    .post-cover {
+      background-color: $bg-color;
+    }
+    .post-title {
+      margin: 0;
+    }
+    p .post-lang {
+      border: 1px solid $text-color;
+      border-radius: 3px;
+      padding: 0 2px;
+      transition: border-color .2s linear;
+    }
+    footer {
+      text-align: right;
+      .see-post {
+        display: inline-block;
+        padding: 10px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
 // #sobre img {
 //   float: left;
 //   margin-right: 15px;
@@ -151,46 +213,6 @@ h6 {
 //     @media screen and (min-width: $max-width) {
 //       margin-left: auto;
 //       margin-right: auto;
-//     }
-//   }
-//   #blog-post header {
-//     margin-bottom: 3rem;
-//     position: relative;
-//     cursor: default;
-//     text-align: center;
-//     .post-title,
-//     .post-tagline {
-//       margin: 0;
-//       margin-right: auto;
-//       margin-left: auto;
-//     }
-//     .post-cover {
-//       width: 100%;
-//       margin: 1em auto 0;
-//       z-index: -1;
-//       img {
-//         margin: 0 auto;
-//         padding: 0;
-//       }
-//     }
-//     .post-title {
-//       line-height: 1;
-//     }
-//     .post-tagline {
-//       font-size: 1.7rem;
-//       text-transform: uppercase;
-//       margin-bottom: 1rem;
-//       line-height: 1;
-//       width: 80%;
-//       color: #90CAF9;
-//       font-weight: 200;
-//       @media screen and (max-width: $mobile-breakpoint) {
-//         font-size: 1.2rem;
-//       }
-//     }
-//     .post-metadata>*:not(:last-child)::after {
-//       content: ' • ';
-//       color: $text-color;
 //     }
 //   }
 //   @media screen and (min-width: $max-width + 50px) {
