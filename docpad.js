@@ -15,6 +15,8 @@ var author = {
   googlePlusUrl: "https://plus.google.com/+GuilhermeVenturaDanguilherme"
 };
 
+const translationsMap = {};
+
 var docpadConfig = {
   collections: {
     pages: function () {
@@ -33,14 +35,6 @@ var docpadConfig = {
         .findAllLive({
           relativeOutDirPath: { $in: ['en\\blog', 'blog'] },
           basename: { $ne: "index" }
-        }, [{ date: -1 }]);
-    },
-    'posts_pt-br': function () {
-      return this
-        .getCollection("html")
-        .findAllLive({
-          relativeOutDirPath: { $in: ['blog'] },
-          basename: { $ne: "index" }
         }, [{ date: -1 }])
         .on("add", function (model) {
           return model.setMetaDefaults({
@@ -48,6 +42,14 @@ var docpadConfig = {
             layout: "blog-post"
           });
         });
+    },
+    'posts_pt-br': function () {
+      return this
+        .getCollection("html")
+        .findAllLive({
+          relativeOutDirPath: { $in: ['blog'] },
+          basename: { $ne: "index" }
+        }, [{ date: -1 }]);
     },
     'posts_en': function () {
       // should get only docs in English
@@ -57,13 +59,7 @@ var docpadConfig = {
         .findAllLive({
           relativeOutDirPath: { $in: ['en\\blog'] },
           basename: { $ne: "index" }
-        }, [{ date: -1 }])
-        .on("add", function (model) {
-          return model.setMetaDefaults({
-            htmlmin: true,
-            layout: "en\\blog-post"
-          });
-        });
+        }, [{ date: -1 }]);
     },
     sitemap: function () {
       return this
@@ -134,6 +130,28 @@ var docpadConfig = {
     },
     slugify: function (text) {
       return text.toString().toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '').replace(/\-\-+/g, '-').replace(/^-+/, '').replace(/-+$/, '');
+    },
+
+    _: function (i18nKey, placeholders) {
+      let lang = this.document ? this.document.lang : 'pt-br';
+      // se o cache nao ta feito ou o valor nao foi encontrado no cache,
+      // lê o arquivo do disco
+      if (!translationsMap[lang] || !translationsMap[lang][i18nKey]) {
+        let prefix = lang == 'pt-br' ? '' : 'en/';
+        let path = `src/documents/${prefix}${lang}.json`;
+        let translation = fs.readFileSync(path);
+        translationsMap[lang] = JSON.parse(translation);
+      }
+
+      let text = translationsMap[lang][i18nKey];
+
+      for (key in placeholders) {
+        let value = placeholders[key];
+        text = replaceVariable(text, key, value);
+      }
+
+      console.log(`[i18n] ${i18nKey}=${text}`);
+      return text;
     }
   },
 
@@ -258,5 +276,11 @@ docpadConfig.templateData.blog = {
     return coverUrl;
   }
 };
+
+function replaceVariable(text, variable, value) {
+  // usa regex para dar replace em todas as ocorrências da variável na mesma string
+  let regex = new RegExp(`%${variable}%`, 'gi');
+  return (text || '').replace(regex, value || '');
+}
 
 module.exports = docpadConfig;

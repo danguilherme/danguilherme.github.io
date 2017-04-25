@@ -13,7 +13,7 @@
     <%- @content %>
   </main>
 
-  <%- @partial("#{@document.langPrefix}footer") %>
+  <%- @partial("footer") %>
 
   <%- @getBlock("scripts").add(@document.scripts or []).toHTML() %>
   <%- @partial("document-metadata-export") %>

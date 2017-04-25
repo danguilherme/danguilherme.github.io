@@ -12,7 +12,7 @@
             <% if coverSrc: %>
               <img src="<%= coverSrc %>"
                 class="post-cover"
-                alt="Capa de '<%= post.title %>'">
+                alt="<%- @_ 'posts_list.cover_alt', title: post.title %>">
             <% end %>
             <div class="post-info">
               <time datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
@@ -24,7 +24,7 @@
             <span><%= post.tagline %></span>
           </p>
           <footer>
-            <span class="see-post">Read post →</span>
+            <span class="see-post"><%- @_ 'posts_list.read_post' %> →</span>
           </footer>
         </article>
       </a

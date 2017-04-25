@@ -2,8 +2,6 @@
 identifier: "home"
 title:      "Guilherme Ventura"
 layout:     "base"
-noHeader:   true
-noFooter:   true
 
 priority: 1
 changefreq: "daily"
@@ -12,65 +10,69 @@ styles: ['/styles/home.css']
 ---
 
 <% maxPosts = 2; %>
+<% blogUrl = "/#{@document.langPrefix}blog/"; %>
 
 <article class="presentation">
   <section class="section landing">
     <aside class="translate">
-      <a href="<%= @toLang('pt-br') || '/' %>"
-        hreflang="pt-br"
+      <a href="<%= @toLang('en') || '/' %>"
+        hreflang="en"
         data-ga-category="landing"
         data-ga-action="see-translation"
-        data-ga-label="pt-br">Prefiro em português</a>
+        data-ga-label="en"><%- @_ 'index.landing.read_in_en' %></a>
     </aside>
 
     <header>
-      <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=200" alt="A pic of mine" width="200" height="200">
+      <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=200" alt="<%- @_ 'index.landing.pic' %>" width="200" height="200">
       <div class="headings">
         <h1>Guilherme Ventura</h1>
-        <p class="job-title">Front-end Developer</p>
+        <p class="job-title"><%- @_ 'index.landing.job_title' %></p>
       </div>
     </header>
 
-    <p>
-      I am just another <span id="adjective">dreamer</span>.
-      <br>
-      <span class="no-break">Get in touch!</span>
-    </p>
+    <% adjectives = @_ 'index.landing.adjectives' %>
+    <p><%- @_ 'index.landing.get_in_touch', adjectives: "<span id=\"adjective\" data-adjectives='#{JSON.stringify(adjectives)}'>#{adjectives[0]}</span>" %></p>
 
     <footer>
       <ul class="social-links">
         <li class="blog">
-          <a href="/<%= @document.langPrefix %>blog/" title="Read my blog"
+          <a href="<%= blogUrl %>"
+            title="<%- @_ 'index.landing.links.blog' %>"
             data-ga-category="landing"
             data-ga-action="social-link-click"
             data-ga-label="blog">Blog</a>
         </li>
         <li class="github">
-          <a href="<%= @site.author.githubUrl %>" target="_blank" title="/<%= @site.author.github %>"
+          <a href="<%= @site.author.githubUrl %>" target="_blank"
+            title="/<%= @site.author.github %>"
             data-ga-category="landing"
             data-ga-action="social-link-click"
             data-ga-label="github">GitHub</a>
         </li>
         <li class="linkedin">
-          <a href='<%= "#{@site.author.linkedinUrl}/#{@document.lang}" %>' target="_blank" title="<%= @site.author.name %>"
+          <a href='<%= "#{@site.author.linkedinUrl}/#{@document.lang}" %>' target="_blank"
+            title="<%= @site.author.name %>"
             data-ga-category="landing"
             data-ga-action="social-link-click"
             data-ga-label="linkedin">LinkedIn</a>
         </li>
         <li class="twitter">
-          <a href="<%= @site.author.twitterUrl %>" target="_blank" title="@<%= @site.author.twitter %>"
+          <a href="<%= @site.author.twitterUrl %>" target="_blank"
+            title="@<%= @site.author.twitter %>"
             data-ga-category="landing"
             data-ga-action="social-link-click"
             data-ga-label="twitter">Twitter</a>
         </li>
         <li class="google-plus">
-          <a href="<%= @site.author.googlePlusUrl %>" target="_blank" title="+<%= @site.author.googlePlus %>"
+          <a href="<%= @site.author.googlePlusUrl %>" target="_blank"
+            title="+<%= @site.author.googlePlus %>"
             data-ga-category="landing"
             data-ga-action="social-link-click"
             data-ga-label="google-plus">Google+</a>
         </li>
         <li class="email">
-          <a href="mailto:<%= @site.author.email %>" target="_blank" title="<%= @site.author.email %>"
+          <a href="mailto:<%= @site.author.email %>" target="_blank"
+            title="<%= @site.author.email %>"
             data-ga-category="landing"
             data-ga-action="social-link-click"
             data-ga-label="email">Email</a>
@@ -80,34 +82,30 @@ styles: ['/styles/home.css']
     <a id="see-content-handle" class="arrow bounce" href="#content-start"
       data-ga-category="home"
       data-ga-action="see-content"
-      data-ga-label="down-arrow"><span class="sr-only">see content</span></a>
+      data-ga-label="down-arrow"><span class="sr-only"><%- @_ 'index.landing.see_content' %></span></a>
   </section>
 
   <section id="content-start" class="section introduction">
-    <h2 class="section-title">Hello Stranger</h2>
-    <p>It's good to have you here</p>
+    <h2 class="section-title"><%- @_ 'index.introduction.title' %></h2>
+    <p><%- @_ 'index.introduction.text' %></p>
     <a href="/en/about-me/" class="call-to-action"
       ga-category="introduction"
-      ga-label="my-story">Know My Story</a>
+      ga-label="my-story"><%- @_ 'index.introduction.button' %></a>
   </section>
 
   <section class="section skills right separator">
-    <h2 class="section-title">I am a Web Developer</h2>
-    <p>Javascript runs through my vains.</p>
+    <h2 class="section-title"><%- @_ 'index.skills.title' %></h2>
+    <p><%- @_ 'index.skills.text' %></p>
     <img class="js-logo" src="/images/js.svg" alt="JavaScript logo" width="200px" height="200px">
     <a href="<%= @site.author.githubUrl %>" class="call-to-action"
       target="_blank"
       ga-category="skills"
-      ga-label="github">Take a look at my GitHub</a>
+      ga-label="github"><%- @_ 'index.skills.button' %></a>
   </section>
 
   <section class="section portfolio left separator">
-    <h2 class="section-title">What I've Built</h2>
-    <p>
-      I like to spend time in some personal projects.
-      <br>
-      Check some of my work:
-    </p>
+    <h2 class="section-title"><%- @_ 'index.portfolio.title' %></h2>
+    <p><%- @_ 'index.portfolio.text' %></p>
     <ul>
       <li>Cartagrafia</li>
       <li>Uno online</li>
@@ -116,25 +114,21 @@ styles: ['/styles/home.css']
     </ul>
     <a href="/portfolio/" class="call-to-action"
       ga-category="portfolio"
-      ga-label="portfolio">Check my portfolio</a>
+      ga-label="portfolio"><%- @_ 'index.portfolio.button' %></a>
   </section>
 
   <section class="section writings right separator">
-    <h2 class="section-title">Writings</h2>
-    <p>
-      I take some time to write a little about tech.
-      <br>
-      Heres is a list of my recent blog posts.
-    </p>
+    <h2 class="section-title"><%- @_ 'index.writings.title' %></h2>
+    <p><%- @_ 'index.writings.text' %></p>
 
     <% posts = @getCollection("posts") %>
     <% if posts.length: %>
       <div class="recent-blog-posts">
         <%= @partial('posts-list', {posts: posts.toJSON().slice(0, maxPosts) }) %>
         <% if posts.length > maxPosts: %>
-          <a href="/en/blog" class="call-to-action see-all-posts"
+          <a href="<%= blogUrl %>" class="call-to-action see-all-posts"
             ga-category="writings"
-            ga-label="see-all-posts">See all blog posts</a>
+            ga-label="see-all-posts"><%- @_ 'index.writings.button' %></a>
         <% end %>
       </div>
     <% end %>

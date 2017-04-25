@@ -1,9 +1,5 @@
 onDocumentReady(() => {
   const LANG = window.documentMetadata.lang;
-  const ADJECTIVES = {
-    'pt-br': [ 'sonhador', 'aprendiz', 'desenvolvedor', 'curioso', 'ouvinte', 'entusiasta' ],
-    'en': [ 'dreamer', 'learner', 'developer', 'curious', 'listener', 'enthusiast' ]
-  }
 
   init();
 
@@ -26,9 +22,10 @@ onDocumentReady(() => {
   function configureAdjectiveChanges() {
     const WORD_SHOW_INTERVAL = 3; // in seconds
     const WORD_TRANSITION_INTERVAL = .5; // in seconds (same as keyframe on home.css.styl)
-    let adjectives = ADJECTIVES[LANG];
 
     const targetEl = document.getElementById('adjective');
+    const adjectives = JSON.parse(targetEl.dataset.adjectives);
+
     let idx = 1;
 
     setInterval(changeAdjective, WORD_SHOW_INTERVAL * 1000);

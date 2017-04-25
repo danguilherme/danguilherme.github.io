@@ -10,7 +10,7 @@ layout: "base"
     <% if postImageSrc: %>
       <img class="cover"
         src="<%= postImageSrc %>"
-        alt="Capa de '<%= @document.title %>'">
+        alt="<%- @_ 'blog_post.header.cover_alt', title: @document.title %>">
     <% end %>
 
     <h1 class="title"><%= @document.title %></h1>
@@ -21,8 +21,8 @@ layout: "base"
     <div class="metadata">
       <span class="meta-info publishing-date">
         <%- @icon('calendar') %>
-        <time datetime="<%= @document.date.toISOString() %>" title="<%= @formatDate(@document.date, 'LLL') %>">
-          <span class="day"><%= @formatDate(@document.date, "DD") %></span>/<span class="month"><%= @formatDate(@document.date, "MMM").toLowerCase() %></span>/<span class="year"><%= @formatDate(@document.date, "YYYY") %></span>
+        <time datetime="<%= @document.date.toISOString() %>" title="<%= @date({ format: 'LLL' }) %>">
+          <%= @date({ format: 'L' }) %>
         </time>
       </span>
       <span class="meta-info tags">
@@ -35,12 +35,12 @@ layout: "base"
         data-ga-use-text-as-label>
           <%- @icon('comment') %>
           <span class="disqus-comment-count"
-            data-disqus-identifier="<%= @document.url %>">0 Comentários</span>
+            data-disqus-identifier="<%= @document.url %>">0</span> <%- @_ 'blog_post.header.comments' %>
       </a>
       <span class="meta-info share">
         <span class="share-button">
           <share-button id="share-header" class="share" data-ga-label="toggle-share-buttons-heading"></share-button>
-          <%- @icon('share') %> Compartilhar
+          <%- @icon('share') %> <%- @_ 'blog_post.header.share' %>
         </span>
       </span>
     </div>
@@ -52,41 +52,34 @@ layout: "base"
         <section class="draft-notice">
           <header>
             <%- @icon('pencil') %>
-            <h3>Esse post é um rascunho.</h3>
+            <h3><%- @_ 'blog_post.draft_notice.title' %></h3>
           </header>
-          <p>
-              Se você chegou até ele e pretende continuar lendo,
-              fique ciente que a informação pode estar errada ou
-              não ser nem um pouco útil... 😉
-          </p>
+          <p><%- @_ 'blog_post.draft_notice.text' %></p>
         </section>
       <% end %>
-
-      <% if @hasLang('en'): %>
-        <a href="<%= @toLang('en') %>" hreflang="en">Read the English version here.</a>
-        <hr>
-      <% end %>
       
-      <section class="body"><%- @content %></section>
+      <section class="body">
+        <% otherLang = @document.lang == 'pt-br' ? 'pt-br' : 'en'; %>
+        <% if @hasLang(otherLang): %>
+          <a href="<%= @toLang(otherLang) %>" hreflang="<%= otherLang %>"><%- @_ 'blog_post.read_in_other_lang' %></a>
+          <hr>
+        <% end %>
+
+        <%- @content %>
+      </section>
       
       <section class="interactions">
         <p class="twitter-share-notice">
           <% author = @site.author %>
-          Se você tiver qualquer dúvida ou comentário, por favor escreva-os abaixo.
-          Curtiu o post? Você pode
-          <a href="https://twitter.com/intent/tweet?url=<%= @site.url  %><%=  @document.url  %>&text=<%=  @document.title  %>&via=<%= author.twitter %>"
-            title="Twittar sobre '<%= @document.title %>'"
-            target="_blank"
-            data-ga-label="tweet">compartilhá-lo com seus seguidores</a> ou
-          <a href="https://twitter.com/intent/follow?screen_name=<%= author.twitter %>"
-            title="@<%= author.twitter %>"
-            data-ga-label="twitter-follow">me seguir no Twitter</a>!
+          <% pageUrl = @site.url + @document.url  %>
+
+          <%- @_ 'blog_post.interactions.twitter_share', pageUrl: pageUrl, title: @document.title, twitterHandle: author.twitter, shareGaLabel: 'tweet', followGaLabel: 'twitter-follow' %>
         </p>
       
         <p id="social-share">
           <span class="share-button">
             <share-button id="share-footer" class="share" data-ga-label="toggle-share-buttons-footer"></share-button>
-            <%- @icon('share') %> Compartilhar
+            <%- @icon('share') %> <%- @_ 'blog_post.interactions.share' %>
           </span>
         </p>
       </section>
@@ -94,20 +87,18 @@ layout: "base"
 
     <aside class="aside-column">
       <section class="about-the-author">
-        <h2 class="title">Sobre o Autor</h2>
+        <h2 class="title"><%- @_ 'blog_post.about_author.title' %></h2>
         <div>
-          <img class="avatar" src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=100" alt="Guilherme Ventura" width="100" height="100">
+          <img class="avatar" src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=100" alt="<%- @_ 'blog_post.about_author.avatar_alt' %>" width="100" height="100">
           <p class="text">
-            Eu sou o Guilherme, desenvolvedor front-end e curioso.
-            Resolvo problemas com JavaScript. HTML e CSS é opcional.
-            <a href="/<%= @document.langPrefix %>">Conheça mais sobre mim.</a>
+            <%- @_ 'blog_post.about_author.text', targetUrl: "/#{@document.langPrefix}", targetGaLabel: "know-the-author" %>
           </p>
         </div>
       </section>
       <% related = @getRelatedDocuments() %>
       <% if related.length: %>
       <section class="related-posts">
-        <h2 class="title">Posts Relacionados</h2>
+        <h2 class="title"><%- @_ 'blog_post.related_posts.title' %></h2>
         
         <%= @partial('posts-list', { posts: related }) %>
       </section>
