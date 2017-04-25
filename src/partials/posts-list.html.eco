@@ -3,10 +3,11 @@
     <% postLang = @langFromUrl(post.url) %>
     <li class="post-brief <%= if post.isDraft then 'draft' %>" lang="<%= postLang %>">
       <a href="<%= post.url %>"
+        class="post-link"
         hreflang="<%= postLang %>"
         data-ga-category="blog"
         data-ga-label="<%= post.title %>">
-        <article>
+        <article class="post">
           <header>
             <% coverSrc = @getPostThumb(post) %>
             <% if coverSrc: %>
@@ -15,12 +16,12 @@
                 alt="<%- @_ 'posts_list.cover_alt', title: post.title %>">
             <% end %>
             <div class="post-info">
-              <time datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
+              <span class="post-lang"><%= postLang %></span>
+              <time class="post-time" datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
               <h3 class="post-title"><%= post.title %></h3>
             </div>
           </header>
           <p class="post-tagline">
-            <span class="post-lang"><%= postLang %></span>
             <span><%= post.tagline %></span>
           </p>
           <footer>

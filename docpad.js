@@ -150,7 +150,7 @@ var docpadConfig = {
         text = replaceVariable(text, key, value);
       }
 
-      console.log(`[i18n] ${i18nKey}=${text}`);
+      // console.log(`[i18n] ${i18nKey}=${text}`);
       return text;
     }
   },

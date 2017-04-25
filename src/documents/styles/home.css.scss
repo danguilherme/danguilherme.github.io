@@ -3,6 +3,8 @@
 @import '_helpers.css.scss';
 @import 'hover.scss';
 @import '../../../node_modules/hover.css/scss/effects/background-transitions/_sweep-to-right.scss';
+$section-horizontal-spacing: 2rem;
+$section-horizontal-spacing-desktop: 15%;
 
 @keyframes bounce {
   0%,
@@ -28,14 +30,19 @@ body.page-home {
     overflow: hidden;
   }
   .section {
-    padding: 100px 2rem 200px;
+    $separator-height: 5rem;
+    padding: $separator-height $section-horizontal-spacing ($separator-height * 2);
+    @include media(desktop) {
+      padding-left: $section-horizontal-spacing-desktop;
+      padding-right: $section-horizontal-spacing-desktop;
+    }
     &.separator.left,
     &.separator.right {
       position: relative;
       &::before {
         position: absolute;
         width: 150%;
-        height: 100px;
+        height: $separator-height;
         top: 0;
         content: '';
       }
@@ -64,7 +71,7 @@ body.page-home {
     justify-content: center;
     position: relative;
     padding: .5em;
-    padding-top: 1em;
+    padding-top: 2em;
     min-height: 100vh;
     background-color: $theme-color;
     background-image: url('../images/square_bg.png');
@@ -96,6 +103,8 @@ body.page-home {
       text-transform: uppercase;
       letter-spacing: 1px;
       a {
+        display: inline-block;
+        padding: 1em;
         color: $theme-contrast-color;
       }
     }
@@ -226,21 +235,29 @@ body.page-home {
   }
   .writings {
     background-color: $theme-color;
-    padding-bottom: 200px;
+    color: $theme-contrast-color;
     &::before {
       background-color: $theme-color;
     }
-    .posts-list {
-      color: $theme-contrast-color;
-      text-align: left;
-      @include media(large) {
-        .post-brief {
-          margin-left: 5em;
-          margin-right: 5em;
-        }
+    @include media(desktop) {
+      padding-left: $section-horizontal-spacing;
+      padding-right: $section-horizontal-spacing;
+      .section-title,
+      .section-text {
+        padding-left: $section-horizontal-spacing-desktop;
+        padding-right: $section-horizontal-spacing-desktop;
       }
+    }
+    .posts-list {
+      text-align: left;
+      flex-wrap: wrap;
+      align-items: stretch;
       .post-brief {
         border-color: $bg-color;
+        flex-grow: 1;
+        flex-basis: 250px;
+        margin-left: .5em;
+        margin-right: .5em;
         &:hover {
           background-color: $bg-color;
           color: $theme-color;
@@ -248,8 +265,22 @@ body.page-home {
             border-color: $theme-color;
           }
         }
-        p .post-lang {
+        .post-link,
+        .post {
+          height: 100%;
+        }
+        .post {
+          display: flex;
+          flex-direction: column;
+        }
+        .post-link {
+          display: block;
+        }
+        .post-lang {
           border-color: $bg-color;
+        }
+        .post-tagline {
+          flex: 1;
         }
         footer {
           .see-post {

@@ -3,10 +3,10 @@
   "footer.made_with_docpad": "Site criado com %docpad%, um gerador de sites estáticos.",
   "footer.made_with_github": "Descubra mais no <a href=\"%repoUrl%\" target=\"_blank\" data-ga-category=\"%gaCategory%\" data-ga-label=\"%gaLabel%\">repositório do GitHub</a>.",
 
-  "index.landing.read_in_en": "I prefer in English",
+  "index.landing.read_in_other_lang": "I prefer in English",
   "index.landing.pic": "Avatar de Guilherme Ventura",
   "index.landing.job_title": "Front-end Developer",
-  "index.landing.get_in_touch": "Sou apenas mais um %adjectives%. Conecte-se!",
+  "index.landing.get_in_touch": "Sou apenas mais um %adjectives%.<br><span class=\"no-break\">Conecte-se!</span>",
   "index.landing.adjectives": ["sonhador", "aprendiz", "desenvolvedor", "curioso", "ouvinte", "entusiasta"],
   "index.landing.links.blog": "Dê uma olhada no meu blog",
   "index.landing.see_content": "See content",

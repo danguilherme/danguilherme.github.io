@@ -9,17 +9,18 @@ scripts: ['/bower_components/smooth-scroll/dist/js/smooth-scroll.min.js', '/scri
 styles: ['/styles/home.css']
 ---
 
-<% maxPosts = 2; %>
+<% maxPosts = 3; %>
 <% blogUrl = "/#{@document.langPrefix}blog/"; %>
 
 <article class="presentation">
   <section class="section landing">
     <aside class="translate">
-      <a href="<%= @toLang('en') || '/' %>"
-        hreflang="en"
+      <% otherLang = if @document.lang == 'pt-br' then 'en' else 'pt-br' %>
+      <a href="<%= @toLang(otherLang) || '/' %>"
+        hreflang="<%= otherLang %>"
         data-ga-category="landing"
         data-ga-action="see-translation"
-        data-ga-label="en"><%- @_ 'index.landing.read_in_en' %></a>
+        data-ga-label="<%= otherLang %>"><%- @_ 'index.landing.read_in_other_lang' %></a>
     </aside>
 
     <header>
@@ -88,7 +89,7 @@ styles: ['/styles/home.css']
   <section id="content-start" class="section introduction">
     <h2 class="section-title"><%- @_ 'index.introduction.title' %></h2>
     <p><%- @_ 'index.introduction.text' %></p>
-    <a href="/en/about-me/" class="call-to-action"
+    <a href="/#{@document.langPrefix}about-me/" class="call-to-action"
       ga-category="introduction"
       ga-label="my-story"><%- @_ 'index.introduction.button' %></a>
   </section>
@@ -119,9 +120,9 @@ styles: ['/styles/home.css']
 
   <section class="section writings right separator">
     <h2 class="section-title"><%- @_ 'index.writings.title' %></h2>
-    <p><%- @_ 'index.writings.text' %></p>
+    <p class="section-text"><%- @_ 'index.writings.text' %></p>
 
-    <% posts = @getCollection("posts") %>
+    <% posts = @getCollection("posts_#{@document.lang}") %>
     <% if posts.length: %>
       <div class="recent-blog-posts">
         <%= @partial('posts-list', {posts: posts.toJSON().slice(0, maxPosts) }) %>

@@ -7,7 +7,7 @@ priority: 1
 changefreq: "daily"
 ---
 
-<% posts = @getCollection("posts_pt-br") %>
+<% posts = @getCollection("posts") %>
 <% if posts.length: %>
   <%= @partial('posts-list', {posts: posts.toJSON() }) %>
 <% else: %>

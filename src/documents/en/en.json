@@ -3,7 +3,7 @@
   "footer.made_with_docpad": "Site created with %docpad%, a static website generator.",
   "footer.made_with_github": "Discover more in the <a href=\"%repoUrl%\" target=\"_blank\" data-ga-category=\"%gaCategory%\" data-ga-label=\"%gaLabel%\">GitHub repo</a>.",
 
-  "index.landing.read_in_en": "Prefiro em Português",
+  "index.landing.read_in_other_lang": "Prefiro em Português",
   "index.landing.pic": "Guilherme Ventura avatar",
   "index.landing.job_title": "Front-end Developer",
   "index.landing.get_in_touch": "I am just another %adjectives%.<br><span class=\"no-break\">Get in touch!</span>",
