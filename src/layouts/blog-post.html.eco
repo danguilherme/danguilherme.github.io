@@ -19,7 +19,7 @@ layout: "base"
       <span class="meta-info publishing-date">
         <%- @icon('calendar') %>
         <time datetime="<%= @document.date.toISOString() %>" title="<%= @date({ format: 'LLL' }) %>">
-          <%= @date({ format: 'L' }) %>
+          <%= @date({ format: 'LL' }) %>
         </time>
       </span>
       <span class="meta-info tags">

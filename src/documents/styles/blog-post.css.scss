@@ -26,7 +26,8 @@ $columns-max-width: $main-col-width+$aside-col-width;
         display: none;
       }
     }
-    &:hover {
+    &:hover,
+    &:focus {
       color: $link-active-color;
       .icon-share {
         fill: $link-active-color;
@@ -271,7 +272,8 @@ $columns-max-width: $main-col-width+$aside-col-width;
         padding: $padding-spacing;
         border: 1px solid $link-color;
         border-radius: 5px;
-        &:hover {
+        &:hover,
+        &:focus {
           border-color: $link-active-color;
         }
       }

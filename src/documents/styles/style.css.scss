@@ -131,7 +131,8 @@ h6 {
     li {
       opacity: 0.5;
       transition: opacity .2s linear;
-      &:hover {
+      &:hover,
+      &:focus {
         opacity: 1;
       }
     }
@@ -169,7 +170,8 @@ h6 {
     border-radius: 5px;
     overflow: hidden;
     transition: background-color .2s linear;
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $theme-color;
       color: $theme-contrast-color;
       .post-lang {
@@ -318,7 +320,8 @@ h6 {
   text-align: center;
   a,
   a:visited,
-  a:hover {
+  a:hover,
+  &:focus {
     color: $theme-contrast-color;
   }
   .reference-balloons {
@@ -354,7 +357,8 @@ h6 {
             fill: $theme-color;
           }
         }
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: $theme-color;
           .icon {
             animation: footer-links-hover .3s forwards;

@@ -17,7 +17,7 @@
             <% end %>
             <div class="post-info">
               <span class="post-lang"><%= postLang %></span>
-              <time class="post-time" datetime="<%= post.date.toISOString() %>"><%= @formatDate(post.date) %></time>
+              <time class="post-time" datetime="<%= post.date.toISOString() %>"><%= @date({date: post.date, format: 'll'}) %></time>
               <h3 class="post-title"><%= post.title %></h3>
             </div>
           </header>

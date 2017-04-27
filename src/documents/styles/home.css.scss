@@ -173,7 +173,8 @@ body.page-home {
           transition: color .2s linear, text-shadow .2s linear;
           color: $theme-contrast-color;
           text-decoration: none;
-          &:hover {
+          &:hover,
+          &:focus {
             color: transparent;
             text-shadow: $theme-contrast-color 0 0 2px;
           }
@@ -258,7 +259,8 @@ body.page-home {
         flex-basis: 250px;
         margin-left: .5em;
         margin-right: .5em;
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: $bg-color;
           color: $theme-color;
           .post-lang {
