@@ -27,7 +27,7 @@
 
 
 html {
-  font-family: Raleway, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: $base-font-size;
   line-height: $base-line-height;
   height: 100%;
@@ -65,7 +65,7 @@ h5,
 h6 {
   margin-top: 1em;
   margin-bottom: 0;
-  font-family: 'Tenor Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Raleway', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   line-height: 1;
 }
 
@@ -261,35 +261,7 @@ h6 {
 //       }
 //     }
 //   }
-//   pre.highlight {
-//     max-width: 100%;
-//     background: #3F3F3F;
-//     textarea {
-//       width: 100%;
-//       display: block;
-//       padding: 0.5em;
-//       white-space: pre-wrap;
-//       word-wrap: break-word;
-//       color: #fff;
-//       border: none;
-//       background-color: transparent;
-//       outline: none;
-//       border-radius: 0;
-//       resize: none;
-//     }
-//     code.hljs {
-//       max-width: $max-width;
-//       margin: 0 auto;
-//       white-space: pre-wrap;
-//       border: none;
-//       &.copying-code {
-//         display: none;
-//       }
-//     }
-//     .xml .javascript {
-//       opacity: 1;
-//     }
-//   }
+
 //   #posts-list {
 //     padding: 0;
 //     cursor: default;

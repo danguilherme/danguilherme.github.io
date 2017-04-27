@@ -91,9 +91,10 @@ onDocumentReady(function () {
 
   function selectCode(codeEl) {
     var codeTextContainer = document.createElement('div');
-    codeTextContainer.classList.add('code-text');
+    codeTextContainer.classList.add('code-container');
 
     var codeText = document.createElement('textarea');
+    codeText.classList.add('code-text');
     codeText.textContent = codeEl.textContent.trim();
     codeText.style.height = codeEl.offsetHeight + 'px';
 
@@ -103,13 +104,11 @@ onDocumentReady(function () {
     codeEl.parentNode.insertBefore(codeTextContainer, codeEl);
     codeText.select();
 
-    var removeTextArea = function () {
+    document.addEventListener('click', function removeTextArea() {
       codeEl.classList.remove('copying-code');
       codeTextContainer.remove();
       document.removeEventListener('click', removeTextArea);
-    };
-
-    document.addEventListener('click', removeTextArea);
+    });
   }
 
   init();

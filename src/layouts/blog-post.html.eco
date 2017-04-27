@@ -14,9 +14,6 @@ layout: "base"
     <% end %>
 
     <h1 class="title"><%= @document.title %></h1>
-    <% if @document.tagline: %>
-      <p class="tagline"><%= @document.tagline %></p>
-    <% end %>
 
     <div class="metadata">
       <span class="meta-info publishing-date">
@@ -45,6 +42,10 @@ layout: "base"
       </span>
     </div>
   </header>
+
+  <% if @document.tagline: %>
+    <p class="tagline"><%= @document.tagline %></p>
+  <% end %>
 
   <div class="columns-container">
     <div class="main-column post-main">
