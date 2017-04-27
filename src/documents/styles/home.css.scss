@@ -5,6 +5,14 @@
 @import '../../../node_modules/hover.css/scss/effects/background-transitions/_sweep-to-right.scss';
 $section-horizontal-spacing: 2rem;
 $section-horizontal-spacing-desktop: 15%;
+$section-bg-color-introduction: #3434F5;
+$section-bg-color-skills: #FFC413;
+$section-bg-color-portfolio: #FF9A13;
+$section-bg-color-writings: $theme-color;
+$section-text-color-introduction: $theme-contrast-color;
+$section-text-color-skills: $text-color;
+$section-text-color-portfolio: $text-color;
+$section-text-color-writings: $theme-contrast-color;
 
 @keyframes bounce {
   0%,
@@ -203,18 +211,20 @@ body.page-home {
     }
   }
   .introduction {
-    background-color: #21f3e7;
+    background-color: $section-bg-color-introduction;
+    color: $section-text-color-introduction;
     &::before {
-      background-color: #21f3e7;
+      background-color: $section-bg-color-introduction;
     }
     .call-to-action {
-      @include call-to-action(#21f3e7, inherit);
+      @include call-to-action($section-bg-color-introduction, inherit);
     }
   }
   .skills {
-    background-color: #f3e721;
+    background-color: $section-bg-color-skills;
+    color: $section-text-color-skills;
     &::before {
-      background-color: #f3e721;
+      background-color: $section-bg-color-skills;
     }
     .js-logo {
       float: left;
@@ -222,23 +232,24 @@ body.page-home {
       border: #000 1px solid;
     }
     .call-to-action {
-      @include call-to-action(#f3e721, inherit);
+      @include call-to-action($section-bg-color-skills, inherit);
     }
   }
   .portfolio {
-    background-color: #f37e21;
+    background-color: $section-bg-color-portfolio;
+    color: $section-text-color-portfolio;
     &::before {
-      background-color: #f37e21;
+      background-color: $section-bg-color-portfolio;
     }
     .call-to-action {
-      @include call-to-action(#f37e21, inherit);
+      @include call-to-action($section-bg-color-portfolio, inherit);
     }
   }
   .writings {
-    background-color: $theme-color;
-    color: $theme-contrast-color;
+    background-color: $section-bg-color-writings;
+    color: $section-text-color-writings;
     &::before {
-      background-color: $theme-color;
+      background-color: $section-bg-color-writings;
     }
     @include media(desktop) {
       padding-left: $section-horizontal-spacing;
@@ -295,7 +306,7 @@ body.page-home {
       }
     }
     .call-to-action {
-      @include call-to-action($theme-color, $theme-contrast-color);
+      @include call-to-action($section-bg-color-writings, $theme-contrast-color);
     }
   }
   .site-footer {
