@@ -107,7 +107,7 @@ $columns-max-width: $main-col-width+$aside-col-width;
     padding: 0 1em;
     font-size: 1.3rem;
     font-weight: 300;
-    color: #aaa;
+    color: $text-light-color;
     text-align: center;
   }
   .main-column,
@@ -190,6 +190,20 @@ $columns-max-width: $main-col-width+$aside-col-width;
     }
     ul {
       padding-left: 1em;
+    }
+    figure {
+      margin: 0;
+      margin-bottom: 1rem;
+      text-align: center;
+      img {
+        margin: 0;
+      }
+      figcaption {
+        margin: 0 auto;
+        max-width: 90%;
+        font-size: .8em;
+        color: $text-light-color;
+      }
     }
     p img,
     .twitter-tweet {
