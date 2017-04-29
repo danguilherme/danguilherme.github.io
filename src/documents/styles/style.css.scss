@@ -1,7 +1,6 @@
 @import '_variables.css.scss';
 @import '_mixins.css.scss';
 @import '_theme.css.scss';
-
 @keyframes footer-links-hover {
   50% {
     transform: translateY(150%);
@@ -17,14 +16,34 @@
 }
 
 @keyframes heartbeat {
-  0% { transform: scale( .75 ); }
-  20% { transform: scale( 1 ); }
-  40% { transform: scale( .75 ); }
-  60% { transform: scale( 1 ); }
-  80% { transform: scale( .75 ); }
-  100% { transform: scale( .75 ); }
+  0% {
+    transform: scale( .75);
+  }
+  20% {
+    transform: scale( 1);
+  }
+  40% {
+    transform: scale( .75);
+  }
+  60% {
+    transform: scale( 1);
+  }
+  80% {
+    transform: scale( .75);
+  }
+  100% {
+    transform: scale( .75);
+  }
 }
 
+@keyframes fade-in-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
 
 html {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -49,13 +68,7 @@ body {
   padding: 0;
   height: 100%;
   color: $text-color;
-  // display: flex;
-  // flex-direction: column;
 }
-
-// main {
-//   flex: 1 1 auto;
-// }
 
 h1,
 h2,
@@ -68,6 +81,7 @@ h6 {
   font-family: 'Raleway', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   line-height: 1;
 }
+
 
 /*
 * HEADER
@@ -151,9 +165,11 @@ h6 {
   }
 }
 
+
 /**
 * POSTS LIST COMPONENT
 */
+
 .posts-list {
   display: flex;
   align-items: flex-start;
@@ -225,12 +241,9 @@ h6 {
 //   margin-right: 15px;
 //   margin-bottom: 15px;
 // }
-
-
 // /*
 // * BODY
 // */
-
 // main {
 //   header,
 //   h1,
@@ -263,7 +276,6 @@ h6 {
 //       }
 //     }
 //   }
-
 //   #posts-list {
 //     padding: 0;
 //     cursor: default;
@@ -315,7 +327,6 @@ h6 {
   background-color: $theme-color;
   color: $theme-contrast-color;
   margin-top: 3rem;
-  padding-bottom: 1rem;
   font-size: .8rem;
   text-align: center;
   a,
@@ -368,9 +379,13 @@ h6 {
     }
   }
   .footer-content {
+    padding-bottom: $padding-spacing;
     p {
       max-width: 400px;
-      margin: 0 auto 15px;
+      margin: 0 auto;
+      &:not(:last-child) {
+        margin-bottom: $padding-spacing;
+      }
     }
     .love {
       display: inline-block;
@@ -378,8 +393,9 @@ h6 {
       color: #D70021;
       animation: heartbeat 1s infinite;
       font-size: 2em;
-
-      // heart drawing
+      /**
+      * heart drawing
+      */
       $heart-width: 20px;
       $heart-height: 20px;
       & {
@@ -388,21 +404,19 @@ h6 {
         height: $heart-height;
         animation: heartbeat 1s infinite;
       }
-
       &:before,
       &:after {
         position: absolute;
         content: "";
         left: $heart-width * .5;
         top: 0;
-        width: $heart-width  * .5;
+        width: $heart-width * .5;
         height: $heart-width * .8;
         background: #D70021;
         border-radius: ($heart-width * .5) ($heart-width * .5) 0 0;
         transform: rotate(-45deg);
         transform-origin: 0 100%;
       }
-
       &:after {
         left: 0;
         transform: rotate(45deg);
@@ -410,20 +424,70 @@ h6 {
       }
     }
   }
+  .now-playing {
+    background-color: #000;
+    display: none;
+    &.is-playing {
+      display: block;
+    }
+    .content {
+      margin: 0 auto;
+      max-width: $mobile-breakpoint;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      text-decoration: none;
+    }
+    .title {
+      display: block;
+      text-transform: uppercase;
+      font-weight: 200;
+      font-size: .7em;
+      letter-spacing: 0.5em;
+      color: $theme-color;
+      animation: fade-in-out 2s infinite;
+    }
+    p {
+      margin: 0;
+    }
+    .cover-and-play {
+      flex: 0 0 50px;
+      display: inline-block;
+      max-width: 50px;
+      min-height: 50px;
+      margin-right: 5px;
+      img {
+        margin: 0;
+        border-radius: 0;
+      }
+    }
+    .song {
+      flex: 1 1 auto;
+      min-width: 0;
+      .song-title,
+      .song-artist-and-album {
+        @include overflow-ellipsis;
+      }
+      .song-title {
+        font-weight: 700;
+        line-height: 1;
+      }
+      .song-artist-and-album {
+        font-size: .9em;
+        font-weight: 200;
+      }
+    }
+  }
 }
-
 
 // /*
 // * STYLE FOR PAGES
 // */
-
 // // #page
 // //   #home
-
 // /*
 // * STYLE FOR BLOG POSTS
 // */
-
 // #blog-post {
 //   article>hr {
 //     width: 200px;

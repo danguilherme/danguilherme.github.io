@@ -13,7 +13,9 @@ $section-text-color-introduction: $theme-contrast-color;
 $section-text-color-skills: $text-color;
 $section-text-color-portfolio: $text-color;
 $section-text-color-writings: $theme-contrast-color;
-
+$now-playing-card-max-size: 800px;
+$now-playing-card-bg-color: #fafafa;
+$now-playing-card-border-color: #f1f1f1;
 @keyframes bounce {
   0%,
   20%,
@@ -65,7 +67,30 @@ body.page-home {
       transform: rotate(-3deg);
       transform-origin: top left;
     }
-    &.right {
+    &.separator-after.left,
+    &.separator-after.right {
+      position: relative;
+      &::after {
+        position: absolute;
+        width: 150%;
+        height: $separator-height;
+        bottom: 0;
+        content: '';
+      }
+    }
+    &.separator-after.right::after {
+      left: 0;
+      transform: rotate(3deg);
+      transform-origin: top left;
+      z-index: 1;
+    }
+    &.separator-after.left::after {
+      right: 0;
+      transform: rotate(-3deg);
+      transform-origin: top right;
+      z-index: 1;
+    }
+    &.separator.right {
       text-align: right;
     }
     .section-title {
@@ -212,11 +237,94 @@ body.page-home {
   .introduction {
     background-color: $section-bg-color-introduction;
     color: $section-text-color-introduction;
-    &::before {
+    &::before,
+    &::after {
       background-color: $section-bg-color-introduction;
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-introduction, inherit);
+      @include call-to-action($section-bg-color-introduction,
+      inherit);
+    }
+  }
+  .now-playing.section {
+    display: none;
+    position: relative;
+    background-image: url('../images/now_playing.png');
+    background-attachment: fixed;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    &.is-playing {
+      display: block;
+    }
+    .section-title {
+      position: absolute;
+      top: 1rem;
+      transform: rotate(3deg);
+      font-weight: 200;
+      letter-spacing: .5rem;
+      text-transform: uppercase;
+      cursor: default;
+    }
+    .now-playing-track {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: $now-playing-card-max-size;
+      margin: 2rem auto;
+      padding: $padding-spacing;
+      background: $now-playing-card-bg-color;
+      border: 1px solid $now-playing-card-border-color;
+      border-radius: 3px;
+      text-decoration: none;
+      color: inherit;
+      transform: rotate(-3deg);
+      transition: box-shadow .2s linear;
+      box-shadow: #666 0 0 10px 0px;
+      &:focus,
+      &:hover {
+        box-shadow: #999 0 0 15px 3px;
+      }
+      p {
+        margin: 0;
+      }
+      .cover-and-play {
+        img {
+          max-width: 100%;
+          border: 1px solid $now-playing-card-border-color;
+        }
+      }
+      .song {
+        flex: 1;
+        line-height: 1;
+        .song-artist,
+        .song-album {
+          display: inline;
+        }
+        .song-title {
+          font-size: 1.2em;
+          font-weight: 700;
+          margin-bottom: 5px;
+          @include media(tablet) {
+            margin-bottom: $padding-spacing;;
+          }
+        }
+        .song-artist {
+          &::after {
+            content: ' • ';
+            color: #aaa;
+          }
+        }
+        .song-album {
+          font-weight: 200;
+        }
+      }
+      @include media(tablet) {
+        flex-direction: row;
+        .cover-and-play {
+          margin-right: 15px;
+          max-width: 50%;
+        }
+      }
     }
   }
   .skills {
@@ -231,7 +339,8 @@ body.page-home {
       border: #000 1px solid;
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-skills, inherit);
+      @include call-to-action($section-bg-color-skills,
+      inherit);
     }
   }
   .portfolio {
@@ -241,7 +350,8 @@ body.page-home {
       background-color: $section-bg-color-portfolio;
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-portfolio, inherit);
+      @include call-to-action($section-bg-color-portfolio,
+      inherit);
     }
   }
   .writings {
@@ -305,7 +415,8 @@ body.page-home {
       }
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-writings, $theme-contrast-color);
+      @include call-to-action($section-bg-color-writings,
+      $theme-contrast-color);
     }
   }
   .site-footer {
@@ -315,6 +426,7 @@ body.page-home {
     }
   }
 }
+
 
 /*
 * STYLE FOR HOME

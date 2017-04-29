@@ -36,4 +36,20 @@
       <%- @_ 'footer.made_with_github', repoUrl: "https://github.com/danguilherme/danguilherme.github.io/tree/source", gaCategory: "footer", gaLabel: "github" %>
     </p>
   </div>
+
+  <div class="now-playing" data-image-size="medium">
+    <a class="content song-url" href="#" target="_blank">
+      <div class="cover-and-play">
+        <img class="song-cover" alt="Album cover">
+        <span class="play"></span>
+      </div>
+      <div class="song">
+        <p class="title"><%- @_ 'footer.now_playing.title' %></p>
+        <div class="song-info">
+          <p class="song-title"></p>
+          <p class="song-artist-and-album"></p>
+        </div>
+      </div>
+    </a>
+  </div>
 </footer>

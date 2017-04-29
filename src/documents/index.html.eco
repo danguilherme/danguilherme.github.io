@@ -86,12 +86,33 @@ styles: ['/styles/home.css']
       data-ga-label="down-arrow"><span class="sr-only"><%- @_ 'index.landing.see_content' %></span></a>
   </section>
 
-  <section id="content-start" class="section introduction">
+  <section id="content-start" class="section introduction right separator-after">
     <h2 class="section-title"><%- @_ 'index.introduction.title' %></h2>
     <p><%- @_ 'index.introduction.text' %></p>
     <a href="/#{@document.langPrefix}about-me/" class="call-to-action"
       ga-category="introduction"
       ga-label="my-story"><%- @_ 'index.introduction.button' %></a>
+  </section>
+
+  <section class="section now-playing">
+    <h2 class="section-title"><%- @_ 'index.now_playing.title' %></h2>
+    <p><%- @_ 'index.now_playing.text' %></p>
+    <a class="now-playing-track song-url" href="#" target="_blank"
+      data-ga-action="now-playing-track">
+      <div class="cover-and-play">
+        <img class="song-cover" alt="Album cover">
+      </div>
+      <div class="song">
+        <div class="song-info">
+          <p class="song-title"></p>
+          <p class="song-artist"></p>
+          <p class="song-album"></p>
+        </div>
+      </div>
+    </a>
+    <p>
+      <%- @_ 'index.now_playing.link', lastFmUrl: "https://www.last.fm/user/danguilherme", gaCategory: "now-playing", gaLabel: "lastfm" %>
+    </p>
   </section>
 
   <section class="section skills right separator">

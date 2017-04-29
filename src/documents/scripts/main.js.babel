@@ -1,1 +1,109 @@
 // common scripts for the whole website
+onDocumentReady(function () {
+  const API_BASE_URL = 'http://ws.audioscrobbler.com/2.0/';
+  const API_KEY = '45bc6fe55bc18ce58d46c40e6b64f7db';
+  const USER_NAME = 'danguilherme';
+  const NOW_PLAYING_RETRIEVAL_INTERVAL = 1; // in minutes
+
+  function init() {
+    // get the playing music every minute
+    setInterval(getNowPlayingSong, 1000 * 60 * NOW_PLAYING_RETRIEVAL_INTERVAL);
+    getNowPlayingSong();
+  }
+
+  // simple fetch  polyfill
+  if (!window.fetch) {
+    window.fetch = function fetchPolyfill(url) {
+      return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.onload = response => resolve(new Response(response));
+        xhr.onerror = response => reject(new Response(response));
+        xhr.send();
+      });
+    }
+  }
+
+  // experimenting...
+  let fetchScrobblingTrack = _ => {
+    return fetch(`${API_BASE_URL}?method=user.getrecenttracks&user=${USER_NAME}&api_key=${API_KEY}&format=json&limit=1&extended=1`)
+      .then(r => r.json())
+      .then(j => j.recenttracks.track.filter(i => i['@attr'] && i['@attr'].nowplaying)[0])
+      .then(song => {
+        if (song) {
+          return fetchSongAlbum(song).then(_ => song);
+        }
+        return song;
+      });
+  }
+
+  let fetchAlbum = mbid => {
+    return fetch(`${API_BASE_URL}?method=album.getinfo&mbid=${mbid}&api_key=${API_KEY}&format=json&limit=1&extended=1`)
+      .then(r => r.json())
+      .then(j => j.album);
+  }
+
+  let fetchSongAlbum = song => {
+    return fetchAlbum(song.album.mbid)
+      .then(album => {
+        Object.assign(song.album, album);
+        return album;
+      });
+  }
+
+  function getNowPlayingSong() {
+    fetchScrobblingTrack()
+      .then(song => fillAllNowPlayingElements(song));
+  }
+
+  function fillAllNowPlayingElements(song) {
+    console.info(`Guilherme is listening to '${song.name}' from ${song.album['#title']} by ${song.artist.name}`);
+
+    let nowPlayingEls = document.querySelectorAll('.now-playing');
+
+    for (var element of nowPlayingEls) {
+      fillNowPlaying(element, song);
+    }
+  }
+
+  function fillNowPlaying(nowPlayingEl, song) {
+    if (!song)
+      return void (nowPlayingEl.classList.remove('is-playing'));
+
+    // get from artist, that always exist
+    let songImageSrc = getImageSrc(song.artist.image, 'large');
+    // if album was found, get from the album
+    if (song.album.image)
+      songImageSrc = getImageSrc(song.album.image, nowPlayingEl.dataset.imageSize || 'mega') ||
+        getImageSrc(song.album.image, 'extralarge') ||
+        getImageSrc(song.album.image, 'large');
+    let songName = song.name;
+    let albumName = song.album['#text'];
+    let artistName = song.artist.name;
+
+    let imgEl = nowPlayingEl.querySelector('.song-cover');
+    let titleEl = nowPlayingEl.querySelector('.song-title');
+    let artistAndAlbumEl = nowPlayingEl.querySelector('.song-artist-and-album');
+    let artistEl = nowPlayingEl.querySelector('.song-artist');
+    let albumEl = nowPlayingEl.querySelector('.song-album');
+    let anchorEl = nowPlayingEl.querySelector('.song-url');
+
+    if (imgEl) { imgEl.src = songImageSrc; }
+    if (titleEl) titleEl.textContent = songName;
+    if (artistAndAlbumEl) artistAndAlbumEl.textContent = `${artistName} - ${albumName}`;
+    if (artistEl) artistEl.textContent = artistName;
+    if (albumEl) albumEl.textContent = albumName;
+    if (anchorEl) anchorEl.href = song.url;
+
+    nowPlayingEl.classList.add('is-playing');
+  }
+
+  function getImageSrc(array = [], size = 'large') {
+    let img = array.filter(img => img.size === size)[0];
+    if (img)
+      return img['#text'];
+    return undefined;
+  }
+
+  init();
+});
