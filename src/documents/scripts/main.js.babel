@@ -57,7 +57,8 @@ onDocumentReady(function () {
   }
 
   function fillAllNowPlayingElements(song) {
-    console.info(`Guilherme is listening to '${song.name}' from ${song.album['#title']} by ${song.artist.name}`);
+    if (song)
+      console.info(`Guilherme is listening to '${song.name}' from ${song.album['#text']} by ${song.artist.name}`);
 
     let nowPlayingEls = document.querySelectorAll('.now-playing');
 

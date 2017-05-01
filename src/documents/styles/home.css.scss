@@ -242,19 +242,23 @@ body.page-home {
       background-color: $section-bg-color-introduction;
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-introduction,
-      inherit);
+      @include call-to-action($section-bg-color-introduction, inherit);
     }
   }
   .now-playing.section {
-    display: none;
+    max-height: 0;
     position: relative;
     background-image: url('../images/now_playing.png');
     background-attachment: fixed;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    @include transition(padding max-height,
+    1s,
+    linear);
+    padding-top: 0;
+    padding-bottom: 0;
     &.is-playing {
-      display: block;
+      max-height: 1000px;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
     .section-title {
       position: absolute;
@@ -305,7 +309,7 @@ body.page-home {
           font-weight: 700;
           margin-bottom: 5px;
           @include media(tablet) {
-            margin-bottom: $padding-spacing;;
+            margin-bottom: $padding-spacing;
           }
         }
         .song-artist {
@@ -339,8 +343,7 @@ body.page-home {
       border: #000 1px solid;
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-skills,
-      inherit);
+      @include call-to-action($section-bg-color-skills, inherit);
     }
   }
   .portfolio {
@@ -350,8 +353,7 @@ body.page-home {
       background-color: $section-bg-color-portfolio;
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-portfolio,
-      inherit);
+      @include call-to-action($section-bg-color-portfolio, inherit);
     }
   }
   .writings {
@@ -415,8 +417,7 @@ body.page-home {
       }
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-writings,
-      $theme-contrast-color);
+      @include call-to-action($section-bg-color-writings, $theme-contrast-color);
     }
   }
   .site-footer {
