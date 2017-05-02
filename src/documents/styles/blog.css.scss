@@ -1,0 +1,50 @@
+@import '_variables.css.scss';
+@import '_mixins.css.scss';
+@import '_helpers.css.scss';
+#blog {
+  .blog-header {
+    padding: 0 $padding-spacing;
+  }
+  .posts-list {
+    align-items: stretch;
+    justify-content: left;
+    margin: 0;
+    .post-brief {
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      .post-link {
+        display: block;
+        padding-bottom: 2rem;
+        height: 100%;
+      }
+      .post {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+    }
+    @include media(tablet) {
+      .post-brief {
+        $posts-in-a-row: 2;
+        width: 100% / $posts-in-a-row;
+      }
+    }
+    @include media(desktop) {
+      .post-brief {
+        $posts-in-a-row: 3;
+        width: 100% / $posts-in-a-row;
+      }
+    }
+    @include media(large) {
+      .post-brief {
+        $posts-in-a-row: 4;
+        width: 100% / $posts-in-a-row;
+      }
+    }
+  }
+}
+
+.site-footer {
+  margin-top: 0;
+}

@@ -2,7 +2,7 @@
   "footer.made_with_love": "Feito com <span class=\"love\"><span class=\"sr-only\">amor</span></span> por %twitter%.",
   "footer.made_with_docpad": "Site criado com %docpad%, um gerador de sites estáticos.",
   "footer.made_with_github": "Descubra mais no <a href=\"%repoUrl%\" target=\"_blank\" data-ga-category=\"%gaCategory%\" data-ga-label=\"%gaLabel%\">repositório do GitHub</a>.",
-  "footer.now_playing.title": "Tocando agora",
+  "footer.now_playing.title": "Ouvindo agora",
 
   "index.landing.read_in_other_lang": "I prefer in English",
   "index.landing.pic": "Avatar de Guilherme Ventura",
@@ -14,7 +14,7 @@
   "index.introduction.title": "Oi, sumido",
   "index.introduction.text": "Quanto tempo minino",
   "index.introduction.button": "Saiba mais da minha história",
-  "index.now_playing.title": "Tocando agora",
+  "index.now_playing.title": "Ouvindo agora",
   "index.now_playing.text": "Curto muito ouvir música!<br>Aqui está o que estou escutando nesse momento:",
   "index.now_playing.link": "Veja mais no <a href=\"%lastFmUrl%\" target=\"_blank\" data-ga-category=\"%gaCategory%\" data-ga-label=\"%gaLabel%\">meu perfil no <strong>Last.fm</strong></a>.",
   "index.skills.title": "Sou um Desenvolvedor Front-end",
@@ -29,6 +29,9 @@
 
   "posts_list.read_post": "Ver post",
   "posts_list.cover_alt": "Capa de '%title%'",
+
+  "blog.title": "Postagens",
+  "blog.introduction": "Aqui é onde exponho meus pensamentos.<br>Bom, os pensamentos organizados.",
 
   "blog_post.header.cover_alt": "Capa de '%title%'",
   "blog_post.header.comments": "Comentários",

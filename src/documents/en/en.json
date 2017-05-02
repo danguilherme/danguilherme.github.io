@@ -30,6 +30,9 @@
   "posts_list.read_post": "Read post",
   "posts_list.cover_alt": "Cover for '%title%'",
 
+  "blog.title": "Blog Posts",
+  "blog.introduction": "This is where I put my thoughts.<br>Well, the organized ones.",
+
   "blog_post.header.cover_alt": "Cover for '%title%'",
   "blog_post.header.comments": "Comments",
   "blog_post.header.share": "Share",

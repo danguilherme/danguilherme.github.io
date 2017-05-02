@@ -5,13 +5,22 @@ menuOrder:  0
 
 priority: 1
 changefreq: "daily"
+styles: ['/styles/blog.css']
 ---
 
-<% posts = @getCollection("posts") %>
-<% if posts.length: %>
-  <%= @partial('posts-list', {posts: posts.toJSON() }) %>
-<% else: %>
-  <p>
-    No posts published yet...
-  </p>
-<% end %>
+<article>
+  <header class="blog-header">
+    <h2><%- @_ 'blog.title' %></h2>
+    
+    <p><%- @_ 'blog.introduction' %></p>
+  </header>
+  
+  <% posts = @getCollection("posts") %>
+  <% if posts.length: %>
+    <%= @partial('posts-list', {posts: posts.toJSON() }) %>
+  <% else: %>
+    <p>
+      No posts published yet...
+    </p>
+  <% end %>
+</article>
