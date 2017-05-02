@@ -1,4 +1,7 @@
 {
+  "header.languages.read_in_pt-br": "Ver versão em português",
+  "header.languages.read_in_en": "Go to English version",
+  
   "footer.made_with_love": "Feito com <span class=\"love\"><span class=\"sr-only\">amor</span></span> por %twitter%.",
   "footer.made_with_docpad": "Site criado com %docpad%, um gerador de sites estáticos.",
   "footer.made_with_github": "Descubra mais no <a href=\"%repoUrl%\" target=\"_blank\" data-ga-category=\"%gaCategory%\" data-ga-label=\"%gaLabel%\">repositório do GitHub</a>.",

@@ -6,6 +6,8 @@ menuOrder:  0
 priority: 1
 changefreq: "daily"
 styles: ['/styles/blog.css']
+translations:
+  en: 'blog/index.html'
 ---
 
 <article>
