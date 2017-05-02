@@ -1,0 +1,48 @@
+---
+identifier: "sobre"
+title: "Quem sou eu?"
+layout: "page"
+
+menuTitle: "Sobre Mim"
+menuOrder: 2
+
+styles: ['/styles/about.css']
+
+translations:
+  en: about-me.html
+---
+
+<h2><%- @document.title %></h2>
+
+<p class="avatar">
+  <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=250" alt="Uma foto minha" width="250" height="250">
+</p>
+
+<blockquote class="now-playing" data-image-size="medium">
+  Enquanto está me conhecendo, que tal ouvir uma música?
+  Estou ouvindo
+  <a class="song-url" href="#" target="_blank"><span class="song-title"></span> de <span class="song-artist"></span></a>
+  agora.
+</blockquote>
+
+Meu nome é Guilherme Ventura, tenho 22 anos, 5 desses trabalhando com programação. Sou formado em Ciência da computação e hoje trabalho na [CI&T][2], entregando experiências em JavaScript para nossos clientes.
+
+Também tenho experiência com C#, SQL/T-SQL e Java (incluindo Android). Estudo regularmente outras linguagens e frameworks também, como Ruby e Ruby on Rails.
+
+<h3>O Blog</h3>
+
+A ideia do blog é compartilhar minhas experiências do dia a dia, e simplesmente exercitar o hábito de escrever. Estou sempre ativo no [Twitter][1], compartilhando coisas dos outros que me interessam. Ás vezes aparecem umas coisas minhas também... dá uma passada lá!
+
+<h3>Um Pouco Mais de História</h3>
+
+Minha entrada na carreira de programador foi meio que acidental. Eu sempre fui o "menino do computador", desde pequeno fascinado por essas máquinas incríveis, mas eu nem conhecia programação. O mais perto que eu cheguei de um script foi no RPG Maker, com [<abbr title="Ruby Game Scripting System">RGSS</abbr>][3]. Além disso, nunca fui muito além do Paint.
+
+Comecei a trabalhar com 16 anos, como patrulheiro (o famoso 'menor aprendiz') em uma empresa de manufatura. Nas minhas andanças pela empresa, conheci o setor de desenvolvimento, responsável por desenvolver e manter parte do software que controlava a produção. E foi então que descobri que tem como você **programar computadores!** 😮
+
+A partir desse dia, ainda no ensino médio, comecei a estudar Java por conta própria. Nas idas e vindas do trabalho, eu ia conversando com o pessoal, levando minhas dúvidas e meus progressos, até que um dia fui contratado como estagiário para trabalhar no time de .Net.
+
+E foi assim que comecei minha carreira de programação, em fevereiro de 2012, e desde então tenho isso tanto como profissão quanto hobby.
+
+[1]: https://twitter.com/danguilherme "@danguilherme"
+[2]: https://ciandt.com/
+[3]: https://pt.wikipedia.org/wiki/RGSS
