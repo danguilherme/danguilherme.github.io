@@ -3,6 +3,15 @@
 @import '_helpers.css.scss';
 @import 'hover.scss';
 @import '../../../node_modules/hover.css/scss/effects/background-transitions/_sweep-to-right.scss';
+@keyframes fade-in-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
 $section-horizontal-spacing: 2rem;
 $section-horizontal-spacing-desktop: 15%;
 $section-bg-color-introduction: #3434F5;
@@ -242,7 +251,8 @@ body.page-home {
       background-color: $section-bg-color-introduction;
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-introduction, inherit);
+      @include call-to-action($section-bg-color-introduction,
+      inherit);
     }
   }
   .now-playing.section {
@@ -255,6 +265,10 @@ body.page-home {
     linear);
     padding-top: 0;
     padding-bottom: 0;
+    &,
+    a {
+      color: #fff;
+    }
     &.is-playing {
       max-height: 1000px;
       padding-top: 4rem;
@@ -268,6 +282,7 @@ body.page-home {
       letter-spacing: .5rem;
       text-transform: uppercase;
       cursor: default;
+      animation: fade-in-out 2s infinite;
     }
     .now-playing-track {
       display: flex;
@@ -280,7 +295,7 @@ body.page-home {
       border: 1px solid $now-playing-card-border-color;
       border-radius: 3px;
       text-decoration: none;
-      color: inherit;
+      color: $text-color;
       transform: rotate(-3deg);
       transition: box-shadow .2s linear;
       box-shadow: #666 0 0 10px 0px;
@@ -343,7 +358,8 @@ body.page-home {
       border: #000 1px solid;
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-skills, inherit);
+      @include call-to-action($section-bg-color-skills,
+      inherit);
     }
   }
   .portfolio {
@@ -353,7 +369,8 @@ body.page-home {
       background-color: $section-bg-color-portfolio;
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-portfolio, inherit);
+      @include call-to-action($section-bg-color-portfolio,
+      inherit);
     }
   }
   .writings {
@@ -417,7 +434,8 @@ body.page-home {
       }
     }
     .call-to-action {
-      @include call-to-action($section-bg-color-writings, $theme-contrast-color);
+      @include call-to-action($section-bg-color-writings,
+      $theme-contrast-color);
     }
   }
   .site-footer {

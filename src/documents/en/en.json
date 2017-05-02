@@ -19,7 +19,7 @@
   "index.introduction.button": "Know my story",
   "index.now_playing.title": "Now Playing",
   "index.now_playing.text": "I love listening to music!<br>This is what I am linstening at this moment:",
-  "index.now_playing.link": "See more on <a href=\"%lastFmUrl%\" target=\"_blank\" data-ga-category=\"%gaCategory%\" data-ga-label=\"%gaLabel%\">my profile on <strong>Last.fm</strong></a>.",
+  "index.now_playing.link": "See more on <a href=\"%lastFmUrl%\" target=\"_blank\" data-ga-category=\"%gaCategory%\" data-ga-label=\"%gaLabel%\">my <strong>Last.fm</strong> profile</a>.",
   "index.skills.title": "I am a Web Developer",
   "index.skills.text": "Javascript runs through my vains.",
   "index.skills.button": "Take a look at my GitHub",
