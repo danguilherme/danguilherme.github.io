@@ -18,7 +18,7 @@ translations:
   <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=250" alt="Uma foto minha" width="250" height="250">
 </p>
 
-<blockquote class="now-playing" data-image-size="medium">
+<blockquote class="now-playing">
   Enquanto está me conhecendo, que tal ouvir uma música?
   Estou ouvindo
   <a class="song-url" href="#" target="_blank"><span class="song-title"></span> de <span class="song-artist"></span></a>
@@ -33,7 +33,7 @@ Também tenho experiência com C#, SQL/T-SQL e Java (incluindo Android). Estudo 
 
 A ideia do blog é compartilhar minhas experiências do dia a dia, e simplesmente exercitar o hábito de escrever. Estou sempre ativo no [Twitter][1], compartilhando coisas dos outros que me interessam. Ás vezes aparecem umas coisas minhas também... dá uma passada lá!
 
-<h3>Um Pouco Mais de História</h3>
+<h3>Uma Historinha Sobre Mim</h3>
 
 Minha entrada na carreira de programador foi meio que acidental. Eu sempre fui o "menino do computador", desde pequeno fascinado por essas máquinas incríveis, mas eu nem conhecia programação. O mais perto que eu cheguei de um script foi no RPG Maker, com [<abbr title="Ruby Game Scripting System">RGSS</abbr>][3]. Além disso, nunca fui muito além do Paint.
 

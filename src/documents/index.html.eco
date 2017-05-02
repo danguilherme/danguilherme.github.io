@@ -89,7 +89,7 @@ styles: ['/styles/home.css']
   <section id="content-start" class="section introduction right separator-after">
     <h2 class="section-title"><%- @_ 'index.introduction.title' %></h2>
     <p><%- @_ 'index.introduction.text' %></p>
-    <a href="/#{@document.langPrefix}about-me/" class="call-to-action"
+    <a href="<%- @_ 'index.introduction.button.url' %>" class="call-to-action"
       ga-category="introduction"
       ga-label="my-story"><%- @_ 'index.introduction.button' %></a>
   </section>
@@ -147,11 +147,10 @@ styles: ['/styles/home.css']
     <% if posts.length: %>
       <div class="recent-blog-posts">
         <%= @partial('posts-list', {posts: posts.toJSON().slice(0, maxPosts) }) %>
-        <% if posts.length > maxPosts: %>
-          <a href="<%= blogUrl %>" class="call-to-action see-all-posts"
-            ga-category="writings"
-            ga-label="see-all-posts"><%- @_ 'index.writings.button' %></a>
-        <% end %>
+
+        <a href="<%= blogUrl %>" class="call-to-action see-all-posts"
+          ga-category="writings"
+          ga-label="see-all-posts"><%- @_ 'index.writings.button' %></a>
       </div>
     <% end %>
   </section>

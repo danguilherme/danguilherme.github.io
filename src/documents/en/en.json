@@ -17,6 +17,7 @@
   "index.introduction.title": "Hey Stranger",
   "index.introduction.text": "It's good to have you here",
   "index.introduction.button": "Know my story",
+  "index.introduction.button.url": "/en/about-me/",
   "index.now_playing.title": "Now Playing",
   "index.now_playing.text": "I love listening to music!<br>This is what I am linstening at this moment:",
   "index.now_playing.link": "See more on <a href=\"%lastFmUrl%\" target=\"_blank\" data-ga-category=\"%gaCategory%\" data-ga-label=\"%gaLabel%\">my <strong>Last.fm</strong> profile</a>.",

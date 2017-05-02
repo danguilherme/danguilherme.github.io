@@ -17,6 +17,7 @@
   "index.introduction.title": "Oi, sumido",
   "index.introduction.text": "Quanto tempo minino",
   "index.introduction.button": "Saiba mais da minha história",
+  "index.introduction.button.url": "/sobre/",
   "index.now_playing.title": "Ouvindo agora",
   "index.now_playing.text": "Curto muito ouvir música!<br>Aqui está o que estou escutando nesse momento:",
   "index.now_playing.link": "Veja mais no <a href=\"%lastFmUrl%\" target=\"_blank\" data-ga-category=\"%gaCategory%\" data-ga-label=\"%gaLabel%\">meu perfil no <strong>Last.fm</strong></a>.",
