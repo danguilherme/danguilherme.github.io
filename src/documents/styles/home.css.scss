@@ -260,9 +260,8 @@ body.page-home {
     position: relative;
     background-image: url('../images/now_playing.png');
     background-attachment: fixed;
-    @include transition(padding max-height,
-    1s,
-    linear);
+    overflow: hidden;
+    @include transition(padding max-height, 1s, linear);
     padding-top: 0;
     padding-bottom: 0;
     &,
