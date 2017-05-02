@@ -199,6 +199,7 @@ $columns-max-width: $main-col-width+$aside-col-width;
       margin-bottom: 1rem;
       text-align: center;
       img {
+        display: inline;
         margin: 0;
       }
       figcaption {
