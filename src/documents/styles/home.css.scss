@@ -261,7 +261,7 @@ body.page-home {
     background-image: url('../images/now_playing.png');
     background-attachment: fixed;
     overflow: hidden;
-    @include transition(padding max-height, 1s, linear);
+    @include transition(padding max-height, .3s, linear);
     padding-top: 0;
     padding-bottom: 0;
     &,
@@ -284,18 +284,21 @@ body.page-home {
       animation: fade-in-out 2s infinite;
     }
     .now-playing-track {
-      display: flex;
+      $vertical-spacing: 2rem;
+      display: inline-flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+      left: 50%;
+      transform: rotate(-3deg) translate(-50%, -$vertical-spacing / 2);
       max-width: $now-playing-card-max-size;
-      margin: 2rem auto;
+      margin: $vertical-spacing auto;
       padding: $padding-spacing;
       background: $now-playing-card-bg-color;
       border: 1px solid $now-playing-card-border-color;
       border-radius: 3px;
       text-decoration: none;
       color: $text-color;
-      transform: rotate(-3deg);
       transition: box-shadow .2s linear;
       box-shadow: #666 0 0 10px 0px;
       &:focus,
