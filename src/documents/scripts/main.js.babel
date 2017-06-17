@@ -38,6 +38,10 @@ onDocumentReady(function () {
   }
 
   let fetchAlbum = mbid => {
+    if (!mbid) {
+      return Promise.resolve(null);
+    }
+
     return fetch(`${API_BASE_URL}?method=album.getinfo&mbid=${mbid}&api_key=${API_KEY}&format=json&limit=1&extended=1`)
       .then(r => r.json())
       .then(j => j.album);
@@ -71,13 +75,13 @@ onDocumentReady(function () {
     if (!song)
       return void (nowPlayingEl.classList.remove('is-playing'));
 
+    let songImages = song.image || song.artist.image || song.album.image || [];
+
     // get from artist, that always exist
-    let songImageSrc = getImageSrc(song.artist.image, 'large');
-    // if album was found, get from the album
-    if (song.album.image)
-      songImageSrc = getImageSrc(song.album.image, nowPlayingEl.dataset.imageSize || 'mega') ||
-        getImageSrc(song.album.image, 'extralarge') ||
-        getImageSrc(song.album.image, 'large');
+    let songImageSrc = getImageSrc(songImages, 'large');
+    songImageSrc = getImageSrc(songImages, nowPlayingEl.dataset.imageSize || 'mega') ||
+      getImageSrc(songImages, 'extralarge') ||
+      getImageSrc(songImages, 'large');
     let songName = song.name;
     let albumName = song.album['#text'];
     let artistName = song.artist.name;

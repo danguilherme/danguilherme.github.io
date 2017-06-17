@@ -195,6 +195,9 @@ var docpadConfig = {
           stylusOptions: {
             compress: false
           }
+        },
+        babel: {
+          compact: false
         }
       }
     }
