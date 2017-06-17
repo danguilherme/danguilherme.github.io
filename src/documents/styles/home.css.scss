@@ -55,6 +55,14 @@ body.page-home {
       padding-left: $section-horizontal-spacing-desktop;
       padding-right: $section-horizontal-spacing-desktop;
     }
+    @include media(large) {
+      &.text-right>.section-text {
+        margin-left: 30%;
+      }
+      &.text-left>.section-text {
+        margin-right: 30%;
+      }
+    }
     &.separator.left,
     &.separator.right {
       position: relative;
@@ -354,10 +362,24 @@ body.page-home {
     &::before {
       background-color: $section-bg-color-skills;
     }
-    .js-logo {
-      float: left;
-      margin: 1em;
-      border: #000 1px solid;
+    .skills-tags {
+      padding: 0;
+      @include media(tablet) {
+        float: left;
+        max-width: 30%;
+        margin-right: 1em;
+      }
+      .skill-tag {
+        display: inline-block;
+        padding: 5px 0.5em;
+        margin: .2em;
+        background: darken($section-bg-color-skills, 10%);
+        border: rgba(0, 0, 0, 0.5) solid 1px;
+        border-radius: 5px;
+        font-size: .7em;
+        white-space: nowrap;
+        cursor: default;
+      }
     }
     .call-to-action {
       @include call-to-action($section-bg-color-skills,

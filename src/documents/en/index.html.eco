@@ -86,17 +86,17 @@ styles: ['/styles/home.css']
       data-ga-label="down-arrow"><span class="sr-only"><%- @_ 'index.landing.see_content' %></span></a>
   </section>
 
-  <section id="content-start" class="section introduction right separator-after">
+  <section class="section introduction right separator-after text-left" id="content-start">
     <h2 class="section-title"><%- @_ 'index.introduction.title' %></h2>
-    <p><%- @_ 'index.introduction.text' %></p>
+    <div class="section-text"><%- @_ 'index.introduction.text' %></div>
     <a href="<%- @_ 'index.introduction.button.url' %>" class="call-to-action"
       ga-category="introduction"
       ga-label="my-story"><%- @_ 'index.introduction.button' %></a>
   </section>
 
-  <section class="section now-playing">
+  <section class="section now-playing text-left">
     <h2 class="section-title"><%- @_ 'index.now_playing.title' %></h2>
-    <p><%- @_ 'index.now_playing.text' %></p>
+    <div class="section-text"><%- @_ 'index.now_playing.text' %></div>
     <a class="now-playing-track song-url" href="#" target="_blank"
       data-ga-action="now-playing-track">
       <div class="cover-and-play">
@@ -115,33 +115,36 @@ styles: ['/styles/home.css']
     </p>
   </section>
 
-  <section class="section skills right separator">
+  <section class="section skills right separator text-right">
     <h2 class="section-title"><%- @_ 'index.skills.title' %></h2>
-    <p><%- @_ 'index.skills.text' %></p>
-    <img class="js-logo" src="/images/js.svg" alt="JavaScript logo" width="200px" height="200px">
+    <ul class="skills-tags">
+      <% for skill in @site.author.skills: %><li class="skill-tag"><%= skill %></li><% end %>
+    </ul>
+    <div class="section-text"><%- @_ 'index.skills.text' %></div>
     <a href="<%= @site.author.githubUrl %>" class="call-to-action"
       target="_blank"
       ga-category="skills"
       ga-label="github"><%- @_ 'index.skills.button' %></a>
   </section>
 
-  <section class="section portfolio left separator">
+  <!-- TODO: work on portfolio -->
+  <section class="section portfolio left separator text-left">
     <h2 class="section-title"><%- @_ 'index.portfolio.title' %></h2>
-    <p><%- @_ 'index.portfolio.text' %></p>
+    <div class="section-text"><%- @_ 'index.portfolio.text' %></div>
     <ul>
-      <li>Cartagrafia</li>
-      <li>Uno online</li>
-      <li>3 bancos</li>
-      <li>Spotivy</li>
+      <li><a href="http://cartagrafia.surge.sh/" target="_blank" title="Descubra sobre os países jogando">Cartagrafia</a></li>
+      <li><a href="https://github.com/danguilherme/uno" target="_blank" title="Uno game logic implemented in JavaScript">Uno Online</a></li>
+      <li><a href="https://github.com/danguilherme/spotivy" target="_blank" title="Spotify music videos downloader">Spotivy</a></li>
+      <!--<li>3 bancos</li>-->
     </ul>
     <a href="/portfolio/" class="call-to-action"
       ga-category="portfolio"
       ga-label="portfolio"><%- @_ 'index.portfolio.button' %></a>
   </section>
 
-  <section class="section writings right separator">
+  <section class="section writings right separator text-right">
     <h2 class="section-title"><%- @_ 'index.writings.title' %></h2>
-    <p class="section-text"><%- @_ 'index.writings.text' %></p>
+    <div class="section-text"><%- @_ 'index.writings.text' %></div>
 
     <% posts = @getCollection("posts_#{@document.lang}") %>
     <% if posts.length: %>

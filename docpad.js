@@ -12,7 +12,11 @@ var author = {
   githubUrl: "https://github.com/danguilherme",
   linkedinUrl: "https://linkedin.com/in/danguilherme",
   googlePlus: "GuilhermeVenturaDanguilherme",
-  googlePlusUrl: "https://plus.google.com/+GuilhermeVenturaDanguilherme"
+  googlePlusUrl: "https://plus.google.com/+GuilhermeVenturaDanguilherme",
+  skills: [
+    "JavaScript", "HTML", "CSS", "AngularJS", "jQuery", "Bootstrap",
+    "Android", "Java", "Ruby", "C#", "SQL Server"
+  ]
 };
 
 const translationsMap = {};
