@@ -117,8 +117,8 @@ styles: ['/styles/home.css']
 
   <section class="section skills right separator text-right">
     <h2 class="section-title"><%- @_ 'index.skills.title' %></h2>
-    <ul class="skills-tags">
-      <% for skill in @site.author.skills: %><li class="skill-tag"><%= skill %></li><% end %>
+    <ul class="skills-tags floated-content floated-content-left">
+      <% for skill in @site.author.skills: %><li class="skill-tag bordered-item"><%= skill %></li><% end %>
     </ul>
     <div class="section-text"><%- @_ 'index.skills.text' %></div>
     <a href="<%= @site.author.githubUrl %>" class="call-to-action"
@@ -130,13 +130,14 @@ styles: ['/styles/home.css']
   <!-- TODO: work on portfolio -->
   <section class="section portfolio left separator text-left">
     <h2 class="section-title"><%- @_ 'index.portfolio.title' %></h2>
-    <div class="section-text"><%- @_ 'index.portfolio.text' %></div>
-    <ul>
-      <li><a href="http://cartagrafia.surge.sh/" target="_blank" title="Descubra sobre os países jogando">Cartagrafia</a></li>
-      <li><a href="https://github.com/danguilherme/uno" target="_blank" title="Uno game logic implemented in JavaScript">Uno Online</a></li>
-      <li><a href="https://github.com/danguilherme/spotivy" target="_blank" title="Spotify music videos downloader">Spotivy</a></li>
+    <ul class="portfolio-links floated-content floated-content-right">
+      <li class="portfolio-link"><a href="http://cartagrafia.surge.sh/" target="_blank" title="Descubra sobre os países jogando">Cartagrafia</a></li>
+      <li class="portfolio-link"><a href="https://github.com/danguilherme/uno" target="_blank" title="Uno game logic implemented in JavaScript">Uno Online</a></li>
+      <li class="portfolio-link"><a href="https://github.com/danguilherme/spotivy" target="_blank" title="Spotify music videos downloader">Spotivy</a></li>
+      <li class="portfolio-link"><a href="https://github.com/danguilherme/docpad-plugin-polyglot" target="_blank" title="DocPad plugin for multilingual websites">docpad-plugin-polyglot</a></li>
       <!--<li>3 bancos</li>-->
     </ul>
+    <div class="section-text"><%- @_ 'index.portfolio.text' %></div>
     <a href="/portfolio/" class="call-to-action"
       ga-category="portfolio"
       ga-label="portfolio"><%- @_ 'index.portfolio.button' %></a>
