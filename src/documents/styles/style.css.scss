@@ -187,6 +187,7 @@ h6 {
 */
 
 .posts-list {
+  $inner-padding: 10px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -236,7 +237,8 @@ h6 {
     }
     .post-info,
     .post-tagline {
-      padding: 0 10px;
+      padding-left: $inner-padding;
+      padding-right: $inner-padding;
     }
     .post-cover {
       background-color: $bg-color;
@@ -254,7 +256,14 @@ h6 {
     }
     .post-title {
       margin: 0;
+      padding-top: $inner-padding;
       font-size: 1.3em;
+    }
+    .post-tagline {
+      padding-bottom: $inner-padding;
+      font-size: 0.9em;
+      font-weight: 100;
+      line-height: 1.2;
     }
     footer {
       text-align: right;
