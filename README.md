@@ -17,11 +17,10 @@ Repositório do meu blog e futuro site.
 
 **Pré-requisitos:**
 - Node (v4+)
-- Bower (`npm i -g bower`)
 
 **Passo a passo:**
 1. Instalar [GraphicsMagick](http://www.graphicsmagick.org/)
-    - Windows: [download and install](http://www.graphicsmagick.org/INSTALL-windows.html)
+    - Windows: [download and install](http://www.graphicsmagick.org/INSTALL-windows.html) (Q8 version)
     - Ubuntu: `sudo apt-get install graphicsmagick`
     - Mac OS: `brew install graphicsmagick`
 1. `npm start`
