@@ -46,7 +46,7 @@
 }
 
 html {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
   height: 100%;
@@ -56,10 +56,10 @@ html {
     display: none;
   }
   @include media(tablet) {
-    font-size: $base-font-size * 1.3;
+    font-size: $base-font-size * 1.1;
   }
   @include media(large) {
-    font-size: $base-font-size * 1.5;
+    font-size: $base-font-size * 1.2;
   }
 }
 
@@ -78,7 +78,7 @@ h5,
 h6 {
   margin-top: 1em;
   margin-bottom: 0;
-  font-family: 'Raleway', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: $titles-font-family;
   line-height: 1;
 }
 
@@ -108,16 +108,11 @@ h6 {
       padding: 0;
     }
   }
-  .site-title,
-  .header-menu,
-  .header-external-links {
-    line-height: 1.5;
-  }
   .site-title {
-    font-family: 'Dosis', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: $header-font-family;
     display: inline-block;
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.3rem;
     padding-right: 10px;
     position: relative;
     top: -3px;
@@ -126,13 +121,19 @@ h6 {
   .header-content {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     position: relative;
     h1 {
       flex: 0 0 auto;
     }
+    .title-and-menu {
+      flex: 1;
+    }
     .header-menu {
       flex: 1 1 auto;
+      font-family: Raleway;
+      font-size: 0.8rem;
       li {
         margin-right: 10px;
       }
@@ -162,6 +163,10 @@ h6 {
         display: inline-block;
         padding: 5px;
       }
+    }
+    @include media(small) {
+      flex-direction: row;
+      align-items: center;
     }
   }
   &::after {
