@@ -11,45 +11,47 @@
       </nav>
     </div>
 
-    <nav class="header-external-links">
-      <ul>
-        <li>
-          <a href="<%= @site.author.githubUrl %>"
-              title="<%= @site.author.github %>"
-              data-ga-category="right-static-menu"
-              data-ga-label="github">GitHub</a>
-        </li>
-        <li>
-          <a href="<%= @site.author.twitterUrl %>"
-              title="@<%= @site.author.twitter %>"
-              data-ga-category="right-static-menu"
-              data-ga-label="twitter">Twitter</a>
-        </li>
-        <li>
-          <a href="/rss.xml"
-            data-ga-category="right-static-menu"
-            data-ga-label="feed">Feed</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="languages-and-links">
+      <nav class="header-languages">
+        <ul>
+          <li>
+            <a href="<%= @toLang('pt-br') or '/' %>"
+                title="<%= @_ 'header.languages.read_in_pt-br' %>"
+                class="<%= if @document.lang == 'pt-br' then 'active' %>"
+                data-ga-category="languages-menu"
+                data-ga-label="pt-br">pt-br</a>
+          </li>
+          <li>
+            <a href="<%= @toLang('en') or '/en/' %>"
+                title="<%= @_ 'header.languages.read_in_en' %>"
+                class="<%= if @document.lang == 'en' then 'active' %>"
+                data-ga-category="languages-menu"
+                data-ga-label="en">en</a>
+          </li>
+        </ul>
+      </nav>
 
-    <nav class="header-languages">
-      <ul>
-        <li>
-          <a href="<%= @toLang('pt-br') or '/' %>"
-              title="<%= @_ 'header.languages.read_in_pt-br' %>"
-              class="<%= if @document.lang == 'pt-br' then 'active' %>"
-              data-ga-category="languages-menu"
-              data-ga-label="pt-br">pt-br</a>
-        </li>
-        <li>
-          <a href="<%= @toLang('en') or '/en/' %>"
-              title="<%= @_ 'header.languages.read_in_en' %>"
-              class="<%= if @document.lang == 'en' then 'active' %>"
-              data-ga-category="languages-menu"
-              data-ga-label="en">en</a>
-        </li>
-      </ul>
-    </nav>
+      <nav class="header-external-links">
+        <ul>
+          <li>
+            <a href="<%= @site.author.githubUrl %>"
+                title="<%= @site.author.github %>"
+                data-ga-category="right-static-menu"
+                data-ga-label="github">GitHub</a>
+          </li>
+          <li>
+            <a href="<%= @site.author.twitterUrl %>"
+                title="@<%= @site.author.twitter %>"
+                data-ga-category="right-static-menu"
+                data-ga-label="twitter">Twitter</a>
+          </li>
+          <li>
+            <a href="/rss.xml"
+              data-ga-category="right-static-menu"
+              data-ga-label="feed">Feed</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>

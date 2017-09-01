@@ -114,9 +114,8 @@ h6 {
     margin: 0;
     font-size: 1.3rem;
     padding-right: 10px;
-    position: relative;
-    top: -3px;
     transition: font-size .2s linear;
+    white-space: nowrap;
   }
   .header-content {
     display: flex;
@@ -124,10 +123,15 @@ h6 {
     flex-direction: column;
     align-items: flex-start;
     position: relative;
+    @include media(small) {
+      flex-direction: row;
+    }
     h1 {
       flex: 0 0 auto;
     }
     .title-and-menu {
+      display: flex;
+      flex-direction: column;
       flex: 1;
     }
     .header-menu {
@@ -138,8 +142,13 @@ h6 {
         margin-right: 10px;
       }
     }
+    .languages-and-links {
+      display: flex;
+      align-self: flex-end;      
+      flex-direction: column;
+    }
     .header-external-links {
-      float: right;
+      flex: 1;
       li {
         opacity: 0.5;
         transition: opacity .2s linear;
@@ -150,23 +159,17 @@ h6 {
       }
     }
     .header-languages {
-      position: absolute;
-      top: -5px;
-      right: -5px;
       font-size: 0.7rem;
       font-weight: 200;
       line-height: 1;
+      text-align: right;
       .active {
         font-weight: 700;
       }
       a {
         display: inline-block;
-        padding: 5px;
+        padding: 0 5px;
       }
-    }
-    @include media(small) {
-      flex-direction: row;
-      align-items: center;
     }
   }
   &::after {
