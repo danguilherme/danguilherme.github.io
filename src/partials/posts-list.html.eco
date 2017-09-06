@@ -6,6 +6,7 @@
         class="post-link"
         hreflang="<%= postLang %>"
         data-ga-category="blog"
+        data-ga-action="blog-post-click"
         data-ga-label="<%= post.title %>">
         <article class="post">
           <header>

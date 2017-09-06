@@ -36,18 +36,18 @@
           <li>
             <a href="<%= @site.author.githubUrl %>"
                 title="<%= @site.author.github %>"
-                data-ga-category="right-static-menu"
+                data-ga-category="right-menu"
                 data-ga-label="github">GitHub</a>
           </li>
           <li>
             <a href="<%= @site.author.twitterUrl %>"
                 title="@<%= @site.author.twitter %>"
-                data-ga-category="right-static-menu"
+                data-ga-category="right-menu"
                 data-ga-label="twitter">Twitter</a>
           </li>
           <li>
             <a href="/rss.xml"
-              data-ga-category="right-static-menu"
+              data-ga-category="right-menu"
               data-ga-label="feed">Feed</a>
           </li>
         </ul>

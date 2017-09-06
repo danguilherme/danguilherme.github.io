@@ -28,8 +28,7 @@ layout: "base"
       </span>
       <a class="meta-info comments-anchor"
         href="#disqus_thread"
-        data-ga-action="see-comments"
-        data-ga-use-text-as-label>
+        data-ga-label="see-comments">
           <%- @icon('comment') %>
           <span class="disqus-comment-count"
             data-disqus-identifier="<%= @document.url %>">0</span> <%- @_ 'blog_post.header.comments' %>
@@ -62,7 +61,7 @@ layout: "base"
       <section class="body">
         <% otherLang = if @document.lang == 'pt-br' then 'en' else 'pt-br' %>
         <% if @hasLang(otherLang): %>
-          <a href="<%= @toLang(otherLang) %>" hreflang="<%= otherLang %>"><%- @_ 'blog_post.read_in_other_lang' %></a>
+          <a href="<%= @toLang(otherLang) %>" hreflang="<%= otherLang %>" data-ga-label="read-in-other-lang"><%- @_ 'blog_post.read_in_other_lang' %></a>
           <hr>
         <% end %>
 

@@ -38,7 +38,9 @@
   </div>
 
   <div class="now-playing" data-image-size="medium">
-    <a class="content song-url" href="#" target="_blank">
+    <a class="content song-url" href="#" target="_blank"
+      data-ga-category="footer"
+      data-ga-label="now-playing">
       <div class="cover-and-play">
         <img class="song-cover" alt="Album cover">
         <span class="play"></span>

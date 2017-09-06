@@ -90,15 +90,15 @@ styles: ['/styles/home.css']
     <h2 class="section-title"><%- @_ 'index.introduction.title' %></h2>
     <div class="section-text"><%- @_ 'index.introduction.text' %></div>
     <a href="<%- @_ 'index.introduction.button.url' %>" class="call-to-action"
-      ga-category="introduction"
-      ga-label="my-story"><%- @_ 'index.introduction.button' %></a>
+      data-ga-category="call-to-action"
+      data-ga-label="my-story"><%- @_ 'index.introduction.button' %></a>
   </section>
 
   <section class="section now-playing text-left">
     <h2 class="section-title"><%- @_ 'index.now_playing.title' %></h2>
     <div class="section-text"><%- @_ 'index.now_playing.text' %></div>
     <a class="now-playing-track song-url" href="#" target="_blank"
-      data-ga-action="now-playing-track">
+      data-ga-action="now-playing-track-card">
       <div class="cover-and-play">
         <img class="song-cover" alt="Album cover">
       </div>
@@ -111,7 +111,7 @@ styles: ['/styles/home.css']
       </div>
     </a>
     <p>
-      <%- @_ 'index.now_playing.link', lastFmUrl: "https://www.last.fm/user/danguilherme", gaCategory: "now-playing", gaLabel: "lastfm" %>
+      <%- @_ 'index.now_playing.link', lastFmUrl: "https://www.last.fm/user/danguilherme", gaCategory: "call-to-action", gaLabel: "now-playing" %>
     </p>
   </section>
 
@@ -123,24 +123,36 @@ styles: ['/styles/home.css']
     <div class="section-text"><%- @_ 'index.skills.text' %></div>
     <a href="<%= @site.author.githubUrl %>" class="call-to-action"
       target="_blank"
-      ga-category="skills"
-      ga-label="github"><%- @_ 'index.skills.button' %></a>
+      data-ga-category="call-to-action"
+      data-ga-label="github"><%- @_ 'index.skills.button' %></a>
   </section>
 
   <!-- TODO: work on portfolio -->
   <section class="section portfolio left separator text-left">
     <h2 class="section-title"><%- @_ 'index.portfolio.title' %></h2>
     <ul class="portfolio-links floated-content floated-content-right">
-      <li class="portfolio-link"><a href="http://cartagrafia.surge.sh/" target="_blank" title="Descubra sobre os países jogando">Cartagrafia</a></li>
-      <li class="portfolio-link"><a href="https://github.com/danguilherme/uno" target="_blank" title="Uno game logic implemented in JavaScript">Uno Online</a></li>
-      <li class="portfolio-link"><a href="https://github.com/danguilherme/spotivy" target="_blank" title="Spotify music videos downloader">Spotivy</a></li>
-      <li class="portfolio-link"><a href="https://github.com/danguilherme/docpad-plugin-polyglot" target="_blank" title="DocPad plugin for multilingual websites">docpad-plugin-polyglot</a></li>
+      <li class="portfolio-link">
+        <a href="http://cartagrafia.surge.sh/" target="_blank" title="Descubra sobre os países jogando"
+        data-ga-category="project">Cartagrafia</a>
+      </li>
+      <li class="portfolio-link">
+        <a href="https://github.com/danguilherme/uno" target="_blank" title="Uno game logic implemented in JavaScript"
+        data-ga-category="project">Uno Online</a>
+      </li>
+      <li class="portfolio-link">
+        <a href="https://github.com/danguilherme/spotivy" target="_blank" title="Spotify music videos downloader"
+        data-ga-category="project">Spotivy</a>
+      </li>
+      <li class="portfolio-link">
+        <a href="https://github.com/danguilherme/docpad-plugin-polyglot" target="_blank" title="DocPad plugin for multilingual websites"
+        data-ga-category="project">docpad-plugin-polyglot</a>
+      </li>
       <!--<li>3 bancos</li>-->
     </ul>
     <div class="section-text"><%- @_ 'index.portfolio.text' %></div>
     <a href="/portfolio/" class="call-to-action"
-      ga-category="portfolio"
-      ga-label="portfolio"><%- @_ 'index.portfolio.button' %></a>
+      data-ga-category="call-to-action"
+      data-ga-label="portfolio"><%- @_ 'index.portfolio.button' %></a>
   </section>
 
   <section class="section writings right separator text-right">
@@ -153,8 +165,8 @@ styles: ['/styles/home.css']
         <%= @partial('posts-list', {posts: posts.toJSON().slice(0, maxPosts) }) %>
 
         <a href="<%= blogUrl %>" class="call-to-action see-all-posts"
-          ga-category="writings"
-          ga-label="see-all-posts"><%- @_ 'index.writings.button' %></a>
+          data-ga-category="call-to-action"
+          data-ga-label="see-all-posts"><%- @_ 'index.writings.button' %></a>
       </div>
     <% end %>
   </section>

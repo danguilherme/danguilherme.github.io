@@ -21,7 +21,7 @@ translations:
 <blockquote class="now-playing">
   Enquanto está me conhecendo, que tal ouvir uma música?
   Estou ouvindo
-  <a class="song-url" href="#" target="_blank"><span class="song-title"></span> de <span class="song-artist"></span></a>
+  <a class="song-url" href="#" target="_blank" data-ga-label="now-playing"><span class="song-title"></span> de <span class="song-artist"></span></a>
   agora.
 </blockquote>
 
