@@ -45,6 +45,9 @@ var docpadConfig = {
             htmlmin: true,
             layout: "blog-post"
           });
+        })
+        .findAllLive({
+          isDraft: { $ne: true }
         });
     },
     'posts_pt-br': function () {
@@ -53,7 +56,10 @@ var docpadConfig = {
         .findAllLive({
           relativeOutDirPath: { $in: ['blog'] },
           basename: { $ne: "index" }
-        }, [{ date: -1 }]);
+        }, [{ date: -1 }])
+        .findAllLive({
+          isDraft: { $ne: true }
+        });
     },
     'posts_en': function () {
       // should get only docs in English
@@ -63,7 +69,10 @@ var docpadConfig = {
         .findAllLive({
           relativeOutDirPath: { $in: ['en\\blog'] },
           basename: { $ne: "index" }
-        }, [{ date: -1 }]);
+        }, [{ date: -1 }])
+        .findAllLive({
+          isDraft: { $ne: true }
+        });
     },
     sitemap: function () {
       return this
