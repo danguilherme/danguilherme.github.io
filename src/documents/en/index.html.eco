@@ -158,18 +158,26 @@ styles: ['/styles/home.css']
   </section>
 
   <section class="section writings right separator text-right">
-    <h2 class="section-title"><%- @_ 'index.writings.title' %></h2>
-    <div class="section-text"><%- @_ 'index.writings.text' %></div>
-
     <% posts = @getCollection("posts_#{@document.lang}") %>
+
+    <h2 class="section-title"><%- @_ 'index.writings.title' %></h2>
+    <div class="section-text">
+      <%- @_ 'index.writings.text' %>
+      <% if !posts.length: %>
+        <a href="<%= blogUrl %>" class="call-to-action see-all-posts"
+          data-ga-category="call-to-action"
+          data-ga-label="see-all-posts"><%- @_ 'index.writings.button' %></a>
+      <% end %>
+    </div>
+
+    <% if posts.length: %>
       <div class="recent-blog-posts">
-        <% if posts.length: %>
-          <%= @partial('posts-list', {posts: posts.toJSON().slice(0, maxPosts) }) %>
-        <% end %>
+        <%= @partial('posts-list', {posts: posts.toJSON().slice(0, maxPosts) }) %>
 
         <a href="<%= blogUrl %>" class="call-to-action see-all-posts"
           data-ga-category="call-to-action"
           data-ga-label="see-all-posts"><%- @_ 'index.writings.button' %></a>
       </div>
+    <% end %>
   </section>
 </article>
