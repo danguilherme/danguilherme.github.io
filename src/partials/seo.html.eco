@@ -4,7 +4,7 @@ htmlmin: true
 <!-- SEO -->
 <% author = @site.author %>
 <% post_image = if @document.layout == 'post' then @blog.getPostOriginalImageSrc(@document) else "" %>
-<% site_thumb = 'https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=16' %>
+<% site_thumb = 'https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=350' %>
 <% post_image_url = @site.url + post_image %>
 <% document_url = @site.url + @document.url %>
 
