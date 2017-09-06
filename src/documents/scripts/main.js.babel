@@ -1,6 +1,6 @@
 // common scripts for the whole website
 onDocumentReady(function () {
-  const API_BASE_URL = 'http://ws.audioscrobbler.com/2.0/';
+  const API_BASE_URL = 'https://ws.audioscrobbler.com/2.0/';
   const API_KEY = '45bc6fe55bc18ce58d46c40e6b64f7db';
   const USER_NAME = 'danguilherme';
   const NOW_PLAYING_RETRIEVAL_INTERVAL = 1; // in minutes
@@ -9,19 +9,6 @@ onDocumentReady(function () {
     // get the playing music every minute
     setInterval(getNowPlayingSong, 1000 * 60 * NOW_PLAYING_RETRIEVAL_INTERVAL);
     getNowPlayingSong();
-  }
-
-  // simple fetch  polyfill
-  if (!window.fetch) {
-    window.fetch = function fetchPolyfill(url) {
-      return new Promise((resolve, reject) => {
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', url);
-        xhr.onload = response => resolve(new Response(response));
-        xhr.onerror = response => reject(new Response(response));
-        xhr.send();
-      });
-    }
   }
 
   // experimenting...
@@ -56,8 +43,11 @@ onDocumentReady(function () {
   }
 
   function getNowPlayingSong() {
-    fetchScrobblingTrack()
-      .then(song => fillAllNowPlayingElements(song));
+    // só funciona com suporte a ES6 e fetch, por preguiça mesmo
+    try {
+      fetchScrobblingTrack()
+        .then(song => fillAllNowPlayingElements(song));
+    } catch (e) { }
   }
 
   function fillAllNowPlayingElements(song) {
