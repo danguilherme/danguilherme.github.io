@@ -150,7 +150,9 @@ styles: ['/styles/home.css']
       <!--<li>3 bancos</li>-->
     </ul>
     <div class="section-text"><%- @_ 'index.portfolio.text' %></div>
-    <a href="/portfolio/" class="call-to-action"
+    <a href="https://github.com/danguilherme"
+      target="_blank"
+      class="call-to-action"
       data-ga-category="call-to-action"
       data-ga-label="portfolio"><%- @_ 'index.portfolio.button' %></a>
   </section>
