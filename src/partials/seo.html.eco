@@ -4,6 +4,7 @@ htmlmin: true
 <!-- SEO -->
 <% author = @site.author %>
 <% post_image = if @document.layout == 'post' then @blog.getPostOriginalImageSrc(@document) else "" %>
+<% site_thumb = 'https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=16' %>
 <% post_image_url = @site.url + post_image %>
 <% document_url = @site.url + @document.url %>
 
@@ -23,7 +24,7 @@ htmlmin: true
   <% if post_image: %>
     <meta property="og:image" content="<%= post_image_url %>">
   <% else: %>
-    <meta property="og:image" content="<%= @site.url + '/images/site-thumb.png' %>" />
+    <meta property="og:image" content="<%= site_thumb %>" />
   <% end %>
   <meta property="article:author" content="<%= author.facebookUrl %>" />
   <meta property="article:publisher" content="<%= author.facebookUrl %>" />
@@ -34,7 +35,7 @@ htmlmin: true
   <% end %>
 <% else: %>
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="<%= @site.url + '/images/site-thumb.png' %>" />
+  <meta property="og:image" content="<%= site_thumb %>" />
 <% end %>
 
 <!-- Facebook -->
