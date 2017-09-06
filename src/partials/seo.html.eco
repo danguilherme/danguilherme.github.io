@@ -22,6 +22,8 @@ htmlmin: true
   <meta property="og:type" content="article" />
   <% if post_image: %>
     <meta property="og:image" content="<%= post_image_url %>">
+  <% else: %>
+    <meta property="og:image" content="<%= @site.url + '/images/site-thumb.png' %>" />
   <% end %>
   <meta property="article:author" content="<%= author.facebookUrl %>" />
   <meta property="article:publisher" content="<%= author.facebookUrl %>" />
@@ -32,6 +34,7 @@ htmlmin: true
   <% end %>
 <% else: %>
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="<%= @site.url + '/images/site-thumb.png' %>" />
 <% end %>
 
 <!-- Facebook -->
