@@ -123,6 +123,8 @@ h6 {
     flex-direction: column;
     align-items: flex-start;
     position: relative;
+    margin: 0 auto;
+    max-width: $general-content-max-width;
     @include media(small) {
       flex-direction: row;
     }
@@ -183,9 +185,6 @@ h6 {
     .site-title {
       font-size: 1.4rem;
     }
-  }
-  @include media(desktop) {
-    padding: .5rem 2rem;
   }
 }
 

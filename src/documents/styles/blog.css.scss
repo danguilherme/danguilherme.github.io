@@ -3,7 +3,12 @@
 @import '_helpers.css.scss';
 #blog {
   .blog-header {
+    max-width: $general-content-max-width;
+    margin: 0 auto 50px;
     padding: 0 $padding-spacing;
+    @include media(large) {
+      margin-bottom: 100px;
+    }
   }
   .posts-list {
     align-items: stretch;

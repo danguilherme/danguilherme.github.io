@@ -1,8 +1,8 @@
 @import '_variables.css.scss';
 @import '_mixins.css.scss';
 $title-max-width: $tablet-breakpoint;
-$main-col-width: $tablet-breakpoint;
-$aside-col-width: 300px;
+$main-col-width: $general-content-max-width * .7;
+$aside-col-width: $general-content-max-width * .3;
 $columns-max-width: $main-col-width+$aside-col-width;
 #blog-post {
   .share-button {
@@ -12,7 +12,7 @@ $columns-max-width: $main-col-width+$aside-col-width;
     white-space: nowrap;
     .icon-share {
       fill: $link-color;
-      vertical-align: text-top;
+      vertical-align: middle;
       transition: fill .2s;
     }
     share-button {

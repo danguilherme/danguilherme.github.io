@@ -23,3 +23,6 @@ $link-visited-color: darken($theme-color, 20%);
 $link-active-color: darken($theme-color, 25%);
 
 $padding-spacing: 15px;
+
+$general-content-max-width: $large-desktop-breakpoint;
+$text-content-max-width: $general-content-max-width * .7;
