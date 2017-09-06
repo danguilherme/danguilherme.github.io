@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="<%= @document.lang or 'pt-br' %>">
 <head>
+  <%- @partial("document-metadata-export") %>
+
   <%- @partial('head-content') %>
   <title><%= @getPreparedTitle() %></title>
   <%- @getBlock("scripts").add(@site.scripts).toHTML() %>
@@ -16,6 +18,5 @@
   <%- @partial("footer") %>
 
   <%- @getBlock("scripts").add(@document.scripts or []).toHTML() %>
-  <%- @partial("document-metadata-export") %>
 </body>
 </html>
