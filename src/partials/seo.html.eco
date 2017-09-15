@@ -3,9 +3,9 @@ htmlmin: true
 ---
 <!-- SEO -->
 <% author = @site.author %>
-<% post_image = if @document.layout == 'post' then @blog.getPostOriginalImageSrc(@document) else "" %>
-<% site_thumb = 'https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=350' %>
+<% post_image = if @document.layout == 'blog-post' then @blog.getPostOriginalImageSrc(@document) else "" %>
 <% post_image_url = @site.url + post_image %>
+<% site_thumb = 'https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=350' %>
 <% document_url = @site.url + @document.url %>
 
 
@@ -19,7 +19,7 @@ htmlmin: true
 <meta property="og:url" content="<%= document_url %>" />
 <meta property="og:locale" content="pt_BR">
 
-<% if @document.layout == 'post': %>
+<% if @document.layout == 'blog-post': %>
   <meta property="og:type" content="article" />
   <% if post_image: %>
     <meta property="og:image" content="<%= post_image_url %>">
