@@ -34,45 +34,15 @@ var docpadConfig = {
         });
     },
     posts: function () {
-      return this
-        .getCollection("html")
-        .findAllLive({
-          relativeOutDirPath: { $in: ['en\\blog', 'blog'] },
-          basename: { $ne: "index" }
-        }, [{ date: -1 }])
-        .on("add", function (model) {
-          return model.setMetaDefaults({
-            htmlmin: true,
-            layout: "blog-post"
-          });
-        })
-        .findAllLive({
-          isDraft: { $ne: true }
-        });
+      return getPostsCollection(this, ['en', 'pt-br']);
     },
     'posts_pt-br': function () {
-      return this
-        .getCollection("html")
-        .findAllLive({
-          relativeOutDirPath: { $in: ['blog'] },
-          basename: { $ne: "index" }
-        }, [{ date: -1 }])
-        .findAllLive({
-          isDraft: { $ne: true }
-        });
+      return getPostsCollection(this, ['pt-br']);
     },
     'posts_en': function () {
       // should get only docs in English
       // issue: https://github.com/docpad/docpad/issues/1062
-      return this
-        .getCollection("html")
-        .findAllLive({
-          relativeOutDirPath: { $in: ['en\\blog'] },
-          basename: { $ne: "index" }
-        }, [{ date: -1 }])
-        .findAllLive({
-          isDraft: { $ne: true }
-        });
+      return getPostsCollection(this, ['en']);
     },
     sitemap: function () {
       return this
@@ -292,6 +262,36 @@ docpadConfig.templateData.blog = {
     return coverUrl;
   }
 };
+
+function getPostsCollection(docpad, languages) {
+  let isDevelopment = docpad.getEnvironments().includes('development');
+  let langMap = {
+    en: 'en\\blog',
+    'pt-br': 'blog'
+  };
+  let paths = (languages || []).map(l => langMap[l]);
+
+  let collection = docpad
+    .getCollection("html")
+    .findAllLive({
+      relativeOutDirPath: { $in: paths },
+      basename: { $ne: "index" }
+    }, [{ date: -1 }])
+    .on("add", function (model) {
+      return model.setMetaDefaults({
+        htmlmin: true,
+        layout: "blog-post"
+      });
+    });
+
+  if (!isDevelopment) {
+    collection.findAllLive({
+      isDraft: { $ne: true }
+    });
+  }
+
+  return collection;
+}
 
 function replaceVariable(text, variable, value) {
   // usa regex para dar replace em todas as ocorrências da variável na mesma string
