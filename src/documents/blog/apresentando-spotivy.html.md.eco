@@ -10,7 +10,7 @@ Há um tempo atrás eu comprei um carro. Na negociação, fiquei com o aparelho 
 
 Lembrando que era um aparelho de som *em um carro*.
 
-# E Nasce o Spotivy
+# Nasce o Spotivy
 
 Procurando maneiras de baixar as músicas de maneira fácil, encontrei uma extensão aqui, um utilitário ali, mas nenhum deles conseguia fazer o trabalho completo. Ou encontravam arquivos zoados, ou era muito manual. Como eu queria algo para fazer o download **em lote** (todas as músicas de todas as playlists de uma vez), não encontrei nada que suprisse minhas necessidades. Então decidi construir o meu próprio script.
 
@@ -89,3 +89,49 @@ Esse comando vai baixar três playlists, todas as músicas em `.mp3`.
 Se tiver qualquer problema fazendo a configuração ou usando os comandos,
 pode abrir [uma issue no GitHub](https://github.com/danguilherme/spotivy/issues)
 ou [me contatar pessoalmente](https://twitter.com/danguilherme/).
+
+Abaixo vou passar com mais detalhes a implementação do programa e
+explanar algumas das decisões feitas.
+
+# Por Baixo dos Panos
+
+O funcionamento do programa é bem simples, já que o problema que eu queria solucionar também era bem simples.
+O que é necessário para baixar uma playlist é:
+
+1. Encontrar as músicas que estão contidas nessa playlist
+1. Encontrar o vídeo correspondente no YouTube - em ótima qualidade, de preferência
+1. Baixar o vídeo na resolução adequada para uma pasta no sistema
+
+De cara, não parece tão simples (ainda mais com download de arquivo envolvido).
+Se eu fosse implementar todo o código para cada etapa eu nem teria começado.
+Ainda bem que vivemos em um mundo com código aberto (amém GitHub).
+
+Para buscar as músicas existentes em uma playlist, utilizei o projeto [spotify-web-api-node](https://github.com/thelinmichael/spotify-web-api-node).
+É um wrapper bem completo que expõe os endpoints da API do Spotify como simples funções, com promise e tudo. Sucesso!
+
+Para encontrar o vídeo perfeito para ser baixado, utilizo [outro wrapper](https://github.com/IonicaBizau/youtube-api) para a API do YouTube.
+
+Para baixar o vídeo, utilizo a biblioteca [node-ytdl-core](https://github.com/fent/node-ytdl-core), que me permite passar alguns parâmetros antes do download,
+como a qualidade que eu quero ou se eu quero baixar somente a faixa de áudio do arquivo.
+
+## Encontrando Vídeo de Qualidade
+
+Para encontrar o vídeo a ser baixado, é feita uma simples busca com **nome do artista** + **nome da música**.
+Nisso pode aparecer muita coisa zoada, principalmente vídeos feitos por fãs. Nada contra vídeos feitos por fãs, mas nem sempre a qualidade é a melhor.
+
+Digamos que quero buscar The Trick the Devil Did, de Sick Puppies, novamente. Esse seria o resultado da busca:
+
+<figure>
+  ![Resultados da busca no YouTube para "Sick Puppies - The Trick The Devil Did"](<%= @blog.getPostContent(@document, "busca-sick-puppies.png") %>)
+  <figcaption>Resultados da busca no YouTube para "Sick Puppies - The Trick The Devil Did"</figcaption>
+</figure>
+
+Após alguns testes, fica claro que os resultados de canais afiliados à VEVO ficam na primeira página (na maioria das vezes são o primeiro resultado, como no print).
+Por isso, [coloquei no código](https://github.com/danguilherme/spotivy/blob/v0.4.2/youtube_search.js#L76-L80) para filtrar resultados que são de canais da VEVO ou de "vídeos oficiais".
+Chamo de "vídeos oficiais" aqueles que têm "official" no título ou no nome do canal. É preciso? Não. Mas dá pro gasto.
+
+## Utilizando Streams
+
+Me fascinei por streams e seus usos depois [do vídeo](https://www.youtube.com/watch?v=UD2dZw9iHCc) do [@mpjme](https://twitter.com/mpjme) (sim, sou influenciável). A ideia de fazer as coisas em pedaços, assim que os recursos estão disponíveis, fazendo tarefas menores e mais rápidas é bem interessante.
+
+---
