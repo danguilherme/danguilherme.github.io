@@ -1,0 +1,91 @@
+---
+title:    Apresentando: Spotivy!
+tagline:  Baixando playlists do Spotify como vídeos
+tags:     open-source spotify videos
+date:     2017-10-03T02:00:00+00:00
+isDraft:  true
+---
+
+Há um tempo atrás eu comprei um carro. Na negociação, fiquei com o aparelho de som. O aparelho tinha DVD embutido, então eu pensei: "pra que ouvir músicas se eu posso ouvir **e** ver?".
+
+Lembrando que era um aparelho de som *em um carro*.
+
+# E Nasce o Spotivy
+
+Procurando maneiras de baixar as músicas de maneira fácil, encontrei uma extensão aqui, um utilitário ali, mas nenhum deles conseguia fazer o trabalho completo. Ou encontravam arquivos zoados, ou era muito manual. Como eu queria algo para fazer o download **em lote** (todas as músicas de todas as playlists de uma vez), não encontrei nada que suprisse minhas necessidades. Então decidi construir o meu próprio script.
+
+# Introdução
+
+O [Spotivy](https://github.com/danguilherme/spotivy) é um programa de linha de comando escrito em JavaScript (Node.js).
+Por isso, para usá-lo você deve ter o [Node instalado](https://nodejs.org/en/download/) (qualquer versão acima da v6 está ótima).
+
+
+Com tudo certo, é só instalar o programa globalmente:
+```bash
+npm install --global spotivy
+```
+
+Após a instalação, você já pode verificar os possíveis comando pela ajuda do programa:
+```bash
+spotivy help
+```
+
+## Baixar Música
+
+Para baixar uma única música do Spotify, é só passar o **id** da mesma para o comando `track`:
+```bash
+spotivy track <track_id>
+```
+
+Vamos dizer que queremos baixar [The Trick The Devil Did](https://open.spotify.com/track/1SnIhFaGRO3RXy6tErg2aU), de Sick Puppies.
+Precisamos seguir os seguintes passos:
+1. No Spotify, pego o link da música: <code>open.spotify.com/track/<strong>1SnIhFaGRO3RXy6tErg2aU</strong></code> (é só ir em `Compartilhar > Copiar Link da Música`)
+1. Desse link conseguimos o id, marcado acima
+1. Então é só fazer o download:
+    ```bash
+spotivy track 1SnIhFaGRO3RXy6tErg2aU
+    ```
+
+Isso vai baixar o video da música do YouTube - um arquivo `.mp4`.
+Se quiser salvar como áudio, é só passar a flag `--audio` para o programa que ele baixará como `.mp3`.
+
+Também é possível baixar mais de uma música de uma vez:
+```bash
+spotivy track 1SnIhFaGRO3RXy6tErg2aU 0lxnk5Fpvhr47m3MFsgFzQ 04zkiHm6WkDZ0eOx3D9oyD --audio
+```
+
+O comando acima baixará 3 músicas no formato `.mp3`.
+
+## Baixar Playlist
+
+Bom, a ideia ainda era baixar as coisas em lote, e música por música fica inviável, mesmo podendo baixar várias de uma vez.
+
+Para baixar uma playlist completa, utilizamos o comando `playlist` enviando o **id do dono da playlist** e o **id da playlist**:
+```bash
+spotivy playlist <user_id> <playlist_id>
+```
+
+Agora queremos baixar a playlist "[Pop virou Clássico](https://open.spotify.com/user/spotify/playlist/37i9dQZF1DWTsQAU8k2LN7)", do próprio Spotify.
+Os passos para baixar uma playlist são parecidos com o que fizemos para baixar uma música:
+1. Obtenha o link de compartilhamento: <code>open.spotify.com/user/<strong>spotify</strong>/playlist/<strong>37i9dQZF1DWTsQAU8k2LN7</strong></code> (`Compartilhar > Copiar Link da Playlist`)
+1. Desse link conseguimos o id tanto do usuário quanto da playlist, ambos marcados acima
+1. E então é só fazer o download:
+    ```bash
+spotivy playlist spotify 37i9dQZF1DWTsQAU8k2LN7
+    ```
+
+Esse comando vai baixar todas as músicas que existem nessa playlist.
+
+Também é possível baixar mais de uma playlist de uma vez:
+```bash
+spotivy playlist spotify 37i9dQZF1DWTsQAU8k2LN7 37i9dQZF1DXcBWIGoYBM5M 37i9dQZF1DWV1Nj8a6volf --audio
+```
+
+Esse comando vai baixar três playlists, todas as músicas em `.mp3`.
+
+-----
+
+É isso. Se quiser usar o utilitário, isso é tudo que você precisa saber.
+Se tiver qualquer problema fazendo a configuração ou usando os comandos,
+pode abrir [uma issue no GitHub](https://github.com/danguilherme/spotivy/issues)
+ou [me contatar pessoalmente](https://twitter.com/danguilherme/).
