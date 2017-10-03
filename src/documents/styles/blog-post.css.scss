@@ -221,6 +221,8 @@ $columns-max-width: $main-col-width+$aside-col-width;
       max-width: 100%;
       background: #3F3F3F;
       code.hljs {
+        padding-left: 0;
+        padding-right: 0;
         white-space: pre-wrap;
         border: none;
         border-radius: 0;
