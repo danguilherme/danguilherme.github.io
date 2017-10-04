@@ -188,7 +188,8 @@ $columns-max-width: $main-col-width+$aside-col-width;
       width: 30%;
       border: 1px solid $theme-color;
     }
-    ul {
+    ul,
+    ol {
       padding-left: 1em;
     }
     img {
