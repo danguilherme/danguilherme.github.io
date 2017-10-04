@@ -2,8 +2,7 @@
 title:    Apresentando: Spotivy
 tagline:  Utilitário para baixar músicas de playlists do Spotify em lote
 tags:     open-source ferramentas spotify música
-date:     2017-10-04T19:00:00+00:00
-isDraft:  true
+date:     2017-10-04T20:40:00+00:00
 ---
 
 Há um tempo atrás eu comprei um carro. Na negociação, fiquei com o aparelho de som. O aparelho tinha DVD embutido, então eu pensei: "pra que ouvir músicas se eu posso ouvir **e** ver?".
@@ -108,6 +107,12 @@ spotivy playlist spotify 37i9dQZF1DWTsQAU8k2LN7 37i9dQZF1DXcBWIGoYBM5M 37i9dQZF1
 ```
 
 Esse comando vai baixar três playlists, todas as músicas em `.mp3`.
+
+Enfim, a funcionalidade mais esperada (por mim): **baixar todas as playlists públicas de um usuário**.
+Para fazer isso, é só não passar nenhum id de playlist para o comando:
+```bash
+spotivy playlist spotify # BAIXA TUDO!!1!
+```
 
 -----
 
