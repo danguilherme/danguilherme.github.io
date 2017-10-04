@@ -45,7 +45,7 @@
   "blog_post.read_in_other_lang": "Read the English version here.",
   "blog_post.interactions.twitter_share": "Se você tiver qualquer dúvida ou comentário, por favor escreva-os abaixo. Curtiu o post? Você pode <a href=\"https://twitter.com/intent/tweet?url=%pageUrl%&text=%title%&via=%twitterHandle%\" title=\"Twittar sobre '%title%'\" target=\"_blank\" data-ga-label=\"%shareGaLabel%\">compartilhá-lo com seus seguidores</a> ou <a href=\"https://twitter.com/intent/follow?screen_name=%twitterHandle%\" title=\"@%twitterHandle%\" data-ga-label=\"%followGaLabel%\">me seguir no Twitter</a>!",
   "blog_post.interactions.share": "Compartilhar",
-  "blog_post.about_author.title": "Sobre o Author",
+  "blog_post.about_author.title": "Sobre o Autor",
   "blog_post.about_author.avatar_alt": "Guilherme Ventura",
   "blog_post.about_author.text": "Eu sou o Guilherme, desenvolvedor front-end e curioso. Resolvo problemas com JavaScript. HTML e CSS é opcional. <a href=\"%targetUrl%\" data-ga-label=\"%targetGaLabel%\">Conheça mais sobre mim.</a>",
   "blog_post.related_posts.title": "Posts Relacionados"

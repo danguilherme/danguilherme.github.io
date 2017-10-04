@@ -1,8 +1,8 @@
 ---
-title:    Apresentando: Spotivy!
-tagline:  Baixando playlists do Spotify como vídeos
+title:    Apresentando: Spotivy
+tagline:  Utilitário para baixar músicas de playlists do Spotify em lote
 tags:     open-source ferramentas spotify música
-date:     2017-10-03T02:00:00+00:00
+date:     2017-10-04T19:00:00+00:00
 isDraft:  true
 ---
 
@@ -204,3 +204,5 @@ A maior parte da mágica está no [código de paginação](https://github.com/da
 Para fechar as dependências, usei o [Caporal](https://github.com/mattallty/Caporal.js) para auxiliar no recebimento dos comandos, argumentos e opções do programa no terminal. Bem simples de usar.
 
 ---
+
+E foi assim que o Spotivy foi concebido. Esse é meu primeiro projeto open-source que considero realmente finalizado - totalmente funcional e documentado. Espero que não demore tanto para o próximo sair.

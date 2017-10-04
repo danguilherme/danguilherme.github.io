@@ -6,7 +6,7 @@ Repositório do meu blog e futuro site.
 * Criar o arquivo em `documents\blog\`
 * Colocar nome, tagline, tags, date e isDraft
 * Criar uma imagem em `files\blog\content\${nomeDoPost}\cover.png`
-  * A imagem deve ser wide (landscape, largura maior que altura, etc). Tamanho ideal: 500x300
+  * A imagem deve ser wide (landscape, largura maior que altura, etc). Tamanho ideal: 1024x512
 
 
 ## Tecnologias utilizadas
