@@ -132,6 +132,34 @@ Chamo de "vídeos oficiais" aqueles que têm "official" no título ou no nome do
 
 ## Utilizando Streams
 
-Me fascinei por streams e seus usos depois [do vídeo](https://www.youtube.com/watch?v=UD2dZw9iHCc) do [@mpjme](https://twitter.com/mpjme) (sim, sou influenciável). A ideia de fazer as coisas em pedaços, assim que os recursos estão disponíveis, fazendo tarefas menores e mais rápidas é bem interessante.
+Me fascinei por streams e seus usos depois [do vídeo](https://www.youtube.com/watch?v=UD2dZw9iHCc) do [@mpjme](https://twitter.com/mpjme). A ideia de fazer as coisas em pedaços, assim que os recursos estão disponíveis, fazendo tarefas menores e mais rápidas faz muito sentido.
+
+Na versão inicial do script, uma playlist era baixada completamente antes que suas músicas pudessem ser baixadas. Isso significa que para baixar uma playlist com 120 músicas, por exemplo, a aplicação fazia o download da informação de todas as 120 músicas, página por página, para depois fazer a busca e download dos 120 vídeos. Ilustrando:
+- busca página 1 (20/120)
+- busca página 2 (40/120)
+- busca página 3 (60/120)
+- busca página 4 (80/120)
+- busca página 5 (100/120)
+- busca página 6 (120/120)
+- download vídeo 1
+- download vídeo 2
+- download vídeo 3
+- ...
+
+Com streams, podemos fazer o download dos vídeos sob demanda, assim que uma página com informação das músicas forem baixadas. Ilustrando:
+- busca página 1 (20/120)
+- download vídeo 1
+- download vídeo 2
+- ...
+- download vídeo 19
+- download vídeo 20
+- busca página 2 (40/120)
+- download vídeo 21
+- download vídeo 22
+- ...
+
+Apesar do **tempo de download ser o mesmo** no final de tudo, a **sensação de fluidez** é inquestionável. E caramba, não é exatamente assim que a gente faz na web? Incrível!
+
+A maior parte da mágica está no [código de paginação](https://github.com/danguilherme/spotivy/blob/v0.4.2/spotify.js#L75-L76) da busca no Spotify mesmo.
 
 ---
