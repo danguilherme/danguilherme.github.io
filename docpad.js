@@ -264,33 +264,30 @@ docpadConfig.templateData.blog = {
 };
 
 function getPostsCollection(docpad, languages) {
-  let isDevelopment = docpad.getEnvironments().includes('development');
-  let langMap = {
+  const isDevelopment = false;
+  const langMap = {
     en: 'en\\blog',
     'pt-br': 'blog'
   };
-  let paths = (languages || []).map(l => langMap[l]);
+  const paths = (languages || []).map(l => langMap[l]);
+  const findPost = {
+    relativeOutDirPath: { $in: paths },
+    basename: { $ne: "index" }
+  };
 
-  let collection = docpad
+  if (!isDevelopment) {
+    findPost.isDraft = { $ne: true };
+  }
+
+  return docpad
     .getCollection("html")
-    .findAllLive({
-      relativeOutDirPath: { $in: paths },
-      basename: { $ne: "index" }
-    }, [{ date: -1 }])
+    .findAllLive(findPost, [{ date: -1 }])
     .on("add", function (model) {
       return model.setMetaDefaults({
         htmlmin: true,
         layout: "blog-post"
       });
     });
-
-  if (!isDevelopment) {
-    collection.findAllLive({
-      isDraft: { $ne: true }
-    });
-  }
-
-  return collection;
 }
 
 function replaceVariable(text, variable, value) {

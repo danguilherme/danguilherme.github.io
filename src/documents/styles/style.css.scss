@@ -209,7 +209,7 @@ h6 {
     border: 1px solid $theme-color;
     border-radius: 5px;
     overflow: hidden;
-    transition: background-color .2s linear;
+    transition: background-color .2s linear, border-color .2s linear;
     &:hover,
     &:focus {
       background-color: $theme-color;

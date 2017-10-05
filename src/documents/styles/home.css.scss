@@ -76,12 +76,12 @@ body.page-home {
     }
     &.separator.right::before {
       right: 0;
-      transform: rotate(3deg);
+      transform: rotate(2deg);
       transform-origin: top right;
     }
     &.separator.left::before {
       left: 0;
-      transform: rotate(-3deg);
+      transform: rotate(-2deg);
       transform-origin: top left;
     }
     &.separator-after.left,
@@ -97,13 +97,13 @@ body.page-home {
     }
     &.separator-after.right::after {
       left: 0;
-      transform: rotate(3deg);
+      transform: rotate(2deg);
       transform-origin: top left;
       z-index: 1;
     }
     &.separator-after.left::after {
       right: 0;
-      transform: rotate(-3deg);
+      transform: rotate(-2deg);
       transform-origin: top right;
       z-index: 1;
     }
@@ -295,7 +295,7 @@ body.page-home {
     .section-title {
       position: absolute;
       top: 1rem;
-      transform: rotate(3deg);
+      transform: rotate(2deg);
       font-weight: 200;
       letter-spacing: .5rem;
       text-transform: uppercase;
@@ -309,7 +309,7 @@ body.page-home {
       align-items: center;
       position: relative;
       left: 50%;
-      transform: rotate(-3deg) translate(-50%, -$vertical-spacing / 2);
+      transform: rotate(-2deg) translate(-50%, -$vertical-spacing / 2);
       max-width: $now-playing-card-max-size;
       margin: $vertical-spacing auto;
       padding: $padding-spacing;

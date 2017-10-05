@@ -150,9 +150,12 @@ $columns-max-width: $main-col-width+$aside-col-width;
           justify-content: flex-start;
           .post-brief {
             margin: 0;
-            border: none;
+            border: 1px solid $text-color;
             border-radius: 0;
             max-width: 200px;
+            &:hover {
+              border-color: $theme-color;
+            }
           }
         }
       }

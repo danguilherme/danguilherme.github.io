@@ -201,7 +201,7 @@ Com streams, podemos fazer o download dos vídeos sob demanda, assim que uma pá
 
 Apesar do **tempo de download ser o mesmo** no final de tudo, a **sensação de fluidez** é inquestionável. E é exatamente o que a gente faz na maioria das melhoras de performance para o usuário. Se o usuário pensa que está rápido, então está rápido.
 
-Usei a biblioteca de streams [Highland](https://github.com/caolan/highland), usada pelo Mattias em seu vídeo, para facilitar o desenvolvimento6461.
+Usei a biblioteca de streams [Highland](https://github.com/caolan/highland), usada pelo Mattias em seu vídeo, para facilitar o desenvolvimento.
 A maior parte da mágica está no [código de paginação](https://github.com/danguilherme/spotivy/blob/v0.4.2/spotify.js#L75-L76) da busca no Spotify mesmo.
 
 ## Interface de Linha de Comando

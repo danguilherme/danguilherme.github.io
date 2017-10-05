@@ -132,16 +132,16 @@ styles: ['/styles/home.css']
     <h2 class="section-title"><%- @_ 'index.portfolio.title' %></h2>
     <ul class="portfolio-links floated-content floated-content-right">
       <li class="portfolio-link">
+        <a href="https://github.com/danguilherme/spotivy" target="_blank" title="Spotify music videos downloader"
+        data-ga-category="project">Spotivy</a>
+      </li>
+      <li class="portfolio-link">
         <a href="http://cartagrafia.surge.sh/" target="_blank" title="Descubra sobre os países jogando"
         data-ga-category="project">Cartagrafia</a>
       </li>
       <li class="portfolio-link">
         <a href="https://github.com/danguilherme/uno" target="_blank" title="Uno game logic implemented in JavaScript"
         data-ga-category="project">Uno Online</a>
-      </li>
-      <li class="portfolio-link">
-        <a href="https://github.com/danguilherme/spotivy" target="_blank" title="Spotify music videos downloader"
-        data-ga-category="project">Spotivy</a>
       </li>
       <li class="portfolio-link">
         <a href="https://github.com/danguilherme/docpad-plugin-polyglot" target="_blank" title="DocPad plugin for multilingual websites"
