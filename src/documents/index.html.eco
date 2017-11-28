@@ -16,7 +16,8 @@ styles: ['/styles/home.css']
   <section class="section landing">
     <aside class="translate">
       <% otherLang = if @document.lang == 'pt-br' then 'en' else 'pt-br' %>
-      <a href="<%= @toLang(otherLang) || '/' %>"
+      <a rel="alternate"
+        href="<%= @toLang(otherLang) || '/' %>"
         hreflang="<%= otherLang %>"
         data-ga-category="landing"
         data-ga-action="see-translation"

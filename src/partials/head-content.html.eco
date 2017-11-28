@@ -13,4 +13,8 @@
 <link rel="shortcut icon" href="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=16" />
 <link rel="alternate" type="application/rss+xml" title="<%= @site.title %> - RSS" href="/rss.xml" />
 
+<% for lang in Object.keys(@otherLangs()): %>
+  <link rel="alternate" hreflang="<%= lang %>" href="<%= @toLang(lang) or '/' %>">
+<% end %>
+
 <%- @partial('google-analytics') %>

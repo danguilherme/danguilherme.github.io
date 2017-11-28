@@ -15,18 +15,22 @@
       <nav class="header-languages">
         <ul>
           <li>
-            <a href="<%= @toLang('pt-br') or '/' %>"
-                title="<%= @_ 'header.languages.read_in_pt-br' %>"
-                class="<%= if @document.lang == 'pt-br' then 'active' %>"
-                data-ga-category="languages-menu"
-                data-ga-label="pt-br">pt-br</a>
+            <a <%- if @toLang('pt-br') and @document.lang != 'pt-br' then 'rel="alternate"' %>
+              href="<%= @toLang('pt-br') or '/' %>"
+              hreflang="pt-br"
+              title="<%= @_ 'header.languages.read_in_pt-br' %>"
+              class="<%= if @document.lang == 'pt-br' then 'active' %>"
+              data-ga-category="languages-menu"
+              data-ga-label="pt-br">pt-br</a>
           </li>
           <li>
-            <a href="<%= @toLang('en') or '/en/' %>"
-                title="<%= @_ 'header.languages.read_in_en' %>"
-                class="<%= if @document.lang == 'en' then 'active' %>"
-                data-ga-category="languages-menu"
-                data-ga-label="en">en</a>
+            <a <%- if @toLang('en') and @document.lang != 'en' then 'rel="alternate"' %>
+              href="<%= @toLang('en') or '/en/' %>"
+              hreflang="en"
+              title="<%= @_ 'header.languages.read_in_en' %>"
+              class="<%= if @document.lang == 'en' then 'active' %>"
+              data-ga-category="languages-menu"
+              data-ga-label="en">en</a>
           </li>
         </ul>
       </nav>

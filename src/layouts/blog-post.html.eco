@@ -61,7 +61,10 @@ layout: "base"
       <section class="body">
         <% otherLang = if @document.lang == 'pt-br' then 'en' else 'pt-br' %>
         <% if @hasLang(otherLang): %>
-          <a href="<%= @toLang(otherLang) %>" hreflang="<%= otherLang %>" data-ga-label="read-in-other-lang"><%- @_ 'blog_post.read_in_other_lang' %></a>
+          <a rel="alternate"
+            href="<%= @toLang(otherLang) %>"
+            hreflang="<%= otherLang %>"
+            data-ga-label="read-in-other-lang"><%- @_ 'blog_post.read_in_other_lang' %></a>
           <hr>
         <% end %>
 

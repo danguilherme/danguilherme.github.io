@@ -1,0 +1,214 @@
+---
+title:    Apresentando: Spotivy
+tagline:  Utilitário para baixar músicas de playlists do Spotify em lote
+tags:     open-source tools spotify music
+date:     2017-10-04T20:40:00+00:00
+isDraft:  true
+---
+
+Há um tempo atrás eu comprei um carro. Na negociação, fiquei com o aparelho de som. O aparelho tinha DVD embutido, então eu pensei: "pra que ouvir músicas se eu posso ouvir **e** ver?".
+
+Lembrando que era um aparelho de som *em um carro*.
+
+Uso o Spotify para ouvir minhas músicas, e por isso criei várias playlists lá. Procurando maneiras de baixar as músicas do serviço de maneira fácil, encontrei uma extensão aqui, um utilitário ali, mas nenhum deles fazia o trabalho completo. Ou encontravam arquivos zoados, ou era muito manual. Como eu queria algo para fazer o download **em lote** (todas as músicas de todas as playlists de uma vez), não encontrei nada que suprisse minhas necessidades. Então decidi construir o meu próprio script.
+
+# Introdução
+
+O [Spotivy](https://github.com/danguilherme/spotivy) é um programa de linha de comando escrito em JavaScript (Node.js).
+Por isso, para usá-lo você deve ter o [Node instalado](https://nodejs.org/en/download/) (qualquer versão acima da v6 está ótima).
+
+Com tudo certo, é só instalar o programa globalmente:
+```bash
+npm install --global spotivy
+```
+
+Após a instalação, você já pode verificar os comandos disponíveis pela ajuda do programa:
+```bash
+spotivy help
+```
+
+São basicamente dois comandos, um para [baixar uma música específica](#baixar-musica) e um para [baixar toda uma playlist](#baixar-playlist).
+Mas antes de conseguir baixar, precisamos configurar o programa com as chaves para usar as APIs do Spotify e YouTube.
+
+## Configuração
+1. Crie uma aplicação no [portal de desenvolvedores do Spotify](https://developer.spotify.com/my-applications/).
+  - Será fornecido um *client ID* e um *client secret*. Guarde-os.
+1. Crie uma **chave de API** para o YouTube (**YouTube Data API v3**) no [console de desenvolvedores do Google](https://console.developers.google.com).
+
+Agora você tem duas opções. Passar essas credencias toda vez que for utilizar o programa:
+```bash
+spotivy user danguilherme --spotify-client-id=clientid --spotify-client-secret=clientsecret --youtube-key=key
+```
+
+Ou, o que eu recomendo, salvar um arquivo de confiuração na raiz da onde você está executando o programa com essas chaves.
+Copie o código do arquivo de configuração a seguir e salve como `config.json`:
+```json
+{
+    "youtube": {
+        "key": ""
+    },
+    "spotify": {
+        "clientId": "",
+        "clientSecret": ""
+    }
+}
+```
+Aí é só colocar as credenciais em seus respectivos lugares e sucesso.
+
+
+## Baixar Música
+
+Para baixar uma única música do Spotify, é só passar o **id da música** para o comando `track`:
+```bash
+spotivy track <track_id>
+```
+
+Vamos dizer que queremos baixar [The Trick The Devil Did](https://open.spotify.com/track/1SnIhFaGRO3RXy6tErg2aU), de Sick Puppies.
+Precisamos seguir os seguintes passos:
+1. No Spotify, pego o link da música: <code>open.spotify.com/track/<strong>1SnIhFaGRO3RXy6tErg2aU</strong></code> (é só ir em `Compartilhar > Copiar Link da Música`)
+1. Desse link conseguimos o id, marcado acima
+1. Então é só fazer o download:
+    ```bash
+spotivy track 1SnIhFaGRO3RXy6tErg2aU
+    ```
+
+Isso vai baixar o video da música do YouTube - um arquivo `.mp4`.
+Se quiser salvar como áudio, é só passar a flag `--audio` para o programa que ele baixará como `.mp3`.
+
+Também é possível baixar mais de uma música de uma vez:
+```bash
+spotivy track 1SnIhFaGRO3RXy6tErg2aU 0lxnk5Fpvhr47m3MFsgFzQ 04zkiHm6WkDZ0eOx3D9oyD --audio
+```
+
+O comando acima baixará 3 músicas no formato `.mp3`.
+
+## Baixar Playlist
+
+Bom, a ideia ainda era baixar as coisas em lote, e música por música fica inviável, mesmo podendo baixar várias de uma vez.
+
+Para baixar uma playlist completa, utilizamos o comando `playlist` enviando o **id do dono da playlist** e o **id da playlist**:
+```bash
+spotivy playlist <user_id> <playlist_id>
+```
+
+Agora queremos baixar a playlist "[Pop virou Clássico](https://open.spotify.com/user/spotify/playlist/37i9dQZF1DWTsQAU8k2LN7)", do próprio Spotify.
+Os passos para baixar uma playlist são parecidos com o que fizemos para baixar uma música:
+1. Obtenha o link de compartilhamento: <code>open.spotify.com/user/<strong>spotify</strong>/playlist/<strong>37i9dQZF1DWTsQAU8k2LN7</strong></code> (`Compartilhar > Copiar Link da Playlist`)
+1. Desse link conseguimos o id tanto do usuário quanto da playlist, ambos marcados acima
+1. E então é só fazer o download:
+    ```bash
+spotivy playlist spotify 37i9dQZF1DWTsQAU8k2LN7
+    ```
+
+Esse comando vai baixar todas as músicas que existem nessa playlist.
+
+Também é possível baixar mais de uma playlist de uma vez:
+```bash
+spotivy playlist spotify 37i9dQZF1DWTsQAU8k2LN7 37i9dQZF1DXcBWIGoYBM5M 37i9dQZF1DWV1Nj8a6volf --audio
+```
+
+Esse comando vai baixar três playlists, todas as músicas em `.mp3`.
+
+Enfim, a funcionalidade mais esperada (por mim): **baixar todas as playlists públicas de um usuário**.
+Para fazer isso, é só não passar nenhum id de playlist para o comando:
+```bash
+spotivy playlist spotify # BAIXA TUDO!!1!
+```
+
+-----
+
+É isso. Se quiser usar o utilitário, isso é tudo que você precisa saber.
+Existem algumas [opções extras](https://github.com/danguilherme/spotivy#global-options), caso queira mudar a qualidade dos vídeos ou
+como eles serão salvos.
+Se tiver qualquer problema fazendo a configuração ou usando os comandos,
+pode abrir [uma issue no GitHub](https://github.com/danguilherme/spotivy/issues)
+ou [me contatar diretamente](https://twitter.com/danguilherme/).
+
+Abaixo vou passar com mais detalhes a implementação do programa e
+explanar algumas das decisões feitas, então se você é um inspecionador de elemento,
+pode se interessar.
+
+# Por Baixo dos Panos
+
+O funcionamento do programa é bem simples, já que o problema que eu queria solucionar também era relativamente simples.
+O que é necessário para baixar uma playlist é:
+
+1. Encontrar as músicas que estão contidas nessa playlist
+1. Encontrar o vídeo correspondente no YouTube - em ótima qualidade, de preferência
+1. Baixar o vídeo na resolução adequada para uma pasta no sistema
+
+De cara, não parece tão simples (ainda mais com download de arquivo envolvido).
+Se eu fosse implementar todo o código para cada etapa eu nem teria começado, mas
+que bom que vivemos em um mundo com código aberto (amém GitHub).
+
+Para buscar as músicas existentes em uma playlist, utilizei o projeto [spotify-web-api-node](https://github.com/thelinmichael/spotify-web-api-node).
+É um wrapper bem completo que expõe os endpoints da API do Spotify como simples funções, com promise e tudo. Sucesso!
+
+Para encontrar o vídeo perfeito para ser baixado, utilizo [outro wrapper](https://github.com/IonicaBizau/youtube-api) para a API do YouTube.
+
+Para baixar o vídeo, utilizo a biblioteca [node-ytdl-core](https://github.com/fent/node-ytdl-core), que me permite passar alguns parâmetros antes do download,
+como a qualidade que eu quero ou se eu quero baixar somente a faixa de áudio do arquivo.
+
+## Encontrando Vídeo de Qualidade
+
+Para encontrar o vídeo a ser baixado, é feita uma simples busca com **nome do artista** + **nome da música**.
+Nisso pode aparecer muita coisa zoada, principalmente vídeos feitos por fãs. Nada contra vídeos feitos por fãs, mas nem sempre a qualidade é a melhor.
+
+Digamos que quero buscar The Trick the Devil Did, de Sick Puppies, novamente. Esse seria o resultado da busca:
+
+<figure>
+  ![Resultados da busca no YouTube para "Sick Puppies - The Trick The Devil Did"](<%= @blog.getPostContent(@document, "busca-sick-puppies.png") %>)
+  <figcaption>Resultados da busca no YouTube para "Sick Puppies - The Trick The Devil Did"</figcaption>
+</figure>
+
+Após alguns testes, fica claro que os resultados de canais afiliados à VEVO ficam na primeira página (na maioria das vezes são o primeiro resultado, como no print).
+Por isso, [o código](https://github.com/danguilherme/spotivy/blob/v0.4.2/youtube_search.js#L76-L80) dá preferência a resultados que são de canais da VEVO ou de "vídeos oficiais".
+Chamo de "vídeos oficiais" aqueles que têm "official" no título ou no nome do canal. É preciso? Não. Mas dá pro gasto.
+
+## Utilizando Streams
+
+Há muito tempo tento entender streams mais a fundo. Que é um fluxo contínuo de dados, onde um pode ser acoplado a outro, já estava bem claro.
+
+Me interessei em usar streams em um código mais trivial após assistir [o vídeo](https://www.youtube.com/watch?v=UD2dZw9iHCc) do [@mpjme](https://twitter.com/mpjme). A ideia de fazer as coisas em pedaços, assim que os recursos estão disponíveis, fazendo tarefas menores e mais rápidas faz muito sentido.
+
+Na versão inicial do Spotivy, para fazer o download de uma playlist eram baixadas todas as suas músicas antes de começar o download.
+Isso significa que para baixar uma playlist com 120 músicas, por exemplo, a aplicação fazia o download da informação de todas as 120 músicas, página por página, para depois fazer a busca e download dos 120 vídeos. Ilustrando:
+```lsl
+> busca página 1 (20/120)
+> busca página 2 (40/120)
+> busca página 3 (60/120)
+> busca página 4 (80/120)
+> busca página 5 (100/120)
+> busca página 6 (120/120)
+> download vídeo 1
+> download vídeo 2
+> download vídeo 3
+> ...
+```
+
+Com streams, podemos fazer o download dos vídeos sob demanda, assim que uma página com informação das músicas forem baixadas, e mantendo a sanidade do código. Ilustrando:
+```lsl
+> busca página 1 (20/120)
+> download vídeo 1
+> download vídeo 2
+> ...
+> download vídeo 19
+> download vídeo 20
+> busca página 2 (40/120)
+> download vídeo 21
+> download vídeo 22
+> ...
+```
+
+Apesar do **tempo de download ser o mesmo** no final de tudo, a **sensação de fluidez** é inquestionável. E é exatamente o que a gente faz na maioria das melhoras de performance para o usuário. Se o usuário pensa que está rápido, então está rápido.
+
+Usei a biblioteca de streams [Highland](https://github.com/caolan/highland), usada pelo Mattias em seu vídeo, para facilitar o desenvolvimento.
+A maior parte da mágica está no [código de paginação](https://github.com/danguilherme/spotivy/blob/v0.4.2/spotify.js#L75-L76) da busca no Spotify mesmo.
+
+## Interface de Linha de Comando
+
+Para fechar as dependências, usei o [Caporal](https://github.com/mattallty/Caporal.js) para auxiliar no recebimento dos comandos, argumentos e opções do programa no terminal. Bem simples de usar.
+
+---
+
+E foi assim que o Spotivy foi concebido. Esse é meu primeiro projeto open-source que considero realmente finalizado - totalmente funcional e documentado. Espero que não demore tanto para o próximo sair.
