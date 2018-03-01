@@ -39,21 +39,11 @@ Agora você tem duas opções. Passar essas credencias toda vez que for utilizar
 spotivy user danguilherme --spotify-client-id=clientid --spotify-client-secret=clientsecret --youtube-key=key
 ```
 
-Ou, o que eu recomendo, salvar um arquivo de confiuração na raiz da onde você está executando o programa com essas chaves.
-Copie o código do arquivo de configuração a seguir e salve como `config.json`:
-```json
-{
-    "youtube": {
-        "key": ""
-    },
-    "spotify": {
-        "clientId": "",
-        "clientSecret": ""
-    }
-}
+Ou, o que eu recomendo, utilizar o utilitário para criar um arquivo de configuração,
+assim você só precisa lembrar delas uma vez:
+```bash
+spotivy init
 ```
-Aí é só colocar as credenciais em seus respectivos lugares e sucesso.
-
 
 ## Baixar Música
 
