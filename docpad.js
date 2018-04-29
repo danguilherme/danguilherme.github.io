@@ -1,7 +1,10 @@
-var fs = require('fs');
-var moment = require('moment');
-var pkg = require('./package.json');
-var author = {
+const fs = require('fs');
+const moment = require('moment');
+const pkg = require('./package.json');
+
+const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+
+const author = {
   name: "Guilherme Ventura",
   email: "guilhermeventura2@gmail.com",
   facebookId: 100002397085708,
@@ -21,7 +24,7 @@ var author = {
 
 const translationsMap = {};
 
-var docpadConfig = {
+const docpadConfig = {
   collections: {
     pages: function () {
       return this
@@ -264,7 +267,7 @@ docpadConfig.templateData.blog = {
 };
 
 function getPostsCollection(docpad, languages) {
-  const isDevelopment = false;
+  const isDevelopment = IS_DEVELOPMENT;
   const langMap = {
     en: 'en\\blog',
     'pt-br': 'blog'

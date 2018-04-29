@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Guilherme Ventura's personal website",
   "dependencies": {
-    "bower": "^1.8.0",
+    "bower": "^1.8.4",
     "docpad": "~6.79.4",
     "docpad-plugin-babel": "~2.2.1",
     "docpad-plugin-cleanurls": "~2.8.1",
@@ -28,9 +28,11 @@
   "main": "node_modules/.bin/docpad-server",
   "scripts": {
     "prestart": "npm install && bower install",
-    "start": "node_modules/.bin/docpad-server",
-    "watch": "node_modules/.bin/docpad.cmd run",
-    "publish": "docpad.cmd deploy-ghpages --env static"
+    "start": "cross-env NODE_ENV=development docpad-server",
+    "watch": "cross-env NODE_ENV=development node_modules/.bin/docpad run",
+    "publish": "cross-env NODE_ENV=production node_modules/.bin/docpad deploy-ghpages --env static"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cross-env": "^5.1.4"
+  }
 }
