@@ -1,7 +1,7 @@
 ---
 title:    Afinal, o que é o Polymer?
 tagline:  Respondendo de uma vez por todas o que realmente é a biblioteca da Google (e principalmente: o que ela não é)
-tags:     web-components polymer google custom-elements
+tags:     web-components javascript polymer custom-elements
 date:     2015-06-30T21:04:00+00:00
 ---
 
