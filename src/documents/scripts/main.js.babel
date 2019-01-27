@@ -76,6 +76,7 @@ onDocumentReady(function () {
     let albumName = song.album['#text'];
     let artistName = song.artist.name;
 
+    let coverBg = nowPlayingEl.querySelector('.song-cover-bg');
     let imgEl = nowPlayingEl.querySelector('.song-cover');
     let titleEl = nowPlayingEl.querySelector('.song-title');
     let artistAndAlbumEl = nowPlayingEl.querySelector('.song-artist-and-album');
@@ -83,6 +84,7 @@ onDocumentReady(function () {
     let albumEl = nowPlayingEl.querySelector('.song-album');
     let anchorEl = nowPlayingEl.querySelector('.song-url');
 
+    if (coverBg) { coverBg.style.backgroundImage = 'url(' + songImageSrc + ')'; }
     if (imgEl) { imgEl.src = songImageSrc; }
     if (titleEl) titleEl.textContent = songName;
     if (artistAndAlbumEl) artistAndAlbumEl.textContent = `${artistName} - ${albumName}`;

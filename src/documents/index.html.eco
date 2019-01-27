@@ -96,6 +96,7 @@ styles: ['/styles/home.css']
   </section>
 
   <section class="section now-playing text-left">
+    <div class="song-cover-bg"></div>
     <h2 class="section-title"><%- @_ 'index.now_playing.title' %></h2>
     <div class="section-text"><%- @_ 'index.now_playing.text' %></div>
     <a class="now-playing-track song-url" href="#" target="_blank"

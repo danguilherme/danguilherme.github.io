@@ -301,6 +301,22 @@ body.page-home {
       text-transform: uppercase;
       cursor: default;
       animation: fade-in-out 2s infinite;
+      background: rgba(0,0,0,.7);
+      padding-left: 0.2em;
+    }
+    .song-cover-bg {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(5px);
+      background-position: center;
     }
     .now-playing-track {
       $vertical-spacing: 2rem;
