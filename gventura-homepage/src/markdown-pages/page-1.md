@@ -1,0 +1,47 @@
+---
+slug: "/about-me"
+date: "2020-05-04"
+identifier: "sobre"
+title: "Who Am I?"
+layout: "page"
+
+menuTitle: "About Me"
+menuOrder: 2
+
+styles: ['/styles/about.css']
+---
+
+<h2><%- @document.title %></h2>
+
+<p class="avatar">
+  <img src="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=250" alt="Uma foto minha" width="250" height="250">
+</p>
+
+<blockquote class="now-playing">
+  While you are getting to know me, what about some music?
+  I'm hearing
+  <a class="song-url" href="#" target="_blank"><span class="song-title"></span> from <span class="song-artist"></span></a>
+  right now.
+</blockquote>
+
+My name is Guilherme Ventura, I am 25 years old, 7 of which working with programming. I am graduated in Computer Science, working for [Matterway][2], solving problems with JavaScript.
+
+I also have some experience with C#, SQL/T-SQL and Java (focused on Android). I am always studying other languages and frameworks, like Ruby and Ruby on Rails.
+
+<h3>Blog</h3>
+
+My idea with the blog is to share my day to day experiences, and to exercise my writing skills. I am always active on [Twitter][1], sharing stuff that are of my interest. Sometimes may appear posts by myself, take a look!
+
+<h3>A Little Story About Me</h3>
+
+My entrance into the development career was kind of accidental. I was always the "computer boy", always fascinated by these incredible machines, but I had no idea about the programming world. The closes I've come to a script was in RPG Maker, with [<abbr title="Ruby Game Scripting System">RGSS</abbr>][3]. Besides that, I've gone to far from Paint.
+
+I started working when I was 16, as an office boy (actually, an under age apprentice) in a manufacturing company. In one of my wanderings through the company, I met the development section, responsible of developing and maintaining part of the production controlling software. That was when I discovered we can **program computers!** 😮
+
+Since that day, still in high school, I started studying Java by my own. In the comings and goings from work, I talked to the development guys with some doubts and progresses, until the day I was hired as an intern in the .Net team.
+
+And that's how my development career started, in February 2012, and since then I have this as a profession and hobby.
+
+[1]: https://twitter.com/danguilherme "@danguilherme"
+[2]: https://matterway.io/
+[3]: https://en.wikipedia.org/wiki/RGSS
