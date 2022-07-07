@@ -23,7 +23,7 @@
     "docpad-plugin-stylus": "~2.13.0",
     "docpad-plugin-thumbnails": "~2.1.2",
     "hover.css": "^2.2.0",
-    "moment": "^2.10.3"
+    "moment": "^2.29.4"
   },
   "main": "node_modules/.bin/docpad-server",
   "scripts": {
