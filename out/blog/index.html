@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <script id="document-metadata">
+  window.documentMetadata = {
+    title: 'Blog',
+    preparedTitle: 'Blog | Guilherme Ventura',
+    lang: 'pt-br'
+  };
+</script>
+
+  <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2196F3">
+
+<meta name="description" content="Blog do Guilherme">
+
+<!-- SEO -->
+
+
+
+
+
+
+
+
+  <meta name="author" content="Guilherme Ventura">
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Guilherme Ventura">
+<meta property="og:title" content="Blog | Guilherme Ventura" />
+<meta property="og:url" content="https://danguilherme.github.io/blog/" />
+<meta property="og:locale" content="pt_BR">
+
+
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=350" />
+
+
+<!-- Facebook -->
+<meta property="fb:profile_id" content="100002397085708" />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="Blog | Guilherme Ventura">
+<meta name="twitter:description" content="Blog do Guilherme">
+<meta name="twitter:site" content="@danguilherme">
+<meta name="twitter:creator" content="@danguilherme">
+<meta name="twitter:url" content="https://danguilherme.github.io/blog/">
+
+<meta name="generator" content="DocPad v6.79.4" />
+
+<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/style.css" /><link  rel="stylesheet" href="/styles/print.css" /><link  rel="stylesheet" href="/styles/highlight.js/zenburn.css" /><link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700|Open+Sans:300,400,700|Raleway:200,400,700|Dosis:300,700" /><link  rel="stylesheet" href="/styles/blog.css" />
+
+<link rel="shortcut icon" href="https://www.gravatar.com/avatar/4c63581802d04203e3f0ab00c72a2410?s=16" />
+<link rel="alternate" type="application/rss+xml" title="Guilherme Ventura - RSS" href="/rss.xml" />
+
+
+  <link rel="alternate" hreflang="en" href="/en/blog/">
+
+
+<!-- Google Analytics (async load) -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-59821168-1', 'auto');
+// ga('set', 'language', window.documentMetadata.lang);
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+  <title>Blog | Guilherme Ventura</title>
+  <script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/docpad-livereload/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script defer="defer"  src="/scripts/danguilherme.js"></script><script defer="defer"  src="/scripts/triple-click.js"></script><script defer="defer"  src="/scripts/main.js"></script><script defer="defer"  src="/scripts/google-analytics.js"></script>
+</head>
+
+<body id="page" class="page-blog">
+  <header id="site-header" class="site-header">
+  <div class="header-content">
+    <div class="title-and-menu">
+      <h1 class="site-title">
+        <a href="/"
+          data-ga-label="home">Guilherme Ventura</a>
+      </h1>
+  
+      <nav class="header-menu">
+        <!-- Define `renderMenu` partial -->
+
+<!-- Run `renderMenu` partial against passed `menuItems` meta-data  -->
+
+<ul>
+  
+    <!-- show only documents with the same language -->
+    
+    
+    
+
+    
+    <!-- Highlight menu item if its `item.state` is not false -->
+    <li class="selected">
+      <!-- Remove link if we’re currently viewing this document -->
+      
+        <strong>Blog</strong>
+      
+      <!-- Render submenu if item has children -->
+      
+    </li>
+  
+    <!-- show only documents with the same language -->
+    
+    
+    
+
+    
+    <!-- Highlight menu item if its `item.state` is not false -->
+    <li>
+      <!-- Remove link if we’re currently viewing this document -->
+      
+        <a href="/en/blog/"
+          data-ga-category="left-menu"
+          data-ga-label="Blog">Blog</a>
+      
+      <!-- Render submenu if item has children -->
+      
+    </li>
+  
+    <!-- show only documents with the same language -->
+    
+    
+    
+
+    
+    <!-- Highlight menu item if its `item.state` is not false -->
+    <li>
+      <!-- Remove link if we’re currently viewing this document -->
+      
+        <a href="/sobre/"
+          data-ga-category="left-menu"
+          data-ga-label="Sobre Mim">Sobre Mim</a>
+      
+      <!-- Render submenu if item has children -->
+      
+    </li>
+  
+    <!-- show only documents with the same language -->
+    
+    
+    
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="languages-and-links">
+      <nav class="header-languages">
+        <ul>
+          <li>
+            <a 
+              href="/blog/"
+              hreflang="pt-br"
+              title="Ver versão em português"
+              class="active"
+              data-ga-category="languages-menu"
+              data-ga-label="pt-br">pt-br</a>
+          </li>
+          <li>
+            <a rel="alternate"
+              href="/en/blog/"
+              hreflang="en"
+              title="Go to English version"
+              class=""
+              data-ga-category="languages-menu"
+              data-ga-label="en">en</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="header-external-links">
+        <ul>
+          <li>
+            <a href="https://github.com/danguilherme"
+                title="danguilherme"
+                data-ga-category="right-menu"
+                data-ga-label="github">GitHub</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/danguilherme"
+                title="@danguilherme"
+                data-ga-category="right-menu"
+                data-ga-label="twitter">Twitter</a>
+          </li>
+          <li>
+            <a href="/rss.xml"
+              data-ga-category="right-menu"
+              data-ga-label="feed">Feed</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+  <main id="blog">
+    <article>
+  <header class="blog-header">
+    <h2>Postagens</h2>
+    
+    <p>Aqui é onde exponho meus pensamentos.<br>Bom, os pensamentos organizados.</p>
+  </header>
+  
+  
+  
+    <ul class="posts-list">
+  
+    
+    <li class="post-brief " lang="pt-br">
+      <a href="/blog/spotivy/"
+        class="post-link"
+        hreflang="pt-br"
+        data-ga-category="blog"
+        data-ga-action="blog-post-click"
+        data-ga-label="Apresentando: Spotivy">
+        <article class="post">
+          <header>
+            
+            
+              <img src="/blog/spotivy/cover.thumb_zoomcrop_w768h384q85.png"
+                class="post-cover"
+                alt="Capa de 'Apresentando: Spotivy'">
+            
+            <div class="post-info">
+              <span class="post-lang">pt-br</span>
+              <time class="post-time" datetime="2017-10-04T20:40:00.000Z">4 de out de 2017</time>
+              <h3 class="post-title">Apresentando: Spotivy</h3>
+            </div>
+          </header>
+          <p class="post-tagline">
+            <span>Utilitário para baixar músicas de playlists do Spotify em lote</span>
+          </p>
+          <footer>
+            <span class="see-post">Ver post →</span>
+          </footer>
+        </article>
+      </a
+    </li>
+  
+    
+    <li class="post-brief " lang="pt-br">
+      <a href="/blog/vanhackathon-2017/"
+        class="post-link"
+        hreflang="pt-br"
+        data-ga-category="blog"
+        data-ga-action="blog-post-click"
+        data-ga-label="VanHackathon 2017 - O Hackathon Sem Fronteiras">
+        <article class="post">
+          <header>
+            
+            
+              <img src="/blog/vanhackathon-2017/cover.thumb_zoomcrop_w768h384q85.png"
+                class="post-cover"
+                alt="Capa de 'VanHackathon 2017 - O Hackathon Sem Fronteiras'">
+            
+            <div class="post-info">
+              <span class="post-lang">pt-br</span>
+              <time class="post-time" datetime="2017-04-11T15:00:00.000Z">11 de abr de 2017</time>
+              <h3 class="post-title">VanHackathon 2017 - O Hackathon Sem Fronteiras</h3>
+            </div>
+          </header>
+          <p class="post-tagline">
+            <span>Como foi participar de um hackathon 100% remoto</span>
+          </p>
+          <footer>
+            <span class="see-post">Ver post →</span>
+          </footer>
+        </article>
+      </a
+    </li>
+  
+    
+    <li class="post-brief " lang="pt-br">
+      <a href="/blog/introducao-ao-termux/"
+        class="post-link"
+        hreflang="pt-br"
+        data-ga-category="blog"
+        data-ga-action="blog-post-click"
+        data-ga-label="Introdução ao Termux">
+        <article class="post">
+          <header>
+            
+            
+              <img src="/blog/introducao-ao-termux/cover.thumb_zoomcrop_w768h384q85.png"
+                class="post-cover"
+                alt="Capa de 'Introdução ao Termux'">
+            
+            <div class="post-info">
+              <span class="post-lang">pt-br</span>
+              <time class="post-time" datetime="2016-12-14T19:00:00.000Z">14 de dez de 2016</time>
+              <h3 class="post-title">Introdução ao Termux</h3>
+            </div>
+          </header>
+          <p class="post-tagline">
+            <span>Um terminal completo na tela do seu Android</span>
+          </p>
+          <footer>
+            <span class="see-post">Ver post →</span>
+          </footer>
+        </article>
+      </a
+    </li>
+  
+    
+    <li class="post-brief draft" lang="pt-br">
+      <a href="/blog/pagina-de-exemplo/"
+        class="post-link"
+        hreflang="pt-br"
+        data-ga-category="blog"
+        data-ga-action="blog-post-click"
+        data-ga-label="Página de exemplo">
+        <article class="post">
+          <header>
+            
+            
+              <img src="http://dummyimage.com/768x384/292929/e3e3e3&amp;text=Página de exemplo"
+                class="post-cover"
+                alt="Capa de 'Página de exemplo'">
+            
+            <div class="post-info">
+              <span class="post-lang">pt-br</span>
+              <time class="post-time" datetime="2016-12-14T19:00:00.000Z">14 de dez de 2016</time>
+              <h3 class="post-title">Página de exemplo</h3>
+            </div>
+          </header>
+          <p class="post-tagline">
+            <span>Esse é um artigo poliglota</span>
+          </p>
+          <footer>
+            <span class="see-post">Ver post →</span>
+          </footer>
+        </article>
+      </a
+    </li>
+  
+    
+    <li class="post-brief " lang="pt-br">
+      <a href="/blog/primeiro-hackathon-campinas/"
+        class="post-link"
+        hreflang="pt-br"
+        data-ga-category="blog"
+        data-ga-action="blog-post-click"
+        data-ga-label="1º Hackathon de Campinas: Eu Fui!">
+        <article class="post">
+          <header>
+            
+            
+              <img src="/blog/primeiro-hackathon-campinas/cover.thumb_zoomcrop_w768h384q85.png"
+                class="post-cover"
+                alt="Capa de '1º Hackathon de Campinas: Eu Fui!'">
+            
+            <div class="post-info">
+              <span class="post-lang">pt-br</span>
+              <time class="post-time" datetime="2016-03-10T02:50:00.000Z">10 de mar de 2016</time>
+              <h3 class="post-title">1º Hackathon de Campinas: Eu Fui!</h3>
+            </div>
+          </header>
+          <p class="post-tagline">
+            <span>Soluções inteligentes para a população em 24 horas de código</span>
+          </p>
+          <footer>
+            <span class="see-post">Ver post →</span>
+          </footer>
+        </article>
+      </a
+    </li>
+  
+    
+    <li class="post-brief " lang="pt-br">
+      <a href="/blog/chrome-novo-ie/"
+        class="post-link"
+        hreflang="pt-br"
+        data-ga-category="blog"
+        data-ga-action="blog-post-click"
+        data-ga-label="Chrome é Mesmo o Novo IE?">
+        <article class="post">
+          <header>
+            
+            
+              <img src="/blog/chrome-novo-ie/cover.thumb_zoomcrop_w768h384q85.png"
+                class="post-cover"
+                alt="Capa de 'Chrome é Mesmo o Novo IE?'">
+            
+            <div class="post-info">
+              <span class="post-lang">pt-br</span>
+              <time class="post-time" datetime="2016-02-22T02:20:00.000Z">22 de fev de 2016</time>
+              <h3 class="post-title">Chrome é Mesmo o Novo IE?</h3>
+            </div>
+          </header>
+          <p class="post-tagline">
+            <span>Ou estão falhando em entregar soluções cross-browser?</span>
+          </p>
+          <footer>
+            <span class="see-post">Ver post →</span>
+          </footer>
+        </article>
+      </a
+    </li>
+  
+    
+    <li class="post-brief " lang="pt-br">
+      <a href="/blog/o-que-realmente-e-o-google-polymer/"
+        class="post-link"
+        hreflang="pt-br"
+        data-ga-category="blog"
+        data-ga-action="blog-post-click"
+        data-ga-label="Afinal, o que é o Polymer?">
+        <article class="post">
+          <header>
+            
+            
+              <img src="/blog/o-que-realmente-e-o-google-polymer/cover.thumb_zoomcrop_w768h384q85.png"
+                class="post-cover"
+                alt="Capa de 'Afinal, o que é o Polymer?'">
+            
+            <div class="post-info">
+              <span class="post-lang">pt-br</span>
+              <time class="post-time" datetime="2015-06-30T21:04:00.000Z">30 de jun de 2015</time>
+              <h3 class="post-title">Afinal, o que é o Polymer?</h3>
+            </div>
+          </header>
+          <p class="post-tagline">
+            <span>Respondendo de uma vez por todas o que realmente é a biblioteca da Google (e principalmente: o que ela não é)</span>
+          </p>
+          <footer>
+            <span class="see-post">Ver post →</span>
+          </footer>
+        </article>
+      </a
+    </li>
+  
+</ul>
+
+  
+</article>
+  </main>
+
+  <footer class="site-footer">
+  <ul class="reference-balloons">
+    <li class="balloon">
+      <a href="https://twitter.com/danguilherme"
+        target="_blank"
+        title="Twitter"
+        data-ga-category="footer"
+        data-ga-action="social-link-click"
+        data-ga-label="twitter"><svg class="icon icon-twitter"><use xlink:href="/styles/iconset/symbol-defs.svg#icon-twitter"></use></svg></a>
+    </li>
+    <li class="balloon">
+      <a href="https://github.com/danguilherme"
+        target="_blank"
+        title="GitHub"
+        data-ga-category="footer"
+        data-ga-action="social-link-click"
+        data-ga-label="github"><svg class="icon icon-github"><use xlink:href="/styles/iconset/symbol-defs.svg#icon-github"></use></svg></a>
+    </li>
+    <li class="balloon">
+      <a href='https://linkedin.com/in/danguilherme/pt-br'
+        target="_blank"
+        title="LinkedIn"
+        data-ga-category="footer"
+        data-ga-action="social-link-click"
+        data-ga-label="linkedin"><svg class="icon icon-linkedin"><use xlink:href="/styles/iconset/symbol-defs.svg#icon-linkedin"></use></svg></a>
+    </li>
+  </ul>
+
+
+  <div class="footer-content">
+    <p>
+      Feito com <span class="love"><span class="sr-only">amor</span></span> por <a href="https://twitter.com/danguilherme" target="_blank" title="Guilherme Ventura" data-ga-category="footer" data-ga-label="twitter">@danguilherme</a>.
+    </p>
+    <p>
+      Site criado com <a href="https://docpad.org/" target="_blank" data-ga-category="footer" data-ga-label="docpad">DocPad</a>, um gerador de sites estáticos.
+      Descubra mais no <a href="https://github.com/danguilherme/danguilherme.github.io/tree/source" target="_blank" data-ga-category="footer" data-ga-label="github">repositório do GitHub</a>.
+    </p>
+  </div>
+
+  <div class="now-playing" data-image-size="medium">
+    <a class="content song-url" href="#" target="_blank"
+      data-ga-category="footer"
+      data-ga-label="now-playing">
+      <div class="cover-and-play">
+        <img class="song-cover" alt="Album cover">
+        <span class="play"></span>
+      </div>
+      <div class="song">
+        <p class="title">Ouvindo agora</p>
+        <div class="song-info">
+          <p class="song-title"></p>
+          <p class="song-artist-and-album"></p>
+        </div>
+      </div>
+    </a>
+  </div>
+</footer>
+
+
+  <script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/docpad-livereload/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+</body>
+</html>
