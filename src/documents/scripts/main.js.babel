@@ -1,8 +1,8 @@
 // common scripts for the whole website
 onDocumentReady(function () {
   const API_BASE_URL = 'https://ws.audioscrobbler.com/2.0/';
-  const API_KEY = '45bc6fe55bc18ce58d46c40e6b64f7db';
-  const USER_NAME = 'danguilherme';
+  const API_KEY = 'f331efc08f3167d453f8545f3e58a763';
+  const USER_NAME = 'Danguilherme';
   const NOW_PLAYING_RETRIEVAL_INTERVAL = 1; // in minutes
 
   function init() {
@@ -12,47 +12,56 @@ onDocumentReady(function () {
   }
 
   // experimenting...
-  let fetchScrobblingTrack = _ => {
-    return fetch(`${API_BASE_URL}?method=user.getrecenttracks&user=${USER_NAME}&api_key=${API_KEY}&format=json&limit=1&extended=1`)
-      .then(r => r.json())
-      .then(j => j.recenttracks.track.filter(i => i['@attr'] && i['@attr'].nowplaying)[0])
-      .then(song => {
+  let fetchScrobblingTrack = (_) => {
+    return fetch(
+      `${API_BASE_URL}?method=user.getrecenttracks&user=${USER_NAME}&api_key=${API_KEY}&format=json&limit=1&extended=1`,
+    )
+      .then((r) => r.json())
+      .then(
+        (j) =>
+          j.recenttracks.track.filter(
+            (i) => i['@attr'] && i['@attr'].nowplaying,
+          )[0],
+      )
+      .then((song) => {
         if (song) {
-          return fetchSongAlbum(song).then(_ => song);
+          return fetchSongAlbum(song).then((_) => song);
         }
         return song;
       });
-  }
+  };
 
-  let fetchAlbum = mbid => {
+  let fetchAlbum = (mbid) => {
     if (!mbid) {
       return Promise.resolve(null);
     }
 
-    return fetch(`${API_BASE_URL}?method=album.getinfo&mbid=${mbid}&api_key=${API_KEY}&format=json&limit=1&extended=1`)
-      .then(r => r.json())
-      .then(j => j.album);
-  }
+    return fetch(
+      `${API_BASE_URL}?method=album.getinfo&mbid=${mbid}&api_key=${API_KEY}&format=json&limit=1&extended=1`,
+    )
+      .then((r) => r.json())
+      .then((j) => j.album);
+  };
 
-  let fetchSongAlbum = song => {
-    return fetchAlbum(song.album.mbid)
-      .then(album => {
-        Object.assign(song.album, album);
-        return album;
-      });
-  }
+  let fetchSongAlbum = (song) => {
+    return fetchAlbum(song.album.mbid).then((album) => {
+      Object.assign(song.album, album);
+      return album;
+    });
+  };
 
   function getNowPlayingSong() {
     // só funciona com suporte a ES6 e fetch, por preguiça mesmo
     try {
-      fetchScrobblingTrack()
-        .then(song => fillAllNowPlayingElements(song));
-    } catch (e) { }
+      fetchScrobblingTrack().then((song) => fillAllNowPlayingElements(song));
+    } catch (e) {}
   }
 
   function fillAllNowPlayingElements(song) {
     if (song)
-      console.info(`Guilherme is listening to '${song.name}' from ${song.album['#text']} by ${song.artist.name}`);
+      console.info(
+        `Guilherme is listening to '${song.name}' from ${song.album['#text']} by ${song.artist.name}`,
+      );
 
     let nowPlayingEls = document.querySelectorAll('.now-playing');
 
@@ -62,14 +71,14 @@ onDocumentReady(function () {
   }
 
   function fillNowPlaying(nowPlayingEl, song) {
-    if (!song)
-      return void (nowPlayingEl.classList.remove('is-playing'));
+    if (!song) return void nowPlayingEl.classList.remove('is-playing');
 
     let songImages = song.image || song.artist.image || song.album.image || [];
 
     // get from artist, that always exist
     let songImageSrc = getImageSrc(songImages, 'large');
-    songImageSrc = getImageSrc(songImages, nowPlayingEl.dataset.imageSize || 'mega') ||
+    songImageSrc =
+      getImageSrc(songImages, nowPlayingEl.dataset.imageSize || 'mega') ||
       getImageSrc(songImages, 'extralarge') ||
       getImageSrc(songImages, 'large');
     let songName = song.name;
@@ -84,10 +93,15 @@ onDocumentReady(function () {
     let albumEl = nowPlayingEl.querySelector('.song-album');
     let anchorEl = nowPlayingEl.querySelector('.song-url');
 
-    if (coverBg) { coverBg.style.backgroundImage = 'url(' + songImageSrc + ')'; }
-    if (imgEl) { imgEl.src = songImageSrc; }
+    if (coverBg) {
+      coverBg.style.backgroundImage = 'url(' + songImageSrc + ')';
+    }
+    if (imgEl) {
+      imgEl.src = songImageSrc;
+    }
     if (titleEl) titleEl.textContent = songName;
-    if (artistAndAlbumEl) artistAndAlbumEl.textContent = `${artistName} - ${albumName}`;
+    if (artistAndAlbumEl)
+      artistAndAlbumEl.textContent = `${artistName} - ${albumName}`;
     if (artistEl) artistEl.textContent = artistName;
     if (albumEl) albumEl.textContent = albumName;
     if (anchorEl) anchorEl.href = song.url;
@@ -96,9 +110,8 @@ onDocumentReady(function () {
   }
 
   function getImageSrc(array = [], size = 'large') {
-    let img = array.filter(img => img.size === size)[0];
-    if (img)
-      return img['#text'];
+    let img = array.filter((img) => img.size === size)[0];
+    if (img) return img['#text'];
     return undefined;
   }
 
